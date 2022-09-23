@@ -19,3 +19,7 @@ Campus de Vannes - 02 97 01 27 21 - sante.handicap.vannes@listes.univ-ubs.fr
 
 Plus d'informations sur la page suivante :
 https://www.univ-ubs.fr/fr/vie-des-campus/campus/sante-handicap.html
+
+----------------------------------------------------------------------------------------------
+
+Présentation : https://view.genial.ly/612e4b6eb713320dd67ee4b1
