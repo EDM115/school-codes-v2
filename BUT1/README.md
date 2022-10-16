@@ -1,5 +1,5 @@
-## [Codes](BUT1/Codes)
+## [Codes](./Codes)
 Simplement tous les codes que je fait
 
-## [Moodle](BUT1/Moodle)
+## [Moodle](./Moodle)
 Un dump complet de Moodle
