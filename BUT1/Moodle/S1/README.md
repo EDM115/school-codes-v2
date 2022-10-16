@@ -39,8 +39,23 @@ Bases de la communication
 ### [R1.12](./R1.12)
 Projet professionnel et personnel
 
+### [SAE1.01](./SAE1.01)
+Implémentation d’un besoin client
+
+### [SAE1.02](./SAE1.02)
+Comparaison d’approches algorithmiques
+
 ### [SAE1.03](./SAE1.03)
 Installation d’un poste pour le développement
+
+### [SAE1.04](./SAE1.04)
+Création d’une base de données
+
+### [SAE1.05](./SAE1.05)
+Recueil de besoins
+
+### [SAE1.06](./SAE1.06)
+Découverte de l’environnement économique et écologique
 
 ### [SCom](./Scom)
 Service communication IUT Vannes
