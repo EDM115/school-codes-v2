@@ -1,6 +1,6 @@
 /**
 * Calcule le périmètre et l'aire d'un cercle à partir du rayon
-* @author L.Lederrey
+* @author EDM115
 */
 
 class Cercle {
