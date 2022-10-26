@@ -1,6 +1,6 @@
 /**
 * Crée une fiche de salaire à partir du salaire brut
-* @author L.Lederrey
+* @author EDM115
 */
 
 class Salaire {
