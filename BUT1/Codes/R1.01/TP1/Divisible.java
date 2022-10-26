@@ -1,6 +1,6 @@
 /**
 * Teste si une valeur est divisible par 2/3/4/5
-* @author L.Lederrey
+* @author EDM115
 */
 
 class Divisible {
