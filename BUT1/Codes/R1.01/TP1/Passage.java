@@ -1,6 +1,6 @@
 /**
 * Indique si un utilisateur passe dans la classe supérieure
-* @author L.Lederrey
+* @author EDM115
 */
 
 class Passage {
