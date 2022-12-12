@@ -1,0 +1,20 @@
+1 / TER / Vannes / Redon
+1 / 09 / 35 / 10 / 30
+2 / TGV / Vannes / Redon
+2 / 08 / 00 / 10 / 05
+3 / TER / Redon / Nantes
+3 / 11 / 00 / 12 / 30
+4 / TER / Redon / Nantes
+4 / 14 / 15 / 15 / 37
+5 / TGV / Vannes / Nantes
+5 / 10 / 03 / 12 / 11
+6 / TGV / Vannes / Nantes
+6 / 11 / 25 / 13 / 38
+7 / TER / Vannes / Rennes
+7 / 9 / 45 / 11 / 00
+8 / TGV / Vannes / Rennes
+8 / 7 / 19 / 8 / 33
+9 / TGV / Rennes / Nantes
+9 / 10 / 12 / 11 / 28
+10 / TER / Rennes / Nantes
+10 / 9 / 05 / 10 / 56
