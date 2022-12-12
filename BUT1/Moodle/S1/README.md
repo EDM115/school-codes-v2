@@ -3,6 +3,12 @@
 ### [APT](./APT)
 Apprentissage du Poste de Travail
 
+### [EPE](./EPE)
+Étudier avec plaisir et efficacité à l'université
+
+### [Forum Entreprises](./Forum%20Entreprises)
+Forum Entreprises
+
 ### [R1.01](./R1.01)
 R1.01 Initiation au développement
 
