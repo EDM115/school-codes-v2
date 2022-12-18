@@ -1,8 +1,6 @@
-CM1 Codage des caractères - Notes de cours
-==========================================
+# CM1 Codage des caractères - Notes de cours
 
-Introduction
-============
+# Introduction
 
 - Des décodages étranges
 - Aperçu dans gedit des 3 fichiers, c'est le même texte
@@ -15,37 +13,32 @@ Introduction
   - Différences là où sont les caractères latins (non US/ASCII)
   - Fichier UTF8 plus gros...
 
-Des octets...
-=============
+# Des octets...
 
 - Tout n'est que binaire
 - Un élément central : l'octet, 8 bits
 - Compris donc entre 0 et 2<sup>8</sup> = 255 (décimal) = 0xFF (hexadécimal)
 - (héritage par convention historique de ce pack de 8 bits comme groupe de base)
 
-La notion de codage
-===================
+# La notion de codage
 
 - Puisque tout est binaire, pas de lettres fondamentalement
 - On peut associer une chaîne binaire à une lettre -> codage
 - Plusieurs conventions, c'est une _interprétation_
 
-ASCII
-=====
+# ASCII
 
 - Table ASCII, étude
 - Limites : caractères accentués, cédilles, idéogrammes, cyrilliques, ...
 
-ISO, CP/Windows
-===============
+# ISO, CP/Windows
 
 - Table ISO8859-15
 - Table Windows1252
 - Même jeu de caractères (en gros), mais pas les mêmes tables (exemple œ)...
 - Alors avec des jeux de caractères différents...
 
-Unicode
-=======
+# Unicode
 
 - Une synthèse universelle, un répertoire de l'ensemble des glyphes
 - Un procédé en deux étapes :
@@ -57,8 +50,7 @@ Unicode
 
 _La rétro-compatibilité est très souvent présente sur les technologies qui rencontrent du succès, car c'est ce qui permet leur adoption progressive, sans incompatibilité temporaire, dans un système numérique mondial aux évolutions non synchronisées_
 
-Exemple du mail
-===============
+# Exemple du mail
 
 - On s'écrit du texte
 - Ce texte est encodé en binaire
@@ -66,11 +58,10 @@ Exemple du mail
 - Le binaire est décodé chez le destinataire
 - Du texte apparaît à l'écran
 
-
-Panorama du cours
-=================
+# Panorama du cours
 
 Déroulé :
+
 - Codage des caractères
 - Codage des entiers et réels
 - Architecture d'un ordinateur
@@ -79,5 +70,6 @@ Déroulé :
 - Histoire du libre, de l'open-source et du captif
 
 Évaluation :
-* 1/3 contrôle continu sur les comptes-rendus de TP
-* 2/3 examen
+
+- 1/3 contrôle continu sur les comptes-rendus de TP
+- 2/3 examen

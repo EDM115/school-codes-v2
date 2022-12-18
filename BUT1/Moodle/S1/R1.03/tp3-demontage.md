@@ -1,7 +1,7 @@
-TP3 (Dé)montage d'un ordinateur (1h30)
-======================================
+# TP3 (Dé)montage d'un ordinateur (1h30)
 
 Vous avez un ordinateur, un tournevis, et 1h30 devant vous. Durant ce temps, votre mission, que vous ne pouvez refuser :
+
 - ouvrir un ordinateur
 - démonter tout ce que vous pouvez
 - remonter pour le groupe suivant
@@ -10,9 +10,7 @@ Le dernier point est extrêmement important et évidemment le plus proche de l'i
 
 > Ce TP est à réaliser en binôme. Un compte-rendu devra être déposé sur Moodle, en format PDF uniquement. Un seul compte-rendu par binôme suffira (pensez bien à mettre les 2 noms sur le document !)
 
-
-Les composants
-==============
+# Les composants
 
 Commencez par ouvrir le boîtier.
 
@@ -30,11 +28,9 @@ Commencez par ouvrir le boîtier.
 
 > Question 7 : Sortez l'alimentation du boîtier. Quels types de prises avez-vous (noms des connecteurs) ? Quelle est la signification des couleurs de câbles ? Ouvrez la. Reconnaissez-vous certains éléments ? Légendez une photo.
 
-> Question 8 : Retirez la carte mère, si possible sans débrancher tous les fils type USB ou boutons/voyants de façade (il y a normalement la longueur pour poser la carte mère sur le boîtier ; lors du montage, quand c'est possible, on branche les fils *puis* on met la CM à sa place dans le boîtier)
+> Question 8 : Retirez la carte mère, si possible sans débrancher tous les fils type USB ou boutons/voyants de façade (il y a normalement la longueur pour poser la carte mère sur le boîtier ; lors du montage, quand c'est possible, on branche les fils _puis_ on met la CM à sa place dans le boîtier)
 
-
-Compte-rendu
-============
+# Compte-rendu
 
 Votre compte-rendu sera évalué autant sur le fond que sur la forme.
 

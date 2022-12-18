@@ -1,5 +1,7 @@
 # SAE S1.04
+
 ## Création d’une base de données
+
 Cette SAE vise à vérifier deux apprentissages critiques de niveau 1 pour la compétence « Gérer les données de l’information » (UE 1.4 du semestre 1) :
 
 - La capacité à créer une base de données partant d’un cahier des charges avec : i) modélisation UML du domaine, puis ii) traduction en un schéma relationnel et enfin iii) implantation en SQL du schéma ;
@@ -17,6 +19,7 @@ Elle se découpe en deux parties.
 **Dans une seconde partie** vous traduirez un diagramme de classes donné sur le même domaine en un schéma relationnel puis vous implémenterez et utiliserez cette base de données pour réaliser des insertions, suppressions, mises à jour et des requêtes en SQL. Cette partie fera l'objet d'un rendu spécifique. Cette partie comptera pour 50% de la note finale de la SAE.
 
 ### Partie 1 : Modélisation du domaine avec un diagramme de classes
+
 Sur la base du cahier des charges ci-dessous vous devez produire un diagramme de classes UML (avec ses contraintes textuelles en annexe) aussi fidèle que possible au domaine décrit. Votre diagramme (et ses contraintes) est à déposer sur Moodle idéalement en fin de semaine 44 et **au plus tard le Lundi 7/11 à 8h** dans un unique fichier pour le binôme en format pdf. Veillez à bien préciser dans votre document le nom des 2 participants au binôme.
 
 La notation tiendra compte du respect des notations UML et des notations de l'IUT de Vannes (clarté de la contexte de la contrainte, contraintes d'identifiant, contraintes de domaine des attributs, résolution des vrais cycles, détail du calcul des attributs et associations dérivées, etc.).
