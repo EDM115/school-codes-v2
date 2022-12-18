@@ -1,5 +1,4 @@
-TP1 Encodage binaire vers texte (1h30)
-==============================
+# TP1 Encodage binaire vers texte (1h30)
 
 Nous partitionnons classiquement en informatique les fichiers entre fichiers textes et fichiers binaires. Les fichiers texte contiennent uniquement des caractères (essentiellement des lettres minuscules, majuscules, chiffres et ponctuations, on parle souvent de _texte brut_) ; les fichiers binaires sont le reste des fichiers (ie, ceux qui ne sont pas du texte). Comme, évidemment, tout ceci n'est composé que de 0 et de 1, la réalité est un peu plus complexe mais cette simplification nous suffira pour aujourd'hui.
 
@@ -9,15 +8,13 @@ Dans ce TP, vous allez concevoir et analyser un système d'encodage du binaire v
 
 > Ce TP est à réaliser en binôme. Un compte-rendu devra être déposé sur Moodle, en format PDF uniquement. Un seul compte-rendu par binôme suffira (pensez bien à mettre les 2 noms sur le document !)
 
-Mais pourquoi donc ?
-====================
+# Mais pourquoi donc ?
 
 Nous avons vu en cours l'exemple du mail (format MIME). L'usage est en fait plus général. D'une donnée binaire (rentrent dans ce cadre : une photo, un son, une vidéo, un document de traitement de texte, un programme, ...), il peut être nécessaire de la transmettre sur un canal qui a été conçu pour faire communiquer des humain·es, et n'est donc adapté qu'à échanger du _texte brut_ : un e-mail, un document papier, ...
 
 Le second objectif est de faire un premier pas dans la logique des encodages/décodages que vous allez souvent rencontrer en informatique : il faut comprendre que c'est notre solution pour représenter (et donc stocker/transmettre) des informations plus expressives que '0' et '1'; et il faut aussi découvrir qu'il existe généralement plusieurs encodages utilisés pour un même problème (souvent incompatibles).
 
-Encodage
-========
+# Encodage
 
 Votre ensemble de départ sera des bits, ce qui est l'élément de base utilisé par un ordinateur.
 
@@ -27,8 +24,7 @@ Votre ensemble de départ sera des bits, ce qui est l'élément de base utilisé
 
 > Question 2 : Définissez le mécanisme permettant de passer d'une suite de bits de votre ensemble d'entrée à une suite de caractères de votre ensemble d'arrivée.
 
-Transmission sur un canal texte
-===============================
+# Transmission sur un canal texte
 
 Encodez à la main un fichier binaire court de quelques octets, écrivez cet encodage binaire sur un papier et donnez le à un autre binôme du groupe. Arrangez-vous pour que chaque binôme reçoive un message.
 

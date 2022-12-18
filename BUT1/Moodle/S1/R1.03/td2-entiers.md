@@ -1,26 +1,23 @@
-TD2 Codage des entiers
-======================
+# TD2 Codage des entiers
 
 Les trois systèmes utilisés ici (entiers positifs, complément à 1, complément à 2) sont décrits avec les détails suffisants sur la [page Wikipedia dédiée](https://fr.wikipedia.org/wiki/Syst%C3%A8me_binaire). Jetez-y un œil très rapide en début de séance (un parcours du plan, pas une lecture) puis revenez-y au moment nécessaire.
 
 L'objectif de ce TD est de faire les calculs, vous ne devez donc pas utiliser de conversion automatique (par une calculatrice ou un site web) lors des passages binaire <-> décimal.
 
-Table de conversion binaire <-> hexadécimal
--------------------------------------------
+## Table de conversion binaire <-> hexadécimal
 
 Construisez sur votre feuille un tableau de conversion binaire <-> hexadécimal allant de 0x0 à 0xF. Cela sera très utile pour la suite.
 
 | Hexa | Bin  |
-| --- | ---- |
-| 0x0 | 0000 |
-| 0x1 | 0001 |
-| ... | ...  |
-| 0xF | 1111 |
+| ---- | ---- |
+| 0x0  | 0000 |
+| 0x1  | 0001 |
+| ...  | ...  |
+| 0xF  | 1111 |
 
 (Il est évidemment facile de trouver une telle table sur internet mais c'est l'occasion de valider votre compréhension du binaire/hexa, faîtes donc l'exercice sans chercher de modèle)
 
-Entiers positifs
-----------------
+## Entiers positifs
 
 Les entiers positifs s'encodent en changeant leur base directement du décimal au binaire. C'est par exemple le type "unsigned char" en C, pour un entier non signé sur un seul octet.
 
@@ -32,19 +29,16 @@ Les entiers positifs s'encodent en changeant leur base directement du décimal a
 
 > Question 4 : Quelle est la plus grande valeur représentable sur un octet ? Pourquoi ?
 
-
-Complément à 1 (Non mentionné en cours)
---------------
+## Complément à 1 (Non mentionné en cours)
 
 Le complément à 1 va, ici, nous servir d'étape intermédiaire pour construire le complément à 2. Il s'agit simplement d'inverser tous les bits de la représentation binaire.
 
 > Question 5 : Quel est le complément à 1 sur un octet, en binaire puis en hexadécimal, de 0x6B ?
 
-
-Complément à 2
---------------
+## Complément à 2
 
 Le complément à 2, comme décrit sur la page Wikipedia liée en haut de sujet, permet de représenter les entiers négatifs en faisant :
+
 - complément à 1 de la valeur absolue
 - puis +1 sur le binaire
 

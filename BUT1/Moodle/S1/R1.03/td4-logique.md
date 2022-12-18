@@ -1,8 +1,6 @@
-TD4 Logique booléenne
-=====================
+# TD4 Logique booléenne
 
-Transistors
------------
+## Transistors
 
 Les informations nécessaires pour ces questions se trouvent sur [cette page](https://fr.wikibooks.org/wiki/Fonctionnement_d%27un_ordinateur/Les_transistors_et_portes_logiques).
 
@@ -16,46 +14,40 @@ Les informations nécessaires pour ces questions se trouvent sur [cette page](ht
 
 > Question 3 : En vous inspirant du plan transistor de ET et OU de la page Wikibooks, concevez les portes ET et OU à partir des symboles correspondant aux portes déjà décrites NON, NAND et NOR.
 
-
-Tables de vérité
-----------------
+## Tables de vérité
 
 Vérifiez la construction précédente du ET à partir des tables de vérité.
 
 > Question 4 : Écrivez les tables de vérité de NAND, de NON et vérifiez que leur composition donne bien ce qui est attendu pour ET.
 
-
-
-Expressions booléennes
-----------------------
+## Expressions booléennes
 
 > Question 5 : Parenthésez selon les priorités
+>
 > - a + b . c + ¬ a . d
 > - a . a + a . ¬ a + ¬ a
 
-
 > Question 6 : Simplifiez les expressions suivantes
+>
 > - a . a + a . ¬ a + ¬ a
 > - (a + (b + ¬b) + (c.¬c)).a
 
-
 > Question 7 : Distribuez au maximum
+>
 > - (a + b).(c + ¬d).¬(a+b)
 > - ¬(a.b).c
 
-
 > Question 8 : Factorisez au maximum
+>
 > - a.c + a.b + a.¬d
 > - ¬a.c + ¬b.c
 
-
 > Question 9 : Tracez sous forme d'arbre (un nœud = une fonction logique)
+>
 > - a + b . c + ¬ a . d
 > - a . a + a . ¬ a + ¬ a
 
-
-Tables de Karnaugh
-------------------
+## Tables de Karnaugh
 
 Les [tables de Karnaugh](https://fr.wikipedia.org/wiki/Table_de_Karnaugh) permettent de simplifier les expressions booléennes complexes.
 

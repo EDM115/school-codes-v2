@@ -1,5 +1,4 @@
-Décodage
-========
+# Décodage
 
 > Question 3 : Le destinataire sait-il décoder votre message ?
 
@@ -11,17 +10,13 @@ Transmettez maintenant au destinataire, sur papier et sans discussion de vive vo
 
 > Si le décodage est réussi, bravo, vous avez écrit une spécification suffisamment claire et complète pour votre interlocuteur. L'écriture de spécifications complètes et non ambiguës est un exercice difficile que doit savoir faire un développeur.
 
-
-Efficacité
-==========
+# Efficacité
 
 Lors d'un transfert du texte par un moyen électronique, les caractères seront au final ré-encodés en binaire. Nous considérerons que chaque caractère occupera 1 octet (ce qui, en pratique, sera le cas en général si vous avez choisi des caractères "simples").
 
 > Question 5 : Pour un fichier original binaire de x octets, combien d'octets occupera sa conversion texte selon votre mécanisme ?
 
-
-Standardisation
-===============
+# Standardisation
 
 Comme vous l'avez constaté, la communication, au cœur du numérique, ne sera possible qu'avec des normes communes : des standards. Ces standards vont des protocoles réseaux de tous niveaux (une carte wifi communique avec un point d'accès selon un standard défini, un navigateur web communique en HTTP avec un serveur web), au format de fichiers (traitement de texte, tableur) en passant par la représentation des nombres (entiers, réels) ou l'ordre des octets (big-endian / little-endian).
 
@@ -32,9 +27,7 @@ Il est donc indispensable pour tous les acteurs (autant matériels que logiciels
 ![standards](https://imgs.xkcd.com/comics/standards.png)
 _[https://xkcd.com/927/](https://xkcd.com/927/)_
 
-
-Base64
-======
+# Base64
 
 L'encodage binaire->texte le plus couramment utilisé est le Base64, dont vous trouverez la description [ici](https://fr.wikipedia.org/wiki/Base64).
 
@@ -42,17 +35,13 @@ L'encodage binaire->texte le plus couramment utilisé est le Base64, dont vous t
 
 > Question 8 : Quelle est l'efficacité de Base64 ?
 
-
-Base45 et Base85 (Bonus)
-========================
+# Base45 et Base85 (Bonus)
 
 Les encodages [Base45](https://billatnapier.medium.com/so-what-is-base-45-and-where-is-it-used-1ab53279d705) et [Base85](https://fr.wikipedia.org/wiki/Ascii85) sont des alternatives au Base64. Base45 est par exemple utilisé pour l'encodage de binaire dans des QR-codes (qui ne représentent que du texte) et Base85 se retrouve dans le format PDF. Il y a donc 45 ou 85 symboles, ce qui n'est pas une puissance de 2. La conversion oblige à réaliser des changements de base par division euclidienne.
 
 > Question 9 : Refaîtes l'encodage et le décodage de votre message en Base45 et/ou en Base85 (avec le détail des étapes, pas un outil en ligne)
 
-
-Compte-rendu
-============
+# Compte-rendu
 
 Votre compte-rendu sera évalué autant sur le fond que sur la forme.
 

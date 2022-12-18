@@ -4,10 +4,13 @@
 
 Liens utiles :
 1- Premiers pas avec Hugo
-+ https://gohugo.io/getting-started/quick-start
+
+- https://gohugo.io/getting-started/quick-start
 
 2- Template Hugo CV (ceci est un exemple, vous pourrez en choisir un autre. Vous aurez à modifier le contenu ET la forme. Détaillez vos modifications dans votre rapport)
-+ https://github.com/cowboysmall-tools/hugo-devresume-theme
+
+- https://github.com/cowboysmall-tools/hugo-devresume-theme
 
 3- Hugo dans gitlab
-+ https://gohugo.io/hosting-and-deployment/hosting-on-gitlab
+
+- https://gohugo.io/hosting-and-deployment/hosting-on-gitlab

@@ -1,8 +1,6 @@
-TD3 Codage des réels
-====================
+# TD3 Codage des réels
 
-Virgule fixe
-------------
+## Virgule fixe
 
 Soit une convention en virgule fixe avec une partie entière sur 1 octet codée en complément à 2 et une partie fractionnaire sur 1 octet également.
 
@@ -18,22 +16,23 @@ Rappel : la partie fractionnaire représente 2<sup>-1</sup> = 1/2, 2<sup>-2</sup
 
 > Bilan : la virgule fixe permet de calculer sur les réels à partir d'opérations sur les entiers.
 
-
-Virgule flottante
------------------
+## Virgule flottante
 
 Adoptons la convention suivante pour la virgule flottante sur 2 octets :
-* 1 bit de signe
-* 5 bits d'exposant
-* 10 bits de mantisse
+
+- 1 bit de signe
+- 5 bits d'exposant
+- 10 bits de mantisse
 
 Il s'agit de la convention [IEEE 754 Half Precision](https://en.wikipedia.org/wiki/Half-precision_floating-point_format). Un guide est disponible [ici](https://fr.wikihow.com/convertir-un-nombre-d%C3%A9cimal-au-format-binaire-IEEE-754) pour l'encodage. Attention le guide est illustré avec un encodage en simple précision sur 32 bits, il faut donc l'adapter. L'offset à utiliser sur l'exposant ici vaut 15.
 
 > Question 5 : Que vaut en base 10 la chaîne binaire 1110 0110 / 1100 0011 ? Attention :
+>
 > - la mantisse à utiliser pour le calcul commence par un bit à 1 implicite, ie, il faut rajouter un bit à 1 à gauche des 10 bits de mantisse encodés, qui devient ainsi "1,(la partie encodée sur 10 bits)".
 > - l'exposant est encodé avec l'offset de 15, il faut donc soustraire 15 au binaire encodé pour avoir l'exposant du calcul (cet exposant est le nombre de décalages de la virgule depuis la notation scientifique)
 
 > Question 6 : Encodez en virgule flottante le nombre 8576,25. Décomposez en plusieurs étapes :
+>
 > - Représentation binaire de la partie entière, de la partie fractionnaire
 > - Calcul de l'exposant permettant de recaler en notation scientifique
 > - Encodage de l'exposant en lui ajoutant l'offset de 15
