@@ -1,24 +1,29 @@
 enum Races { // On peut en ajouter d'autres
-    Elfe, Hobbit, Homme, Nain
+  Elfe,
+  Hobbit,
+  Homme,
+  Nain
 }
 
 enum Classes { // On peut en ajouter d'autres
-    Barde, Mage, Paladin, Ranger
+  Barde,
+  Mage,
+  Paladin,
+  Ranger
 }
 
 public class CharacterSheetModel {
 
-    private String CharacterName;
-    private String CharacterGender;
-    private String CharacterRace;
-    private String CharacterClass;
+  private String CharacterName;
+  private String CharacterGender;
+  private String CharacterRace;
+  private String CharacterClass;
 
-    public CharacterSheetModel(){
-        this.initValues();
-    }
+  public CharacterSheetModel() {
+    this.initValues();
+  }
 
-    private void initValues() {
-        // TODO
-    }
-
+  private void initValues() {
+    // TODO
+  }
 }
