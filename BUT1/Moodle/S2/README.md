@@ -1,5 +1,8 @@
 ## Le Semestre 2
 
+### [R2.01](./R2.01)
+Développement orienté objets
+
 ### [R2.02](./R2.02)
 Développement d’applications avec IHM
 
@@ -9,6 +12,9 @@ Communication et fonctionnement bas niveau
 ### [R2.05](./R2.05)
 Introduction aux services réseaux
 
+### [R2.06](./R2.06)
+Exploitation d’une base de données
+
 ### [R2.07](./R2.07)
 Graphes
 
@@ -17,6 +23,9 @@ Outils numériques pour les statistiques descriptives
 
 ### [R2.09](./R2.09)
 Méthodes numériques
+
+### [R2.10](./R2.10)
+Gestion de projet & des organisations
 
 ### [R2.11](./R2.11)
 Droit des contrats et du numérique
