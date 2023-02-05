@@ -12,6 +12,7 @@ Une équipe est créée et organise son travail pour réaliser une mission confi
   3. Produire des livrables de qualité (fournir un rapport d'organisation, restitution de documents visuels (un programme et une affiche) 
   4. Présenter et valoriser le projet lors d’un rdv (un oral) : répartition des rôles, fiche d'argumentaire
 - Comment s’organiser ?
+
 1ère phase | 2ème phase | 3ème phase
 | :---: | :---: | :---:
 Vous allez faire référence aux méthodes et outils vus dans les cours suivants du semestre 2 | Mettre en pratique, appliquer ces méthodes et outils pour répondre à un besoin réel | Et acquérir ainsi les compétences suivantes :
@@ -25,6 +26,7 @@ R2.10 Gestion de projet. Organisation, R2.11 Droit, R2.12 Anglais entreprise, R2
 - Coefficient : 40 % UE 2.6 (dont formalisation portfolio) 
 - Évaluation travail de groupe + note individualisée
 - Notation : travail/résultat :
+- 
 Très insuffisant | Insuffisant | Juste | Correct, objectifs atteints | Très bien | Exceptionnel
 ---------- | --------- | ---------- | --------- | ---------- | --------- 
 6/20 | 8/20 | 10/20 | 12/20 | 14/20 | 16/20
