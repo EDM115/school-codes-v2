@@ -1,9 +1,9 @@
-DROP TABLE ATravaillePour;
+/*DROP TABLE ATravaillePour;
 DROP TABLE Avion;
 DROP TABLE Qualification;
 DROP TABLE TypeAvion;
 DROP TABLE Pilote;
-DROP TABLE Compagnie;
+DROP TABLE Compagnie;*/
 
 CREATE TABLE Compagnie
 	(
