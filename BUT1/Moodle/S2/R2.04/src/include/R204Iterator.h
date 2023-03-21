@@ -19,7 +19,7 @@ private:
   /*! pointeur sur l'élément courant */
   T			*ptr;
 public:
-  /*! 
+  /*!
    * Pour pouvoir déclarer un itérateur avant de connaître sa valeur.
    * @return un itérateur inutilisable
    */
@@ -36,7 +36,7 @@ public:
   R204Iterator (const R204Iterator &it) : ptr (it.ptr) {}
 
   /*!
-   * Recopie le pointeur de @p it 
+   * Recopie le pointeur de @p it
    * @param it itérateur de référence pour la copie
    * @return une référence sur this
    */
@@ -71,51 +71,51 @@ public:
    */
   friend bool		operator> (const R204Iterator &a, const R204Iterator &b) { return a.ptr > b.ptr; }
 
-  /*! 
+  /*!
    * Décalage vers l'avant d'un pointeur
    * @param it l'iterateur concerné
    * @param offset nombre d'éléments qu'il faut survoller pour déplacer le pointeur.
    * @return nouvel itérateur à la nouvelle position
    */
   friend R204Iterator<T> operator+ (R204Iterator<T> it, int offset) { it.ptr += offset;  return it; }
-  /*! 
+  /*!
    * Décalage vers l'avant d'un pointeur
    * @param offset nombre d'éléments qu'il faut survoller pour déplacer le pointeur.
    * @param it l'iterateur concerné
    * @return nouvel itérateur à la nouvelle position
    */
   friend R204Iterator<T> operator+ (int offset, R204Iterator<T> it) { it.ptr += offset;  return it; }
-  /*! 
+  /*!
    * Décalage vers l'arrière du pointeur
    * @param it l'iterateur concerné
    * @param offset nombre d'éléments qu'il faut survoller pour déplacer le pointeur.
    * @return nouvel itérateur à la nouvelle position
    */
   friend R204Iterator<T> operator- (R204Iterator<T> it, int offset) { it.ptr -= offset;  return it; }
-  /*! 
+  /*!
    * Distance entre deux poineturs
-   * @param a iterateur (habituellement le dernier) 
-   * @param b iterateur (habituellement le premier) 
+   * @param a iterateur (habituellement le dernier)
+   * @param b iterateur (habituellement le premier)
    * @return le nombre d'éléments qui sépare les 2 iterateurs. La valeur est positive si a est plus grand que b.
    */
   friend int operator- (R204Iterator<T> a, R204Iterator<T> b) { return a.ptr - b.ptr; }
 
-  /*! 
+  /*!
    * pré-incrément. Décale l'itérateur vers l'avant avant de retourner l'itérateur.
    * @return une référence sur this
    */
   R204Iterator		&operator++ () { ++ptr; return *this; }
-  /*! 
+  /*!
    * post-incrément. Décale l'itérateur vers l'avant mais retourne un itérateur sur la position initiale.
    * @return un nouvel itérateur sur la position initiale.
    */
   R204Iterator		operator++ (int) { R204Iterator result (*this); ++ptr; return result; }
-  /*! 
+  /*!
    * déréférencement du pointeur de l'itérateur pour accéder à l'élément pointé.
    * @return une référence sur l'élément pointé.
    */
   T			&operator* () const { return *ptr; }
-  /*! 
+  /*!
    * Déréférencement du pointeur de l'itérateur pour accéder aux champs d'une structure pointé ou aux membres d'un objet pointé.
    * @return champs ou membre pointé.
    */
@@ -133,7 +133,7 @@ private:
   /*! pointeur sur l'élément constant courant */
   const T			*ptr;
 public:
-  /*! 
+  /*!
    * Pour pouvoir déclarer un itérateur avant de connaître sa valeur.
    * @return un itérateur inutilisable
    */
@@ -183,51 +183,51 @@ public:
    */
   friend bool		operator> (const R204ConstIterator &a, const R204ConstIterator &b) { return a.ptr > b.ptr; }
 
-  /*! 
+  /*!
    * Décalage vers l'avant d'un pointeur
    * @param it l'iterateur concerné
    * @param offset nombre d'éléments qu'il faut survoller pour déplacer le pointeur.
    * @return nouvel itérateur à la nouvelle position
    */
   friend R204ConstIterator<T> operator+ (R204ConstIterator<T> it, int offset) { it.ptr += offset;  return it; }
-  /*! 
+  /*!
    * Décalage vers l'avant d'un pointeur
    * @param offset nombre d'éléments qu'il faut survoller pour déplacer le pointeur.
    * @param it l'iterateur concerné
    * @return nouvel itérateur à la nouvelle position
    */
   friend R204ConstIterator<T> operator+ (int offset, R204ConstIterator<T> it) { it.ptr += offset;  return it; }
-  /*! 
+  /*!
    * Décalage vers l'arrière du pointeur
    * @param it l'iterateur concerné
    * @param offset nombre d'éléments qu'il faut survoller pour déplacer le pointeur.
    * @return nouvel itérateur à la nouvelle position
    */
   friend R204ConstIterator<T> operator- (R204ConstIterator<T> it, int offset) { it.ptr -= offset;  return it; }
-  /*! 
+  /*!
    * Distance entre deux poineturs
-   * @param a iterateur (habituellement le dernier) 
-   * @param b iterateur (habituellement le premier) 
+   * @param a iterateur (habituellement le dernier)
+   * @param b iterateur (habituellement le premier)
    * @return le nombre d'éléments qui sépare les 2 iterateurs. La valeur est positive si a est plus grand que b.
    */
   friend int operator- (R204ConstIterator<T> a, R204ConstIterator<T> b) { return a.ptr - b.ptr; }
 
-  /*! 
+  /*!
    * pré-incrément. Décale l'itérateur vers l'avant avant de retourner l'itérateur.
    * @return une référence sur this
    */
   R204ConstIterator		&operator++ () { ++ptr; return *this; }
-  /*! 
+  /*!
    * post-incrément. Décale l'itérateur vers l'avant mais retourne un itérateur sur la position initiale.
    * @return un nouvel itérateur sur la position initiale.
    */
   R204ConstIterator		operator++ (int) { R204ConstIterator result (*this); ++ptr; return result; }
-  /*! 
+  /*!
    * déréférencement du pointeur de l'itérateur pour accéder à l'élément pointé.
    * @return une référence sur l'élément pointé.
    */
   const T			&operator* () const { return *ptr; }
-  /*! 
+  /*!
    * Déréférencement du pointeur de l'itérateur pour accéder aux champs d'une structure pointé ou aux membres d'un objet pointé.
    * @return champs ou membre pointé.
    */

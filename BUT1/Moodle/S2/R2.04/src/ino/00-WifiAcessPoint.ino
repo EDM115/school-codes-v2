@@ -1,7 +1,7 @@
 
 // Set these to your desired credentials.
 const char *ssid = "R204-XXX";
-const char *password = "secret";
+const char *password = "myPassword"; // au moins 8 caractères
 
 
 /*

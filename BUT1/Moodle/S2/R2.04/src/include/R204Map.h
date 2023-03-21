@@ -133,6 +133,12 @@ public:
    */
   inline bool		contains (const K &key) const { return find (key) != nullptr; }
   /*!
+   * indique la présence d'une valeur dans la table
+   * @param val valeur recherché
+   * @return vrai si la valeur est présent pour une clef
+   */
+  inline bool		valueExists (const T &val) const;
+  /*!
    * iterateur sur la première clef
    * @return pointeur sur le premier couple clef/valeur
    */
@@ -190,6 +196,15 @@ R204Map<K, T>::find (const K &key) {
     if (_data [i].key == key)
       return &_data [i];
   return nullptr;
+}
+
+template <class K, class T>
+inline bool
+R204Map<K, T>::valueExists (const T &val) const {
+  for (size_t i (0); i < _data.size (); ++i)
+    if (_data [i].value == val)
+      return true;
+  return false;
 }
 
 template <class K, class T>

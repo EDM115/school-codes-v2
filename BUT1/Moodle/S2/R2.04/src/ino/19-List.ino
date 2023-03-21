@@ -92,7 +92,7 @@ void touchpad_read (lv_indev_drv_t *indev_driver, lv_indev_data_t *data) {
 // ########################################
 // Demo
 void local_main (void) {
-  // lv_example_list_1 ();
+  //lv_example_list_1 ();
   lv_example_list_2 ();
 }
 
