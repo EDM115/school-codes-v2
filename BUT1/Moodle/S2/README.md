@@ -45,17 +45,8 @@ Projet professionnel et personnel : métiers de l’informatique
 ### [SAE2.01](./SAE2.01)
 Développement d’une application
 
-### [SAE2.02](./SAE2.02)
-Exploration algorithmique d’un problème
-
 ### [SAE2.03](./SAE2.03)
 Installation de services réseau
 
-### [SAE2.04](./SAE2.04)
-Exploitation d’une base de données
-
 ### [SAE2.05](./SAE2.05)
 Gestion d’un projet
-
-### [SAE2.06](./SAE2.06)
-Organisation d’un travail d’équipe
