@@ -9,6 +9,9 @@ Développement orienté objets
 ### [R2.02](./R2.02)
 Développement d’applications avec IHM
 
+### [R2.03](./R2.03)
+Qualité de développement
+
 ### [R2.04](./R2.04)
 Communication et fonctionnement bas niveau
 
