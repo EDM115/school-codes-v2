@@ -1,6 +1,3 @@
--- Ce script a été généré automatiquement (ou presque) par le SGBD
--- C'est pour cela qu'il ne respecte pas les conventions d'écriture !
-
 DELETE FROM Apprenti;
 DELETE FROM Stagiaire;
 DELETE FROM Entreprise;
@@ -10,9 +7,6 @@ DELETE FROM Enseignant;
 
  
 
---------------------------------------------------------
---  Table ENSEIGNANT
---------------------------------------------------------
 
 Insert into ENSEIGNANT (IDENS,NOMENS,PRENOMENS) values ('MA','Adam','Michel');
 Insert into ENSEIGNANT (IDENS,NOMENS,PRENOMENS) values ('PB','Baudont','Pascal');
@@ -35,18 +29,14 @@ Insert into ENSEIGNANT (IDENS,NOMENS,PRENOMENS) values ('HT','Tuffigo','Helene')
 Insert into ENSEIGNANT (IDENS,NOMENS,PRENOMENS) values ('MV','Volin','Manon');
 Insert into ENSEIGNANT (IDENS,NOMENS,PRENOMENS) values ('JFK','Kamp','Jean-Francois');
 
---------------------------------------------------------
---  Table GROUPEINFO1
---------------------------------------------------------
+
 
 Insert into GROUPEINFO1 (IDGROUPE,TUTEURGROUPE) values ('A','TG');
 Insert into GROUPEINFO1 (IDGROUPE,TUTEURGROUPE) values ('B','HT');
 Insert into GROUPEINFO1 (IDGROUPE,TUTEURGROUPE) values ('C','PJ');
 Insert into GROUPEINFO1 (IDGROUPE,TUTEURGROUPE) values ('D','MA');
 
---------------------------------------------------------
---  Table ETUDIANT
---------------------------------------------------------
+
 
 Insert into ETUDIANT (IDETUD,NOMETUD,PRENOMETUD,SEXE,BAC,NOMLYCEE,DEPLYCEE,LEGROUPEINFO1,PARCOURSINFO2,FORMATIONINFO2,POURSUITEETUDES) values (21900754,'ADAM','ANTOINE','M','S','LYCEE GENERAL ET TECHNOLOGIQUE FELIX LE',22,'B','IA','App',null);
 Insert into ETUDIANT (IDETUD,NOMETUD,PRENOMETUD,SEXE,BAC,NOMLYCEE,DEPLYCEE,LEGROUPEINFO1,PARCOURSINFO2,FORMATIONINFO2,POURSUITEETUDES) values (21900678,'AJELLO','PAUL','M','S','LYCEE GENERAL PRIVE ST FRANCOIS-XAVIER',56,'B',null,null,null);
@@ -156,9 +146,7 @@ Insert into ETUDIANT (IDETUD,NOMETUD,PRENOMETUD,SEXE,BAC,NOMLYCEE,DEPLYCEE,LEGRO
 Insert into ETUDIANT (IDETUD,NOMETUD,PRENOMETUD,SEXE,BAC,NOMLYCEE,DEPLYCEE,LEGROUPEINFO1,PARCOURSINFO2,FORMATIONINFO2,POURSUITEETUDES) values (21901836,'TRETON','PIERRE','M','S','LY.GEN CHARLES PEG GORGES',44,'A','DA','FI','Licence 2 Info Rennes');
 Insert into ETUDIANT (IDETUD,NOMETUD,PRENOMETUD,SEXE,BAC,NOMLYCEE,DEPLYCEE,LEGROUPEINFO1,PARCOURSINFO2,FORMATIONINFO2,POURSUITEETUDES) values (21702527,'VIAUD','BENJAMIN','M','S','LYCEE GEN TECH PRIVE NOTRE DAME DU VOEU',29,'C','IA','FI','Licence Info Rennes');
 
---------------------------------------------------------
---  ENTREPRISE
---------------------------------------------------------
+
 
 Insert into ENTREPRISE (IDENTREPRISE,NOMENTREPRISE,DEPENTREPRISE) values (1,'ACCENTURE',75);
 Insert into ENTREPRISE (IDENTREPRISE,NOMENTREPRISE,DEPENTREPRISE) values (2,'ADAPEI56',56);
@@ -232,9 +220,6 @@ Insert into ENTREPRISE (IDENTREPRISE,NOMENTREPRISE,DEPENTREPRISE) values (69,'WI
 Insert into ENTREPRISE (IDENTREPRISE,NOMENTREPRISE,DEPENTREPRISE) values (70,'WISEBAND',85);
 Insert into ENTREPRISE (IDENTREPRISE,NOMENTREPRISE,DEPENTREPRISE) values (71,'YOGOKO',35);
 
---------------------------------------------------------
---  Table STAGIAIRE
---------------------------------------------------------
 
 Insert into STAGIAIRE (ETUDSTAGIAIRE,ENTREPRISESTAGE) values (21900265,37);
 Insert into STAGIAIRE (ETUDSTAGIAIRE,ENTREPRISESTAGE) values (21901052,53);
@@ -295,9 +280,7 @@ Insert into STAGIAIRE (ETUDSTAGIAIRE,ENTREPRISESTAGE) values (21900343,12);
 Insert into STAGIAIRE (ETUDSTAGIAIRE,ENTREPRISESTAGE) values (21901836,63);
 Insert into STAGIAIRE (ETUDSTAGIAIRE,ENTREPRISESTAGE) values (21702527,60);
 
---------------------------------------------------------
---  Table APPRENTI
---------------------------------------------------------
+
 
 Insert into APPRENTI (ETUDAPP,ENTREPRISEAPP,TUTEURAPP) values (21807519,5,'RF');
 Insert into APPRENTI (ETUDAPP,ENTREPRISEAPP,TUTEURAPP) values (21901901,7,'MM');
