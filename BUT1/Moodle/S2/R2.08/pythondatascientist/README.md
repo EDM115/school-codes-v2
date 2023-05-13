@@ -14,30 +14,30 @@ Pour utiliser ce répertoire, vous trouverez [des détails plus bas](#utilisatio
 
 Les thèmes abordés sont les suivants :
 
-- [*Chapitre 2* - Les bases du langage](/notebooks/02_python_from_scratch.ipynb)
-- [*Chapitre 3* - Les structures pour traiter des données (NumPy / Pandas)](/notebooks/03_numpy_pandas_bases.ipynb)
-- *Chapitre 4* - La préparation des données
-  - [*4.1* - La récupération des données](/notebooks/04_01_recuperation_des_donnees.ipynb)
-  - [*4.2* - La préparation des données et les premières statistiques](/notebooks/04_02_manipulation_description_des_donnees.ipynb)
-- *Chapitre 5* - La data visualisation
-  - [*5.1* - La data visualisation avec Matplotlib et Seaborn](/notebooks/05_01_Data_visualisation_matplotlib_seaborn.ipynb)
-  - [*5.2* - La cartographie](/notebooks/05_02_Data_visualisation_cartographie.ipynb)
-  - [*5.3* - Les dataviz interactives](/notebooks/05_03_Visualisations_interactives.ipynb)
-- *Chapitre 6* - Le machine learning et le deep learning
-  - [*6.1* - Les approches supervisées](/notebooks/06_01_Machine_learning_supervise.ipynb)
-  - [*6.2* - Les approches non supervisées](/notebooks/06_02_Machine_learning_non_supervise.ipynb)
-  - [*6.3* - Le traitement des données textuelles (NLP)](/notebooks/06_03_NLP.ipynb)
-  - [*6.4* - Le deep learning avec Keras](/notebooks/06_04_Deep_Learning.ipynb)
-- *Chapitre 7* - Les traitements "big data"
-  - [*7.1* - Récupérer des données depuis une infrastructure big data](/notebooks/07_01_Big_data_import.ipynb)
-  - [*7.2* - PySpark pour Apache Spark](/notebooks/07_02_Spark.ipynb)
-
+- [_Chapitre 2_ - Les bases du langage](/notebooks/02_python_from_scratch.ipynb)
+- [_Chapitre 3_ - Les structures pour traiter des données (NumPy / Pandas)](/notebooks/03_numpy_pandas_bases.ipynb)
+- _Chapitre 4_ - La préparation des données
+  - [_4.1_ - La récupération des données](/notebooks/04_01_recuperation_des_donnees.ipynb)
+  - [_4.2_ - La préparation des données et les premières statistiques](/notebooks/04_02_manipulation_description_des_donnees.ipynb)
+- _Chapitre 5_ - La data visualisation
+  - [_5.1_ - La data visualisation avec Matplotlib et Seaborn](/notebooks/05_01_Data_visualisation_matplotlib_seaborn.ipynb)
+  - [_5.2_ - La cartographie](/notebooks/05_02_Data_visualisation_cartographie.ipynb)
+  - [_5.3_ - Les dataviz interactives](/notebooks/05_03_Visualisations_interactives.ipynb)
+- _Chapitre 6_ - Le machine learning et le deep learning
+  - [_6.1_ - Les approches supervisées](/notebooks/06_01_Machine_learning_supervise.ipynb)
+  - [_6.2_ - Les approches non supervisées](/notebooks/06_02_Machine_learning_non_supervise.ipynb)
+  - [_6.3_ - Le traitement des données textuelles (NLP)](/notebooks/06_03_NLP.ipynb)
+  - [_6.4_ - Le deep learning avec Keras](/notebooks/06_04_Deep_Learning.ipynb)
+- _Chapitre 7_ - Les traitements "big data"
+  - [_7.1_ - Récupérer des données depuis une infrastructure big data](/notebooks/07_01_Big_data_import.ipynb)
+  - [_7.2_ - PySpark pour Apache Spark](/notebooks/07_02_Spark.ipynb)
 
 ## Les données
 
 Une partie des données utilisées dans l'ouvrage est disponible dans le répertoire [data](/data/), le reste des données est directement accessible par des liens dans les Notebooks (dans le cas où celles-ci sont trop volumineuses pour ce répertoire).
 
 <a id="utilisation"></a>
+
 ## Utilisation de ce répertoire
 
 ### Binder
@@ -55,34 +55,43 @@ Vous pouvez bien entendu parcourir ce répertoire et ses notebooks directement s
 Une fois que vous avez installé Anaconda, vous pouvez créer un environnement à partir du fichier [environment.yml](/environment.yml) disponible dans ce répertoire.
 
 Utilisez le terminal ou la ligne de commande Anaconda (Conda Prompt). Utilisez la commande :
+
 ```
 conda env create -n mon_nouvel_env -f environment.yml
 ```
 
 Il ne vous reste qu'à activer votre environnement en utilisant :
+
 - Pour MacOS et Linux :
+
 ```
 source activate mon_nouvel_env
 ```
 
 - Pour Windows :
+
 ```
 activate mon_nouvel_env
 ```
 
 Pour vérifier l'installation, utilisez :
+
 ```
 conda list
 ```
 
 Une fois votre environnement activé, utilisez la commande :
+
 ```
 jupyter notebook
 ```
+
 ou
+
 ```
 jupyter lab
 ```
+
 C'est parti, vous pouvez commencer à coder !
 
 **Attention :** il peut arriver que certains packages doivent être installés manuellement.
