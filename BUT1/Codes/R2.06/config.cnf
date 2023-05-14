@@ -1,0 +1,15 @@
+[kamp]
+user = kamp
+password = mdp_kamp
+
+[ridard]
+user = ridard
+password = mdp_ridard
+
+[baudont]
+user = baudont
+password = mdp_baudont
+
+[fleurquin]
+user = fleurquin
+password = mdp_fleurquin

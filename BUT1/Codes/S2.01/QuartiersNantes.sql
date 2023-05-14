@@ -1,0 +1,18 @@
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('1','Centre Ville');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('2','Bellevue - Chantenay - Sainte Anne');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('3','Dervallières - Zola');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('4','Hauts Pavés - Saint Félix');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('5','Malakoff - Saint-Donatien');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('6','Ile de Nantes');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('7','Breil - Barberie');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('8','Nantes Nord');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('9','Nantes Erdre');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('10','Doulon - Bottière');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('11','Nantes Sud');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('14301','Trentemoult');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('14302','Hôtel de Ville');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('14303','Château de Rezé');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('14304','Pont Rousseau');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('14305','La Houssais');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('14306','Blordière');
+Insert into QUARTIERSNANTES (IDENTIFIANT,QUARTIER) values ('14307','Ragon');

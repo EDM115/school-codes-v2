@@ -1,0 +1,12 @@
+Schéma relationnel de la base de données :
+
+
+ComptageVelo(boucle_num(1), libelle(NN), jour = @Temperature.laDate(1), h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, total(NN), probabilite_presence_anomalie, jour_de_la_semaine(NN), vacances_zone_b(NN))
+
+GeolocalisationCompteur(numero = @ComptageVelo.boucle_num(1), libelle(NN), observations, geolocalisation(NN), idQuartier = @QuartiersNantes.identifiant)
+
+LongueurPistesVelo(code_quartier = @QuartiersNantes.identifiant(1), amenagement_cyclable(NN)(UQ))
+
+QuartiersNantes(identifiant(1), quartier(NN)(UQ))
+
+Temperature(laDate(1), tMoy(NN))
