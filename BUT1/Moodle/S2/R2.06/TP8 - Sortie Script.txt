@@ -1,0 +1,582 @@
+-- question 0 : nombre de lignes dans chaque table
+
++----------+
+| COUNT(*) |
++----------+
+|       18 |
++----------+
+1 row in set (0.00 sec)
+
++----------+
+| COUNT(*) |
++----------+
+|       58 |
++----------+
+1 row in set (0.00 sec)
+
++----------+
+| COUNT(*) |
++----------+
+|     1120 |
++----------+
+1 row in set (0.01 sec)
+
++----------+
+| COUNT(*) |
++----------+
+|    54531 |
++----------+
+1 row in set (0.01 sec)
+
+-- question 1
+
++------------+
+| idCompteur |
++------------+
+|         89 |
+|        699 |
+|        889 |
+|        907 |
+|       1031 |
+|       1032 |
++------------+
+6 rows in set (0.00 sec)
+
+-- question 2
+
++------------+---------------------+
+| idCompteur | sens                |
++------------+---------------------+
+|        676 | Beaulieu            |
+|        677 | Malakoff            |
+|        679 | Gare Sud            |
+|       1031 | St Leger les Vignes |
+|       1032 | Suce sur Erdre      |
++------------+---------------------+
+5 rows in set (0.00 sec)
+
+-- question 3
+
++------------------------------+------------+--------+
+| nomCompteur                  | nbCompteur | nbSens |
++------------------------------+------------+--------+
+| 50 Otages                    |          4 |      2 |
+| Avenue de la Liberation      |          2 |      2 |
+| Bd Malakoff                  |          1 |      1 |
+| Bonduelle                    |          2 |      2 |
+| Calvaire                     |          2 |      2 |
+| Ceineray                     |          2 |      2 |
+| Chemin de halage Tortiere    |          2 |      2 |
+| Coteaux                      |          2 |      2 |
+| De Gaulle                    |          1 |      1 |
+| De Gaulle sortie Clemenceau  |          1 |      1 |
+| Entree pont Audibert         |          2 |      2 |
+| Guy Mollet                   |          2 |      2 |
+| Madeleine                    |          2 |      2 |
+| Magellan                     |          4 |      2 |
+| Philippot                    |          2 |      2 |
+| Pont Anne de Bretagne        |          2 |      2 |
+| Pont Audibert                |          1 |      1 |
+| Pont de Pirmil               |          2 |      1 |
+| Pont de Pornic               |          2 |      2 |
+| Pont Haudaudine              |          2 |      2 |
+| Pont Tabarly                 |          4 |      2 |
+| Pont Willy Brandt            |          2 |      2 |
+| Promenade de Bellevue        |          2 |      2 |
+| Sorinieres                   |          2 |      2 |
+| Stade                        |          2 |      2 |
+| Stalingrad                   |          2 |      2 |
+| Van Iseghem                  |          2 |      2 |
+| VN                           |          1 |      1 |
+| VN751A                       |          1 |      1 |
++------------------------------+------------+--------+
+29 rows in set (0.00 sec)
+
+-- question 4
+
++------------------------------------+------------+
+| nomQuartier                        | nbCompteur |
++------------------------------------+------------+
+| Centre Ville                       |         22 |
+| Malakoff - Saint-Donatien          |          9 |
+| Ile de Nantes                      |          6 |
+| Hauts Paves - Saint Felix          |          4 |
+| Nantes Nord                        |          2 |
+| Doulon - Bottiere                  |          2 |
+| Nantes Sud                         |          2 |
+| Pont Rousseau                      |          2 |
+| Ragon                              |          2 |
+| Dervallieres - Zola                |          1 |
+| Bellevue - Chantenay - Sainte Anne |          0 |
+| Breil - Barberie                   |          0 |
+| Nantes Erdre                       |          0 |
+| Trentemoult                        |          0 |
+| Hotel de Ville                     |          0 |
+| Chateau de Reze                    |          0 |
+| La Houssais                        |          0 |
+| Blordiere                          |          0 |
++------------------------------------+------------+
+18 rows in set (0.00 sec)
+
+-- question 5
+
++------------------------------------+------------+
+| nomQuartier                        | nbCompteur |
++------------------------------------+------------+
+| Bellevue - Chantenay - Sainte Anne |          0 |
+| Breil - Barberie                   |          0 |
+| Nantes Erdre                       |          0 |
+| Trentemoult                        |          0 |
+| Hotel de Ville                     |          0 |
+| Chateau de Reze                    |          0 |
+| La Houssais                        |          0 |
+| Blordiere                          |          0 |
++------------------------------------+------------+
+8 rows in set (0.00 sec)
+
+-- question 6
+
++-----------+---------+
+| vacances  | nbJours |
++-----------+---------+
+| Noel      |      54 |
+| NULL      |     737 |
+| Hiver     |      48 |
+| Printemps |      48 |
+| Ascension |      13 |
+| Ete       |     172 |
+| Toussaint |      48 |
++-----------+---------+
+7 rows in set (0.00 sec)
+
+-- question 7
+
+-- on construit d'abord une vue qui simplifiera la requête
+
++------------+---------+----------+-----------+-----------+
+| laDate     | tempMoy | jour     | vacances  | saison    |
++------------+---------+----------+-----------+-----------+
+| 2022-01-01 |    10.3 | samedi   | Noel      | hiver     |
+| 2022-01-02 |   11.92 | dimanche | Noel      | hiver     |
+| 2022-01-03 |    12.2 | lundi    | NULL      | hiver     |
+| 2022-01-04 |    9.28 | mardi    | NULL      | hiver     |
+| 2022-01-05 |    4.65 | mercredi | NULL      | hiver     |
+| 2022-01-06 |    3.18 | jeudi    | NULL      | hiver     |
+| 2022-01-07 |     7.5 | vendredi | NULL      | hiver     |
+| 2022-01-08 |    9.08 | samedi   | NULL      | hiver     |
+| 2022-01-09 |    7.55 | dimanche | NULL      | hiver     |
+| 2022-01-10 |    8.07 | lundi    | NULL      | hiver     |
+| 2022-01-11 |    7.32 | mardi    | NULL      | hiver     |
+| 2022-01-12 |    3.12 | mercredi | NULL      | hiver     |
+| 2022-01-13 |    5.85 | jeudi    | NULL      | hiver     |
+| 2022-01-14 |    0.78 | vendredi | NULL      | hiver     |
+| 2022-01-15 |   -0.33 | samedi   | NULL      | hiver     |
+| 2022-01-16 |    3.12 | dimanche | NULL      | hiver     |
+| 2022-01-17 |    4.58 | lundi    | NULL      | hiver     |
+| 2022-01-18 |    4.18 | mardi    | NULL      | hiver     |
+| 2022-01-19 |    6.15 | mercredi | NULL      | hiver     |
+| 2022-01-20 |    5.33 | jeudi    | NULL      | hiver     |
+| 2022-01-21 |    3.78 | vendredi | NULL      | hiver     |
+| 2022-01-22 |    1.62 | samedi   | NULL      | hiver     |
+| 2022-01-23 |    3.62 | dimanche | NULL      | hiver     |
+| 2022-01-24 |     2.8 | lundi    | NULL      | hiver     |
+| 2022-01-25 |    0.18 | mardi    | NULL      | hiver     |
+| 2022-01-26 |    0.92 | mercredi | NULL      | hiver     |
+| 2022-01-27 |     3.7 | jeudi    | NULL      | hiver     |
+| 2022-01-28 |     6.2 | vendredi | NULL      | hiver     |
+| 2022-01-29 |    8.02 | samedi   | NULL      | hiver     |
+| 2022-01-30 |    8.72 | dimanche | NULL      | hiver     |
+| 2022-01-31 |     8.4 | lundi    | NULL      | hiver     |
+| 2022-02-01 |    6.85 | mardi    | NULL      | hiver     |
+| 2022-02-02 |    8.95 | mercredi | NULL      | hiver     |
+| 2022-02-03 |       7 | jeudi    | NULL      | hiver     |
+| 2022-02-04 |    9.07 | vendredi | NULL      | hiver     |
+| 2022-02-05 |    4.95 | samedi   | Hiver     | hiver     |
+| 2022-02-06 |    9.05 | dimanche | Hiver     | hiver     |
+| 2022-02-07 |     9.3 | lundi    | Hiver     | hiver     |
+| 2022-02-08 |    6.62 | mardi    | Hiver     | hiver     |
+| 2022-02-09 |    7.02 | mercredi | Hiver     | hiver     |
+| 2022-02-10 |    8.22 | jeudi    | Hiver     | hiver     |
+| 2022-02-11 |       4 | vendredi | Hiver     | hiver     |
+| 2022-02-12 |    4.85 | samedi   | Hiver     | hiver     |
+| 2022-02-13 |    5.88 | dimanche | Hiver     | hiver     |
+| 2022-02-14 |    9.25 | lundi    | Hiver     | hiver     |
+| 2022-02-15 |    7.38 | mardi    | Hiver     | hiver     |
+| 2022-02-16 |    11.6 | mercredi | Hiver     | hiver     |
+| 2022-02-17 |      13 | jeudi    | Hiver     | hiver     |
+| 2022-02-18 |   10.28 | vendredi | Hiver     | hiver     |
+| 2022-02-19 |    6.82 | samedi   | Hiver     | hiver     |
+| 2022-02-20 |    11.1 | dimanche | Hiver     | hiver     |
+| 2022-02-21 |    9.73 | lundi    | NULL      | hiver     |
+| 2022-02-22 |    9.32 | mardi    | NULL      | hiver     |
+| 2022-02-23 |   10.07 | mercredi | NULL      | hiver     |
+| 2022-02-24 |    9.18 | jeudi    | NULL      | hiver     |
+| 2022-02-25 |    5.82 | vendredi | NULL      | hiver     |
+| 2022-02-26 |    6.12 | samedi   | NULL      | hiver     |
+| 2022-02-27 |    7.55 | dimanche | NULL      | hiver     |
+| 2022-02-28 |    9.17 | lundi    | NULL      | hiver     |
+| 2022-03-01 |   11.42 | mardi    | NULL      | hiver     |
+| 2022-03-02 |    11.4 | mercredi | NULL      | hiver     |
+| 2022-03-03 |   10.32 | jeudi    | NULL      | hiver     |
+| 2022-03-04 |    9.57 | vendredi | NULL      | hiver     |
+| 2022-03-05 |     6.6 | samedi   | NULL      | hiver     |
+| 2022-03-06 |    7.88 | dimanche | NULL      | hiver     |
+| 2022-03-07 |    4.47 | lundi    | NULL      | hiver     |
+| 2022-03-08 |    7.62 | mardi    | NULL      | hiver     |
+| 2022-03-09 |   11.22 | mercredi | NULL      | hiver     |
+| 2022-03-10 |   11.98 | jeudi    | NULL      | hiver     |
+| 2022-03-11 |   10.52 | vendredi | NULL      | hiver     |
+| 2022-03-12 |   10.12 | samedi   | NULL      | hiver     |
+| 2022-03-13 |     9.6 | dimanche | NULL      | hiver     |
+| 2022-03-14 |    9.57 | lundi    | NULL      | hiver     |
+| 2022-03-15 |   12.68 | mardi    | NULL      | hiver     |
+| 2022-03-16 |   12.02 | mercredi | NULL      | hiver     |
+| 2022-03-17 |    8.73 | jeudi    | NULL      | hiver     |
+| 2022-03-18 |    9.48 | vendredi | NULL      | hiver     |
+| 2022-03-19 |   11.05 | samedi   | NULL      | hiver     |
+| 2022-03-20 |   10.73 | dimanche | NULL      | hiver     |
+| 2022-03-21 |   12.77 | lundi    | NULL      | hiver     |
+| 2022-12-22 |   13.42 | jeudi    | Noel      | hiver     |
+| 2022-12-23 |   13.75 | vendredi | Noel      | hiver     |
+| 2022-12-24 |   11.85 | samedi   | Noel      | hiver     |
+| 2022-12-25 |   12.58 | dimanche | Noel      | hiver     |
+| 2022-12-26 |    9.88 | lundi    | Noel      | hiver     |
+| 2022-12-27 |     6.6 | mardi    | Noel      | hiver     |
+| 2022-12-28 |    10.4 | mercredi | Noel      | hiver     |
+| 2022-12-29 |   10.05 | jeudi    | Noel      | hiver     |
+| 2022-12-30 |   10.95 | vendredi | Noel      | hiver     |
+| 2022-12-31 |   15.35 | samedi   | Noel      | hiver     |
+| 2022-03-22 |   11.32 | mardi    | NULL      | printemps |
+| 2022-03-23 |   10.25 | mercredi | NULL      | printemps |
+| 2022-03-24 |   10.98 | jeudi    | NULL      | printemps |
+| 2022-03-25 |   13.65 | vendredi | NULL      | printemps |
+| 2022-03-26 |   13.85 | samedi   | NULL      | printemps |
+| 2022-03-27 |   14.22 | dimanche | NULL      | printemps |
+| 2022-03-28 |   14.32 | lundi    | NULL      | printemps |
+| 2022-03-29 |    13.1 | mardi    | NULL      | printemps |
+| 2022-03-30 |   10.98 | mercredi | NULL      | printemps |
+| 2022-03-31 |    6.38 | jeudi    | NULL      | printemps |
+| 2022-04-01 |    4.08 | vendredi | NULL      | printemps |
+| 2022-04-02 |     5.3 | samedi   | NULL      | printemps |
+| 2022-04-03 |    4.47 | dimanche | NULL      | printemps |
+| 2022-04-04 |    4.15 | lundi    | NULL      | printemps |
+| 2022-04-05 |   10.62 | mardi    | NULL      | printemps |
+| 2022-04-06 |   10.42 | mercredi | NULL      | printemps |
+| 2022-04-07 |   13.12 | jeudi    | NULL      | printemps |
+| 2022-04-08 |   11.02 | vendredi | NULL      | printemps |
+| 2022-04-09 |    8.18 | samedi   | Printemps | printemps |
+| 2022-04-10 |    7.98 | dimanche | Printemps | printemps |
+| 2022-04-11 |   14.25 | lundi    | Printemps | printemps |
+| 2022-04-12 |   14.28 | mardi    | Printemps | printemps |
+| 2022-04-13 |   13.95 | mercredi | Printemps | printemps |
+| 2022-04-14 |    14.9 | jeudi    | Printemps | printemps |
+| 2022-04-15 |   16.12 | vendredi | Printemps | printemps |
+| 2022-04-16 |    15.3 | samedi   | Printemps | printemps |
+| 2022-04-17 |   14.68 | dimanche | Printemps | printemps |
+| 2022-04-18 |   12.75 | lundi    | Printemps | printemps |
+| 2022-04-19 |   11.15 | mardi    | Printemps | printemps |
+| 2022-04-20 |   13.98 | mercredi | Printemps | printemps |
+| 2022-04-21 |   14.98 | jeudi    | Printemps | printemps |
+| 2022-04-22 |   14.48 | vendredi | Printemps | printemps |
+| 2022-04-23 |    15.5 | samedi   | Printemps | printemps |
+| 2022-04-24 |   15.18 | dimanche | Printemps | printemps |
+| 2022-04-25 |   14.05 | lundi    | NULL      | printemps |
+| 2022-04-26 |   12.02 | mardi    | NULL      | printemps |
+| 2022-04-27 |    13.2 | mercredi | NULL      | printemps |
+| 2022-04-28 |   15.45 | jeudi    | NULL      | printemps |
+| 2022-04-29 |   16.05 | vendredi | NULL      | printemps |
+| 2022-04-30 |   12.65 | samedi   | NULL      | printemps |
+| 2022-05-01 |   13.88 | dimanche | NULL      | printemps |
+| 2022-05-02 |   14.75 | lundi    | NULL      | printemps |
+| 2022-05-03 |    14.2 | mardi    | NULL      | printemps |
+| 2022-05-04 |    14.3 | mercredi | NULL      | printemps |
+| 2022-05-05 |   13.58 | jeudi    | NULL      | printemps |
+| 2022-05-06 |    14.7 | vendredi | NULL      | printemps |
+| 2022-05-07 |   15.88 | samedi   | NULL      | printemps |
+| 2022-05-08 |   17.12 | dimanche | NULL      | printemps |
+| 2022-05-09 |   18.88 | lundi    | NULL      | printemps |
+| 2022-05-10 |    19.7 | mardi    | NULL      | printemps |
+| 2022-05-11 |   16.35 | mercredi | NULL      | printemps |
+| 2022-05-12 |   15.92 | jeudi    | NULL      | printemps |
+| 2022-05-13 |   15.65 | vendredi | NULL      | printemps |
+| 2022-05-14 |    19.4 | samedi   | NULL      | printemps |
+| 2022-05-15 |   23.38 | dimanche | NULL      | printemps |
+| 2022-05-16 |    20.3 | lundi    | NULL      | printemps |
+| 2022-05-17 |   21.75 | mardi    | NULL      | printemps |
+| 2022-05-18 |   21.05 | mercredi | NULL      | printemps |
+| 2022-05-19 |   20.72 | jeudi    | NULL      | printemps |
+| 2022-05-20 |    19.5 | vendredi | NULL      | printemps |
+| 2022-05-21 |   18.33 | samedi   | NULL      | printemps |
+| 2022-05-22 |   21.92 | dimanche | NULL      | printemps |
+| 2022-05-23 |   17.23 | lundi    | NULL      | printemps |
+| 2022-05-24 |   14.32 | mardi    | NULL      | printemps |
+| 2022-05-25 |   13.32 | mercredi | NULL      | printemps |
+| 2022-05-26 |   16.35 | jeudi    | Ascension | printemps |
+| 2022-05-27 |   15.75 | vendredi | Ascension | printemps |
+| 2022-05-28 |   15.95 | samedi   | Ascension | printemps |
+| 2022-05-29 |   14.38 | dimanche | Ascension | printemps |
+| 2022-05-30 |   14.35 | lundi    | NULL      | printemps |
+| 2022-05-31 |   14.77 | mardi    | NULL      | printemps |
+| 2022-06-01 |   16.23 | mercredi | NULL      | printemps |
+| 2022-06-02 |   20.88 | jeudi    | NULL      | printemps |
+| 2022-06-03 |    20.8 | vendredi | NULL      | printemps |
+| 2022-06-04 |   20.33 | samedi   | NULL      | printemps |
+| 2022-06-05 |    18.7 | dimanche | NULL      | printemps |
+| 2022-06-06 |    15.8 | lundi    | NULL      | printemps |
+| 2022-06-07 |   17.83 | mardi    | NULL      | printemps |
+| 2022-06-08 |    18.4 | mercredi | NULL      | printemps |
+| 2022-06-09 |   17.58 | jeudi    | NULL      | printemps |
+| 2022-06-10 |   17.75 | vendredi | NULL      | printemps |
+| 2022-06-11 |   18.42 | samedi   | NULL      | printemps |
+| 2022-06-12 |   19.32 | dimanche | NULL      | printemps |
+| 2022-06-13 |   17.75 | lundi    | NULL      | printemps |
+| 2022-06-14 |    21.2 | mardi    | NULL      | printemps |
+| 2022-06-15 |   24.48 | mercredi | NULL      | printemps |
+| 2022-06-16 |   24.68 | jeudi    | NULL      | printemps |
+| 2022-06-17 |   27.62 | vendredi | NULL      | printemps |
+| 2022-06-18 |    30.1 | samedi   | NULL      | printemps |
+| 2022-06-19 |   22.15 | dimanche | NULL      | printemps |
+| 2022-06-20 |   21.48 | lundi    | NULL      | printemps |
+| 2022-06-21 |    21.9 | mardi    | NULL      | printemps |
+| 2022-06-22 |   20.88 | mercredi | NULL      | ete       |
+| 2022-06-23 |   20.72 | jeudi    | NULL      | ete       |
+| 2022-06-24 |   18.48 | vendredi | NULL      | ete       |
+| 2022-06-25 |   16.92 | samedi   | NULL      | ete       |
+| 2022-06-26 |   15.78 | dimanche | NULL      | ete       |
+| 2022-06-27 |   16.98 | lundi    | NULL      | ete       |
+| 2022-06-28 |   16.35 | mardi    | NULL      | ete       |
+| 2022-06-29 |   15.92 | mercredi | NULL      | ete       |
+| 2022-06-30 |   16.15 | jeudi    | NULL      | ete       |
+| 2022-07-01 |   15.18 | vendredi | NULL      | ete       |
+| 2022-07-02 |   17.95 | samedi   | NULL      | ete       |
+| 2022-07-03 |   18.48 | dimanche | NULL      | ete       |
+| 2022-07-04 |   18.88 | lundi    | NULL      | ete       |
+| 2022-07-05 |   18.45 | mardi    | NULL      | ete       |
+| 2022-07-06 |   20.27 | mercredi | NULL      | ete       |
+| 2022-07-07 |    19.8 | jeudi    | Ete       | ete       |
+| 2022-07-08 |   21.75 | vendredi | Ete       | ete       |
+| 2022-07-09 |    23.7 | samedi   | Ete       | ete       |
+| 2022-07-10 |   23.35 | dimanche | Ete       | ete       |
+| 2022-07-11 |   25.32 | lundi    | Ete       | ete       |
+| 2022-07-12 |    26.5 | mardi    | Ete       | ete       |
+| 2022-07-13 |   27.72 | mercredi | Ete       | ete       |
+| 2022-07-14 |   25.42 | jeudi    | Ete       | ete       |
+| 2022-07-15 |    22.9 | vendredi | Ete       | ete       |
+| 2022-07-16 |   24.48 | samedi   | Ete       | ete       |
+| 2022-07-17 |   26.83 | dimanche | Ete       | ete       |
+| 2022-07-18 |   30.95 | lundi    | Ete       | ete       |
+| 2022-07-19 |   27.15 | mardi    | Ete       | ete       |
+| 2022-07-20 |   21.95 | mercredi | Ete       | ete       |
+| 2022-07-21 |   22.82 | jeudi    | Ete       | ete       |
+| 2022-07-22 |   20.92 | vendredi | Ete       | ete       |
+| 2022-07-23 |    21.2 | samedi   | Ete       | ete       |
+| 2022-07-24 |    23.5 | dimanche | Ete       | ete       |
+| 2022-07-25 |   21.92 | lundi    | Ete       | ete       |
+| 2022-07-26 |    20.5 | mardi    | Ete       | ete       |
+| 2022-07-27 |   19.38 | mercredi | Ete       | ete       |
+| 2022-07-28 |    23.5 | jeudi    | Ete       | ete       |
+| 2022-07-29 |    24.2 | vendredi | Ete       | ete       |
+| 2022-07-30 |   23.48 | samedi   | Ete       | ete       |
+| 2022-07-31 |    NULL | dimanche | Ete       | ete       |
+| 2022-08-01 |   22.78 | lundi    | Ete       | ete       |
+| 2022-08-02 |   24.95 | mardi    | Ete       | ete       |
+| 2022-08-03 |   27.57 | mercredi | Ete       | ete       |
+| 2022-08-04 |   24.42 | jeudi    | Ete       | ete       |
+| 2022-08-05 |   21.42 | vendredi | Ete       | ete       |
+| 2022-08-06 |   20.52 | samedi   | Ete       | ete       |
+| 2022-08-07 |   22.17 | dimanche | Ete       | ete       |
+| 2022-08-08 |   24.02 | lundi    | Ete       | ete       |
+| 2022-08-09 |   25.45 | mardi    | Ete       | ete       |
+| 2022-08-10 |   27.17 | mercredi | Ete       | ete       |
+| 2022-08-11 |   26.32 | jeudi    | Ete       | ete       |
+| 2022-08-12 |   26.95 | vendredi | Ete       | ete       |
+| 2022-08-13 |   27.95 | samedi   | Ete       | ete       |
+| 2022-08-14 |    21.1 | dimanche | Ete       | ete       |
+| 2022-08-15 |   21.62 | lundi    | Ete       | ete       |
+| 2022-08-16 |   21.58 | mardi    | Ete       | ete       |
+| 2022-08-17 |   19.95 | mercredi | Ete       | ete       |
+| 2022-08-18 |   20.58 | jeudi    | Ete       | ete       |
+| 2022-08-19 |    21.7 | vendredi | Ete       | ete       |
+| 2022-08-20 |    20.2 | samedi   | Ete       | ete       |
+| 2022-08-21 |    17.9 | dimanche | Ete       | ete       |
+| 2022-08-22 |   21.78 | lundi    | Ete       | ete       |
+| 2022-08-23 |    23.5 | mardi    | Ete       | ete       |
+| 2022-08-24 |   24.98 | mercredi | Ete       | ete       |
+| 2022-08-25 |    22.8 | jeudi    | Ete       | ete       |
+| 2022-08-26 |   20.83 | vendredi | Ete       | ete       |
+| 2022-08-27 |   21.32 | samedi   | Ete       | ete       |
+| 2022-08-28 |   21.58 | dimanche | Ete       | ete       |
+| 2022-08-29 |   24.22 | lundi    | Ete       | ete       |
+| 2022-08-30 |    25.5 | mardi    | Ete       | ete       |
+| 2022-08-31 |    NULL | mercredi | Ete       | ete       |
+| 2022-09-01 |   22.72 | jeudi    | NULL      | ete       |
+| 2022-09-02 |   20.52 | vendredi | NULL      | ete       |
+| 2022-09-03 |   20.45 | samedi   | NULL      | ete       |
+| 2022-09-04 |   21.22 | dimanche | NULL      | ete       |
+| 2022-09-05 |    22.7 | lundi    | NULL      | ete       |
+| 2022-09-06 |   20.48 | mardi    | NULL      | ete       |
+| 2022-09-07 |   18.77 | mercredi | NULL      | ete       |
+| 2022-09-08 |   19.08 | jeudi    | NULL      | ete       |
+| 2022-09-09 |   18.62 | vendredi | NULL      | ete       |
+| 2022-09-10 |   17.85 | samedi   | NULL      | ete       |
+| 2022-09-11 |   20.52 | dimanche | NULL      | ete       |
+| 2022-09-12 |   24.62 | lundi    | NULL      | ete       |
+| 2022-09-13 |   24.98 | mardi    | NULL      | ete       |
+| 2022-09-14 |    22.5 | mercredi | NULL      | ete       |
+| 2022-09-15 |   21.18 | jeudi    | NULL      | ete       |
+| 2022-09-16 |    15.2 | vendredi | NULL      | ete       |
+| 2022-09-17 |   12.55 | samedi   | NULL      | ete       |
+| 2022-09-18 |   13.05 | dimanche | NULL      | ete       |
+| 2022-09-19 |    14.4 | lundi    | NULL      | ete       |
+| 2022-09-20 |    14.2 | mardi    | NULL      | ete       |
+| 2022-09-21 |   15.65 | mercredi | NULL      | ete       |
+| 2022-09-22 |   15.35 | jeudi    | NULL      | automne   |
+| 2022-09-23 |   15.42 | vendredi | NULL      | automne   |
+| 2022-09-24 |   15.85 | samedi   | NULL      | automne   |
+| 2022-09-25 |   16.27 | dimanche | NULL      | automne   |
+| 2022-09-26 |   13.18 | lundi    | NULL      | automne   |
+| 2022-09-27 |    14.1 | mardi    | NULL      | automne   |
+| 2022-09-28 |   14.58 | mercredi | NULL      | automne   |
+| 2022-09-29 |   12.58 | jeudi    | NULL      | automne   |
+| 2022-09-30 |    11.3 | vendredi | NULL      | automne   |
+| 2022-10-01 |   17.27 | samedi   | NULL      | automne   |
+| 2022-10-02 |   19.18 | dimanche | NULL      | automne   |
+| 2022-10-03 |   16.12 | lundi    | NULL      | automne   |
+| 2022-10-04 |   14.58 | mardi    | NULL      | automne   |
+| 2022-10-05 |   16.15 | mercredi | NULL      | automne   |
+| 2022-10-06 |   13.08 | jeudi    | NULL      | automne   |
+| 2022-10-07 |   12.72 | vendredi | NULL      | automne   |
+| 2022-10-08 |   12.75 | samedi   | NULL      | automne   |
+| 2022-10-09 |   14.68 | dimanche | NULL      | automne   |
+| 2022-10-10 |   16.48 | lundi    | NULL      | automne   |
+| 2022-10-11 |    16.3 | mardi    | NULL      | automne   |
+| 2022-10-12 |   14.25 | mercredi | NULL      | automne   |
+| 2022-10-13 |   14.72 | jeudi    | NULL      | automne   |
+| 2022-10-14 |   16.65 | vendredi | NULL      | automne   |
+| 2022-10-15 |   17.27 | samedi   | NULL      | automne   |
+| 2022-10-16 |    18.4 | dimanche | NULL      | automne   |
+| 2022-10-17 |   17.25 | lundi    | NULL      | automne   |
+| 2022-10-18 |   18.42 | mardi    | NULL      | automne   |
+| 2022-10-19 |   20.52 | mercredi | NULL      | automne   |
+| 2022-10-20 |    18.2 | jeudi    | NULL      | automne   |
+| 2022-10-21 |   18.05 | vendredi | NULL      | automne   |
+| 2022-10-22 |   17.77 | samedi   | Toussaint | automne   |
+| 2022-10-23 |   19.45 | dimanche | Toussaint | automne   |
+| 2022-10-24 |   17.25 | lundi    | Toussaint | automne   |
+| 2022-10-25 |   15.35 | mardi    | Toussaint | automne   |
+| 2022-10-26 |   18.35 | mercredi | Toussaint | automne   |
+| 2022-10-27 |   19.75 | jeudi    | Toussaint | automne   |
+| 2022-10-28 |   18.38 | vendredi | Toussaint | automne   |
+| 2022-10-29 |    20.3 | samedi   | Toussaint | automne   |
+| 2022-10-30 |   15.18 | dimanche | Toussaint | automne   |
+| 2022-10-31 |   14.68 | lundi    | Toussaint | automne   |
+| 2022-11-01 |   14.08 | mardi    | Toussaint | automne   |
+| 2022-11-02 |   12.38 | mercredi | Toussaint | automne   |
+| 2022-11-03 |    13.2 | jeudi    | Toussaint | automne   |
+| 2022-11-04 |   11.62 | vendredi | Toussaint | automne   |
+| 2022-11-05 |    9.88 | samedi   | Toussaint | automne   |
+| 2022-11-06 |    13.4 | dimanche | Toussaint | automne   |
+| 2022-11-07 |   14.77 | lundi    | NULL      | automne   |
+| 2022-11-08 |    14.3 | mardi    | NULL      | automne   |
+| 2022-11-09 |   13.68 | mercredi | NULL      | automne   |
+| 2022-11-10 |    11.2 | jeudi    | NULL      | automne   |
+| 2022-11-11 |    10.7 | vendredi | NULL      | automne   |
+| 2022-11-12 |   13.92 | samedi   | NULL      | automne   |
+| 2022-11-13 |   13.42 | dimanche | NULL      | automne   |
+| 2022-11-14 |   11.78 | lundi    | NULL      | automne   |
+| 2022-11-15 |    12.5 | mardi    | NULL      | automne   |
+| 2022-11-16 |   11.28 | mercredi | NULL      | automne   |
+| 2022-11-17 |   12.48 | jeudi    | NULL      | automne   |
+| 2022-11-18 |    10.2 | vendredi | NULL      | automne   |
+| 2022-11-19 |     6.9 | samedi   | NULL      | automne   |
+| 2022-11-20 |    8.28 | dimanche | NULL      | automne   |
+| 2022-11-21 |    9.82 | lundi    | NULL      | automne   |
+| 2022-11-22 |     9.4 | mardi    | NULL      | automne   |
+| 2022-11-23 |   11.08 | mercredi | NULL      | automne   |
+| 2022-11-24 |   10.98 | jeudi    | NULL      | automne   |
+| 2022-11-25 |     9.4 | vendredi | NULL      | automne   |
+| 2022-11-26 |    7.75 | samedi   | NULL      | automne   |
+| 2022-11-27 |   10.35 | dimanche | NULL      | automne   |
+| 2022-11-28 |    9.52 | lundi    | NULL      | automne   |
+| 2022-11-29 |    5.72 | mardi    | NULL      | automne   |
+| 2022-11-30 |    4.68 | mercredi | NULL      | automne   |
+| 2022-12-01 |    5.38 | jeudi    | NULL      | automne   |
+| 2022-12-02 |    3.48 | vendredi | NULL      | automne   |
+| 2022-12-03 |     3.7 | samedi   | NULL      | automne   |
+| 2022-12-04 |    3.32 | dimanche | NULL      | automne   |
+| 2022-12-05 |    3.68 | lundi    | NULL      | automne   |
+| 2022-12-06 |    4.68 | mardi    | NULL      | automne   |
+| 2022-12-07 |     4.3 | mercredi | NULL      | automne   |
+| 2022-12-08 |    1.08 | jeudi    | NULL      | automne   |
+| 2022-12-09 |    2.48 | vendredi | NULL      | automne   |
+| 2022-12-10 |   -1.65 | samedi   | NULL      | automne   |
+| 2022-12-11 |    1.08 | dimanche | NULL      | automne   |
+| 2022-12-12 |    -0.5 | lundi    | NULL      | automne   |
+| 2022-12-13 |   -0.05 | mardi    | NULL      | automne   |
+| 2022-12-14 |    1.55 | mercredi | NULL      | automne   |
+| 2022-12-15 |    2.35 | jeudi    | NULL      | automne   |
+| 2022-12-16 |    1.95 | vendredi | NULL      | automne   |
+| 2022-12-17 |   -1.35 | samedi   | Noel      | automne   |
+| 2022-12-18 |    3.42 | dimanche | Noel      | automne   |
+| 2022-12-19 |   10.72 | lundi    | Noel      | automne   |
+| 2022-12-20 |      12 | mardi    | Noel      | automne   |
+| 2022-12-21 |   10.68 | mercredi | Noel      | automne   |
++------------+---------+----------+-----------+-----------+
+365 rows in set (0.00 sec)
+
++-----------+---------+---------+---------+---------+
+| saison    | nbJours | tempMoy | tempMin | tempMax |
++-----------+---------+---------+---------+---------+
+| hiver     |      90 |    8.05 |   -0.33 |   15.35 |
+| printemps |      92 |    15.7 |    4.08 |    30.1 |
+| ete       |      92 |  21.452 |   12.55 |   30.95 |
+| automne   |      91 |  11.529 |   -1.65 |   20.52 |
++-----------+---------+---------+---------+---------+
+4 rows in set (0.00 sec)
+
+-- question 8
+
++----------+---------+
+| Jour     | total   |
++----------+---------+
+| lundi    | 1258962 |
+| mardi    | 1510069 |
+| mercredi | 1459823 |
+| jeudi    | 1455591 |
+| vendredi | 1363209 |
+| samedi   |  704999 |
+| dimanche |  576978 |
++----------+---------+
+7 rows in set (0.09 sec)
+
+-- question 9
+
++----------+--------+
+| Jour     | total  |
++----------+--------+
+| vendredi | 522230 |
+| samedi   | 440718 |
+| dimanche | 374012 |
+| lundi    | 484139 |
+| mardi    | 562378 |
+| mercredi | 533500 |
+| jeudi    | 568069 |
++----------+--------+
+7 rows in set (0.06 sec)
+
+-- question 10
+
++---------------------------+-------------------------+
+| nomQuartier               | COUNT(presenceAnomalie) |
++---------------------------+-------------------------+
+| Centre Ville              |                     496 |
+| Dervallieres - Zola       |                     117 |
+| Hauts Paves - Saint Felix |                      42 |
+| Malakoff - Saint-Donatien |                     794 |
+| Ile de Nantes             |                     103 |
+| Nantes Nord               |                      24 |
+| Nantes Sud                |                      16 |
+| Pont Rousseau             |                      74 |
+| Ragon                     |                      46 |
++---------------------------+-------------------------+
+9 rows in set (0.03 sec)
