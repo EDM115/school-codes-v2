@@ -1,0 +1,41 @@
+version: 1
+
+header:
+  name: IUTVA AS
+
+hosts:
+  router:
+    master: alpine
+    network:
+      interfaces:
+        eth0:
+          bridge: transit-a
+          ipv4: 100.64.0.90/24
+          ipv6: 2001:db8:b000::90/48
+        eth1:
+          bridge: iutva-lan
+          ipv4: 100.90.0.1/16
+          ipv6: 2001:db8:90::1/48
+    templates:
+      - bgprouter:
+          asn: 56
+          asdev: eth1
+          neighbors4: 100.64.0.1 as 30
+          neighbors6: 2001:db8:b000::1 as 30
+      - resolv:
+          nameserver: 100.100.100.100
+          domain: iutva.milxc
+
+  infra:
+    network:
+      interfaces:
+        eth0:
+          bridge: iutva-lan
+          ipv4: 100.90.0.2/16
+          ipv6: 2001:db8:90::2/48
+      gatewayv4: 100.90.0.1
+      gatewayv6: 2001:db8:90::1
+    templates:
+      - resolv:
+          domain: iutva.milxc
+          ns: 100.100.100.100
