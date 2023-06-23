@@ -1,7 +1,0 @@
-AbstractTextEditor.Color.Background=40,42,54
-AbstractTextEditor.Color.Background.SystemDefault=false
-AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
-AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
-eclipse.preferences.version=1
-lineNumberRuler=true
-spellingEnabled=true

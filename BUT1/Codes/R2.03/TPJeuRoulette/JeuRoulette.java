@@ -4,7 +4,10 @@
   */
 public class JeuRoulette {
 
-	// Usage : java JeuRoulette <nomJou> <nbCases>
+	/**
+	 * Méthode principale, usage : java JeuRoulette nomJou nbCases
+	 * @param args nomJou et nbCases, respectivement le nom du joueur et le nombre de cases de la roulette
+	 */
 	public static void main(String[] args) {
 
 		// variables locales
@@ -63,6 +66,13 @@ public class JeuRoulette {
 			nbEssais++;
 		}
 		System.out.println("Joueur " + roul.getNomJou() + " GAGNE en " + nbEssais + " tentative(s)");
+	}
+
+	/**
+	 * Constructeur par défaut
+	 */
+	public JeuRoulette() {
+		super();
 	}
 }
 		
