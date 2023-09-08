@@ -40,9 +40,6 @@ R3.13 Communication professionnelle
 ### R3.14
 R3.14 Projet personnel et professionnel
 
-### SAE3.A.01
+### [SAE3.A.01](./S3.A.01)
 Développement d'une application
-
-### SAE3.C.01
-Création et exploitation d'une base de données
 
