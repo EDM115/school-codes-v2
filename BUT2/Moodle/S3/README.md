@@ -40,6 +40,9 @@ R3.13 Communication professionnelle
 ### [R3.14](./R3.14)
 R3.14 Projet personnel et professionnel
 
+### [R3.A.15](./R3.A.15)
+R3.A.15 Apprentissage machine (coloration IA)
+
 ### [SAE3.A.01](./S3.A.01)
 Développement d'une application
 
