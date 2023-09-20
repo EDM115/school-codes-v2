@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Board"},{"p":"<Unnamed>","l":"Board.CollisionType"},{"p":"<Unnamed>","l":"ColoredRectangle"},{"p":"<Unnamed>","l":"Game"},{"p":"<Unnamed>","l":"LaunchTest"},{"p":"<Unnamed>","l":"Mobile"}];updateSearchResults();

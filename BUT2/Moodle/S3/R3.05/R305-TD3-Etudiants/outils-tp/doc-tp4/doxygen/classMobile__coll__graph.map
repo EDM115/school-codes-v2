@@ -1,0 +1,10 @@
+<map id="Mobile" name="Mobile">
+<area shape="rect" id="node1" title=" " alt="" coords="135,275,201,301"/>
+<area shape="rect" id="node2" href="$classColoredRectangle.html" title=" " alt="" coords="99,199,237,225"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,109,67,136"/>
+<area shape="rect" id="node4" href="$classBoard.html" title=" " alt="" coords="91,109,151,136"/>
+<area shape="rect" id="node5" title=" " alt="" coords="11,13,74,39"/>
+<area shape="rect" id="node6" title=" " alt="" coords="98,5,302,47"/>
+<area shape="rect" id="node7" title=" " alt="" coords="176,109,232,136"/>
+<area shape="rect" id="node8" title=" " alt="" coords="257,109,349,136"/>
+</map>
