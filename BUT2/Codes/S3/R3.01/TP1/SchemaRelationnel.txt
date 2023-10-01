@@ -1,0 +1,30 @@
+Schéma Relationnel - SportTrack - Nathan Basol | Lussandre Lederrey - 08/09/2023
+
+User(adresse_electronique(1), nom(NN), prenom(NN), date_naissance(NN), sexe(NN), taille(NN), poids(NN), mot_de_passe(NN))
+
+Activity(id_activity(1), date, description, duree, distance, freq_card_min, freq_card_max, freq_card_moy, un_user=@User.adresse_electronique)
+
+Data(id_data(1), heure_debut, freq_card, altitude, latitude, longitude, une_activite=@Activity.id_activity)
+
+les attributs nom, prenom, mot_de_passe, desccritption, heure_debut et adresse_electronique sont de type VARCHAR
+les attributs date_naissance et date sont de type DATE
+les attributs sexe, taille, poids, id_activity, duree, distance, freq_card_min, freq_card_max, freq_card_moy, freq_card et id_data sont de type et altitude INTEGER
+les attributs longitude et lattitude sont de type DOUBLE
+
+le nom fait au max 40 caracères
+le prenom fait au max 40 caractere
+l'attribut date_naissance doit etre entre 1900 à date du jour
+le sexe doit etre entre 0 et 1
+la taille doit etre entre 10 et 250
+le poids doit etre entre 1 et 500
+le mot de passe doit contenir un caractere spécial, une majuscule et doit faire plus de 8 caractères
+
+la distance est entre 0 et 5000km
+la duree est entre 0 et 24h
+freq_min freq_max et freq_moy sont entre 10 et 250
+
+heure_debut entre 0 et 24h
+freq_card entre 10 et 250
+longitude entre -180 et 180
+latitude entre -90 et 90
+altitude entre -100 et 10000

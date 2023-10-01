@@ -1,0 +1,90 @@
+.center-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+input {
+    background: transparent;
+}
+
+input:not([type="radio"]):invalid {
+	border: 5px #ff5555 solid;
+}
+
+input:not([type="radio"]):valid {
+	border: 5px #50fa7b solid;
+}
+
+form:invalid button {
+	opacity: 0.4;
+	pointer-events: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #f8f8f2;
+    -webkit-box-shadow: 0 0 0px 0 #00000000 inset;
+    box-shadow: 0 0 0px 0 #00000000 inset;
+    transition: all 5000s ease-in-out 0s;
+}
+
+::-webkit-scrollbar {
+	width: 0.6em;
+	transition: all 0.4s ease-in-out;
+}
+
+::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #282a36;
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: #282a36;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #44475a;
+	border-radius: 0.5em;
+	transition: all 0.4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #bd93f9;
+	border-radius: 0.5em;
+}
+
+.headerlink {
+	text-decoration: none;
+	transition: all 0.4s ease-in-out;
+}
+
+.headerlink:hover {
+	color: #50fa7b;
+}
+
+.json-input {
+	display: none;
+}
+
+.json-label {
+	cursor: pointer;
+}
+
+.base64 {
+	display: none;
+	border: 0px !important;
+}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Redirection vers la page d'accueil</title>
+<meta http-equiv="refresh" content="0; URL=/">
+<link rel="canonical" href="/">
+<script>
+	window.onload = function () {
+		const url = window.location.href;
+		const lastSlashIndex = url.lastIndexOf('/');
+		const newUrl = url.substring(0, lastSlashIndex);
+		window.location.href = newUrl;
+	}
+</script>
