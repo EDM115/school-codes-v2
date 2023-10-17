@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    .drac-box.drac-w-full.drac-scrollbar-purple.drac-rounded-lg.drac-p-md
+        br
+        h2.drac-heading.drac-heading-lg.drac-text-purple= title
+        br
+        br
+        if error
+            p.error= error
+        h3.drac-heading.drac-heading-md.drac-text-cyan Activités
+        br
+        br
+        table.drac-table.drac-table-striped
+            thead
+                tr
+                    th.drac-text.drac-text-white ID
+                    th.drac-text.drac-text-white Date
+                    th.drac-text.drac-text-white Description
+                    th.drac-text.drac-text-white Durée
+                    th.drac-text.drac-text-white Distance
+                    th.drac-text.drac-text-white Fréquence cardiaque minimale
+                    th.drac-text.drac-text-white Fréquence cardiaque maximale
+                    th.drac-text.drac-text-white Fréquence cardiaque moyenne
+            tbody
+                if activities.length == 0
+                    tr
+                        td.drac-text.drac-text-white(colspan="8") Aucune activité
+                each activity in activities
+                    tr
+                        td.drac-text.drac-text-white= activity.id_activity
+                        td.drac-text.drac-text-white= activity.date
+                        td.drac-text.drac-text-white= activity.description
+                        td.drac-text.drac-text-white= activity.duree
+                        td.drac-text.drac-text-white= activity.distance
+                        td.drac-text.drac-text-white= activity.freq_card_min
+                        td.drac-text.drac-text-white= activity.freq_card_max
+                        td.drac-text.drac-text-white= activity.freq_card_moy
+        br
+        br
+        h3.drac-heading.drac-heading-md.drac-text-cyan Données
+        br
+        br
+        table.drac-table.drac-table-striped
+            thead
+                tr
+                    th.drac-text.drac-text-white Heure de début
+                    th.drac-text.drac-text-white Fréquence cardiaque
+                    th.drac-text.drac-text-white Altitude
+                    th.drac-text.drac-text-white Latitude
+                    th.drac-text.drac-text-white Longitude
+                    th.drac-text.drac-text-white Activité
+            tbody
+                if data.length == 0
+                    tr
+                        td.drac-text.drac-text-white(colspan="6") Aucune donnée
+                each entry in data
+                    tr
+                        td.drac-text.drac-text-white= entry.heure_debut
+                        td.drac-text.drac-text-white= entry.freq_card
+                        td.drac-text.drac-text-white= entry.altitude
+                        td.drac-text.drac-text-white= entry.latitude
+                        td.drac-text.drac-text-white= entry.longitude
+                        td.drac-text.drac-text-white= entry.une_activite

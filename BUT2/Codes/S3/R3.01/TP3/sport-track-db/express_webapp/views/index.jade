@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    .drac-box.drac-w-md.drac-scrollbar-purple.drac-rounded-lg.drac-p-md
+        br
+        h2.drac-heading.drac-heading-lg.drac-text-purple Accueil
+        br
+        br
+        if user
+            a(href='/logout').drac-anchor.drac-text.drac-text-lg.drac-text-green.drac-text-yellow--hover.drac-mb-sm Déconnexion
+        else
+            a(href='/login').drac-anchor.drac-text.drac-text-lg.drac-text-green.drac-text-yellow--hover.drac-mb-sm Connection
+        br
+        br
+        a(href='/create').drac-anchor.drac-text.drac-text-lg.drac-text-green.drac-text-yellow--hover.drac-mb-sm Ajouter un utilisateur
+        br
+        br 
+        a(href='/update').drac-anchor.drac-text.drac-text-lg.drac-text-green.drac-text-yellow--hover.drac-mb-sm Modifier un utilisateur
+        br
+        br
+        a(href='/upload').drac-anchor.drac-text.drac-text-lg.drac-text-green.drac-text-yellow--hover.drac-mb-sm Ajouter un fichier d'activité
+        br
+        br
+        a(href='/activities').drac-anchor.drac-text.drac-text-lg.drac-text-green.drac-text-yellow--hover.drac-mb-sm Afficher les activités
+        br
+        br
+        a(href='/about').drac-anchor.drac-text.drac-text-lg.drac-text-green.drac-text-yellow--hover.drac-mb-sm À propos

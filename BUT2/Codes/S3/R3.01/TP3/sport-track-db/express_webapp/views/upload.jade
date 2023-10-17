@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    .drac-box.drac-w-xl.drac-scrollbar-purple.drac-rounded-lg.drac-p-md
+        br
+        h2.drac-heading.drac-heading-lg.drac-text-purple= title
+        br
+        br
+        if error
+            p.error= error
+        form(method='post', action='/upload', enctype='multipart/form-data')
+            div(id="jsonDiv", variant="subtle", onclick="document.getElementById('file').click()").drac-box.drac-card.drac-bg-animated.drac-p-sm.json-label
+                label(for='file').drac-text.drac-line-height.drac-text-black.json-label Choisissez un fichier (JSON)
+                input(type='file', name='file', id="file", required, accept=".json, application/json").drac-input.json-input
+            br
+            br
+            button(type='submit').drac-btn.drac-bg-animated.drac-text-black Envoyer
+        script(type='text/javascript').
+            function clearInputFile(f) {
+                if (f.value) {
+                    try {
+                        f.value = '';
+                    } catch(err) {
+                        console.log(err);
+                    }
+                }
+            }
+            
+            let filebutton = document.getElementById("file");
+            filebutton.onchange = function checkJson() {
+                let file = document.getElementById("file").files[0];
+                let reader = new FileReader();
+                reader.readAsText(file);
+                reader.onload = function() {
+                    try {
+                        JSON.parse(reader.result);
+                    } catch (e) {
+                        let filename = file.name;
+                        alert(`Le fichier ${filename} n'est pas un fichier JSON valide`);
+                        clearInputFile(filebutton);
+                    }
+                }
+            }

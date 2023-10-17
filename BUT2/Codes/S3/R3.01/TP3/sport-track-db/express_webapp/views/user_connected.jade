@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    .drac-box.drac-w-xl.drac-scrollbar-purple.drac-rounded-lg.drac-p-md
+        br
+        h2.drac-heading.drac-heading-lg.drac-text-purple= title
+        br
+        br
+        if error
+            p.error= error
+        span.drac-text.drac-line-height.drac-text-white Vous êtes bien connecté, #{user[0]} !

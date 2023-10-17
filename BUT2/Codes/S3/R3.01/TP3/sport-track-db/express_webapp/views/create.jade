@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    .drac-box.drac-w-xl.drac-scrollbar-purple.drac-rounded-lg.drac-p-md
+        br
+        h2.drac-heading.drac-heading-lg.drac-text-purple= title
+        br
+        if error
+            p.error= error
+        form(method='post', action='/create')
+            label(for='email').drac-text.drac-line-height.drac-text-white Email :
+            input(type='email', name='adresse_electronique', required).drac-input.drac-input-white.drac-text-white
+            br
+            br
+            label(for='nom').drac-text.drac-line-height.drac-text-white Nom :
+            input(type='text', name='nom', required).drac-input.drac-input-white.drac-text-white
+            br
+            br
+            label(for='prenom').drac-text.drac-line-height.drac-text-white Prénom :
+            input(type='text', name='prenom', required).drac-input.drac-input-white.drac-text-white
+            br
+            br
+            label(for='date_naissance').drac-text.drac-line-height.drac-text-white Date de naissance :
+            input(type='date', name='date_naissance', required).drac-input.drac-input-white.drac-text-white
+            br
+            br
+            label(for='sexe').drac-text.drac-line-height.drac-text-white Sexe : 
+            input(type='radio', name='sexe', value='0', required, checked).drac-radio.drac-radio-orange
+            span.drac-text.drac-line-height.drac-text-white  Homme 
+            input(type='radio', name='sexe', value='1', required).drac-radio.drac-radio-orange
+            span.drac-text.drac-line-height.drac-text-white  Femme
+            br
+            br
+            label(for='taille').drac-text.drac-line-height.drac-text-white Taille :
+            input(type='number', name='taille', required).drac-input.drac-input-white.drac-text-white
+            br
+            br
+            label(for='poids').drac-text.drac-line-height.drac-text-white Poids :
+            input(type='number', name='poids', required).drac-input.drac-input-white.drac-text-white
+            br
+            br
+            label(for='mot_de_passe').drac-text.drac-line-height.drac-text-white Mot de passe :
+            input(type='password', name='mot_de_passe', required).drac-input.drac-input-white.drac-text-white
+            br
+            br
+            button(type='submit').drac-btn.drac-bg-animated.drac-text-black Créer

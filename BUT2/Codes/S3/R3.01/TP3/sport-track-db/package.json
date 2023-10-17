@@ -1,0 +1,15 @@
+{
+  "name": "sport-track-db",
+  "version": "1.0.0",
+  "description": "database for SportTrack Web Application",
+  "main": "sport-track-db.js",
+  "scripts": {
+    "test": "sport-track-db-test.js"
+  },
+  "author": "EDM115",
+  "license": "MIT",
+  "dependencies": {
+    "express-generator": "^4.16.1",
+    "sqlite3": "^5.1.6"
+  }
+}

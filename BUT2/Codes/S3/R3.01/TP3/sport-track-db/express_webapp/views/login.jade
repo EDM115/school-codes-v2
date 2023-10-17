@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    .drac-box.drac-w-md.drac-scrollbar-purple.drac-rounded-lg.drac-p-md
+        br
+        h2.drac-heading.drac-heading-lg.drac-text-purple= title
+        br
+        br
+        if error
+            p.error= error
+        form(method='post', action='/login')
+            label(for='email').drac-text.drac-line-height.drac-text-white Email :
+            input(type='email', name='email', required).drac-input.drac-input-white.drac-text-white
+            br
+            br
+            label(for='password').drac-text.drac-line-height.drac-text-white Mot de passe :
+            input(type='password', name='password', required).drac-input.drac-input-white.drac-text-white
+            br
+            br
+            button(type='submit').drac-btn.drac-bg-animated.drac-text-black Connection

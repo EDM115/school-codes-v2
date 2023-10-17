@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    .drac-box.drac-w-xl.drac-scrollbar-purple.drac-rounded-lg.drac-p-md
+        br
+        h2.drac-heading.drac-heading-lg.drac-text-purple= title
+        br
+        br
+        if error
+            p.error= error
+        span.drac-text.drac-line-height.drac-text-white Email : 
+        span.drac-text.drac-text-semibold.drac-line-height.drac-text-green #{email}
+        br
+        span.drac-text.drac-line-height.drac-text-white Mot de passe : 
+        span.drac-text.drac-text-semibold.drac-line-height.drac-text-green #{mot_de_passe}
+        br
+        span.drac-text.drac-line-height.drac-text-white Prénom : 
+        span.drac-text.drac-text-semibold.drac-line-height.drac-text-green #{prenom}
+        br
+        span.drac-text.drac-line-height.drac-text-white Nom : 
+        span.drac-text.drac-text-semibold.drac-line-height.drac-text-green #{nom}
+        br
+        span.drac-text.drac-line-height.drac-text-white Date de naissance : 
+        span.drac-text.drac-text-semibold.drac-line-height.drac-text-green #{date_naissance}
+        br
+        span.drac-text.drac-line-height.drac-text-white Sexe : 
+        span.drac-text.drac-text-semibold.drac-line-height.drac-text-green #{sexe}
+        br
+        span.drac-text.drac-line-height.drac-text-white Taille : 
+        span.drac-text.drac-text-semibold.drac-line-height.drac-text-green #{taille}
+        br
+        span.drac-text.drac-line-height.drac-text-white Poids : 
+        span.drac-text.drac-text-semibold.drac-line-height.drac-text-green #{poids}

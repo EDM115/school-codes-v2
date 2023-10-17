@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    br
+    br
+    h1.drac-heading.drac-heading-lg.drac-text-purple= message
+    br
+    br
+    .drac-box.drac-w-xl.drac-scrollbar-purple.drac-rounded-lg.drac-p-md
+    h2.drac-text.drac-line-height.drac-text-white= error.status
+    pre.drac-text.drac-text-semibold.drac-line-height.drac-text-red #{error.stack}

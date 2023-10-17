@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .drac-box.drac-w-xl.drac-scrollbar-purple.drac-rounded-lg.drac-p-md
+        br
+        h2.drac-heading.drac-heading-lg.drac-text-purple= title
+        br
+        br
+        if error
+            p.error= error
+        span.drac-text.drac-line-height.drac-text-white Données :
+        br
+        br
+        span.drac-text.drac-text-semibold.drac-line-height.drac-text-green #{data}
