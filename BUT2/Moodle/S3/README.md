@@ -10,6 +10,9 @@ R3.02 Développement efficace
 ### [R3.03](./R3.03)
 R3.03 Analyse
 
+### [R3.04](./R3.04)
+R3.04 Qualité de développement
+
 ### [R3.05](./R3.05)
 R3.05 Programmation système
 
