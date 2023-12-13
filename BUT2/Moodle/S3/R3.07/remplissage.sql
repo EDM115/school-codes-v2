@@ -25,7 +25,7 @@ INSERT ALL
 	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (7, 'Morel', 'Luc', 2000, 1, 3)
 	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (8, 'Lemoine', 'Isabelle', 1750, 0, 3)
 	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (9, 'Girard', 'Thomas', 1850, 0, 1)
-	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (10, 'Fontaine', 'Bérangère', 2700, 1, 2)
+	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (10, 'Fontaine', 'Bérangère', 2700, 1, 4)
 SELECT * FROM DUAL;
 
 --Insertion de données dans la table Client
@@ -101,19 +101,17 @@ INSERT ALL
 SELECT * FROM DUAL;
 /
 -- Insertion de données dans la table Opération
-INSERT ALL
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (1, SYSDATE-2,'RETRAIT', 10, 2, 1)
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (2, SYSDATE-3,'RETRAIT', 3000, 3, 2) 
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (3, SYSDATE-4,'DEPOT', 50, 3, 3) 
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (4, SYSDATE-4,'DEPOT', 200, 4, 4) 
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (5, SYSDATE-1, 'RETRAIT', 10000, 6, 5)
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (6, SYSDATE-1, 'RETRAIT', 40, 7, 6)
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (7, SYSDATE-1, 'DEPOT', 10000, 7, 7) 
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (8, SYSDATE-2, 'RETRAIT', 100, 9, 8) 
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (9, SYSDATE-2, 'DEPOT', 400, 9, 9) 
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (10, SYSDATE-3, 'DEPOT', 500, 10, 10) 
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (11, SYSDATE-3, 'RETRAIT', 600, 12, 11)
-	INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (12, SYSDATE-5,'DEPOT', 5000, 2, 1)
-	INTO Operation(numOperation, typeOperation, montant, leClient, leCompte) VALUES (13, 'RETRAIT', 700, 13, 12)
-	INTO Operation (numOperation, typeOperation, montant, leClient, leCompte) VALUES (14, 'DEPOT', 750, 13, 13) 
-SELECT * FROM DUAL;
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (1, SYSDATE-2,'RETRAIT', 10, 2, 1);
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (2, SYSDATE-3,'RETRAIT', 3000, 3, 2) ;
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (3, SYSDATE-4,'DEPOT', 50, 3, 3) ;
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (4, SYSDATE-4,'DEPOT', 200, 4, 4) ;
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (5, SYSDATE-1, 'RETRAIT', 10000, 6, 5);
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (6, SYSDATE-1, 'RETRAIT', 40, 7, 6);
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (7, SYSDATE-1, 'DEPOT', 10000, 7, 7) ;
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (8, SYSDATE-2, 'RETRAIT', 100, 9, 8) ;
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (9, SYSDATE-2, 'DEPOT', 400, 9, 9) ;
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (10, SYSDATE-3, 'DEPOT', 500, 10, 10) ;
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (11, SYSDATE-3, 'RETRAIT', 600, 12, 11);
+INSERT INTO Operation(numOperation,dateOperation,typeOperation,montant,leclient,leCompte) VALUES (12, SYSDATE-5,'DEPOT', 5000, 2, 1);
+INSERT INTO Operation(numOperation, typeOperation, montant, leClient, leCompte) VALUES (13, 'RETRAIT', 700, 13, 12);
+INSERT INTO Operation (numOperation, typeOperation, montant, leClient, leCompte) VALUES (14, 'DEPOT', 750, 13, 13) ;
