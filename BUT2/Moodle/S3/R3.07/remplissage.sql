@@ -25,7 +25,7 @@ INSERT ALL
 	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (7, 'Morel', 'Luc', 2000, 1, 3)
 	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (8, 'Lemoine', 'Isabelle', 1750, 0, 3)
 	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (9, 'Girard', 'Thomas', 1850, 0, 1)
-	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (10, 'Fontaine', 'Bérangère', 2700, 1, 4)
+	INTO Agent(numAgent, nomAgent, prenomAgent, salaire, estDirecteur, sonAgence)  VALUES (10, 'Fontaine', 'Bérangère', 2700, 1, 2)
 SELECT * FROM DUAL;
 
 --Insertion de données dans la table Client

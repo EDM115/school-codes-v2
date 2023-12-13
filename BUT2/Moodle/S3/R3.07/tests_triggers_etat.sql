@@ -2,7 +2,7 @@
 -- On active l'affichage pour DBMS_OUTPUT.PUT_LINE --
 -----------------------------------------------------
 
-SET SERVEROUTPUT ON
+SET SERVEROUTPUT ON;
 
 --------------------------------------------------------------------------------------
 -- Une agence a forcément un et un seul directeur --
