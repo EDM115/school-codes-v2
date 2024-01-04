@@ -1,7 +1,8 @@
 repo_name: EDM115/school-codes-v2
-report_id: 6e3c822640f6a4e74d8c549a34c9a9c5
+report_id: 9e4d09a902172b533a952a1309713823
+version: 0.1
 repo_type: Public
-timestamp: '2023-12-14T09:48:01+00:00'
+timestamp: '2024-01-04T15:04:53+00:00'
 requested_by: EDM115
 provider: github
 branch: master
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/no-img-open-source.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: C++
   description: Has imperative, object-oriented and generic programming features, while
@@ -25,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1049/cplusplus.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -34,6 +37,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: Java
   description: A concurrent, class-based, object-oriented, language specifically designed
@@ -44,6 +48,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/995/K85ZWV2F.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -54,6 +59,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: PHP
   description: A popular general-purpose scripting language that is especially suited
@@ -64,6 +70,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/991/hwUcGZ41_400x400.jpg
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: Python
   description: A clear and powerful object-oriented programming language, comparable
@@ -74,6 +81,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: Ruby
   description: A dynamic, interpreted, open source programming language with a focus
@@ -84,6 +92,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/989/ruby.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -95,6 +104,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Codes/R1.05/TP2.sql
   detection_source: BUT1/Codes/R1.05/TP2.sql
   last_updated_by: EDM115
   last_updated_on: 2023-01-29 17:33:06.000000000 Z
@@ -107,6 +117,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1009/tuHsaI2U.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -133,6 +144,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Cross-Platform Mobile Development
   image_url: https://img.stackshare.io/service/2449/qt-icon.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -145,6 +157,7 @@ tools:
   category: Data Stores
   sub_category: Object Relational Mapper (ORM)
   image_url: https://img.stackshare.io/service/1839/q5uAkmy7.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -157,6 +170,7 @@ tools:
   category: Data Stores
   sub_category: Databases
   image_url: https://img.stackshare.io/service/1071/sqlite.jpg
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -168,6 +182,7 @@ tools:
   category: Data Stores
   sub_category: Database Tools
   image_url: https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Codes/R2.01/TP10/data/test.txt
   detection_source: BUT1/Codes/R2.01/TP10/data/test.txt
   last_updated_by: EDM115
   last_updated_on: 2023-05-14 10:40:48.000000000 Z
@@ -194,6 +209,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: GitHub Actions
   description: Automate your workflow from idea to production
@@ -203,6 +219,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Continuous Integration
   image_url: https://img.stackshare.io/service/11563/actions.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/.github/workflows/codeql.yml
   detection_source: ".github/workflows/codeql.yml"
   last_updated_by: renovate[bot]
   last_updated_on: 2023-12-13 16:33:19.000000000 Z
@@ -214,6 +231,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Hosted Package Repository
   image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -225,6 +243,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Package Managers
   image_url: https://img.stackshare.io/service/12795/5jL6-BA5_400x400.jpeg
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -251,6 +270,8 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT2/Moodle/S4/Parcours
+    A/R4.A.10/r4.a.10-main/section/cours/R4A10_Partie_2/plugin/menu/package.json
   detection_source: BUT2/Moodle/S4/Parcours A/R4.A.10/r4.a.10-main/section/cours/R4A10_Partie_2/plugin/menu/package.json
   last_updated_by: EDM115
   last_updated_on: 2023-06-16 10:45:45.000000000 Z
@@ -262,6 +283,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/5559/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -273,6 +295,8 @@ tools:
   category: Build, Test, Deploy
   sub_category: JS Build Tools / JS Task Runners
   image_url: https://img.stackshare.io/service/4423/zE8RTn9E_400x400.jpg
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT2/Moodle/S4/Parcours
+    A/R4.A.10/r4.a.10-main/section/cours/R4A10_Partie_2/plugin/menu/package.json
   detection_source: BUT2/Moodle/S4/Parcours A/R4.A.10/r4.a.10-main/section/cours/R4A10_Partie_2/plugin/menu/package.json
   last_updated_by: renovate[bot]
   last_updated_on: 2023-06-16 17:22:59.000000000 Z
@@ -284,6 +308,7 @@ tools:
   category: Assets and Media
   sub_category: Image Analysis API
   image_url: https://img.stackshare.io/service/21883/default_23e9786ceb5237f419832aedad033db4af4f5ccd.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -295,6 +320,7 @@ tools:
   category: Assets and Media
   sub_category: File Conversion
   image_url: https://img.stackshare.io/service/2330/no-img-open-source.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -306,6 +332,7 @@ tools:
   category: Assets and Media
   sub_category: Image Processing and Management
   image_url: https://img.stackshare.io/service/2375/default_1f67b0ca7416a9f52beb655f90b5602d5ef74b75.jpg
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -317,6 +344,7 @@ tools:
   category: Assets and Media
   sub_category: Image Analysis API
   image_url: https://img.stackshare.io/service/21884/default_fd16fcda5b6efe41b776090f2103e206440797f1.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -328,6 +356,7 @@ tools:
   category: Libraries
   sub_category: CocoaPods Packages
   image_url: https://img.stackshare.io/service/2426/e1cbdef9d4b11484049a033886578e54_400x400.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -339,6 +368,7 @@ tools:
   category: Design
   sub_category: Fonts
   image_url: https://img.stackshare.io/service/21879/default_1d5fc963517560008e15ac9e71c4c95c28a721f2.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -348,6 +378,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S1/R1.07/R1.07_TP1.html
   detection_source: BUT1/Moodle/S1/R1.07/R1.07_TP1.html
   last_updated_by: deepsource-autofix[bot]
   last_updated_on: 2022-12-21 02:07:13.000000000 Z
@@ -360,6 +391,7 @@ tools:
   category: Application Utilities
   sub_category: Data Science Notebooks
   image_url: https://img.stackshare.io/service/4190/fGBUdNf__400x400.jpg
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: LangChain
   description: Build AI apps with LLMs through composability
@@ -369,6 +401,7 @@ tools:
   category: Communications
   sub_category: Large Language Model Tools
   image_url: https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Codes/R2.01/TP10/data/test.txt
   detection_source: BUT1/Codes/R2.01/TP10/data/test.txt
   last_updated_by: EDM115
   last_updated_on: 2023-05-14 10:40:48.000000000 Z
@@ -377,6 +410,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/3730/no-img-open-source.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -389,6 +423,7 @@ tools:
   category: Application Utilities
   sub_category: Data Transfer
   image_url: https://img.stackshare.io/service/10242/default_10e3fd58c910dc0c4241bc273a7235a0aa4197dd.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -401,6 +436,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2
   detection_source: Repo Metadata
 - name: Sip
   description: We love to create apps that make life better and easier! Our first
@@ -409,6 +445,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/2845/-TjSkznr_normal.jpg
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -420,6 +457,7 @@ tools:
   category: Libraries
   sub_category: Data Compression
   image_url: https://img.stackshare.io/service/21878/default_2fbe3828d97c3a75c0332e56a34f4505c3c32418.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -432,6 +470,7 @@ tools:
   category: Application Utilities
   sub_category: Machine Learning Tools
   image_url: https://img.stackshare.io/service/2657/scikit-learn-logo.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -440,6 +479,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/10517/647025.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
@@ -450,6 +490,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/5689/sf_ops_badge_64_normal.png
+  detection_source_url: https://github.com/EDM115/school-codes-v2/blob/master/BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   detection_source: BUT1/Moodle/S2/R2.08/pythondatascientist/environment.yml
   last_updated_by: EDM115
   last_updated_on: 2023-05-13 09:10:37.000000000 Z
