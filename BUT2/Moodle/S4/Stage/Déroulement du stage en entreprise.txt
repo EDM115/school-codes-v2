@@ -1,0 +1,76 @@
+Déroulement du stage en entreprise
+L'université communique aux étudiants avant, ou au plus tard, en début de stage le nom et les coordonnées du tuteur enseignant chargé du suivi de leur stage. Il assure la liaison entre l'entreprise où s'effectue le stage et l'IUT.
+
+Les dates importantes pour 2024
+
+BUT2	BUT3
+Date de début de stage	lundi 22 janvier	lundi 26 février
+Date de fin de stage	vendredi 29 mars	vendredi 14 juin
+Date de rendu du rapport de début de stage
+A remettre à l'enseignant tuteur au format électronique PDF (à déposer sur votre espace de rendu Moodle)
+
+lundi 05 février	lundi 11 mars
+Visite du tuteur enseignant	février / mi-mars	avril / mai
+Date de rendu du rapport final de stage :
+dans le casier de l'enseignant tuteur au format papier relié (à envoyer par courrier postal à l'attention de votre enseignant si nécessaire : IUT Vannes, Rue Montaigne - 8, BP 561, 56017 Vannes cedex) SAUF pour les étudiants qui réalisent un stage à l'étranger
+
+en version électronique au format PDF (à déposer sur votre espace de rendu Moodle)
+
+jeudi 21 mars	jeudi 06 juin
+Date des soutenances de stage :
+après concertation avec le maître de stage et le tuteur-enseignant, prendre rendez-vous avec M. Volin (manon.volin@univ-ubs.fr)
+une soutenance par heure : de 8h à 12h et de 14h à 17h (dernier créneau de 16h à 17h)
+privilégier les créneaux de 8h et 9h pour les entreprises Vannetaises et la périphérie
+chacune des salles est équipée d'un vidéo-projecteur auquel l'étudiant peut brancher son PC personnel
+26, 27 et 28 mars	11, 12 et 13 juin
+
+Compte-rendu hebdomadaire
+L'étudiant stagiaire doit rendre compte à son enseignant-tuteur, une fois par semaine, de son activité en entreprise : tâches accomplies, état d'avancement, points de blocage, etc. Ce compte-rendu hebdomadaire au format PDF doit être déposé dans la zone de rendu sur Moodle S4.St - Stage professionnel ICI.
+
+Le rapport de début de stage
+Dans la période de 2 semaines suivant le début du stage, le stagiaire doit remettre à son enseignant tuteur au format PDF dans la zone de rendu (sur Moodle S4.St - Stage professionnel ICI) un document de début de stage qui précise :
+
+les références géographiques et administratives exactes du stage (lieu exact, plan d'accès, personnes à contacter avec email et téléphone, etc.),
+une proposition validée par le maître de stage en entreprise qui comporte au minimum :
+une présentation de l'entreprise,
+une spécification du projet (reformulation du cahier des charges),
+une démarche qui débouchera sur un planning prévisionnel,
+les outils et l'environnement technique de développement.
+Ce document fera 6 à 8 pages environ. Un compte-rendu hebdomadaire sera remis au tuteur afin de suivre l'avancement du stage. La communication régulière du planning du projet actualisé et d'un point d'avancement est une bonne solution.
+
+La visite
+La visite de l'enseignant tuteur doit lui permettre de s'assurer que le stage est bien engagé, que le sujet est correctement défini et correspond aux attentes des trois parties, étudiant, entreprise et IUT. C'est aussi l'occasion de prendre contact avec le responsable du stage dans l'entreprise. Si le stage se déroule hors du grand ouest ou en région parisienne (et à fortiori à l'étranger), la visite peut être remplacée par un contact téléphonique (ou en visioconférence) avec le responsable du stage et avec l'étudiant.
+
+Un présentation par l'étudiant de l'état d'avancement du travail sous forme d'un petit diaporama de 5-10 min. sera demandé au début de la visite.
+
+Cette visite a lieu si possible au début de la seconde moitié du stage.
+
+Rapport de stage
+Le rapport doit permettre d'évaluer le travail : il ne constitue pas un document technique pour l'entreprise. En l'occurrence c'est votre rapport de stage qui nous intéresse donc à vous d'y réfléchir par vous même, suffisamment tôt, en planifiant votre rédaction.
+
+Tout ce qu'il faut savoir sur le contenu du rapport et sa mise en page est disponible sur Moodle (S4.St - Stage professionnel ICI).
+
+Attention : votre rapport doit impérativement contenir une rubrique intitulée Acquis de compétences qui devra expliquer comment les 3 compétences, listées ci-dessous, ont été maîtrisées durant votre stage. Comme il y a 6 compétences au total en BUT Informatique, chacune de ces 6 compétences est évaluée à travers une grille que l'on trouve ICI. Sur base de cette grille, on en déduit que le rapport de stage doit détailler :
+
+la compétence 1 explicitée par ses 4 Apprentissages Critiques de niveau S4
+la compétence 3 explicitée par ses 3 Apprentissages Critiques de niveau S4
+la compétence 4 explicitée par ses 4 Apprentissages Critiques de niveau S4
+La note obtenue pour l'acquisition de l'ensemble des 6 compétences n'est PAS intégrée à la note de stage mais constituera votre note de Portfolio BUT2.
+Comme tous les rendus attendus lors du stage, le rapport et tous les documents annexes doivent être téléchargés au format PDF dans la zone de rendu.
+
+Soutenance de stage
+Organisation
+La soutenance est l'occasion de présenter en public le travail de stage réalisé ; c'est à ce moment que se fait l'évaluation du stage.
+
+Le maître de stage en entreprise est invité à participer au jury de la soutenance s'il le souhaite (les frais de déplacement ne sont pas remboursés par l'IUT mais le repas de midi est offert).
+
+Le tuteur enseignant fixe la date et le créneau horaire de la soutenance en concertation avec le maître de stage en entreprise.
+
+Déroulement
+Durée :
+
+BUT2 et BUT3 : dans tous les cas 25 minutes d'exposé !y compris une éventuelle démonstration! suivi de 10 mn de questions, soit 35 mn au total. Le jury délibère ensuite durant environ 15 mn.
+C'est un exposé oral du travail :
+décrire le cadre du stage : brève présentation de l'entreprise, du sujet du stage et du plan de l'exposé ;
+ne pas se contenter d'une description fonctionnelle : donner la démarche et aborder les aspects techniques dans une proportion de 1/4 minimum et 1/3 maximum du temps de la soutenance (parler de la BDD si il y en a une, montrer l'organisation du code, montrer quelques détails intéressants du code, faire le parallèle avec ce qui a été vu en cours);
+essayer de mettre en avant les caractéristiques du travail réalisé, de le valoriser, comme s'il s'agissait d'un entretien d'embauche ou de la vente du produit.
