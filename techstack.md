@@ -31,8 +31,6 @@ EDM115/school-codes-v2 is built on the following main stack:
 - [FreeType](https://www.freetype.org/) – Fonts
 - [OpenJPEG](https://www.openjpeg.org/) – Image Analysis API
 - [libpng](http://www.libpng.org/pub/png/libpng.html) – Image Analysis API
-- [LangChain](https://github.com/hwchase17/langchain) – Large Language Model Tools
-- [pgvector](https://github.com/pgvector/pgvector/) – Database Tools
 
 Full tech stack [here](/techstack.md)
 
@@ -70,8 +68,6 @@ EDM115/school-codes-v2 is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/21879/default_1d5fc963517560008e15ac9e71c4c95c28a721f2.png' alt='FreeType'/> [FreeType](https://www.freetype.org/) – Fonts
 - <img width='25' height='25' src='https://img.stackshare.io/service/21883/default_23e9786ceb5237f419832aedad033db4af4f5ccd.png' alt='OpenJPEG'/> [OpenJPEG](https://www.openjpeg.org/) – Image Analysis API
 - <img width='25' height='25' src='https://img.stackshare.io/service/21884/default_fd16fcda5b6efe41b776090f2103e206440797f1.png' alt='libpng'/> [libpng](http://www.libpng.org/pub/png/libpng.html) – Image Analysis API
-- <img width='25' height='25' src='https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg' alt='LangChain'/> [LangChain](https://github.com/hwchase17/langchain) – Large Language Model Tools
-- <img width='25' height='25' src='https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png' alt='pgvector'/> [pgvector](https://github.com/pgvector/pgvector/) – Database Tools
 
 Full tech stack [here](/techstack.md)
 
@@ -82,7 +78,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [EDM115/school-codes-v2](https://github.com/EDM115/school-codes-v2)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|55<br/>Tools used|01/05/24 <br/>Report generated|
+|52<br/>Tools used|01/11/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -194,7 +190,7 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-## <img src='https://img.stackshare.io/databases.svg'/> Data (3)
+## <img src='https://img.stackshare.io/databases.svg'/> Data (2)
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1839/q5uAkmy7.png' alt='SQLAlchemy'>
@@ -208,14 +204,6 @@ Full tech stack [here](/techstack.md)
   <img width='36' height='36' src='https://img.stackshare.io/service/1071/sqlite.jpg' alt='SQLite'>
   <br>
   <sub><a href="http://www.sqlite.org/">SQLite</a></sub>
-  <br>
-  <sub></sub>
-</td>
-
-<td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png' alt='pgvector'>
-  <br>
-  <sub><a href="https://github.com/pgvector/pgvector/">pgvector</a></sub>
   <br>
   <sub></sub>
 </td>
@@ -339,7 +327,7 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-## Other (13)
+## Other (11)
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/2426/e1cbdef9d4b11484049a033886578e54_400x400.png' alt='CocoaPods'>
@@ -358,25 +346,9 @@ Full tech stack [here](/techstack.md)
 </td>
 
 <td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/2270/no-img-open-source.png' alt='HTML'>
-  <br>
-  <sub><a href="http://">HTML</a></sub>
-  <br>
-  <sub></sub>
-</td>
-
-<td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/4190/fGBUdNf__400x400.jpg' alt='Jupyter'>
   <br>
   <sub><a href="http://jupyter.org">Jupyter</a></sub>
-  <br>
-  <sub></sub>
-</td>
-
-<td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg' alt='LangChain'>
-  <br>
-  <sub><a href="https://github.com/hwchase17/langchain">LangChain</a></sub>
   <br>
   <sub></sub>
 </td>
@@ -405,9 +377,7 @@ Full tech stack [here](/techstack.md)
   <sub></sub>
 </td>
 
-</tr>
-<tr>
-  <td align='center'>
+<td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/2845/-TjSkznr_normal.jpg' alt='Sip'>
   <br>
   <sub><a href="http://theolabrothers.com">Sip</a></sub>
@@ -423,7 +393,9 @@ Full tech stack [here](/techstack.md)
   <sub></sub>
 </td>
 
-<td align='center'>
+</tr>
+<tr>
+  <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/2657/scikit-learn-logo.png' alt='scikit-learn'>
   <br>
   <sub><a href="http://scikit-learn.org/stable/">scikit-learn</a></sub>
@@ -470,7 +442,7 @@ Full tech stack [here](/techstack.md)
 |[morgan](https://www.npmjs.com/morgan)|v1.10.0|10/17/23|renovate[bot] |MIT|N/A|
 |[multer](https://www.npmjs.com/multer)|v1.4.5|10/17/23|EDM115 |MIT|N/A|
 |[rollup-plugin-terser](https://www.npmjs.com/rollup-plugin-terser)|v7.0.0|06/16/23|renovate[bot] |MIT|N/A|
-|[sqlite3](https://www.npmjs.com/sqlite3)|v5.1.6|10/17/23|EDM115 |BSD-3-Clause|N/A|
+|[sqlite3](https://www.npmjs.com/sqlite3)|v5.1.7|10/17/23|EDM115 |BSD-3-Clause|N/A|
 
 <br/>
 <div align='center'>
