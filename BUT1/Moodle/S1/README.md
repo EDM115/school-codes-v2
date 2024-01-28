@@ -1,14 +1,5 @@
 ## Le Semestre 1
 
-### [APT](./APT)
-Apprentissage du Poste de Travail
-
-### [EPE](./EPE)
-Étudier avec plaisir et efficacité à l'université
-
-### [Forum Entreprises](./Forum%20Entreprises)
-Forum Entreprises
-
 ### [R1.01](./R1.01)
 R1.01 Initiation au développement
 
@@ -62,6 +53,3 @@ Recueil de besoins
 
 ### [SAE1.06](./SAE1.06)
 Découverte de l’environnement économique et écologique
-
-### [SCom](./Scom)
-Service communication IUT Vannes
