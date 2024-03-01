@@ -1,0 +1,24 @@
+Objectifs pédagogiques des stages
+En fin de formation, les étudiants effectuent un stage de 10 semaines (BUT2) ou 16 semaines (BUT3) en entreprise. Ce stage fait partie intégrante de la scolarité et permet d'une part aux étudiants de confronter et d'appliquer les connaissances acquises aux réalités de l'entreprise et d'autre part aux milieux professionnels qui les accueillent, de juger de l'adéquation de la formation dispensée aux besoins de la profession.
+
+Les enseignants chargés de parrainer les stagiaires (tuteurs) sont alors des interfaces privilégiées entre l'Institut et la Profession.
+
+Cette intégration forte dans l'enseignement impose un certain nombre de contraintes imposées par l'institution.
+
+Nature et contenu du stage
+Le stage doit être une mise en situation réelle d'un des métiers auxquels prépare la formation de «Technicien supérieur en Informatique» :
+
+participation à la conception et au développement d'applications ;
+intégration de services informatiques, choix technologiques et mise en oeuvre (notamment sur le web) ;
+maintenance et test de logiciels, assistance aux usagers ;
+Le stage doit être un projet bien délimité, avec des objectifs et des délivrables bien définis à l'avance.
+
+Encadrement
+Le stage est co-encadré par un «maître de stage» (dans l'entreprise) et un «tuteur» (enseignant) ; ces deux encadrants doivent collaborer entre eux et avec l'étudiant stagiaire ; une page annexe détaille les rôles et engagements de chacun.
+
+Il est vivement recommandé que le maître de stage soit un professionnel de l'informatique et que le stagiaire soit intégré dans une équipe informatique (de développement, d'exploitation ou d'assistance). Si ce n'était pas le cas, il faudrait s'assurer que l'étudiant stagiaire puisse avoir un référent technique compétent dans le domaine d'application du stage, soit dans l'entreprise, soit à travers son tuteur enseignant.
+
+Gestion humaine
+Le stage n'a pas qu'une dimension technique, il a aussi un objectif d'apprentissage de la vie de l'entreprise. Une formation spécifique à la recherche de stage et d'emploi est donnée à l'IUT à travers les cours d'expression et de PPP1) et ce sont les étudiants eux-mêmes qui prennent en charge toutes les opérations de recherche et de négociations des stages. Le Département ne fait pas de placement dirigé et se contente d'afficher vos offres aux étudiants.
+
+1) Nouveau module de «Préparation du Parcours Professionnel»

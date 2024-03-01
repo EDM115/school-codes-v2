@@ -5,7 +5,7 @@
 Parcours A
 
 ### [Parcours C](./Parcours C)
-Parcours C
+Parcours C (parcours aujourd'hui disparu de l'IUT Info de Vannes)
 
 ### R4.01
 R4.01 Architecture logicielle

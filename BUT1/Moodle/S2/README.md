@@ -1,8 +1,5 @@
 ## Le Semestre 2
 
-### [English Week](./English%20Week)
-English Week : Conférences
-
 ### [R2.01](./R2.01)
 Développement orienté objets
 

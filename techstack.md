@@ -31,6 +31,9 @@ EDM115/school-codes-v2 is built on the following main stack:
 - [Shell](https://en.wikipedia.org/wiki/Shell_script) – Shells
 - [bzip2](https://www.sourceware.org/bzip2/) – Data Compression
 - [scikit-learn](http://scikit-learn.org/stable/) – Machine Learning Tools
+- [FreeType](https://www.freetype.org/) – Fonts
+- [OpenJPEG](https://www.openjpeg.org/) – Image Analysis API
+- [libpng](http://www.libpng.org/pub/png/libpng.html) – Image Analysis API
 
 Full tech stack [here](/techstack.md)
 
@@ -68,6 +71,9 @@ EDM115/school-codes-v2 is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png' alt='Shell'/> [Shell](https://en.wikipedia.org/wiki/Shell_script) – Shells
 - <img width='25' height='25' src='https://img.stackshare.io/service/21878/default_2fbe3828d97c3a75c0332e56a34f4505c3c32418.png' alt='bzip2'/> [bzip2](https://www.sourceware.org/bzip2/) – Data Compression
 - <img width='25' height='25' src='https://img.stackshare.io/service/2657/scikit-learn-logo.png' alt='scikit-learn'/> [scikit-learn](http://scikit-learn.org/stable/) – Machine Learning Tools
+- <img width='25' height='25' src='https://img.stackshare.io/service/21879/default_1d5fc963517560008e15ac9e71c4c95c28a721f2.png' alt='FreeType'/> [FreeType](https://www.freetype.org/) – Fonts
+- <img width='25' height='25' src='https://img.stackshare.io/service/21883/default_23e9786ceb5237f419832aedad033db4af4f5ccd.png' alt='OpenJPEG'/> [OpenJPEG](https://www.openjpeg.org/) – Image Analysis API
+- <img width='25' height='25' src='https://img.stackshare.io/service/21884/default_fd16fcda5b6efe41b776090f2103e206440797f1.png' alt='libpng'/> [libpng](http://www.libpng.org/pub/png/libpng.html) – Image Analysis API
 
 Full tech stack [here](/techstack.md)
 

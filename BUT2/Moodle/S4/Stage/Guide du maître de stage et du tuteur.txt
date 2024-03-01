@@ -1,0 +1,51 @@
+Guide du maître de stage et du tuteur
+Définitions
+
+Le maître de stage est, au sein de l'organisme d'accueil, la personne qui a défini le sujet du stage et qui encadre le stagiaire au quotidien.
+Le tuteur (ou tuteur enseignant) est un enseignant de l'IUT qui va servir de référent à l'étudiant durant toute la durée du stage. Il est la personne que l'étudiant peut et doit solliciter, notamment pour rendre compte de l'avancement de son travail, mais aussi pour l'aider à résoudre des difficultés techniques ou relationnelles qu'il pourrait rencontrer.
+Même si le stage se déroule au sein de l'UBS, les tâches de «maître de stage» et de «tuteur» ne peuvent être cumulées par la même personne pour un même stage.
+
+La base des relations etudiant/entreprise/institution est maintenant régies par la loi et est décrite complètement dans le document officiel edité par le Ministère de l'Enseignement Supérieur ; le texte ci-dessous n'est qu'un rappel partiel de ces règles.
+
+Avant de lire cette page, il est bon de se renseigner sur les objectifs pédagogiques du stage.
+
+Rôle et responsabilités du maître de stage en entreprise et obligations du stagiaire
+Accueil du stagiaire
+L'entreprise doit fournir au stagiaire des conditions de travail correctes pour la réalisation de sa mission (en particulier un bureau et un poste de travail). Le maître de stage doit avoir péparé un sujet clair et mesuré et il doit être raisonnablement disponible pour répondre aux questions et demandes du stagiaire.
+
+Réciproquement, l'étudiant stagiaire s'engage à respecter les us et coutumes de l'entreprise, principalement les horaires, mais aussi les éventuelles contraintes vestimentaires, et doit «rester à sa place» en prenant raisonnablement des initiatives et en évitant de harceler son maître de stage de questions.
+
+Les horaires, congés exceptionnels et conditions particulières de travail doivent avoir été négociés à l'avance et être mentionnés explicitement dans la convention de stage.
+
+Formation et encadrement
+Durant le stage, le maître de stage est l'accompagnateur principal de l'étudiant et il a un réel rôle pédagoqique, concernant le fonctionnement de l'entreprise, les savoir-faire du métier, les éléments techniques spécifiques ; il doit accepter de consacrer le temps nécessaire à cette tâche.
+
+Evaluation
+Les délivrables du «projet stage» peuvent être séparés en deux parties :
+
+les «délivrables techniques» correspondant au projet proposé, ce sont des documents qui resteront dans l'enteprise,
+les «délivrables pédagogiques» qui répondent au cahier des charges de l'IUT : un rapport de début de stage, un rapport de stage et une soutenance orale.
+Le maître de stage a en charge d'évaluer les délivrables techniques et d'une façon plus générale la qualité du travail et du comportement de l'étudiant durant son stage. Il est conseillé qu'il relise les délivrables pédagogiques avant diffusion, en particulier si des questions de confidentialité ou d'image d'entreprise sont en jeu, et qu'il organise en interne une répétition de la soutenance orale.
+
+Le maître de stage est invité à participer au jury de soutenance orale qui a lieu à l'IUT.
+
+Suivant les choix du maître de stage, le travail correspondant à la rédaction du rapport de stage pédagogique dû à l'IUT peut ou non être intégré dans la durée de travail de stage ; ce choix doit être indiqué à l'étudiant en début de stage.
+
+Rôle et responsabilités du tuteur enseignant et obligations du stagiaire
+Conseils et orientation sur le sujet du stage
+Le tuteur enseignant (et dans la phase péliminaire le coordonnateur des stages) a un premier rôle de conseil pour aider les étudiants à choisir des stages qui leur conviennent et les valorisent ; les étudiants ne doivent pas hésiter à consulter leurs enseignants pour solliciter des conseils ou de l'aide pour évaluer un sujet par exemple.
+
+Au début du stage, le tuteur peut aider à comprendre ou à cadrer un sujet qui est mal défini ou mal compris de l'étudiant.
+
+Suivi du stagiaire
+Le tuteur, désigné avant le début du stage, est le référent naturel de l'étudiant, il doit fournir à ce dernier un moyen de communication fiable (courriel le plus souvent) et réagira dans un délai raisonnable à ses sollicitations. Réciproquement, l'étudiant s'engage à l'informer régulièrement de l'avancement de ses travaux et des éventuelles difficultés rencontrées ; l'envoi régulier d'un mini-compte-rendu (fait/reste à faire) par courriel est une bonne solution.
+
+Un point important du suivi est la visite du tuteur dans l'entreprise ; idéalement elle se situe au début de la seconde moitié du stage. C'est à l'étudiant de prendre en charge l'organisation de cette visite (mise en concordance des calendriers, envoi d'un plan d'accès, etc).
+
+Rédaction du rapport et préparation de la soutenance
+Le tuteur enseignant est l'interlocuteur privilégié pour apporter de l'assitance dans la rédaction du rapport et dans la préparation de la soutenance ; une part importante de cette assistance peut être apportée lors de la visite de stage. C'est le tuteur enseignant qui est le principal évaluateur du rapport de stage et de la soutenance.
+
+Organisation de la soutenance
+Les soutenances se déroulent sur 4 ou 5 demi-journées annoncées à l'avance par le Département Informatique. Il est vivement souhaité que les maîtres de stage assistent à ces soutenances1). L'étudiant stagiaire doit, en fonction des contraintes de calendrier de son maître de stage, réserver auprès du secrétariat du département la plage horaire pour sa soutenance.
+
+1) L'IUT ne prend pas en charge les frais de déplacements éventuellement liés à cette soutenance, mais il offre le repas de midi aux maîtres de stage présents.
