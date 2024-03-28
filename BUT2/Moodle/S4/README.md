@@ -25,7 +25,7 @@ R4.05 Anglais
 ### [R4.06](./R4.06)
 R4.06 Communication interne
 
-### R4.07
+### [R4.07](./R4.07)
 R4.07 Projet personnel et professionnel
 
 ### SAE4.A.01
