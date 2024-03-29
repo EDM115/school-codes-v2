@@ -28,7 +28,7 @@
     "@rollup/plugin-node-resolve": "^15.0.0",
     "babel-plugin-transform-html-import-to-string": "2.0.0",
     "core-js": "^3.6.5",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "rollup": "^3.0.0",
     "@rollup/plugin-terser": "^0.4.4"
   }
