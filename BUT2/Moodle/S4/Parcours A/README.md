@@ -15,3 +15,6 @@ R4.A.11 Développement pour applications mobiles
 
 ### [R4.A.12](./R4.A.12)
 Automates et Languages
+
+### [R4.A.13](./R4.A.13)
+Apprentissage profond (coloration IA)
