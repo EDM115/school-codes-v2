@@ -1,0 +1,30 @@
+<zk>
+	<window apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('fr.ubs.sporttrack.webapp.MyViewModel')"
+		validationMessages="@id('vmsgs')">
+		<!-- <hlayout>count: <label value="@load(vm.count)" /></hlayout> -->
+		<!-- <button label="add" onClick="@command('cmd')"/>
+
+        -->
+        <hbox align="center">
+          Keyword:
+          <textbox value="@bind(vm.keyword)" />
+          <button label="Search" image="/img/search.png" onClick="@command('search')" />
+        </hbox>
+        <listbox  model="@bind(vm.actList)" emptyMessage="No car found in results"
+                 selectedItem="@bind(vm.selectedActivity)" style="margin-top:10px">
+          <listhead>
+            <listheader label="Date" />
+            <listheader label="Description" />
+            <listheader label="Distance" width="20%"/>
+          </listhead>
+          <template name="model">
+            <listitem>
+              <listcell label="@bind(each.date)"></listcell>
+              <listcell label="@bind(each.description)"></listcell>
+              <listcell><label value="@bind(each.distance)" />m</listcell>
+            </listitem>
+          </template>
+</listbox>
+	</window>
+</zk>
