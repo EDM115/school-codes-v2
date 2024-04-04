@@ -5,7 +5,7 @@
   <artifactId>webapp</artifactId>
   <version>1.0</version>
   <properties>
-	<zk.version>9.6.0.2</zk.version>
+	<zk.version>10.0.0-jakarta</zk.version>
 	<commons-io>2.11.0</commons-io>
 	<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 	<packname>-${project.version}-FL-${maven.build.timestamp}</packname>
