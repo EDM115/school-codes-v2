@@ -1,0 +1,20 @@
+version: '3'
+services:
+  ######################
+  # RHTEST APP
+  #############
+  rhapi:
+    build: ./rhapi
+    container_name: rhapi
+    ports:
+      - 8080:8080
+
+  rhfront:
+    build:
+      context: ./rhfront
+      dockerfile: Dockerfile
+      args:
+        - GITPOD_WORKSPACE_URL
+    container_name: rhfront
+    ports:
+      - 8086:80

@@ -2,7 +2,7 @@ The Very Restrictive License
 
 
 0. Preface
-- "The Content" provided has been aggregated by The Owner through third-party utilities under unrestricted open access. The Content may include various documents and code, with ownership and licensing conditions differing across items. While The Content might not be uniformly licensed under this License, and other rules and terms may apply, the non-liability and non-warranty clauses stipulated herein still apply.
+- The Content provided has been aggregated by The Owner through third-party utilities under unrestricted open access. The Content may include various documents and code, with ownership and licensing conditions differing across items. While The Content might not be uniformly licensed under this License, and other rules and terms may apply, the non-liability and non-warranty clauses stipulated herein still apply.
 
 1. Definitions
 - "The Content" refers to the collection of documents and code supplied under this License, except as specifically noted otherwise.
@@ -35,11 +35,21 @@ The Very Restrictive License
 5. Termination
 - This License and the rights granted hereunder will terminate automatically upon any breach by you of the terms of this License.
 - Continuation of Terms :
-  - The terms of this license shall remain in effect until the first to occur of the following events :
+  - The Content was created in 2022, and these terms are intended to continue to apply thereafter.
+  - The terms of this license shall remain in effect until the last to occur of the following events :
     - Ten (10) years after the death of The Owner, or
     - Twenty-five (25) years after the last modification made by The Owner to The Content.
     These conditions ensure that the terms continue to protect and govern the use of The Content beyond the lifespan of The Owner and are based on the active engagement of The Owner with The Content.
-  - The Content was created in 2022, and these terms are intended to continue to apply thereafter.
 
 6. Special Provisions
-- The contents under the folders labeled "My Codes" are owned by The Owner, created from scratch, and are shared under the terms akin to the MIT License. This allows for the sharing and modification of "My Codes" but does not include any warranty or liability on the part of The Owner.
+- The contents under the folders labeled "My Codes" are owned by The Owner, created from scratch, and are shared under the terms akin to the MIT License hereafter. This allows for the sharing and modification of "My Codes" but does not include any warranty or liability on the part of The Owner.
+
+MIT License :
+
+  Copyright (c) 2022 EDM115
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

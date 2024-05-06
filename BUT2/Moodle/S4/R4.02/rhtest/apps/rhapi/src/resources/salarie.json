@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "id": "SAL1",
+      "name": "DURAND",
+      "lastname": "Pierre",
+      "salary": "12345",
+      "level": "3",
+      "time": 1482963573074
+    },
+    {
+      "id": "SAL2",
+      "name": "DUPOND",
+      "lastname": "René",
+      "salary": "34554",
+      "level": "-4",
+      "time": 1482963592496
+    }
+  ]
+}

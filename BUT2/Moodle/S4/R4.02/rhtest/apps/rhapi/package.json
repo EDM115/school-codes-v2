@@ -1,0 +1,33 @@
+{
+  "name": "rhapi-new",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "build": "tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@biomejs/biome": "1.7.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/supertest": "^6.0.2",
+    "@vitest/coverage-istanbul": "^1.5.3",
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "vitest": "^1.5.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-promise-router": "^4.1.1",
+    "prom-client": "^15.1.2"
+  }
+}

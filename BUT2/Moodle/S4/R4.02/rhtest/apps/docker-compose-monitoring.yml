@@ -1,0 +1,48 @@
+version: "3"
+services:
+  ######################
+  # MONITORING STACK
+  #############
+  grafana:
+    image: grafana/grafana-oss:9.3.2
+    container_name: grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - ./monitoring/grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+      - grafana-data:/var/lib/grafana
+
+  prometheus:
+    image: prom/prometheus:v2.41.0
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./monitoring/prometheus:/etc/prometheus
+    command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
+
+  noise:
+    build: ./monitoring/noise
+    container_name: noise
+
+  ######################
+  # RHTEST APP
+  #############
+  rhapi:
+    build: ./rhapi
+    container_name: rhapi
+    ports:
+      - 8080:8080
+
+  rhfront:
+    build:
+      context: ./rhfront
+      dockerfile: Dockerfile
+      args:
+        - GITPOD_WORKSPACE_URL
+    container_name: rhfront
+    ports:
+      - 8086:80
+
+volumes:
+  grafana-data:

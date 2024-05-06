@@ -1,0 +1,22 @@
+{
+  "name": "rhfront",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "predev": "rm .env | true && echo VITE_GITPOD_WORKSPACE_URL=$GITPOD_WORKSPACE_URL > .env",
+    "prebuild": "rm .env && echo VITE_GITPOD_WORKSPACE_URL=$GITPOD_WORKSPACE_URL > .env",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@picocss/pico": "^2.0.6",
+    "axios": "^1.6.8",
+    "vue": "^3.4.26"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.10"
+  }
+}

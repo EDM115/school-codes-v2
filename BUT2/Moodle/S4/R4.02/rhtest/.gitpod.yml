@@ -1,0 +1,17 @@
+tasks:
+  - command: docker compose -f apps/docker-compose-monitoring.yml up -d
+ports:
+  - port: 8080
+    visibility: public
+  - port: 8086
+    visibility: public
+  - port: 9090
+    visibility: public
+  - port: 3000
+    visibility: public
+vscode:
+  extensions:
+    - "ms-azuretools.vscode-docker"
+    - vitest.explorer
+    - biomejs.biome
+    - Vue.volar
