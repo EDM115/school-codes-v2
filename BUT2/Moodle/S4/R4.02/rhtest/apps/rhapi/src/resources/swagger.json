@@ -196,7 +196,37 @@
               }
            }
         }
-     }
+     },
+     "/api/deleteall":{
+         "delete":{
+            "summary":"Admin - Supprimer les données",
+            "description":"Supprimer les données",
+            "parameters":[],
+            "responses":{
+               "200":{
+                  "description":"OK"
+               },
+               "400":{
+                  "description":"Bad request"
+               }
+            }
+         }
+      },
+      "/api/datatest":{
+         "delete":{
+            "summary":"Admin - Restaurer les données de test",
+            "description":"Restaurer les données de test",
+            "parameters":[],
+            "responses":{
+               "200":{
+                  "description":"OK"
+               },
+               "400":{
+                  "description":"Bad request"
+               }
+            }
+         }
+      }
   },
   "components":{
      "schemas":{
