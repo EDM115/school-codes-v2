@@ -1,16 +1,16 @@
 ## Le Semestre 1
 
 ### [R1.01](./R1.01)
-R1.01 Initiation au développement
+Initiation au développement
 
 ### [R1.02](./R1.02)
-Développement d’interfaces web
+Développement d'interfaces web
 
 ### [R1.03](./R1.03)
-Introduction à l’architecture des ordinateurs
+Introduction à l'architecture des ordinateurs
 
 ### [R1.04](./R1.04)
-Introduction aux systèmes d’exploitation et à leur fonctionnement
+Introduction aux systèmes d'exploitation et à leur fonctionnement
 
 ### [R1.05](./R1.05)
 Introduction aux bases de données et SQL
@@ -37,19 +37,19 @@ Bases de la communication
 Projet professionnel et personnel
 
 ### [SAE1.01](./SAE1.01)
-Implémentation d’un besoin client
+Implémentation d'un besoin client
 
 ### [SAE1.02](./SAE1.02)
-Comparaison d’approches algorithmiques
+Comparaison d'approches algorithmiques
 
 ### [SAE1.03](./SAE1.03)
-Installation d’un poste pour le développement
+Installation d'un poste pour le développement
 
 ### [SAE1.04](./SAE1.04)
-Création d’une base de données
+Création d'une base de données
 
 ### [SAE1.05](./SAE1.05)
 Recueil de besoins
 
 ### [SAE1.06](./SAE1.06)
-Découverte de l’environnement économique et écologique
+Découverte de l'environnement économique et écologique

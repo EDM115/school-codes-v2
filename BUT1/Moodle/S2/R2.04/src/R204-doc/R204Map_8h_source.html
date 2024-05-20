@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>R204:  Fichier source de include/R204Map.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="wt32-sco1.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">R204
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('R204Map_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">R204Map.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="R204Map_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef _R204Map_hpp_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define _R204Map_hpp_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="R204Iterator_8h.html">R204Iterator.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="R204Vector_8h.html">R204Vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// ########################################</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classR204Pair.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classR204Pair.html">R204Pair</a>  {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classR204Pair.html#a0f0bc17ad41157fded3d4c33067b3f0b">   22</a></span>&#160;  K <a class="code" href="classR204Pair.html#a0f0bc17ad41157fded3d4c33067b3f0b">key</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classR204Pair.html#ae2a576a6820efb0c2e3503f61d63a9ae">   24</a></span>&#160;  T <a class="code" href="classR204Pair.html#ae2a576a6820efb0c2e3503f61d63a9ae">value</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classR204Pair.html#a308182578aff1510af118dbb776a2429">   26</a></span>&#160;  <a class="code" href="classR204Pair.html#a308182578aff1510af118dbb776a2429">R204Pair</a> () : <a class="code" href="classR204Pair.html#a0f0bc17ad41157fded3d4c33067b3f0b">key</a> (), <a class="code" href="classR204Pair.html#ae2a576a6820efb0c2e3503f61d63a9ae">value</a> () {}</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classR204Pair.html#abe4f5c9b8b9e7a216e5fa900cf053e6f">   31</a></span>&#160;  <a class="code" href="classR204Pair.html#abe4f5c9b8b9e7a216e5fa900cf053e6f">R204Pair</a> (<span class="keyword">const</span> K &amp;<a class="code" href="classR204Pair.html#a0f0bc17ad41157fded3d4c33067b3f0b">key</a>) : <a class="code" href="classR204Pair.html#a0f0bc17ad41157fded3d4c33067b3f0b">key</a> (<a class="code" href="classR204Pair.html#a0f0bc17ad41157fded3d4c33067b3f0b">key</a>), <a class="code" href="classR204Pair.html#ae2a576a6820efb0c2e3503f61d63a9ae">value</a> () {}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// ########################################</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classR204Map.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classR204Map.html">R204Map</a>  {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classR204Map.html#a8a58c360d58712b99ff7f1ebd56ac4f8">   43</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classR204Pair.html">R204Pair&lt;K, T&gt;</a> <a class="code" href="classR204Map.html#a8a58c360d58712b99ff7f1ebd56ac4f8">pair</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classR204Map.html#a61099f057c55bb942ef11eed4588fb5c">   45</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classR204Iterator.html">R204Iterator&lt;pair&gt;</a> <a class="code" href="classR204Map.html#a61099f057c55bb942ef11eed4588fb5c">iterator</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classR204Map.html#aab71ecedc68521334d6aa87f4dc101e4">   47</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classR204ConstIterator.html">R204ConstIterator&lt;pair&gt;</a> <a class="code" href="classR204Map.html#aab71ecedc68521334d6aa87f4dc101e4">const_iterator</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">   50</a></span>&#160;  <a class="code" href="classR204Vector.html">R204Vector&lt;pair&gt;</a>  <a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="classR204Pair.html">pair</a>          *<a class="code" href="classR204Map.html#a08817f163fc91699dee531c3175a400b">find</a> (<span class="keyword">const</span> K &amp;key);</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classR204Map.html#a58c3e05343fc49ea5a665fc5360a2bd2">   60</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classR204Pair.html">pair</a>        *<a class="code" href="classR204Map.html#a58c3e05343fc49ea5a665fc5360a2bd2">find</a> (<span class="keyword">const</span> K &amp;key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classR204Map.html#a04e462c23cef63ee8d2c4d01c60d98df">   66</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="classR204Map.html#a04e462c23cef63ee8d2c4d01c60d98df">R204Map</a> (<span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp;n = 0) : <a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a> (n) {}</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classR204Map.html#a147e8f2260e3114f2761588e8e334af9">   71</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="classR204Map.html#a147e8f2260e3114f2761588e8e334af9">R204Map</a> (<span class="keyword">const</span> <a class="code" href="classR204Map.html">R204Map&lt;K, T&gt;</a> &amp;m) : <a class="code" href="classR204Map.html">R204Map</a> (0) { *<span class="keyword">this</span> = m; }</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classR204Map.html#a85a91234b88c5d3dc443887ccf0d2a34">   73</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="classR204Map.html#a85a91234b88c5d3dc443887ccf0d2a34">~R204Map</a> () {}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classR204Map.html#a7212d90d37ea0e8c6054bab4c1239b76">   79</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span>       <a class="code" href="classR204Map.html#a7212d90d37ea0e8c6054bab4c1239b76">empty</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>.empty (); }</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classR204Map.html#a51439c97713f8595b3467e17881ff17d">   84</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">size_t</span>     <a class="code" href="classR204Map.html#a51439c97713f8595b3467e17881ff17d">size</a> ()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>.size (); }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">inline</span> <a class="code" href="classR204Map.html">R204Map&lt;K, T&gt;</a>  &amp;<a class="code" href="classR204Map.html#aebba1b22cb40fa0ed4abadd758a927f1">operator= </a>(<span class="keyword">const</span> <a class="code" href="classR204Map.html">R204Map</a> &amp;m);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span>       <a class="code" href="classR204Map.html#a7927f204b388a78195b597544275baad">swap</a> (<a class="code" href="classR204Map.html">R204Map</a> &amp;m);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classR204Map.html#afffb956691e74b6fbfdb3b6d8c4ed408">  106</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span>       <a class="code" href="classR204Map.html#afffb956691e74b6fbfdb3b6d8c4ed408">clear</a> () { <a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>.clear (); }</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classR204Map.html#a6f71423bfe653260c79195fe3a88ca57">  111</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span>       <a class="code" href="classR204Map.html#a6f71423bfe653260c79195fe3a88ca57">reserve</a> (<span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp;n) { <a class="code" href="classR204Map.html#a6f71423bfe653260c79195fe3a88ca57">reserve</a> (n); }</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classR204Map.html#a3f1d91786f3b176baa020017d64ae1dd">  113</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span>       <a class="code" href="classR204Map.html#a3f1d91786f3b176baa020017d64ae1dd">shrink_to_fit</a> () { <a class="code" href="classR204Map.html#a3f1d91786f3b176baa020017d64ae1dd">shrink_to_fit</a> (); }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">inline</span> T      &amp;<a class="code" href="classR204Map.html#a4821d68bad7f3f2e56d3623efa522ccf">operator[] </a>(<span class="keyword">const</span> K &amp;key);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keyword">inline</span> T      &amp;<a class="code" href="classR204Map.html#a374e10013ff8e637010f2e56e5abc611">at</a> (<span class="keyword">const</span> K &amp;key);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classR204Map.html#ac4c4c379ce261c610a6d1bd4b60d1394">  134</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span>       <a class="code" href="classR204Map.html#ac4c4c379ce261c610a6d1bd4b60d1394">contains</a> (<span class="keyword">const</span> K &amp;key)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classR204Map.html#a08817f163fc91699dee531c3175a400b">find</a> (key) != <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span>       <a class="code" href="classR204Map.html#a40b38cffb68bc5f134d2bb047764f353">valueExists</a> (<span class="keyword">const</span> T &amp;val) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="classR204Map.html#aee221f498ac0b4e520dd75b7d12fe1ec">  145</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="classR204Iterator.html">iterator</a>   <a class="code" href="classR204Map.html#aee221f498ac0b4e520dd75b7d12fe1ec">begin</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classR204Map.html#a61099f057c55bb942ef11eed4588fb5c">iterator</a> (&amp;<a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>[0]); }</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classR204Map.html#a763eb2cb007421aa31b657ff0c98876f">  150</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="classR204Iterator.html">iterator</a>   <a class="code" href="classR204Map.html#a763eb2cb007421aa31b657ff0c98876f">end</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classR204Map.html#a61099f057c55bb942ef11eed4588fb5c">iterator</a> (&amp;<a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>[<a class="code" href="classR204Map.html#a51439c97713f8595b3467e17881ff17d">size</a> ()]); }</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classR204Map.html#ad6123354b9ca0500a7984c31dc3627b9">  155</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="classR204ConstIterator.html">const_iterator</a> <a class="code" href="classR204Map.html#ad6123354b9ca0500a7984c31dc3627b9">cbegin</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classR204Map.html#aab71ecedc68521334d6aa87f4dc101e4">const_iterator</a> (&amp;<a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>[0]); }</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classR204Map.html#a26f0f64785c2a027d77089483f87f078">  160</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="classR204ConstIterator.html">const_iterator</a> <a class="code" href="classR204Map.html#a26f0f64785c2a027d77089483f87f078">cend</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classR204Map.html#aab71ecedc68521334d6aa87f4dc101e4">const_iterator</a> (&amp;<a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>[<a class="code" href="classR204Map.html#a51439c97713f8595b3467e17881ff17d">size</a> ()]); }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span>       <span class="keywordflow">foreach</span> (F f);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span>       <span class="keywordflow">foreach</span> (<span class="keyword">const</span> F f) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;};</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">// ########################################</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<a class="code" href="classR204Map.html">R204Map&lt;K, T&gt;</a> &amp;</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="classR204Map.html#aebba1b22cb40fa0ed4abadd758a927f1">  178</a></span>&#160;<a class="code" href="classR204Map.html#aebba1b22cb40fa0ed4abadd758a927f1">R204Map&lt;K, T&gt;::operator= </a>(<span class="keyword">const</span> <a class="code" href="classR204Map.html">R204Map</a> &amp;m) {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  _data = m.<a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classR204Map.html#a7927f204b388a78195b597544275baad">  185</a></span>&#160;<a class="code" href="classR204Map.html#a7927f204b388a78195b597544275baad">R204Map&lt;K, T&gt;::swap</a> (<a class="code" href="classR204Map.html">R204Map</a> &amp;m) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <a class="code" href="classR204Vector.html">R204Vector&lt;R204Pair&lt;K,T&gt;</a> &gt; _data2 (_data);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  _data = m.<a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  m.<a class="code" href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">_data</a> = _data2;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">// ########################################</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<a class="code" href="classR204Pair.html">R204Pair&lt;K,T&gt;</a> *</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classR204Map.html#a08817f163fc91699dee531c3175a400b">  194</a></span>&#160;<a class="code" href="classR204Map.html#a08817f163fc91699dee531c3175a400b">R204Map&lt;K, T&gt;::find</a> (<span class="keyword">const</span> K &amp;key) {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i (0); i &lt; _data.<a class="code" href="classR204Vector.html#a45e23dea73a3272a24d7bff1bd75a4c0">size</a> (); ++i)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">if</span> (_data [i].key == key)</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keywordflow">return</span> &amp;_data [i];</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="classR204Map.html#a40b38cffb68bc5f134d2bb047764f353">  203</a></span>&#160;<a class="code" href="classR204Map.html#a40b38cffb68bc5f134d2bb047764f353">R204Map&lt;K, T&gt;::valueExists</a> (<span class="keyword">const</span> T &amp;val)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i (0); i &lt; _data.<a class="code" href="classR204Vector.html#a45e23dea73a3272a24d7bff1bd75a4c0">size</a> (); ++i)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">if</span> (_data [i].value == val)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;T &amp;</div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="classR204Map.html#a4821d68bad7f3f2e56d3623efa522ccf">  212</a></span>&#160;<a class="code" href="classR204Map.html#a4821d68bad7f3f2e56d3623efa522ccf">R204Map&lt;K, T&gt;::operator[] </a>(<span class="keyword">const</span> K &amp;key) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <a class="code" href="classR204Pair.html">R204Pair&lt;K,T&gt;</a> *<a class="code" href="classR204Pair.html">pair</a> = find (key);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classR204Pair.html">pair</a>)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classR204Pair.html">pair</a>-&gt;<a class="code" href="classR204Pair.html#ae2a576a6820efb0c2e3503f61d63a9ae">value</a>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  _data.<a class="code" href="classR204Vector.html#a14a312dee21051c5aecce6a6385d0ef7">push_back</a> (<a class="code" href="classR204Pair.html">R204Pair&lt;K,T&gt;</a> (key));</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">return</span> _data [_data.<a class="code" href="classR204Vector.html#a45e23dea73a3272a24d7bff1bd75a4c0">size</a> ()-1].value;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;T &amp;</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="classR204Map.html#a374e10013ff8e637010f2e56e5abc611">  222</a></span>&#160;<a class="code" href="classR204Map.html#a374e10013ff8e637010f2e56e5abc611">R204Map&lt;K, T&gt;::at</a> (<span class="keyword">const</span> K &amp;key) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <a class="code" href="classR204Pair.html">R204Pair&lt;K,T&gt;</a> *<a class="code" href="classR204Pair.html">pair</a> = find (key);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classR204Pair.html">pair</a>)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classR204Pair.html">pair</a>-&gt;<a class="code" href="classR204Pair.html#ae2a576a6820efb0c2e3503f61d63a9ae">value</a>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keywordflow">throw</span> std::out_of_range (<span class="stringliteral">&quot;R204Map: key not found&quot;</span>);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">// ========================================</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="classR204Map.html#a0b7aeb85d6aea72c990901420d6fd9bf">  233</a></span>&#160;<a class="code" href="classR204Map.html#a0b7aeb85d6aea72c990901420d6fd9bf">R204Map&lt;K, T&gt;::foreach</a> (F f) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _data.<a class="code" href="classR204Vector.html#aaa8387a148b8159893e2b39e51879aec">_size</a>; ++i)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    f (_data [i].key, _data [i].value);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> K, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> F&gt;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="classR204Map.html#a7cc02ec15c79cafe32366e7b1173f49c">  241</a></span>&#160;<a class="code" href="classR204Map.html#a0b7aeb85d6aea72c990901420d6fd9bf">R204Map&lt;K, T&gt;::foreach</a> (<span class="keyword">const</span> F f)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _data.<a class="code" href="classR204Vector.html#aaa8387a148b8159893e2b39e51879aec">_size</a>; ++i)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    f (_data [i].key, _data [i].value);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">// ########################################</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// _R204Map_hpp_</span></div>
+<div class="ttc" id="aR204Iterator_8h_html"><div class="ttname"><a href="R204Iterator_8h.html">R204Iterator.h</a></div><div class="ttdoc">Définie les classes R204Iterator et R204ConstIterator.</div></div>
+<div class="ttc" id="aR204Vector_8h_html"><div class="ttname"><a href="R204Vector_8h.html">R204Vector.h</a></div><div class="ttdoc">Définie la classe R204Vector.</div></div>
+<div class="ttc" id="aclassR204ConstIterator_html"><div class="ttname"><a href="classR204ConstIterator.html">R204ConstIterator</a></div><div class="ttdoc">classe d'itérateurs génériques pour Arduino utilisé pour des constantes vers des tableaux (R204Vector...</div><div class="ttdef"><b>Definition:</b> R204Iterator.h:131</div></div>
+<div class="ttc" id="aclassR204Iterator_html"><div class="ttname"><a href="classR204Iterator.html">R204Iterator</a></div><div class="ttdoc">classe d'itérateurs génériques pour Arduino utilisé par les tableaux (R204Vector) et tables associati...</div><div class="ttdef"><b>Definition:</b> R204Iterator.h:17</div></div>
+<div class="ttc" id="aclassR204Map_html"><div class="ttname"><a href="classR204Map.html">R204Map</a></div><div class="ttdoc">classe de liste associatives génériques pour Arduino</div><div class="ttdef"><b>Definition:</b> R204Map.h:40</div></div>
+<div class="ttc" id="aclassR204Map_html_a04e462c23cef63ee8d2c4d01c60d98df"><div class="ttname"><a href="classR204Map.html#a04e462c23cef63ee8d2c4d01c60d98df">R204Map::R204Map</a></div><div class="ttdeci">R204Map(const size_t &amp;n=0)</div><div class="ttdef"><b>Definition:</b> R204Map.h:66</div></div>
+<div class="ttc" id="aclassR204Map_html_a08817f163fc91699dee531c3175a400b"><div class="ttname"><a href="classR204Map.html#a08817f163fc91699dee531c3175a400b">R204Map::find</a></div><div class="ttdeci">pair * find(const K &amp;key)</div><div class="ttdef"><b>Definition:</b> R204Map.h:194</div></div>
+<div class="ttc" id="aclassR204Map_html_a0b7aeb85d6aea72c990901420d6fd9bf"><div class="ttname"><a href="classR204Map.html#a0b7aeb85d6aea72c990901420d6fd9bf">R204Map::foreach</a></div><div class="ttdeci">void foreach(F f)</div><div class="ttdef"><b>Definition:</b> R204Map.h:233</div></div>
+<div class="ttc" id="aclassR204Map_html_a147e8f2260e3114f2761588e8e334af9"><div class="ttname"><a href="classR204Map.html#a147e8f2260e3114f2761588e8e334af9">R204Map::R204Map</a></div><div class="ttdeci">R204Map(const R204Map&lt; K, T &gt; &amp;m)</div><div class="ttdef"><b>Definition:</b> R204Map.h:71</div></div>
+<div class="ttc" id="aclassR204Map_html_a26f0f64785c2a027d77089483f87f078"><div class="ttname"><a href="classR204Map.html#a26f0f64785c2a027d77089483f87f078">R204Map::cend</a></div><div class="ttdeci">const_iterator cend() const</div><div class="ttdef"><b>Definition:</b> R204Map.h:160</div></div>
+<div class="ttc" id="aclassR204Map_html_a374e10013ff8e637010f2e56e5abc611"><div class="ttname"><a href="classR204Map.html#a374e10013ff8e637010f2e56e5abc611">R204Map::at</a></div><div class="ttdeci">T &amp; at(const K &amp;key)</div><div class="ttdef"><b>Definition:</b> R204Map.h:222</div></div>
+<div class="ttc" id="aclassR204Map_html_a3f1d91786f3b176baa020017d64ae1dd"><div class="ttname"><a href="classR204Map.html#a3f1d91786f3b176baa020017d64ae1dd">R204Map::shrink_to_fit</a></div><div class="ttdeci">void shrink_to_fit()</div><div class="ttdef"><b>Definition:</b> R204Map.h:113</div></div>
+<div class="ttc" id="aclassR204Map_html_a40b38cffb68bc5f134d2bb047764f353"><div class="ttname"><a href="classR204Map.html#a40b38cffb68bc5f134d2bb047764f353">R204Map::valueExists</a></div><div class="ttdeci">bool valueExists(const T &amp;val) const</div><div class="ttdef"><b>Definition:</b> R204Map.h:203</div></div>
+<div class="ttc" id="aclassR204Map_html_a4821d68bad7f3f2e56d3623efa522ccf"><div class="ttname"><a href="classR204Map.html#a4821d68bad7f3f2e56d3623efa522ccf">R204Map::operator[]</a></div><div class="ttdeci">T &amp; operator[](const K &amp;key)</div><div class="ttdef"><b>Definition:</b> R204Map.h:212</div></div>
+<div class="ttc" id="aclassR204Map_html_a51439c97713f8595b3467e17881ff17d"><div class="ttname"><a href="classR204Map.html#a51439c97713f8595b3467e17881ff17d">R204Map::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Definition:</b> R204Map.h:84</div></div>
+<div class="ttc" id="aclassR204Map_html_a58c3e05343fc49ea5a665fc5360a2bd2"><div class="ttname"><a href="classR204Map.html#a58c3e05343fc49ea5a665fc5360a2bd2">R204Map::find</a></div><div class="ttdeci">const pair * find(const K &amp;key) const</div></div>
+<div class="ttc" id="aclassR204Map_html_a61099f057c55bb942ef11eed4588fb5c"><div class="ttname"><a href="classR204Map.html#a61099f057c55bb942ef11eed4588fb5c">R204Map::iterator</a></div><div class="ttdeci">R204Iterator&lt; pair &gt; iterator</div><div class="ttdef"><b>Definition:</b> R204Map.h:45</div></div>
+<div class="ttc" id="aclassR204Map_html_a6f71423bfe653260c79195fe3a88ca57"><div class="ttname"><a href="classR204Map.html#a6f71423bfe653260c79195fe3a88ca57">R204Map::reserve</a></div><div class="ttdeci">void reserve(const size_t &amp;n)</div><div class="ttdef"><b>Definition:</b> R204Map.h:111</div></div>
+<div class="ttc" id="aclassR204Map_html_a7212d90d37ea0e8c6054bab4c1239b76"><div class="ttname"><a href="classR204Map.html#a7212d90d37ea0e8c6054bab4c1239b76">R204Map::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> R204Map.h:79</div></div>
+<div class="ttc" id="aclassR204Map_html_a763eb2cb007421aa31b657ff0c98876f"><div class="ttname"><a href="classR204Map.html#a763eb2cb007421aa31b657ff0c98876f">R204Map::end</a></div><div class="ttdeci">iterator end() const</div><div class="ttdef"><b>Definition:</b> R204Map.h:150</div></div>
+<div class="ttc" id="aclassR204Map_html_a7927f204b388a78195b597544275baad"><div class="ttname"><a href="classR204Map.html#a7927f204b388a78195b597544275baad">R204Map::swap</a></div><div class="ttdeci">void swap(R204Map &amp;m)</div><div class="ttdef"><b>Definition:</b> R204Map.h:185</div></div>
+<div class="ttc" id="aclassR204Map_html_a85a91234b88c5d3dc443887ccf0d2a34"><div class="ttname"><a href="classR204Map.html#a85a91234b88c5d3dc443887ccf0d2a34">R204Map::~R204Map</a></div><div class="ttdeci">~R204Map()</div><div class="ttdef"><b>Definition:</b> R204Map.h:73</div></div>
+<div class="ttc" id="aclassR204Map_html_a8a58c360d58712b99ff7f1ebd56ac4f8"><div class="ttname"><a href="classR204Map.html#a8a58c360d58712b99ff7f1ebd56ac4f8">R204Map::pair</a></div><div class="ttdeci">R204Pair&lt; K, T &gt; pair</div><div class="ttdef"><b>Definition:</b> R204Map.h:43</div></div>
+<div class="ttc" id="aclassR204Map_html_a8b2b69a63bbb2d9a43b1257ad7166264"><div class="ttname"><a href="classR204Map.html#a8b2b69a63bbb2d9a43b1257ad7166264">R204Map::_data</a></div><div class="ttdeci">R204Vector&lt; pair &gt; _data</div><div class="ttdef"><b>Definition:</b> R204Map.h:50</div></div>
+<div class="ttc" id="aclassR204Map_html_aab71ecedc68521334d6aa87f4dc101e4"><div class="ttname"><a href="classR204Map.html#aab71ecedc68521334d6aa87f4dc101e4">R204Map::const_iterator</a></div><div class="ttdeci">R204ConstIterator&lt; pair &gt; const_iterator</div><div class="ttdef"><b>Definition:</b> R204Map.h:47</div></div>
+<div class="ttc" id="aclassR204Map_html_ac4c4c379ce261c610a6d1bd4b60d1394"><div class="ttname"><a href="classR204Map.html#ac4c4c379ce261c610a6d1bd4b60d1394">R204Map::contains</a></div><div class="ttdeci">bool contains(const K &amp;key) const</div><div class="ttdef"><b>Definition:</b> R204Map.h:134</div></div>
+<div class="ttc" id="aclassR204Map_html_ad6123354b9ca0500a7984c31dc3627b9"><div class="ttname"><a href="classR204Map.html#ad6123354b9ca0500a7984c31dc3627b9">R204Map::cbegin</a></div><div class="ttdeci">const_iterator cbegin() const</div><div class="ttdef"><b>Definition:</b> R204Map.h:155</div></div>
+<div class="ttc" id="aclassR204Map_html_aebba1b22cb40fa0ed4abadd758a927f1"><div class="ttname"><a href="classR204Map.html#aebba1b22cb40fa0ed4abadd758a927f1">R204Map::operator=</a></div><div class="ttdeci">R204Map&lt; K, T &gt; &amp; operator=(const R204Map &amp;m)</div><div class="ttdef"><b>Definition:</b> R204Map.h:178</div></div>
+<div class="ttc" id="aclassR204Map_html_aee221f498ac0b4e520dd75b7d12fe1ec"><div class="ttname"><a href="classR204Map.html#aee221f498ac0b4e520dd75b7d12fe1ec">R204Map::begin</a></div><div class="ttdeci">iterator begin() const</div><div class="ttdef"><b>Definition:</b> R204Map.h:145</div></div>
+<div class="ttc" id="aclassR204Map_html_afffb956691e74b6fbfdb3b6d8c4ed408"><div class="ttname"><a href="classR204Map.html#afffb956691e74b6fbfdb3b6d8c4ed408">R204Map::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> R204Map.h:106</div></div>
+<div class="ttc" id="aclassR204Pair_html"><div class="ttname"><a href="classR204Pair.html">R204Pair</a></div><div class="ttdoc">pair généric associant une clef à une valeur</div><div class="ttdef"><b>Definition:</b> R204Map.h:19</div></div>
+<div class="ttc" id="aclassR204Pair_html_a0f0bc17ad41157fded3d4c33067b3f0b"><div class="ttname"><a href="classR204Pair.html#a0f0bc17ad41157fded3d4c33067b3f0b">R204Pair::key</a></div><div class="ttdeci">K key</div><div class="ttdef"><b>Definition:</b> R204Map.h:22</div></div>
+<div class="ttc" id="aclassR204Pair_html_a308182578aff1510af118dbb776a2429"><div class="ttname"><a href="classR204Pair.html#a308182578aff1510af118dbb776a2429">R204Pair::R204Pair</a></div><div class="ttdeci">R204Pair()</div><div class="ttdef"><b>Definition:</b> R204Map.h:26</div></div>
+<div class="ttc" id="aclassR204Pair_html_abe4f5c9b8b9e7a216e5fa900cf053e6f"><div class="ttname"><a href="classR204Pair.html#abe4f5c9b8b9e7a216e5fa900cf053e6f">R204Pair::R204Pair</a></div><div class="ttdeci">R204Pair(const K &amp;key)</div><div class="ttdef"><b>Definition:</b> R204Map.h:31</div></div>
+<div class="ttc" id="aclassR204Pair_html_ae2a576a6820efb0c2e3503f61d63a9ae"><div class="ttname"><a href="classR204Pair.html#ae2a576a6820efb0c2e3503f61d63a9ae">R204Pair::value</a></div><div class="ttdeci">T value</div><div class="ttdef"><b>Definition:</b> R204Map.h:24</div></div>
+<div class="ttc" id="aclassR204Vector_html"><div class="ttname"><a href="classR204Vector.html">R204Vector</a></div><div class="ttdoc">gère des tableaux dynamiques génériques pour Arduino</div><div class="ttdef"><b>Definition:</b> R204Vector.h:18</div></div>
+<div class="ttc" id="aclassR204Vector_html_a14a312dee21051c5aecce6a6385d0ef7"><div class="ttname"><a href="classR204Vector.html#a14a312dee21051c5aecce6a6385d0ef7">R204Vector::push_back</a></div><div class="ttdeci">void push_back(const T &amp;val)</div><div class="ttdef"><b>Definition:</b> R204Vector.h:285</div></div>
+<div class="ttc" id="aclassR204Vector_html_a45e23dea73a3272a24d7bff1bd75a4c0"><div class="ttname"><a href="classR204Vector.html#a45e23dea73a3272a24d7bff1bd75a4c0">R204Vector::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Definition:</b> R204Vector.h:62</div></div>
+<div class="ttc" id="aclassR204Vector_html_aaa8387a148b8159893e2b39e51879aec"><div class="ttname"><a href="classR204Vector.html#aaa8387a148b8159893e2b39e51879aec">R204Vector::_size</a></div><div class="ttdeci">size_t _size</div><div class="ttdef"><b>Definition:</b> R204Vector.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="R204Map_8h.html">R204Map.h</a></li>
+    <li class="footer">Généré le Dimanche 12 Mars 2023 19:52:53 pour R204 par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

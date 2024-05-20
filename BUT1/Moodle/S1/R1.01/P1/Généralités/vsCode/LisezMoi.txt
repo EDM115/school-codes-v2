@@ -1,0 +1,2 @@
+Placer les fichiers dans .config/Code/User de votre home
+ctrl-h pour voir les fichiers et dossiers cachés

@@ -3,7 +3,7 @@ BUT2 Info - R3.06 - Architecture des réseaux
 
 _François Lesueur ([francois.lesueur@univ-ubs.fr](mailto:francois.lesueur@univ-ubs.fr))_
 
-L’objectif de cette ressource est de comprendre l’organisation et le fonctionnement d’un réseau informatique. Cette ressource permettra de découvrir les différentes technologies matérielles et logicielles mises en œuvre dans l’acheminement de données à l’intérieur d’un réseau (local ou étendu), de voir par quels types d’applications accéder au réseau.
+L'objectif de cette ressource est de comprendre l'organisation et le fonctionnement d'un réseau informatique. Cette ressource permettra de découvrir les différentes technologies matérielles et logicielles mises en œuvre dans l'acheminement de données à l'intérieur d'un réseau (local ou étendu), de voir par quels types d'applications accéder au réseau.
 
 Savoirs de référence étudiés :
 * Technologies des réseaux (piles protocolaires, couche transport, TCP/IP/UDP, DHCP, DNS…)

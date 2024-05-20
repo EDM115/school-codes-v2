@@ -1,9 +1,11 @@
 # SAE S1.04
-## Création d’une base de données
-Cette SAE vise à vérifier deux apprentissages critiques de niveau 1 pour la compétence « Gérer les données de l’information » (UE 1.4 du semestre 1) :
+## Création d'une base de données
+Cette SAE vise à vérifier deux apprentissages critiques de niveau 1 pour la compétence « Gérer les données de l'information » (UE 1.4 du semestre 1) :
 
-- La capacité à créer une base de données partant d’un cahier des charges avec : i) modélisation UML du domaine, puis ii) traduction en un schéma relationnel et enfin iii) implantation en SQL du schéma ;
-
+- La capacité à créer une base de données partant d'un cahier des charges avec :
+  1. modélisation UML du domaine, puis
+  2. traduction en un schéma relationnel et enfin
+  3. implantation en SQL du schéma
 - La capacité à interroger une base de données, à réaliser des insertions, des suppressions et des mises à jour des données de cette base.
 
 Elle s'appuie sur la ressource R1.05 (Introduction aux bases de données et à SQL) du Semestre 1.

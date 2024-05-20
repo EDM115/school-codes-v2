@@ -1,0 +1,18 @@
+Dans ce TP, vous allez devoir installer et configurer un outil de CI/CD (Jenkins) pour construire un executable.
+
+Pour l'instant le process CI/CD est simple, vous devez juste récupérer le jeu Tetris en clonant le git repository du jeu sur gitlab.iu-vannes.org, puis vous arranger pour que le job jenkins construise (build) le jeu.
+
+On doit pouvoir ensuite récupérer le jeu (son exécutable) dans le job jenkins, une fois celui-ci terminé.
+
+Vous devez installer Jenkins sur la machine mis à disposition pour que cela fonctionne, c'est la même machine que celle des TP d'avant (elle a été reseté), donc pour vous y connecter, regardez dans les TP précédents si vous ne vous souvenez plus comment faire.
+
+ATTENTION: vous ne devez pas changer le mot de passe par défaut du Jenkins que vous installerez.
+
+
+Dans ce TP, vous allez reprendre l'outil de CI/CD que vous avez mis en place la dernière fois (Jenkins) et créer un job pour construire le même jeu que la dernière fois mais en utilisant un pipeline Jenkins.
+
+A la fin de ce job, postez le contenu de votre pipeline dans la zone de rendu.
+
+Le job pipeline doit aussi générer un artefact avec l'exécutable du jeu dedans + un fichier md5sum contenant le md5sum de l'exécutable.
+
+Du coup cet artefact doit etre un fichier zip.

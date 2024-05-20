@@ -1,5 +1,7 @@
 ## Le Semestre 4
 
+### [Apprentissage](./Apprentissage)
+BUT Info Apprentissage 2023-2025
 
 ### [Parcours A](./Parcours A)
 Parcours A
@@ -8,25 +10,25 @@ Parcours A
 Parcours C (parcours aujourd'hui disparu de l'IUT Info de Vannes)
 
 ### [R4.01](./R4.01)
-R4.01 Architecture logicielle
+Architecture logicielle
 
 ### [R4.02](./R4.02)
-R4.02 Qualité de developpement
+Qualité de developpement
 
 ### [R4.03](./R4.03)
-R4.03 Qualité et au-delà du relationnel
+Qualité et au-delà du relationnel
 
 ### [R4.04](./R4.04)
-R4.01 Méthodes d'optimisation
+Méthodes d'optimisation
 
 ### [R4.05](./R4.05)
-R4.05 Anglais
+Anglais
 
 ### [R4.06](./R4.06)
-R4.06 Communication interne
+Communication interne
 
 ### [R4.07](./R4.07)
-R4.07 Projet personnel et professionnel
+Projet personnel et professionnel
 
 ### SAE4.A.01
 Développement d'une application complexe

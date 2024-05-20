@@ -1,0 +1,15 @@
+// A placer dans .config/Code/User
+//Placer vos combinaisons de touches dans ce fichier pour remplacer les valeurs par défaut
+[{
+    "key": "ctrl+shift+r",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Exécution java R1.01",
+    "when": "resourceExtname == .java"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Compilation java R1.01",
+    "when": "resourceExtname == .java"
+  }  
+]

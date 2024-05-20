@@ -4,7 +4,7 @@
 Développement orienté objets
 
 ### [R2.02](./R2.02)
-Développement d’applications avec IHM
+Développement d'applications avec IHM
 
 ### [R2.03](./R2.03)
 Qualité de développement
@@ -16,7 +16,7 @@ Communication et fonctionnement bas niveau
 Introduction aux services réseaux
 
 ### [R2.06](./R2.06)
-Exploitation d’une base de données
+Exploitation d'une base de données
 
 ### [R2.07](./R2.07)
 Graphes
@@ -34,19 +34,19 @@ Gestion de projet & des organisations
 Droit des contrats et du numérique
 
 ### [R2.12](./R2.12)
-Anglais d’entreprise
+Anglais d'entreprise
 
 ### [R2.13](./R2.13)
 Communication avec le milieu professionnel
 
 ### [R2.14](./R2.14)
-Projet professionnel et personnel : métiers de l’informatique
+Projet professionnel et personnel : métiers de l'informatique
 
 ### [SAE2.01](./SAE2.01)
-Développement d’une application
+Développement d'une application
 
 ### [SAE2.03](./SAE2.03)
 Installation de services réseau
 
 ### [SAE2.05](./SAE2.05)
-Gestion d’un projet
+Gestion d'un projet

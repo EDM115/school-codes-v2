@@ -3,7 +3,7 @@ LA PROCÉDURE POUR LE DÉPÔT DES PROJETS TUTORÉS/ÉVÉNEMENTS EST EN COURS DE 
 UNE PLATEFORME COMMUNE DE DÉPÔT VA ÊTRE PROCHAINEMENT MISE EN PLACE POUR CETTE ANNÉE UNIVERSITAIRE AVEC L'UNIVERSITÉ (information publiée le 7/09/2022)
 
 ## A. La charte de communication globale en vigueur à l'IUT Vannes (figure depuis la rentrée 2016 dans le règlement intérieur de l'IUT (article 1.4)
- 
+
 + Signature en ligne obligatoire entre le 1er septembre et le 30 octobre 2022
 + Circuit de validation de la communication
 + Documents disponibles sur la plateforme

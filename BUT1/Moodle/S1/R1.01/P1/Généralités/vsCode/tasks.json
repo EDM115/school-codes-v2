@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilation java R1.01",
+            "type": "shell",
+            "command": "cd ${fileDirname}; javac -cp ../class -d ../class ../src/${fileBasename}",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {   
+            "label": "Exécution java R1.01",
+            "type": "shell",
+            "command": "cd ${fileDirname}; java -cp ../class Start ${fileBasenameNoExtension}",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
