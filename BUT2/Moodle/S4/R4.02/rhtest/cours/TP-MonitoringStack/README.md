@@ -17,10 +17,10 @@ On utilisera pour cela un outil de visualisation open-source : [**Grafana**](htt
 Pour pouvoir surveiller notre application, l'api de rhtest nous fournit ce qu'on appelle une **métrique**. Une métrique est une valeur qui peut être lue à un instant t, et qui varie dans le temps. Elle possède un nom et peut aussi comporter un ensemble d'attributs (ou labels).
 
 Dans notre cas, rhapi expose une métrique `search_counter` qui compte le nombre d'appels HTTP effectués sur l'API. Sa valeur s'incrémente donc à chaque appel HTTP. Elle possède plusieurs labels, ceux qui nous intéressent sont :
-* ip : l'adresse ip source de l'appel HTTP
-* response : le code HTTP de réponse (200, 404, etc.)
-* route : l'url de l'appel HTTP
-* type : le type d'appel HTTP (GET, POST, etc.)
+* `ip` : l'adresse ip source de l'appel HTTP
+* `response` : le code HTTP de réponse (200, 404, etc.)
+* `route` : l'url de l'appel HTTP
+* `type` : le type d'appel HTTP (GET, POST, etc.)
 
 
 Grafana va permettre de visualiser l'évolution de la valeur de cette métrique dans le temps, sous forme de séries temporelles. De plus, pour une métrique donnée on aura autant de séries temporelles qu'il n'y a de combinaisons possibles de labels. Par exemple :
@@ -95,23 +95,23 @@ Dans cette démonstration, nous allons initier notre tableau de bord Grafana, et
 
 ## A vous de jouer
 Agrémentez votre tableau de bord en ajoutant de nouveaux composants pour :
-* Visualiser le nombre de requêtes HTTP par minute pour chaque code de réponse
-* Visualiser le nombre de requêtes HTTP par minute pour chaque adresse IP
-* Visualiser l'état actuel de notre API (UP ou DOWN)
+1. Visualiser le nombre de requêtes HTTP par minute pour chaque code de réponse
+2. Visualiser le nombre de requêtes HTTP par minute pour chaque adresse IP (en utilisant un autre type de visualisation, par exemple `Bar Gauge`)
+3. Visualiser l'état actuel de notre API (UP ou DOWN)
     * Pour cela, vous pouvez utiliser la métrique `up` égale à 0 si l'appli est down, ou 1 si elle est up.
     * Essayez d'utiliser un graphique de type `Stat`, pour lequel vous pouvez définir le texte à afficher selon la valeur actuelle de la métrique dans les options `Value mappings` à droite.
     * On cherche à obtenir quelque-chose qui ressemble à ça :
         <br><img src="img/api_up.png" alt="drawing" width="30%"/>
     * Vous pouvez stopper et redémarrer le conteneur de rhapi sur GitPod pour tester votre composant 😉
         <br><img src="img/api_down.png" alt="drawing" width="30%"/>
-* Visualiser le taux de disponibilité de notre API sur 1 heure (information très utilisée comme SLI !)
+4. Visualiser le taux de disponibilité de notre API sur 1 heure (information très utilisée comme SLI !)
     * Là aussi, la métrique `up` est la plus adaptée.
     * Une opération permet de calculer la moyenne des valeurs sur une période donnée : `Range functions > Avg over time`
     * A l'aide du type de graphe `Gauge`, essayez d'obtenir le résultat suivant :
         <br><img src="img/dispo_vert.png" alt="drawing" width="30%"/>
     * Si on coupe le conteneur de l'api, constatez le taux diminuer :
         <br><img src="img/dispo_rouge.png" alt="drawing" width="30%"/>
-* Visualiser le taux d'erreurs 4xx par minute (pas seulement 400 ou 409)
+5. Visualiser le taux d'erreurs 4xx par minute (pas seulement 400 ou 409)
     * Tip 1 : vous pouvez filtrer vos labels en utilisant des regex avec le matching `=~`
     * Tip 2 : vous pouvez opérer des calculs entre deux séries temporelles avec l'opération `Binary operations > Binary operation with query`
     * Une fois votre composant créé, spammez la route `/api/rechercher` de rhapi dans votre naviguateur pour faire monter le taux d'erreurs 4xx
@@ -127,4 +127,4 @@ Vous pouvez également réfléchir à d'autres composants qui vous semblent pert
 * De plus, **une anomalie en production a un impact direct sur l'image de votre produit**. Il est donc impératif de **les détecter le plus rapidement possible**.
 * C'est dans ce but qu'on utilise des moyens de supervision, la collecte de métriques en faisant partie. **L'utilisation de métriques permet de détecter en temps réel un comportement anormal, et avoir une idication sur son origine**. Par exemple, un grand nombre d'erreurs 500 sur une route précise de notre API.
 * Les métriques nous indiquent également si certaines spécifications de notre référentiel de test sont toujours respectées en production. **Ces spécifications constituent souvent nos SLI**, comme par exemple le taux de disponibilité de l'API.
-* Enfin, dans un contexte de cybersécurité, avoir une stack de supervision peut contribuer à détecter des comportements malveillants. Par exemple, un soudain pic d'appels par un ensemble d'adresses IP peut suggérer une attaque par déni de service.
+* Enfin, dans un contexte de cybersécurité, avoir une stack de supervision peut **contribuer à détecter des comportements malveillants**. Par exemple, un soudain pic d'appels par un ensemble d'adresses IP peut suggérer une attaque par déni de service.

@@ -107,12 +107,83 @@ Dans la suite de test "Créer", il va falloir
 - _Cas de test 2 :_ Cas en erreur  
   Ajouter un employé avec des critères invalides  
   Et contrôler avec 2 assertions
+  <details>
+  <summary>Réponse</summary>
+  METHOD : POST
+
+  URL : {{baseURL}}/api/ajouter?id=test001&name=martin&lastname=pierre&salary=15000&level=-11
+
+  TEST :  
+  <code>
+  pm.test("Status code is 409", function () {  
+   pm.response.to.have.status(409);  
+  });
+
+  pm.test("Body matches string", function () {
+  pm.expect(pm.response.text()).to.include("Le niveau doit être > -10 et < 10");  
+  });
+  </code>
+
+  </details>
+
 - _Cas de test 3 :_ Cas en erreur  
-  Ajouter un employé avec des critères obligatoires non renseignés  
+  Ajouter un employé avec des critères obligatoires non renseignés
+  <details>
+  <summary>Réponse</summary>
+  METHOD : POST
+
+  URL : {{baseURL}}/api/ajouter?id=&name=martin&lastname=pierre&salary=15000&level=1
+
+  TEST :  
+  <code>
+  pm.test("Status code is 409", function () {  
+   pm.response.to.have.status(409);  
+  });
+
+  pm.test("Body matches string", function () {
+  pm.expect(pm.response.text()).to.include("Le matricule est obligatoire");  
+  });
+  </code>
+
+  </details>
   Et contrôler avec 2 assertions
+
 - _Cas de test 4 :_ Cas en erreur (duplication)  
   Ajouter 2x le même employé  
   Et contrôler avec 2 assertions
+  <details>
+  <summary>Réponse</summary>
+  METHOD : POST
+
+  URL : {{baseURL}}/api/ajouter?id=&name=martin&lastname=pierre&salary=15000&level=1
+
+  TEST :  
+  <code>
+  pm.test("Status code is 201", function () {
+  pm.response.to.have.status(201);
+  });
+
+  pm.test("Body matches string", function () {
+  pm.expect(pm.response.text()).to.include("Le salarié a bien été ajouté");
+  });
+  </code>
+
+  METHOD : POST
+
+  URL : {{baseURL}}/api/ajouter?id=&name=martin&lastname=pierre&salary=15000&level=1
+
+  TEST :  
+  <code>
+  pm.test("Status code is 409", function () {
+  pm.response.to.have.status(409);
+  });
+
+  pm.test("Body matches string", function () {
+  pm.expect(pm.response.text()).to.include("Le matricule existe déjà");
+  });
+  </code>
+
+  </details>
 
 _ex 02 :_ Modifier  
 Dans la suite de test "Modifier", il va falloir
