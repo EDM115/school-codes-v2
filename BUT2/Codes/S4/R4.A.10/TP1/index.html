@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./weather-icons/css/weather-icons.min.css" />
+    <link rel="stylesheet" href="./weather-icons/css/weather-icons-wind.min.css" />
+    <title>TP1 - Météo</title>
+  </head>
+  <body>
+    <div class="flex-container">
+      <menu class="horizontal-container top">
+        <h1>Météo</h1>
+        <div class="horizontal-separator"></div>
+        <button id="home" onclick="window.location.reload()">Home</button>
+        <button id="about" onclick="window.location.href = 'https://www.youtube.com/watch?v=h2csePLbahQ'">About</button>
+        <button id="contact" onclick="window.location.href = 'https://github.com/EDM115'">Contact</button>
+      </menu>
+      <div class="row">
+        <div class="horizontal-container flex-item">
+          <input type="text" id="city" placeholder="Saisir une ville">
+          <button id="submit">Submit</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="flex-item">
+          <div class="load" id="load"></div>
+          <div id="unload">
+            <h2 id="cityName">Ville</h2>
+            <p>Température : <span id="temp">Température</span></p>
+            <i id="icon" class="wi wi-day-sunny"><span id="description">Description</span></i>
+            <button id="more">Plus d'informations</button>
+            <div id="moreLoad" class="load"></div>
+            <div id="moreUnload" class="moreUnload">
+              <p>Nuageosité : <span id="clouds">Nuageosité</span></p>
+              <p>Température ressentie : <span id="tempFeel">Température ressentie</span></p>
+              <p>Humidité : <span id="humidity">Humidité</span></p>
+              <p>Pression atmosphérique : <span id="pressure">Pression atmosphérique</span></p>
+              <p>Vitesse du vent : <span id="windSpeed">Vitesse du vent</span></p>
+              <p>Direction du vent : <span id="windDeg">Direction du vent</span> <i id="windIcon" class="wi wi-wind towards-0-deg"></i></p>
+              <p>Heure du lever du soleil : <span id="sunrise">Heure du lever du soleil</span></p>
+              <p>Heure du coucher du soleil : <span id="sunset">Heure du coucher du soleil</span></p>
+            </div>
+          </div>
+          <div id="error">
+            <h2>Erreur</h2>
+            <p id="err">La ville n'existe pas</p>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom">
+        <div class="horizontal-container">
+          <p>© 2024 - Lussandre Lederrey</p>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

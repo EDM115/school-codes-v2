@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css"/>
+    <link rel="stylesheet" href="./weather-icons/css/weather-icons.min.css" />
+    <link rel="stylesheet" href="./weather-icons/css/weather-icons-wind.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+    <title>TP1 - Météo</title>
+  </head>
+  <body>
+    <div class="ui menu">
+      <h1 class="item">Météo</h1>
+      <div class="right menu">
+        <button class="ui button green" id="home" onclick="window.location.reload()">Home</button>
+        <button class="ui button green" id="about" onclick="window.location.href = 'https://www.youtube.com/watch?v=h2csePLbahQ'">About</button>
+        <button class="ui button green" id="contact" onclick="window.location.href = 'https://github.com/EDM115'">Contact</button>
+      </div>
+    </div>
+
+    <div class="ui centered grid">
+      <div class="row">
+        <div class="column five wide">
+          <div class="ui input fluid">
+            <input type="text" id="city" placeholder="Saisir une ville">
+          </div>
+          <button class="ui button primary fluid" id="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui centered grid">
+      <div class="row">
+        <div class="column five wide">
+          <div class="ui segment">
+            <div class="ui active dimmer" id="load">
+              <div class="ui loader"></div>
+            </div>
+            <div id="unload">
+              <h2 id="cityName">Ville</h2>
+              <p>Température : <span id="temp">Température</span></p>
+              <i id="icon" class="wi wi-day-sunny"><span id="description">Description</span></i>
+              <div class="ui divider"></div>
+              <button class="ui button primary" id="more">Plus d'informations</button>
+              <div class="ui active dimmer" id="moreLoad">
+                <div class="ui loader"></div>
+              </div>
+              <div id="moreUnload" class="moreUnload">
+                <p>Nuageosité : <span id="clouds">Nuageosité</span></p>
+                <p>Température ressentie : <span id="tempFeel">Température ressentie</span></p>
+                <p>Humidité : <span id="humidity">Humidité</span></p>
+                <p>Pression atmosphérique : <span id="pressure">Pression atmosphérique</span></p>
+                <p>Vitesse du vent : <span id="windSpeed">Vitesse du vent</span></p>
+                <p>Direction du vent : <span id="windDeg">Direction du vent</span> <i id="windIcon" class="wi wi-wind towards-0-deg"></i></p>
+                <p>Heure du lever du soleil : <span id="sunrise">Heure du lever du soleil</span></p>
+                <p>Heure du coucher du soleil : <span id="sunset">Heure du coucher du soleil</span></p>
+              </div>
+            </div>
+            <div id="error">
+              <h2>Erreur</h2>
+              <p id="err">La ville n'existe pas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui centered grid">
+      <div class="row">
+        <div class="column ten wide">
+          <div class="ui five cards" id="forecastContainer">
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <div class="ui centered grid">
+      <div class="row">
+        <div class="column five wide">
+          <div class="ui horizontal divider">© 2024 - Lussandre Lederrey</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
