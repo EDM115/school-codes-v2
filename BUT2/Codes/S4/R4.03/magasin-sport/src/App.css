@@ -1,0 +1,103 @@
+body {
+  background-color: #282A36;
+  color: #F8F8F2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #282A36;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+input, select, button {
+  background-color: #d8d8d1;
+  color: #282A36;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+input.input-error, select.input-error {
+  border: 2px solid #FF5555;
+}
+
+button {
+  background-color: #FFB86C;
+  color: #282A36;
+  cursor: pointer;
+
+}
+
+button:disabled {
+  background-color: #7c7c76;
+  cursor: not-allowed;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #F8F8F2;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #FFB86C;
+  color: #282A36;
+}
+
+td {
+  background-color: #282A36;
+}
+
+.error {
+  color: #FF5555;
+  margin-top: 20px;
+}
+
+.taille-container {
+  display: flex;
+  align-items: center;
+}
+
+.taille-container input {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+  table, th, td {
+    font-size: 12px;
+  }
+  input, select, button {
+    padding: 8px;
+  }
+}

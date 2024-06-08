@@ -1,0 +1,15 @@
+{
+  "short_name": "Magasin de sport",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "magasin_sport.png",
+      "type": "image/png",
+      "sizes": "1616x1616"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FFB86C",
+  "background_color": "#282A36"
+}

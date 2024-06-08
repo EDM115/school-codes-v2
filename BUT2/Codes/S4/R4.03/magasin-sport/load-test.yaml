@@ -1,0 +1,18 @@
+config:
+  target: 'http://localhost:3001'
+  phases:
+    - duration: 300
+      arrivalRate: 10
+  processor: './functions.js'
+scenarios:
+  - name: Insertion et Lecture d'Articles et de Rayons
+    flow:
+      - function: 'insertArticle'
+      - function: 'insertRayon'
+      - function: 'readArticle'
+      - function: 'readRayon'
+
+  - name: Lire les Articles et Rayons
+    flow:
+      - function: 'readArticle'
+      - function: 'readRayon'

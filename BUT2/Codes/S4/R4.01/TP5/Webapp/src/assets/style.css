@@ -1,0 +1,44 @@
+.logo {
+  height: 10em;
+  padding: 1.5em;
+  margin: 1em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #FFB86Caa);
+}
+
+.activity-list-container {
+  padding: 20px;
+}
+
+.link-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.link-button {
+  text-decoration: none;
+}
+
+.user-list-container {
+  padding: 20px;
+}
+
+input {
+  background: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill:active {
+  border: 1px solid transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #F8F8F2;
+  -webkit-box-shadow: 0 0 0px 1000px #00000000 inset !important;
+  box-shadow: 0 0 0px 1000px #00000000 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}

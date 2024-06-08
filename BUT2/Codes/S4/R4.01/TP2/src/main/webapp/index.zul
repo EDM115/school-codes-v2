@@ -1,0 +1,31 @@
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window title="Activity Tracker" border="normal" width="600px"
+            apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('fr.ubs.sporttrack.webapp.MyViewModel')"
+            validationMessages="@id('vmsgs')">
+        <vlayout style="margin:20px;">
+            <!-- Search Functionality -->
+            <hlayout spacing="10px">
+                <label value="Keyword:"/>
+                <textbox hflex="1" value="@bind(vm.keyword)" instant="true"/>
+                <button label="Search" iconSclass="z-icon-search" onClick="@command('search')"/>
+            </hlayout>
+            
+            <!-- Activities List Display -->
+            <listbox model="@load(vm.activities)" emptyMessage="No activities found" mold="paging" pageSize="10">
+                <listhead>
+                    <listheader label="Date"/>
+                    <listheader label="Description"/>
+                    <listheader label="Distance (m)"/>
+                </listhead>
+                <template name="model" var="activity">
+                    <listitem>
+                        <listcell label="@load(activity.date)"/>
+                        <listcell label="@load(activity.description)"/>
+                        <listcell label="@load(activity.distance)"/>
+                    </listitem>
+                </template>
+            </listbox>
+        </vlayout>
+    </window>
+</zk>
