@@ -1,5 +1,5 @@
 # school-codes-v2
-## Everything I code at school (college that time)
+## Everything I code at school (college this time)
 
 [![School-Codes-v2 Analytics](https://repobeats.axiom.co/api/embed/32a8af84c9b2d252a57abbf3e98aa6ca001496e9.svg)](https://github.com/EDM115/school-codes-v2/pulse)
 
