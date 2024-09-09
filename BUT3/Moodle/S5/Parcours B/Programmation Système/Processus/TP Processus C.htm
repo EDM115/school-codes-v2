@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+        <meta name=" ">
+        <title> TP R5.B.04 - BUT 3 </title>
+        <link rel="stylesheet" type="text/css" href="TP%20INFO%202_fichiers/style.css">
+    </head>
+    <body>
+    
+        <table>
+            <tbody><tr>
+            <td style="width:880px;padding-left: 30px;padding-right: 30px;">
+            <h1> TP R5.B.04 - BUT 3 : Système d'exploitation </h1>
+            
+            <p>Dans ce TP, nous utiliserons le langage C. Pour rappel, le code doit être enregistré dans un fichier portant l'extension <code>.c</code>, et peut être compilé en console avec la commande <code>gcc</code> (par exemple, <code>gcc mon_programme.c</code>). Par défaut, votre programme sera nommé <code>a.out</code> et pourra être exécuté en console par l'instruction <code>./a.out</code> (attention, vous devez vous trouver dans le répertoire du fichier <code>a.out</code>). Si vous souhaitez nommer autrement votre programme, vous pouvez utiliser l'option <code>-o</code> (par exemple, <code>gcc mon_programme.c -o mon_programme</code> pour nommer le programme  <code>mon_programme</code>)</p>
+            
+            <!--<h2>I Path et variables d’environnement</h2>
+            
+            <p>Sur les systèmes Unix, la variable d'environnement <code>PATH</code> contient les chemins d'accès vers les commandes du système. Par exemple, le chemin d'accès de <code>ls</code> est <code>/bin/ls</code>. On peut retrouver cette information à l'aide de la commande <code>which</code> en tapant <code>which ls</code> dans un terminal. Pour pouvoir exécuter <code>ls</code> dans n'importe quel répertoire, il faut donc que 
+            <code>PATH</code> contienne le chemin <code>/bin</code>. On peut vérifier que c'est le cas en tapant <code>echo $PATH</code> dans un terminal.</p>
+            
+            <p><code>PATH</code> peut être modifiée (<code>PATH=[chaîne de caractères]</code>) ou complétée (<code>PATH=$PATH[chaîne de caractères]</code>).
+            
+            <p><span class="tqu">Question 1 : </span> <span class="qu">
+           
+             Créez dans un programme <code>print_hello</code> qui affiche "hello" sur le terminal. Changez de répertoire, et essayez d'exécuter votre programme.
+             Que se passe-t-il ? Faites en sorte que l'instruction <code>print_hello</code> exécute votre programme correctement quel que soit le répertoire d'appel. 
+            </span></p>-->
+            
+            <h2>I Quelques rappels sur les processus</h2>
+            <p>
+            Nous allons travailler principalement sur les processus. Un 
+processus n'est rien d'autre qu'un programme informatique, et peut être 
+défini par les ressources suivantes:
+            </p><ul>
+            <li>Un ensemble d'instructions à exécuter les unes après les autres </li>
+            <li>Des données stockées en mémoire vive </li>
+            </ul>
+            <p>Le rôle du système d'exploitation est de lui attribuer 
+les ressources dont il a besoin, c'est à dire l'exécution de ses 
+instructions par le processeur (le module qui effectue les calculs sur 
+votre ordinateur), et un espace d'adressage dédié dans la mémoire.
+            </p>
+            <p>
+            Un grand nombre de processus peuvent être exécutés en même 
+temps de façon indépendante  sur les ordinateurs modernes. Par exemple, 
+j'utilise actuellement Firefox pour naviguer sur internet, et j'écoute 
+en même temps de la musique depuis mon lecteur multimédia VLC. De mon 
+point de vue, le processus de chacune de ces applications s'exécute en 
+même temps. Et pourtant, le nombre de processeurs est limité sur ma 
+machine (partons du principe que je n'en ai qu'un seul), alors comment 
+est-ce possible ? 
+            </p>
+            <p>
+            Les instructions sont en fait exécutées une par une par le 
+processeur. C'est le système d'exploitation qui décide quel sera l'ordre
+ d'exécution de ces instructions, c'est ce qu'on appelle 
+l'ordonnancement. Il alternera régulièrement entre les instructions des 
+différents processus, c'est ce qui nous donne l'impression que tout 
+s'exécute en même temps. 
+            </p>
+            Mettons que mes deux processus aient les instructions suivantes:
+            <p>
+            </p><table>
+            <tbody><tr>
+            <td>
+            <span style="color:red">
+            Firefox :</span>
+            <ol style="color:red">
+            <li>instruction-f-1;</li>
+            <li>instruction-f-2;</li>
+            <li>instruction-f-3;</li>
+            <li>instruction-f-4;</li>
+            </ol>
+            </td>
+            <td style="width:150px">
+            </td>
+            <td>
+            <span style="color:blue">
+            VLC :</span>
+            <ol style="color:blue">
+            <li>instruction-v-1;</li>
+            <li>instruction-v-2;</li>
+            <li>instruction-v-3;</li>
+            <li>instruction-v-4;</li>
+            </ol>
+            
+            </td>
+            </tr>
+            </tbody></table>
+            <p>Le système d'exploitation pourra, par exemple,  
+ordonnancer les instructions à effectuer par le processeur de la façon 
+suivante :</p>
+            <table>
+            <tbody><tr>
+            <td>
+            <ol>
+            <li style="color:red">instruction-f-1;</li>
+            <li style="color:red">instruction-f-2;</li>
+            <li style="color:blue">instruction-v-1;</li>
+            <li style="color:red">instruction-f-3;</li>
+            <li style="color:blue">instruction-v-2;</li>
+            <li style="color:blue">instruction-v-3;</li>
+            <li style="color:red">instruction-f-4;</li>
+            <li style="color:blue">instruction-v-4;</li>
+            </ol>
+            </td>
+            </tr>
+            </tbody></table>
+            <p>Les processus peuvent créer de nouveaux processus. En 
+fait, chaque processus sera initié par un autre. Ces deux processus 
+seront appelés respectivement processus fils, et processus père. Seul le
+ processus <code>init</code>, le premier exécuté au démarrage du système
+ d'exploitation, n'a pas de père. Par contre, chaque processus sera son 
+descendant. On peut représenter l'ensemble des processus comme un arbre 
+dont la racine est le processus <code>init</code>, et dont chaque branche relie un processus père à l'un de ses fils. Le système d'exploitation affectera  à chaque processus :
+            </p><ul>
+            <li>un identifiant (PID)</li>
+            <li>un identifiant de processus parent (PPID), qui sera le PID de son père ;
+            par exemple, si un processus de PID 12 crèe un autre processus de PID 45, le PPID du processus 45 sera 12</li>
+            </ul>
+            Pour commencer, lisez le manuel de la commande <code>ps</code> : <a href="http://www.linux-france.org/article/man-fr/man1/ps-1.html">http://www.linux-france.org/article/man-fr/man1/ps-1.html</a>.
+            <h2>II Programmation C et processus.</h2>
+
+            <!-- <p>Pour ce TP, on utilisera <span class="qu">onlineGDB</span> : <a href="https://www.onlinegdb.com/online_c_compiler">https://www.onlinegdb.com/online_c_compiler</a></p> -->
+            <!--<p>
+             Vous pouvez compiler et exécuter votre code sur cet outil en ligne en cliquant sur "run". Votre code sera alors compilé en un fichier <code>a.out</code>, qui sera exécuté sur le système d'exploitation d'une machine virtuelle gérée par le serveur de onlineGDB. Ainsi, vous n'avez rien à installer, et nous ne travaillerons pas directement sur votre système d'exploitation. -->
+            <p><span class="tqu">Question 1 : </span> <span class="qu">Commençons par observer les processus de votre machine. Lancez quelques processus, ouvrez un terminal, et tapez la commande 
+            <code>ps -l</code>. Commentez (quels sont les processus listés, quelle est leur hiérarchie...). Tapez ensuite 
+            <code>ps -aux</code>, retrouvez les identifiants des processus que vous avez lancé, et retrouvez le processus <code>init</code>.
+            </span></p>
+            
+            <!--Pour cela, on va faire un programme qui exécute 
+            <code>ps -aux</code>. Nous utiliserons la fonction <code>execl</code>, qui remplace les instructions du processus qui l'appelle par celles d'un programme passé en argument. 
+            <p>Avant toute chose, il faut consulter la documentation de <code>execl</code> : <a href="https://linux.die.net/man/3/execl"> https://linux.die.net/man/3/execl </a>
+            <p> <code>execl</code> prend quatre paramètres : le chemin de la commande à exécuter (pour ps : <code>/bin/ps</code>, le nom de la commande (pour ps : <code>ps</code>), et son attribut (pour ps -aux : <code>-aux</code>). On ne s'occupera pas du quatrième paramètre. On devra donc appeler :
+            <code class="c">
+            execl("/bin/ps", "ps", "-aux",(char *) 0);
+            </code> 
+            <p><span class="tqu">Question 1 : </span> <span class="qu">Compilez, et exécutez le code suivant.  Quel est le résultat ? Combien de processus voyez-vous, et à quoi correspondent-ils ? Expliquez.</span></p>
+            <pre><code class="c">
+#include &lt;unistd.h&gt; 
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char * argv[]) {
+    execl("/bin/ps", "ps", "-aux",(char *) 0);
+}
+            </code></pre>-->
+            
+            <p>Avant de passer à la suite, étudiez les manuels de <code>fork</code>, <code>exit</code> et <code>wait</code> : </p>
+            <a href="http://manpagesfr.free.fr/man/man2/fork.2.html">http://manpagesfr.free.fr/man/man2/fork.2.html</a><br>
+            <a href="http://manpagesfr.free.fr/man/man3/exit.3.html">http://manpagesfr.free.fr/man/man3/exit.3.html</a><br>
+            <a href="http://manpagesfr.free.fr/man/man2/wait.2.html">http://manpagesfr.free.fr/man/man2/wait.2.html</a>
+            <p> 
+            Pour créer un nouveau processus en C, on utilise la fonction <code>fork</code>.
+ Attention, les deux processus (père et fils) utiliseront le même code 
+source, ce qui rend la programmation et la gestion des processus peu 
+intuitive. La fonction <code>fork</code> renvoie un pid : </p>
+            <pre><code class="c">
+pid = fork();
+            </code></pre>
+            <p>À partir de l'appel à <code>fork</code>, le processus est
+ dédoublé en deux processus, le père et le fils, ayant chacun leur 
+propre mémoire et leur propre suite d'instructions. Chacun des deux 
+processus exécutera le code qui suit l'appel de <code>fork</code>. Par exemple, si on a le code suivant :</p>
+            <pre><code class="c">
+pid_t pid;
+pid = fork();
+printf("je m'exécute !");
+            </code></pre>
+            <p>
+            chacun des deux processus affichera "je m'exécute !". La valeur de retour de <code>fork</code>
+ (pid) dépend du processus. Si c'est le fils, pid vaut 0, sinon, pid est
+ une valeur entière différente de zéro. On peut donc se servir de pid 
+pour exécuter du code uniquement dans le processus père, ou dans le 
+fils. Par exemple, si on exécute le code suivant : 
+            </p>
+            <pre><code class="c">
+pid_t pid;
+pid = fork();
+if(pid == 0){
+    printf("je suis le fils ! ");
+}
+else{
+    printf("je suis le père ! ");
+}
+printf("Nous sommes père et fils !");
+            </code></pre>
+            <p>
+            Le processus père affichera "je suis le père ! Nous sommes 
+père et fils !" et le processus fils affichera "je suis le fils ! Nous 
+sommes père et fils !"</p>
+            <p>
+            La fonction <code>exit</code> permet de terminer un processus. <code>exit</code> prend en paramètre une valeur de retour. Lorsque <code>exit</code>
+ est appelée, le système d'exploitation termine le processus, libère sa 
+mémoire, puis attend que le père du processus récupère la valeur de 
+retour donnée en paramètre avant de détruire définitivement le 
+processus. 
+            </p>
+            <pre><code class="c">
+exit(status);
+            </code></pre>
+            <p>
+            Il faut donc que le processus père récupère la valeur de retour de son fils. Pour cela, il utilise la fonction <code>wait</code>,
+ qui prend l'adresse d'une variable en paramètre, attend que le 
+processus fils se termine, et récupère la valeur de retour du fils dans 
+cette variable. La fonction <code>wait</code> renvoie le pid du processus fils qui s'est terminé.
+            </p>
+            <pre><code class="c">
+pid_fils = wait(&amp;status);
+            </code></pre>
+            <p>
+            L'exemple ci-dessous récapitule l'utilisation de ces différentes fonctions.
+            </p>
+            <pre><code class="c">
+int status;
+pid_t pid;
+pid = fork();
+if(pid == 0){
+    printf("je suis le fils ! ");
+    exit(0); //termine avec le retour 0
+}
+else{
+    printf("je suis le père ! ");
+    wait(&amp;status); //récupère le retour de fils, donc status = 0
+}
+            </code></pre>
+            <p> Le schéma ci-dessous représente l'exécution des deux 
+processus père et fils. Les flèches verticales représentent l'exécution 
+d'un processus dans le temps. Deux flèches parallèles représentent deux 
+processus qui s'exécutent simultanément, typiquement le père et son 
+fils. On distingue deux cas de figure:
+            </p><ul>
+            <li> Lorsque le fils a terminé son travail, et qu'il appelle la fonction <code>exit</code>, le père n'a pas encore terminé son travail, et donc n'a pas encore appelé la fonction <code>wait</code>. Dans ce cas, le processus fils doit attendre que le père appelle <code>wait</code>, et est inactif pendant ce laps de temps. Sur le schéma, cette inactivité est représentée par des pointillés.</li> 
+            <li> Lorsque le père a terminé son travail, et qu'il appelle la fonction <code>wait</code>, le fils n'a pas encore terminé son travail, et donc n'a pas encore appelé la fonction <code>exit</code>. Dans ce cas, le processus père doit attendre que le fils appelle <code>exit</code>, et est inactif pendant ce laps de temps. Sur le schéma, cette inactivité est représentée par des pointillés.</li> 
+            </ul>
+            <p></p>
+            <div style="text-align: center"><img src="TP%20INFO%202_fichiers/pereetfils.png" width="800"></div>
+             <p>
+            Il est important de toujours utiliser la fonction <code>wait</code>
+ lorsqu'on crée un processus. Sinon, le processus fils, en essayant de 
+transmettre sa valeur de retour, continuera d'exister pour rien en 
+consommant des ressources du système d'exploitation. Dans ce cas, on 
+dira que le processus est un <span class="qu">"zombie"</span>, ou un processus <span class="qu">"défunt"</span>. <span style="font-weight:bold">Retenez bien ceci, ce sera important pour la suite !</span></p>
+            <p>
+            Lorsque le processus père se termine, ses fils non-terminés 
+se retrouvent orphelins. Ils sont alors adoptés en tant que fils d'un 
+processus du système d'exploitation. Celui-ci attendra (si besoin) 
+qu'ils se terminent et récupérera leurs valeurs de retour afin qu'ils ne
+ restent pas processus zombies.
+            </p>
+            <p><span class="tqu">Question 2 : </span> <span class="qu"> Exécutez le code suivant, qu'affiche-t-il ? expliquez ce résultat.</span>
+            (rappel : la fonction <code>sleep(n)</code> marque une pause de n secondes dans l'exécution du programme) </p>
+            <pre><code class="c">
+#include &lt;sys/types.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;unistd.h&gt; 
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char * argv[]) {
+    pid_t pid;
+    int stat;
+    pid=fork();
+    if (pid == 0){
+        for (int i = 0; i &lt; 5 ; i++){
+            printf("--%d--\n",i);
+            sleep(1);
+        }
+        exit(0);
+    }
+    else{
+        for (int i = 0; i &lt; 5 ; i++){
+            printf("--%d--\n",i);
+            sleep(1);
+        }
+        wait(&amp;stat);
+    }   
+    
+}
+            </code></pre>
+            <p><span class="tqu">Question 3 : </span> <span class="qu"> Exécutez le code suivant, qu'affiche-t-il ? Expliquez ce résultat.</span></p>
+            <pre><code class="c">
+#include &lt;sys/types.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;unistd.h&gt; 
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char * argv[]) {
+    pid_t pid;
+    int stat;
+    pid=fork();
+    for (int i = 0; i &lt; 5 ; i++){
+        printf("--%d--\n",i);
+        sleep(1);
+    }
+    if(pid == 0)
+        exit(0);
+    else
+        wait(&amp;stat);
+}
+            </code></pre>
+            <p><span class="tqu">Question 4 : </span> <span class="qu"> Exécutez le code suivant, qu'affiche-t-il ? Expliquez ce résultat.</span></p>
+            <pre><code class="c">
+#include &lt;sys/types.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;unistd.h&gt; 
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char * argv[]) {
+    pid_t pid1, pid2;
+    int stat;
+    pid1=fork();
+    if (pid1 == 0){
+        for (int i = 0; i &lt; 5 ; i++){
+            printf("--%d--\n",i);
+            sleep(1);
+        }
+        exit(0);
+    }
+    pid2=fork();
+    if (pid2 == 0){
+        for (int i = 0; i &lt; 5 ; i++){
+            printf("--%d--\n",i);
+            sleep(1);
+        }
+        exit(0);
+    }
+    wait(&amp;stat);
+    wait(&amp;stat);
+}
+            </code></pre>
+
+            <p><span class="tqu">Question 5 : </span> <span class="qu">Exécutez le code suivant, qu'affiche-t-il ? Expliquez ce résultat.
+            </span></p>
+            <!--<p>Indication : on peut remarquer que le premier fils ne fait pas de <code>exit</code> dans le bloc <code>if (pid1 == 0)</code></p>-->
+            <pre><code class="c">
+#include &lt;sys/types.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;unistd.h&gt; 
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char * argv[]) {
+    pid_t pid1, pid2;
+    int stat;
+    pid1=fork();
+    if (pid1 == 0){
+        for (int i = 0; i &lt; 5 ; i++){
+            printf("--%d--\n",i);
+            sleep(1);
+        }
+    }
+    pid2=fork();
+    if (pid2 == 0){
+        for (int i = 0; i &lt; 5 ; i++){
+            printf("--%d--\n",i);
+            sleep(1);
+        }
+        exit(0);
+    }
+    wait(&amp;stat);
+    wait(&amp;stat);
+}
+            </code></pre>
+
+            <p><span class="tqu">Question 6 : </span> <span class="qu">Que fait le code suivant ? </span> (rappel : argv[i] est le i-ème argument donné à l'exécution du programme) <span class="qu">
+            Exécutez ce code avec les arguments '10 5' et '5 10'</span>
+            <!--(utilisez le champ "Command line arguments" pour donner les arguments avant de cliquer sur run).--><span class="qu"> Qu'obtenez-vous ? Expliquez. </span></p>
+            <pre><code class="c">
+#include &lt;sys/types.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;unistd.h&gt; 
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char * argv[]) {
+    pid_t pid;
+    int attente_fils,attente_pere;
+    if(argc != 3)
+        perror("usage: ex1 n m\n");
+        
+    attente_pere = atoi(argv[1]); //ascii to integer
+    attente_fils = atoi(argv[2]);
+    
+    pid=fork();
+    if(pid == 0){
+        sleep(attente_fils);
+        printf("fils attente finie\n");
+    }
+    else{
+        sleep(attente_pere);
+        printf("pere attente finie\n");            
+    }   
+    
+}
+            </code></pre>
+            
+            
+            <!--<p>Sur ma machine personnelle, j'ai exécuté le programme de la question 5 avec la commande <code>./a.out 5 10</code> (donc avec 5 et 10 en paramètres),
+            J'ai ensuite tapé immédiatement la commande <code>ps</code> pour retrouver des informations sur mes processus dans une autre console :</p>
+            <pre><code class="c">
+ps -la | grep 'a.out\|PID'
+            </code></pre>
+            <p>J'ai obtenu le résultat suivant.</p> 
+            <pre><code class="c">
+            F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+            0 S  1000  5376  5275  0  80   0 -  1093 hrtime pts/2    00:00:00 a.out
+            1 S  1000  5377  5376  0  80   0 -  1093 hrtime pts/2    00:00:00 a.out
+            </code></pre>-->
+            <p><span class="tqu">Question 7 : </span> <span class="qu">Ouvrez deux terminaux. Sur le premier, exécutez le programme de la question 6 avec la commande <code>./a.out 5 10</code> (donc avec 5 et 10 en paramètres), puis
+            tapez immédiatement la commande <code>ps -al</code> dans le second terminal. Commentez le résultat. Quels sont les PID de vos processus ? Lequel est le fils ? Lequel est le père ?</span></p>
+            <p></p>
+           <!-- <p>Sur ma machine personnelle, j'ai exécuté le programme de la question 5 avec la commande <code>./a.out 5 10</code>.
+            J'ai attendu 6 secondes, puis j'ai tapé la commande <code>ps</code> comme dans la question 7. Voici ce que j'obtiens :
+            </p>
+            <pre><code class="c">
+            F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+            1 S  1000  5391  1549  0  80   0 -  1093 hrtime pts/2    00:00:00 a.out
+            </code></pre>
+            <p>-->
+            <p><span class="tqu">Question 8 : </span> <span class="qu">Ouvrez deux terminaux. Sur le premier, exécutez le programme de la question 6 avec la commande <code>./a.out 5 10</code> , attendez 6 secondes, puis
+            tapez  la commande <code>ps -al</code> dans le second terminal.
+            Commentez ce résultat. 
+            </span></p>
+            <!--<p>Sur ma machine personnelle, j'ai exécuté le programme de la question 5 avec la commande <code>./a.out 10 5</code>.
+            J'ai attendu 6 secondes, puis j'ai tapé la commande <code>ps</code> comme dans la question 7. Voici ce que j'obtiens :
+            </p>
+            <pre><code class="c">
+            F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+            0 S  1000  5399  5275  0  80   0 -  1093 hrtime pts/2    00:00:00 a.out
+            1 Z  1000  5400  5399  0  80   0 -     0 -      pts/2    00:00:00 a.out &lt;defunct&gt;
+            </code></pre>-->
+            <p><span class="tqu">Question 9 : </span> <span class="qu">
+            Ouvrez deux terminaux. Sur le premier, exécutez le programme de la question 6 avec la commande <code>./a.out 10 5</code> , attendez 6 secondes, puis
+            tapez  la commande <code>ps -al</code> dans le second terminal.
+            Commentez ce résultat. 
+            </span></p>
+            
+            <p> La fonction <code>execl</code>, remplace les instructions du processus qui l'appelle par celles d'un programme passé en argument. 
+            Vous pouvez consulter la documentation de <code>execl</code> ici : <a href="https://linux.die.net/man/3/execl"> https://linux.die.net/man/3/execl </a></p>
+            <p> <code>execl</code> prend plusieurs paramètres : le chemin de la commande à exécuter (pour ps : <code>/bin/ps</code>), le nom de la commande (pour ps : <code>ps</code>), et ses attributs (pour ps -aux : <code>-aux</code>).
+ Attention, si l'on souhaite utiliser plusieurs attributs, chaque 
+attribut doit être passé par un paramètre différent. Enfin, le dernier 
+paramètre doit toujours être la chaîne de caractères nulle : <code>(char *) 0</code>. Pour <code>ps -aux</code> on devra donc appeler : <br>
+            <code class="c">
+            execl("/bin/ps", "ps", "-aux",(char *) 0);
+            </code> 
+            
+         <!--   <p><span class="tqu">Question 11 : </span> <span class="qu">
+            À vous de jouer maintenant ! Écrivez un programme qui crée 2 processus, l’un faisant la commande <code>ls -l /bin</code>, l’autre <code>ps -al</code></span> (utilisez <code>execl</code>, et l'instruction <code>which</code> pour retrouver les chemins de <code>ps</code> et <code>ls</code>).<span class="qu">
+            Le père devra  attendre la fin de ses deux fils et afficher quel processus a terminé en premier.</p>-->
+            </p><p><span class="tqu">Question 10 : </span> <span class="qu">
+            À vous de jouer maintenant ! Écrivez un programme qui crée 2
+ processus, l’un affichant les chiffres de 1 à 300, l’autre -1 à -300.<span class="qu">
+            Le père devra  attendre la fin de ses deux fils et afficher 
+quel processus a terminé en premier. Exécutez ensuite plusieurs fois 
+votre programme, est-ce toujours le même processus fils qui termine en 
+premier ?  </span></span></p>
+            <p>
+            Pour vous aider, voici le début et la fin du code.
+            </p>
+            <pre><code class="c">
+#include &lt;sys/types.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;unistd.h&gt; 
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char * argv[]) {
+    pid_t pid1,pid2,pid_premier;
+    int status;
+    
+    //TO DO !
+    
+    pid_premier = wait(&amp;status);
+    wait(&amp;status);
+    printf("Premier processus a finir : %d\n", (pid_premier==pid1)?1:2);
+}
+            </code></pre>
+</body></html>

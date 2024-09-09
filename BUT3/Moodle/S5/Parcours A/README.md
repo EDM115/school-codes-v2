@@ -1,6 +1,9 @@
 ## Le Semestre 5 - Parcours A
 
 
+### [AL5.A.01](./AL5.A.01)
+Techniques d'IA (coloration IA)
+
 ### [R5.A.02](./R5.A.02)
 Projet personnel et professionnel
 
@@ -31,7 +34,7 @@ Méthodes d'optimisation pour l'aide à la décision
 ### [R5.A.12](./R5.A.12)
 Modélisations mathématiques
 
-### R5.A.13
+### [R5.A.13](./R5.A.13)
 Économie durable et numérique
 
 ### [R5.A.14](./R5.A.14)

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Gaël Thomas">
+
+	    <title>R5.B.04  – Introduction aux systèmes d’exploitation - annexe-shell</title>
+
+	<body>
+		<div class="header">
+
+      
+			<a class="title" href="">
+				<h1>R5.B.04  – Introduction aux systèmes d’exploitation</h1>
+			</a>
+      
+			<a class="tagline" href="">
+							</a>
+
+			<div class="navbar dropdown-area" id="dropdown-area-0">
+				<div class="navbar-toggler dropdown-button" id="main-menu"><!-- style='background-color: cyan;'> -->
+					<div class="navbar-toggler-icon"></div>
+				</div>
+
+				<div class="navbar-menu tsp-menu" data-toggler="main-menu"><!-- style='background-color: lightgreen;'> -->
+					<div id="chapters-list">
+
+				
+
+	
+
+<!-- Local Variables: -->
+<!-- ispell-dictionary: "fr_FR" -->
+<!-- mode: web -->
+<!-- mode: flyspell -->
+<!-- coding: utf-8 -->
+<!-- End: -->
+			
+
+
+<div class="content cours">
+  <div class="main" id="main-content">
+<style>
+table.annexe {
+	width: 100%;
+	border-spacing: 0px;
+  border: 0px;
+}
+
+table.annexe td {
+  vertical-align: top;
+  padding-right: 20px;
+}
+
+table.annexe h3 {
+  font-size: 1.2em;
+  margin: 1rem 0rem 1rem 0rem;
+}
+
+table.annexe code {
+  white-space: pre;
+  color: #003882;
+}
+
+table.annexe h3 code {
+  color: inherit;
+}
+
+</style>
+
+<div class="chapitre-container ">
+<h2 class="chapitre-toggle toggle on" data-toggle-to="chapitre-idm44997267898832">Annexe shell</h2>
+<div class="chapitre-content active" id="chapitre-idm44997267898832">
+
+	<table class="annexe">
+		<tbody><tr>
+			<td colspan="2">
+				<h3>Commandes utiles utilisées dans le cours</h3>
+			</td>
+		</tr>
+		<tr>
+			<td width="180px"><span class="code "><span class="code-container">cat fich</span></span></td>
+			<td>Affiche le contenu du fichier <span class="code "><span class="code-container">fich</span></span> sur la sortie standard.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">echo args</span></span></td>
+			<td>Affiche les arguments <span class="code "><span class="code-container">args</span></span> sur la sortie standard.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">expr expression</span></span></td>
+			<td>Calcule le résultat de l’expression arithmétique indiquée en argument et affiche le résultat
+				sur la sortie standard. Attention, ne travaille qu’en arithmétique entière. Typiquement,
+				vous pouvez incrémenter un compteur <span class="code "><span class="code-container">i</span></span> avec l'expression suivante
+				<span class="code "><span class="code-container">i=$(expr $i + 1)</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">grep [opt] motif fich</span></span></td>
+			<td>Affiche sur la sortie standard les lignes de <span class="code "><span class="code-container">fich</span></span> correspondant au motif <span class="code "><span class="code-container">bash</span></span> 
+				<span class="code "><span class="code-container">motif</span></span>. Si l'option <span class="code "><span class="code-container">–v</span></span> est précisée, les lignes ne correspondant pas au motif
+				<span class="code "><span class="code-container">motif</span></span> sont affichées. Si aucun nom de fichier n'est donné, fait la recherche à partir de 
+				l'entrée standard. Les motifs utilisés par <span class="code "><span class="code-container">grep</span></span> sont différents de ceux utilisés
+				par <span class="code "><span class="code-container">bash</span></span> et nous invitons les étudiants à consulter la page de <span class="code "><span class="code-container">man</span></span>.
+				Pour <span class="code "><span class="code-container">grep</span></span>, le caractère <span class="code "><span class="code-container">^</span></span> indique le début de ligne et 
+				le caractère <span class="code "><span class="code-container">$</span></span> indique la fin de ligne.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">du [opt] fich</span></span></td>
+			<td>Affiche la taille du fichier <span class="code "><span class="code-container">fich</span></span> en nombre de blocs suivi du nom du fichier
+				(un bloc correspond à 512 octets).
+				L'option <span class="code "><span class="code-container">-h</span></span> permet d'afficher la taille en utilisant des unités de mesure
+				plus usitées par les humains.</td>
+		</tr>
+<tr>
+			<td><span class="code "><span class="code-container">read var</span></span></td>
+			<td>Copie la ligne de caractères lue sur l'entrée standard dans la variable <span class="code "><span class="code-container">var</span></span>.
+				Typiquement, pour lire une ligne d'un fichier, on utilise <span class="code "><span class="code-container">read var &lt; fichier</span></span>.
+				Pour lire un fichier ligne à ligne, on utilise
+				<span class="code "><span class="code-container">while read var; do echo $var; done &lt; fichier</span></span>.</td>
+		</tr>
+<!-- 		<tr> -->
+<!-- 			<td><code>set -x</code></td> -->
+<!-- 			<td>Toute commande suivant cette instruction sera trac&eacute;e sur la sortie erreur standard. -->
+<!-- 				Tr&egrave;s utile pour identifier les erreurs dans un script. -->
+<!-- 				On peut d&eacute;sactiver ce comportement avec <code>set +x</code>.</td> -->
+<!-- 		</tr> -->
+		<tr>
+			<td width="180px"><span class="code "><span class="code-container">touch fich</span></span></td>
+			<td>Crée le fichier <span class="code "><span class="code-container">fich</span></span> si il n'existait pas.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">which cmd</span></span></td>
+			<td>Indique le chemin absolue de la commande <span class="code "><span class="code-container">cmd</span></span> après avoir recherché <span class="code "><span class="code-container">cmd</span></span>
+				dans le <span class="code "><span class="code-container">PATH</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">alias cmd='...'</span></span></td>
+			<td>
+<span class="code "><span class="code-container">cmd</span></span> devient un alias pour la commande <span class="code "><span class="code-container">...</span></span>. <span class="code "><span class="code-container">alias</span></span> sans
+			autres options donnent la liste des alias utilisés par <span class="code "><span class="code-container">bash</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">unalias cmd</span></span></td>
+			<td>Supprime l'alias associé à <span class="code "><span class="code-container">cmd</span></span>.</td>
+		</tr>
+		<tr>
+			<td>
+<span class="code "><span class="code-container">source script.sh</span></span> ou <span class="code "><span class="code-container">. script.sh</span></span>
+</td>
+			<td>Exécute les instructions de script.sh dans le processus courant.</td>
+		</tr>
+		<!--			<tr>
+					<td><code>touch fic1 fic2</code></td>
+					<td>Change la date de modification des fichiers donn&eacute;s en param&egrave;tre. Si les fichiers n'existent pas, 
+					cette commande les cr&eacute;&eacute;.</td>
+					</tr>
+					<tr>
+					<td><code>tr seq1 seq2</code></td>
+					<td>Affiche sur la sortie standard le texte re&ccedil;u de l'entr&eacute;e standard en 
+					substituant le n<sup>i&egrave;me</sup> caract&egrave;re de <code>seq1</code> par le n<sup>i&egrave;me</sup> caract&egrave;re de 
+					<code>seq2</code>.</td>
+					</tr> -->
+
+		<tr>
+			<td colspan="2">
+				<h3>Motifs <span class="code "><span class="code-container">bash</span></span>
+</h3>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">*</span></span></td>
+			<td>N'importe quelle séquence de caractères.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">?</span></span></td>
+			<td>N'importe quel caractère</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[wtz]</span></span></td>
+			<td>Le caractère <span class="code "><span class="code-container">w</span></span> ou le caractère <span class="code "><span class="code-container">t</span></span> ou le caractère <span class="code "><span class="code-container">z</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[d-r]</span></span></td>
+			<td>Tous les caractères compris entre <span class="code "><span class="code-container">d</span></span> et <span class="code "><span class="code-container">r</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[[:lower:]]/[[:upper:]]</span></span></td>
+			<td>Alphabet (caractères accentués compris) minuscule/majuscule.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[[:digit:]]</span></span></td>
+			<td>Chiffres décimaux.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[[:alpha:]]</span></span></td>
+			<td>Tous les caractères alphabétique, c'est-à-dire toutes les lettres de l'alphabet 
+				(caractères accentués compris).</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<h3>Système de fichiers</h3>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">cd [chemin]</span></span></td>
+			<td>Positionne le répertoire courant à “chemin” ou au répertoire d'accueil (HomeDirectory) si aucun paramètre n'est donné.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">cp f1 f2</span></span></td>
+			<td>Copie le fichier <span class="code "><span class="code-container">f1</span></span> dans le fichier <span class="code "><span class="code-container">f2</span></span>. 
+				Si <span class="code "><span class="code-container">f2</span></span> existait déjà, son ancien contenu est perdu.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">ls [opt] [liste]</span></span></td>
+			<td>Pour chaque élément <span class="code "><span class="code-container">e</span></span> de <span class="code "><span class="code-container">liste</span></span>, affiche le contenu du répertoire
+				<span class="code "><span class="code-container">e</span></span> si c'est un répertoire ou le nom du fichier <span class="code "><span class="code-container">e</span></span> si c'est un fichier.
+				Un certain nombre d’options peuvent être indiquées (opt). En voici quelques unes&nbsp;:
+				<ul>
+					<li>
+<span class="code "><span class="code-container">-l</span></span>: affiche un certain nombre d’informations relatives aux éléments (type, taille, date...).</li>
+					<li>
+<span class="code "><span class="code-container">-a</span></span>: visualise tous les éléments, y compris les fichiers et répertoires cachés 
+						(sous Unix, les éléments cachés commencent par le caractère “.”).</li>
+					<li>
+<span class="code "><span class="code-container">-d</span></span>: affiche le nom du répertoire et non son contenu.</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">tree [chem]</span></span></td>
+			<td>Affiche l'arborescence des fichiers accessibles à partir de <span class="code "><span class="code-container">chem</span></span>. Si <span class="code "><span class="code-container">chem</span></span> n'est
+				pas spécifié, utilise le répertoire courant.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">mkdir [opt] rep</span></span></td>
+			<td>Crée le répertoire <span class="code "><span class="code-container">rep</span></span> dans le répertoire courant. Si l'option <span class="code "><span class="code-container">-p</span></span> est
+				passée en argument, les répertoires intermédiaires sont aussi créés.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">mv f1 f2</span></span></td>
+			<td>Déplace le fichier <span class="code "><span class="code-container">f1</span></span> dans le fichier <span class="code "><span class="code-container">f2</span></span>.
+				Cette commande peut aussi s'appliquer à des répertoires.
+				Si <span class="code "><span class="code-container">f2</span></span> existait déjà, son ancien contenu est perdu. 
+				Après l’opération, <span class="code "><span class="code-container">f1</span></span> n’existe plus. </td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">pwd</span></span></td>
+			<td>Permet de connaître le chemin absolu du répertoire courant (celui dans lequel on se trouve).</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">rm f1</span></span></td>
+			<td>Détruit le fichier f1.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">rmdir rep</span></span></td>
+			<td>Détruit le répertoire <span class="code "><span class="code-container">rep</span></span>, à condition que celui-ci soit vide.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">sleep n</span></span></td>
+			<td>Endort le processus <span class="code "><span class="code-container">n</span></span> secondes.</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<h3>Variables notables</h3>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">HOME</span></span></td>
+			<td>Chemin vers le répertoire de connextion.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">PS1</span></span></td>
+			<td>Prompt utilisé par <span class="code "><span class="code-container">bash</span></span>. Par exemple <span class="code "><span class="code-container">PS1="\w$ "</span></span> permet d'avoir un prompt
+				qui indique le répertoire courant.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">PS2</span></span></td>
+			<td>Prompt en cas de commandes sur plusieurs lignes.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">PATH</span></span></td>
+			<td>Liste de chemins séparés par des «&nbsp;:&nbsp;» dans lesquels <span class="code "><span class="code-container">bash</span></span> recherche
+				les commandes.</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<h3>Redirection des entrées-sorties</h3>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">exec n&lt;&gt; fichier</span></span></td>
+			<td>Ouvre le flux de numéro <span class="code "><span class="code-container">n</span></span> en écriture à partir de <span class="code "><span class="code-container">fichier</span></span> (en écrasant son contenu).<br>
+			Par exemple&nbsp;: <span class="code "><span class="code-container">exec 3&lt;&gt;mon-tube.pipe</span></span>. Dans la suite du script,  on peut alors exécuter 
+				<span class="code "><span class="code-container">echo coucou &gt;&amp;3</span></span> pour écrire une donnée ou <span class="code "><span class="code-container">read x &lt;&amp;3</span></span> pour lire une donnée.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">exec n&gt; fichier</span></span></td>
+			<td>Ouvre le flux de numéro <span class="code "><span class="code-container">n</span></span> en écriture à partir de <span class="code "><span class="code-container">fichier</span></span> (en écrasant son contenu).</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">exec n&gt;&gt; fichier</span></span></td>
+			<td>Ouvre le flux de numéro <span class="code "><span class="code-container">n</span></span> en écriture à partir de <span class="code "><span class="code-container">fichier</span></span> (en ajout).</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">exec n&lt; fichier</span></span></td>
+			<td>Ouvre le flux de numéro <span class="code "><span class="code-container">n</span></span> en lecture à partir de <span class="code "><span class="code-container">fichier</span></span>.</td>
+		</tr>
+
+		<tr>
+			<td><span class="code "><span class="code-container">cmd &gt;&amp;n</span></span></td>
+			<td>Redirige la sortie standard de la commande <span class="code "><span class="code-container">cmd</span></span> dans le flux numéro <span class="code "><span class="code-container">n</span></span>.</td>
+		</tr>
+
+		<tr>
+			<td><span class="code "><span class="code-container">cmd &lt;&amp;n</span></span></td>
+			<td>Redirige l'entrée standard de la commande <span class="code "><span class="code-container">cmd</span></span> à partir du flux numéro <span class="code "><span class="code-container">n</span></span>.</td>
+		</tr>
+
+		<tr>
+			<td><span class="code "><span class="code-container">cmd &gt; fichier</span></span></td>
+			<td>Ouvre un flux en écriture à partir de <span class="code "><span class="code-container">fichier</span></span>
+				(en écrasant son contenu), avant de rediriger la sortie de <span class="code "><span class="code-container">cmd</span></span> dans le flux.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">cmd &gt;&gt; fichier</span></span></td>
+			<td>Ouvre un flux en écriture à partir de <span class="code "><span class="code-container">fichier</span></span>
+				(en ajout à la fin), avant de rediriger la sortie de <span class="code "><span class="code-container">cmd</span></span> dans le flux.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">cmd &lt; fichier</span></span></td>
+			<td>Ouvre un flux en lecture à partir de <span class="code "><span class="code-container">fichier</span></span>,
+				avant de rediriger l'entrée de <span class="code "><span class="code-container">cmd</span></span> à partir du flux.</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<h3>Processus</h3>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">;</span></span></td>
+			<td>Permet de séparer deux commandes exécutées en séquentiel.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">&amp;</span></span></td>
+			<td>Exécute la commande à gauche en arrière plan.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">$$</span></span></td>
+			<td>Identifiant (PID) du processus en cours d’exécution.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">$PPID</span></span></td>
+			<td>Identifiant (PID) du processus père du processus en cours d’exécution.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">$!</span></span></td>
+			<td>Identifiant (PID) du dernier processus lancé en arrière plan.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">$?</span></span></td>
+			<td>Valeur de retour de la dernière commande exécutée en premier plan.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">exit [n]</span></span></td>
+			<td>Interrompre l’exécution d’un script avec la valeur de retour <span class="code "><span class="code-container">n</span></span>.
+				Par convention, une commande renvoie une valeur différente de <span class="code "><span class="code-container">0</span></span>
+				en cas d'erreur et <span class="code "><span class="code-container">0</span></span> sinon.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">export var</span></span></td>
+			<td>Crée une copie de la variable <span class="code "><span class="code-container">var</span></span> lorsque le processus engendre des enfants. La variable
+				sera aussi exportée par les enfants.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">wait [n1 n2 ...]</span></span></td>
+			<td>Bloque le processus courant tant que les fils dont les identifiants sont passés 
+				en paramètre ne sont pas terminés. Si aucun paramètre n’est donné, le processus attend la fin de tous 
+				ses fils.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">$(xyz)</span></span></td>
+			<td>Le shell substitue à $(xyz) le texte produit sur la sortie standard par l’exécution de la commande xyz.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">ps [opt]</span></span></td>
+			<td>Affiche la liste des processus en cours d'exécution. Un certain 
+nombre d’options peuvent être indiquées (opt). En voici quelques 
+unes&nbsp;:
+				<ul>
+					<li>
+<span class="code "><span class="code-container">l</span></span>: affiche un certain nombre d’informations relatives aux éléments (PPID, état, priorité...).</li>
+					<li>
+<span class="code "><span class="code-container">e</span></span>: affiche la liste de tous les processus (pas seulement ceux attachés au terminal courant).</li>
+					<li>
+<span class="code "><span class="code-container">u</span></span>: affiche le nom de l'utilisateur qui a lancé chaque processus.</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">pstree</span></span></td>
+			<td>Affiche l'arborescence des processus.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">top</span></span></td>
+			<td>Fournie une vue dynamique temps réel des processus en cours d'exécution.</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<h3>Arguments</h3>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">$#</span></span></td>
+			<td>Nombre de paramètres de la ligne de commande.</td>
+		</tr>
+		<tr>
+			<td>
+<span class="code "><span class="code-container">$n</span></span> avec <span class="code "><span class="code-container">n ∈ [0,9]</span></span>
+</td>
+			<td>Valeur du n<sup>e</sup> paramètre. <span class="code "><span class="code-container">$0</span></span> correspond au nom de la commande 
+				invoquée. <span class="code "><span class="code-container">$n</span></span> correspond à la chaîne vide s’il y a moins de <span class="code "><span class="code-container">n</span></span> paramètres.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">"$@"</span></span></td>
+			<td>Donne l'ensemble des paramètres à partir de $1 en préservant les espaces à l'intérieur de chaque paramètre.
+				Équivalent à écrire <span class="code "><span class="code-container">"$1" "$2" ...</span></span>.
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">shift [n]</span></span></td>
+			<td>Décale d’un cran les paramètres du script (pas de valeur <span class="code "><span class="code-container">n</span></span>) ou bien de “<span class="code "><span class="code-container">n</span></span> crans” 
+				(si <span class="code "><span class="code-container">n</span></span> est précisé). 
+				Par exemple, dans le cas où <span class="code "><span class="code-container">n</span></span> n'est pas spécifié, <span class="code "><span class="code-container">$2</span></span> devient <span class="code "><span class="code-container">$1</span></span>,
+				<span class="code "><span class="code-container">$3</span></span> devient <span class="code "><span class="code-container">$2</span></span> etc...
+				<div class="attention">Le comportement n'est pas spécifié si le nombre de paramètres n'est pas suffisant.</div>
+</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<h3>Chaînes et protections de caractères</h3>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">\x</span></span></td>
+			<td>Un <span class="code "><span class="code-container">\</span></span> protège n’importe quel caractère ayant normalement un sens particulier pour le shell. 
+				Par exemple, <span class="code "><span class="code-container">\*</span></span> est interprété comme le caractère <span class="code "><span class="code-container">*</span></span> et non comme le 
+				motif <span class="code "><span class="code-container">*</span></span>. <span class="code "><span class="code-container">\\</span></span> correspond au caractère <span class="code "><span class="code-container">\</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">"xyz"</span></span></td>
+			<td>Protège la chaîne <span class="code "><span class="code-container">xyz</span></span> du découpage sur les espaces lors de la séparation des arguments. 
+				Empêche l’interprétation des méta-caractères du langage, sauf <span class="code "><span class="code-container">$</span></span>, <span class="code "><span class="code-container">`</span></span>
+				et <span class="code "><span class="code-container">\</span></span>. En particulier, les variables (<span class="code "><span class="code-container">$mavar</span></span>) et les substitutions
+				de commandes (<span class="code "><span class="code-container">$(xyz)</span></span>) sont interprétées.
+		</td>
+</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">'xyz'</span></span></td>
+			<td>Protège la chaîne <span class="code "><span class="code-container">xyz</span></span> du découpage, comme les guillemets, mais n’effectue aucune 
+				substitution. Aucun caractère autre que <span class="code "><span class="code-container">'</span></span>
+				n’a de sens particulier dans une chaîne entre apostrophes, pas même <span class="code "><span class="code-container">\</span></span>.</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<h3>Tests</h3>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ -z ch1 ]</span></span></td>
+			<td>Renvoie vrai si la chaîne de caractères <span class="code "><span class="code-container">ch1</span></span> est vide.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ -n ch1 ]</span></span></td>
+			<td>Renvoie vrai si la chaîne de caractères <span class="code "><span class="code-container">ch1</span></span> est non vide.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ ch1 = ch2 ]</span></span></td>
+			<td>Renvoie vrai si les chaînes de caractères <span class="code "><span class="code-container">ch1</span></span> et <span class="code "><span class="code-container">ch2</span></span> sont égales.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ ch1 != ch2 ]</span></span></td>
+			<td>Renvoie vrai si les chaînes de caractères <span class="code "><span class="code-container">ch1</span></span> et <span class="code "><span class="code-container">ch2</span></span> sont différentes.</td>
+		</tr>
+
+		<tr>
+<td style="border-bottom: 8px solid white;"></td>
+<td></td>
+</tr>
+
+		<tr>
+			<td><span class="code "><span class="code-container">[ n1 -eq n2 ]</span></span></td>
+			<td>Renvoie vrai si les nombres <span class="code "><span class="code-container">n1</span></span> et <span class="code "><span class="code-container">n2</span></span> sont égaux.
+				Par exemple, <span class="code "><span class="code-container">[ "01" -eq "1" ]</span></span> renvoie vrai puisque les nombres sont égaux, alors
+				que <span class="code "><span class="code-container">[ "01" = "1" ]</span></span> renvoie faux puisque les chaînes de caractères sont différentes.
+		</td>
+</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ n1 -ne n2 ]</span></span></td>
+			<td>Renvoie vrai si les nombres <span class="code "><span class="code-container">n1</span></span> et <span class="code "><span class="code-container">n2</span></span> sont différents.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ n1 -lt n2 ]</span></span></td>
+			<td>Renvoie vrai si le nombre <span class="code "><span class="code-container">n1</span></span> est strictement inférieur au nombre <span class="code "><span class="code-container">n2</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ n1 -le n2 ]</span></span></td>
+			<td>Renvoie vrai si le nombre <span class="code "><span class="code-container">n1</span></span> est inférieur ou égal au nombre <span class="code "><span class="code-container">n2</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ n1 -gt n2 ]</span></span></td>
+			<td>Renvoie vrai si le nombre <span class="code "><span class="code-container">n1</span></span> est strictement supérieur au nombre <span class="code "><span class="code-container">n2</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ n1 -ge n2 ]</span></span></td>
+			<td>Renvoie vrai si le nombre <span class="code "><span class="code-container">n1</span></span> est supérieur ou égal au nombre <span class="code "><span class="code-container">n2</span></span>.</td>
+		</tr>
+
+		<tr>
+<td style="border-bottom: 8px solid white;"></td>
+<td></td>
+</tr>
+
+		<tr>
+			<td><span class="code "><span class="code-container">[ -e chemin ]</span></span></td>
+			<td>Renvoie vrai si le chemin <span class="code "><span class="code-container">chemin</span></span> existe dans le système de fichier
+				(fichier, répertoire, lien symbolique...).</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ -f chemin ]</span></span></td>
+			<td>Renvoie vrai si <span class="code "><span class="code-container">chemin</span></span> correspond à un fichier.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ -d chemin ]</span></span></td>
+			<td>Renvoie vrai si <span class="code "><span class="code-container">chemin</span></span> correspond à un répertoire.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">[ -L chemin ]</span></span></td>
+			<td>Renvoie vrai si <span class="code "><span class="code-container">chemin</span></span> correspond à un lien symbolique.</td>
+		</tr>
+
+		<tr>
+<td style="border-bottom: 8px solid white;"></td>
+<td></td>
+</tr>
+
+		<tr>
+			<td><span class="code "><span class="code-container">! test</span></span></td>
+			<td>Renvoie vrai si <span class="code "><span class="code-container">test</span></span> renvoie faux. Par exemple <span class="code "><span class="code-container">! [ 42 -eq 67 ]</span></span> renvoie vrai.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">test1 &amp;&amp; test2</span></span></td>
+			<td>Renvoie vrai si <span class="code "><span class="code-container">test1</span></span> et <span class="code "><span class="code-container">test2</span></span> renvoie vrai.
+		</td>
+</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">test1 || test2</span></span></td>
+			<td>Renvoie vrai si <span class="code "><span class="code-container">test1</span></span> ou <span class="code "><span class="code-container">test2</span></span> renvoie vrai.
+		</td>
+</tr>
+
+		<tr>
+			<td colspan="2">
+				<h3>Structures de contrôle</h3>
+			</td>
+		</tr>
+
+		<tr>
+			<td><span class="code "><span class="code-container">if test1; then
+  corps1
+elif test2; then
+  corps2
+else
+  corps3
+fi</span></span></td>
+				<td>Execute <span class="code "><span class="code-container">corps1</span></span> si le test <span class="code "><span class="code-container">test1</span></span> renvoie vrai. Dans le cas où
+					<span class="code "><span class="code-container">test1</span></span> renvoie faux, exécute <span class="code "><span class="code-container">corps2</span></span> si <span class="code "><span class="code-container">test2</span></span>
+					renvoie vrai et <span class="code "><span class="code-container">corps3</span></span> sinon. Les parties <span class="code "><span class="code-container">elif</span></span> et <span class="code "><span class="code-container">else</span></span>
+					sont optionnelles.</td>
+		</tr>
+
+		<tr>
+<td style="border-bottom: 8px solid white;"></td>
+<td></td>
+</tr>
+
+		<tr>
+			<td><span class="code "><span class="code-container">while test; do
+  corps
+done</span></span></td>
+			<td>
+				Execute <span class="code "><span class="code-container">corps</span></span> tant que le test <span class="code "><span class="code-container">test</span></span> renvoie vrai.
+			</td>
+		</tr>
+
+		<tr>
+<td style="border-bottom: 8px solid white;"></td>
+<td></td>
+</tr>
+
+		<tr>
+			<td><span class="code "><span class="code-container">for var in liste; do
+  corps
+done</span></span></td>
+			<td>Pour <span class="code "><span class="code-container">var</span></span> prenant successivement les différentes valeurs de la liste
+				(une liste est une suite de mots séparés par des espaces), exécute <span class="code "><span class="code-container">corps</span></span>.
+			</td>
+		</tr>
+
+		<tr>
+<td style="border-bottom: 8px solid white;"></td>
+<td></td>
+</tr>
+
+		<tr>
+			<td>
+				<span class="code "><span class="code-container">case $var in
+  motif1) corps1;;
+  motif2) corps2;;
+  ...
+  motifn) bodyn;;
+esac</span></span>
+</td>
+			<td>Trouve le premier <span class="code "><span class="code-container">motif</span></span> correspondant à <span class="code "><span class="code-container">$var</span></span> et exécute le <span class="code "><span class="code-container">corps</span></span>
+				associé. 
+		</td>
+</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">( expression )</span></span></td>
+			<td>Permet de regrouper des commandes. Utile pour donner des priorités aux opérateurs <span class="code "><span class="code-container">!</span></span>, <span class="code "><span class="code-container">||</span></span>
+				et <span class="code "><span class="code-container">&amp;&amp;</span></span> dans les tests.
+				Par exemple <span class="code "><span class="code-container">[ 42 -eq 65 ] || ( [ 65 -eq 65 ] &amp;&amp; [ 63 -eq 63 ] )</span></span>
+				renvoie vrai. Peut aussi être utilisé pour rediriger les entrées/sorties de plusieurs commandes
+			  simultanément. Par exemple <span class="code "><span class="code-container">( ls; cat /etc/passwd ) &gt; fic</span></span>
+</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<h3>Communication</h3>
+			</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">|</span></span></td>
+			<td>Tube de communication anonyme entre deux processus&nbsp;: connecte la sortie standard de la commande de gauche 
+				à l’entrée standard de la commande de droite.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">kill -sig pid</span></span></td>
+			<td>Envoie le signal <span class="code "><span class="code-container">sig</span></span> (<span class="code "><span class="code-container">sig</span></span> est un numéro ou un nom de signal, avec ou sans le
+				<span class="code "><span class="code-container">SIG</span></span> de début de chaîne) 
+				au processus d’identifiant <span class="code "><span class="code-container">pid</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">kill –l</span></span></td>
+			<td>Donne la liste des signaux (nom et valeur numérique).</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">mkfifo chemin</span></span></td>
+			<td>Crée le tube nommé de nom <span class="code "><span class="code-container">chemin</span></span>.</td>
+		</tr>
+		<tr>
+			<td><span class="code "><span class="code-container">trap [arg] sig</span></span></td>
+			<td>Exécute <span class="code "><span class="code-container">arg</span></span> lors du traitement du signal <span class="code "><span class="code-container">sig</span></span>
+				(<span class="code "><span class="code-container">sig</span></span> est un numéro ou un nom de signal, avec ou sans le <span class="code "><span class="code-container">SIG</span></span> de début de chaîne).
+				Si <span class="code "><span class="code-container">arg</span></span> est une chaîne vide, le signal est ignoré. Si <span class="code "><span class="code-container">arg</span></span> est absent, 
+				le traitement par défaut du signal est rétabli.</td>
+		</tr>
+	</tbody></table>
+</div>
+</div>
+
+
+<!-- Local Variables: -->
+<!-- mode: web -->
+<!-- mode: flyspell -->
+<!-- ispell-local-dictionary: "french" -->
+<!-- coding: utf-8 -->
+<!-- End: -->
+
+</div></div>
+	
+
+</body></html>
