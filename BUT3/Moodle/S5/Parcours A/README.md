@@ -7,7 +7,7 @@ Techniques d'IA (coloration IA)
 ### [R5.A.02](./R5.A.02)
 Projet personnel et professionnel
 
-### R5.A.04
+### [R5.A.04](./R5.A.04)
 Qualité algorithmique
 
 ### R5.A.05
