@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tvTaskTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dracula_text"
+        android:textStyle="bold"
+        android:text="@string/item_title"/>
+
+    <TextView
+        android:id="@+id/tvTaskDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dracula_text"
+        android:text="@string/item_description"/>
+
+    <TextView
+        android:id="@+id/tvTaskDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dracula_text"
+        android:text="@string/item_date"/>
+
+    <TextView
+        android:id="@+id/tvTaskDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dracula_text"
+        android:text="@string/item_duration"/>
+
+    <TextView
+        android:id="@+id/tvTaskContext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dracula_text"
+        android:text="@string/item_context"/>
+
+    <TextView
+        android:id="@+id/tvTaskStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dracula_text"
+        android:text="@string/item_status"/>
+
+    <TextView
+        android:id="@+id/tvTaskWebLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dracula_accent"
+        android:text="@string/item_web_link"/>
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="draculaBackground">#282a36</color>
+    <color name="draculaCurrentLine">#44475a</color>
+    <color name="draculaForeground">#f8f8f2</color>
+    <color name="draculaComment">#6272a4</color>
+    <color name="draculaCyan">#8be9fd</color>
+    <color name="draculaGreen">#50fa7b</color>
+    <color name="draculaOrange">#ffb86c</color>
+    <color name="draculaPink">#ff79c6</color>
+    <color name="draculaPurple">#bd93f9</color>
+    <color name="draculaRed">#ff5555</color>
+    <color name="draculaYellow">#f1fa8c</color>
+</resources>

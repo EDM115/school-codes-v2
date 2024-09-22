@@ -1,0 +1,8 @@
+<resources>
+    <color name="dracula_primary">#282a36</color>
+    <color name="dracula_primary_dark">#44475a</color>
+    <color name="dracula_accent">#bd93f9</color>
+    <color name="dracula_background">#282a36</color>
+    <color name="dracula_text">#f8f8f2</color>
+    <color name="dracula_hint">#6272a4</color>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string-array name="task_context">
+        <item>A la maison</item>
+        <item>Au travail</item>
+        <item>Sur téléphone</item>
+        <item>Sur PC</item>
+    </string-array>
+    <string-array name="task_status">
+        <item>A faire</item>
+        <item>En cours</item>
+        <item>Terminé</item>
+    </string-array>
+</resources>

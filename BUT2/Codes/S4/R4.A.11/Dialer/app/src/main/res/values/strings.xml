@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Dialer</string>
+    <string name="username">Identifiant</string>
+    <string name="password">Mot de passe</string>
+    <string name="s_identifier">S\'identifier</string>
+    <string name="appeler">Appeler</string>
+    <string name="enter_phone_number">Numéro de téléphone</string>
+    <string name="valider">Valider</string>
+    <string name="connexion_reussie">Connexion réussie</string>
+    <string name="identifiants_invalides">Identifiants invalides</string>
+    <string name="appel_en_cours">Appel en cours</string>
+    <string name="appel_reussi">Appel réussi</string>
+    <string name="veuillez_vous_connecter">Veuillez vous connecter</string>
+    <string name="numero_valide">Numéro validé</string>
+    <string name="veuillez_saisir_numero">Veuillez saisir un numéro</string>
+</resources>

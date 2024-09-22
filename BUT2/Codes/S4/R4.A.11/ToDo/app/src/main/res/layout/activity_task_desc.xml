@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/tvTaskTitleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"
+            android:text="@string/item_title"/>
+
+        <TextView
+            android:id="@+id/tvTaskTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvTaskDescriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"
+            android:text="@string/item_description"/>
+
+        <TextView
+            android:id="@+id/tvTaskDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"/>
+
+        <TextView
+            android:id="@+id/tvTaskDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"
+            android:text="@string/item_date"/>
+
+        <TextView
+            android:id="@+id/tvTaskDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"/>
+
+        <TextView
+            android:id="@+id/tvTaskDurationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"
+            android:text="@string/item_duration"/>
+
+        <TextView
+            android:id="@+id/tvTaskDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"/>
+
+        <TextView
+            android:id="@+id/tvTaskContextLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"
+            android:text="@string/item_context"/>
+
+        <TextView
+            android:id="@+id/tvTaskContext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"/>
+
+        <TextView
+            android:id="@+id/tvTaskStatusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"
+            android:text="@string/item_status"/>
+
+        <TextView
+            android:id="@+id/tvTaskStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"/>
+
+        <TextView
+            android:id="@+id/tvTaskWebLinkLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_text"
+            android:text="@string/item_web_link"/>
+
+        <TextView
+            android:id="@+id/tvTaskWebLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dracula_accent"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toEndOf="@+id/btnBack"
+        android:text="@string/edit" />
+
+    <Button
+        android:id="@+id/btnChangeStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_status"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"/>
+</RelativeLayout>

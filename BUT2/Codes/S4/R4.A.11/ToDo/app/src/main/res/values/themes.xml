@@ -1,0 +1,18 @@
+<resources>
+    <style name="Theme.ToDo" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@color/dracula_primary</item>
+        <item name="colorPrimaryDark">@color/dracula_primary_dark</item>
+        <item name="colorAccent">@color/dracula_accent</item>
+        <item name="android:windowBackground">@color/dracula_background</item>
+        <item name="android:textColor">@color/dracula_text</item>
+        <item name="android:spinnerStyle">@style/Widget.AppCompat.Spinner</item>
+        <item name="android:dropDownListViewStyle">@style/Widget.AppCompat.ListView.DropDown</item>
+    </style>
+
+    <style name="MyAlertDialogTheme" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:background">@color/dracula_background</item>
+        <item name="android:textColor">@color/dracula_text</item>
+        <item name="android:windowBackground">@color/dracula_background</item>
+    </style>
+</resources>

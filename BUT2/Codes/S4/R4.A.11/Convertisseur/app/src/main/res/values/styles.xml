@@ -1,0 +1,6 @@
+<resources>
+    <style name="DraculaButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/draculaOrange</item>
+        <item name="android:textColor">@color/draculaBackground</item>
+    </style>
+</resources>

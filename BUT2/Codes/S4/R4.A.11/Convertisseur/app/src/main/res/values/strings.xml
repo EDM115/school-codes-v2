@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Convertisseur</string>
+    <string name="temperature">Température</string>
+    <string name="button">Convertir</string>
+    <string name="celsius">°C</string>
+    <string name="fahrenheit">°F</string>
+    <string name="default_celsius">20.00</string>
+    <string name="default_fahrenheit">68.00</string>
+</resources>

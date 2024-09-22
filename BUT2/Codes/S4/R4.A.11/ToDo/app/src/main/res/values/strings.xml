@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ToDo</string>
+    <string name="add_task">Ajouter une tâche</string>
+    <string name="filter_task">Filtrer les tâches</string>
+    <string name="task_title">Titre</string>
+    <string name="task_description">Description</string>
+    <string name="task_date">Date</string>
+    <string name="task_duration">Durée</string>
+    <string name="task_web_link">Lien web</string>
+    <string name="save_task">Enregistrer la tâche</string>
+    <string name="back">Retour</string>
+    <string name="edit">Modifier</string>
+    <string name="change_status">Changer le statut</string>
+    <string name="delete">Supprimer</string>
+    <string name="item_title">Titre : </string>
+    <string name="item_description">Description : </string>
+    <string name="item_date">Date : </string>
+    <string name="item_duration">Durée : </string>
+    <string name="item_context">Contexte : </string>
+    <string name="item_status">Statut : </string>
+    <string name="item_web_link">Lien web : </string>
+    <string name="days">Jours</string>
+    <string name="hours">Heures</string>
+    <string name="minutes">Minutes</string>
+    <string name="date_format">%1$d/%2$d/%3$d</string>
+</resources>

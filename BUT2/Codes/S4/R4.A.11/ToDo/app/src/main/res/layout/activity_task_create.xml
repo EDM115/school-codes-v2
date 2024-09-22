@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etTaskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Title"
+        android:inputType="text"
+        android:hint="@string/task_title"
+        android:textColorHint="@color/dracula_hint"
+        android:backgroundTint="@color/dracula_text"
+        android:textColor="@color/dracula_text"/>
+
+    <EditText
+        android:id="@+id/etTaskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Description"
+        android:hint="@string/task_description"
+        android:layout_below="@id/etTaskTitle"
+        android:layout_marginTop="16dp"
+        android:inputType="textMultiLine"
+        android:textColorHint="@color/dracula_hint"
+        android:backgroundTint="@color/dracula_text"
+        android:textColor="@color/dracula_text"/>
+
+    <EditText
+        android:id="@+id/etTaskDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Date"
+        android:hint="@string/task_date"
+        android:layout_below="@id/etTaskDescription"
+        android:layout_marginTop="16dp"
+        android:inputType="date"
+        android:clickable="true"
+        android:focusable="false"
+        android:textColorHint="@color/dracula_hint"
+        android:backgroundTint="@color/dracula_text"
+        android:textColor="@color/dracula_text"
+        android:onClick="showDatePicker"/>
+
+    <LinearLayout
+        android:id="@+id/layoutDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etTaskDate"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etTaskDurationDays"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/days"
+            android:inputType="number"
+            android:textColorHint="@color/dracula_hint"
+            android:backgroundTint="@color/dracula_text"
+            android:textColor="@color/dracula_text"/>
+
+        <EditText
+            android:id="@+id/etTaskDurationHours"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hours"
+            android:inputType="number"
+            android:textColorHint="@color/dracula_hint"
+            android:backgroundTint="@color/dracula_text"
+            android:textColor="@color/dracula_text"/>
+
+        <EditText
+            android:id="@+id/etTaskDurationMinutes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/minutes"
+            android:inputType="number"
+            android:textColorHint="@color/dracula_hint"
+            android:backgroundTint="@color/dracula_text"
+            android:textColor="@color/dracula_text"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etTaskWebLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="WebLink"
+        android:hint="@string/task_web_link"
+        android:layout_below="@id/layoutDuration"
+        android:layout_marginTop="16dp"
+        android:inputType="textUri"
+        android:textColorHint="@color/dracula_hint"
+        android:backgroundTint="@color/dracula_text"
+        android:textColor="@color/dracula_text"/>
+
+    <Spinner
+        android:id="@+id/spTaskContext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etTaskWebLink"
+        android:layout_marginTop="16dp"
+        android:entries="@array/task_context"/>
+
+    <Spinner
+        android:id="@+id/spTaskStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spTaskContext"
+        android:layout_marginTop="16dp"
+        android:entries="@array/task_status"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_task"
+        android:layout_below="@id/spTaskStatus"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
