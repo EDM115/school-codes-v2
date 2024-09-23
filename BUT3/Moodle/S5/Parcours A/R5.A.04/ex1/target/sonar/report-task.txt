@@ -1,0 +1,6 @@
+projectKey=tp-r5a04-sq1
+serverUrl=http://localhost:9000
+serverVersion=9.9.6.92038
+dashboardUrl=http://localhost:9000/dashboard?id=tp-r5a04-sq1
+ceTaskId=AZH6EMr_84TRKha40qGR
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AZH6EMr_84TRKha40qGR
