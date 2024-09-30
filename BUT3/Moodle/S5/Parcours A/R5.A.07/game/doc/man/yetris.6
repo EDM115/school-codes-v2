@@ -1,0 +1,76 @@
+
+\" ----------------------------- yetris man page -------------------------------
+.TH yetris 6 "DATE" vVERSION "yetris vVERSION"
+
+\"---------------------------------- NAME --------------------------------------
+.SH NAME
+yetris \- Customizable Tetris(tm) with textual interface.
+
+\"-------------------------------- SYNOPSIS ------------------------------------
+.SH SYNOPSIS
+yetris
+.RB [ -h ]
+.RB [ -v ]
+
+\"------------------------------- DESCRIPTION ----------------------------------
+.SH DESCRIPTION
+.PP
+yetris is a customizable Tetris(tm) clone for the terminal.
+It has some features found on modern adaptations and aims
+to please both casual players and Tetris(tm) enthusiasts.
+.PP
+It has full textual interface, with many features such as
+extensive customizability, GUI-like menus and options,
+animated interface, and more.
+.PP
+yetris was originally developed in C, now reprogrammed in C++
+with ncurses. It runs on pretty much every terminal around here,
+but it's limited to POSIX systems.
+
+.B Controls:
+.RS
+.BR "Left, Right         " "Controls the piece"
+
+.BR "Down                " "Soft-drop"
+
+.BR "Space               " "Hard-drop"
+
+.BR "c                   " "Holds the piece"
+
+.BR "z" ", " "x                " "Rotates the piece counter-clockwise and clockwise"
+
+.BR "p" ", " "Enter            " "Pauses the game"
+
+.BR "q                   " "Quits the game at any time"
+
+.BR "h                   " "Show help window"
+.RE
+\"--------------------------------- OPTIONS ------------------------------------
+.SH OPTIONS
+
+.TP
+.B "-h, --help"
+Display the help text.
+
+.TP
+.B "-v, --version"
+Display version and contact information.
+\"----------------------------------- FILES -------------------------------------
+.SH FILES
+.BR "$(HOME)/.local/share/yetris/" "     Settings and scores, organized by profile"
+\"----------------------------------- SEE ALSO ----------------------------------
+.SH SEE ALSO
+.BR "petris" "(6)   " "netris" "(6)   " "bastet" "(6) "
+\"----------------------------------- BUGS -------------------------------------
+.SH BUGS
+Of course yetris has no bugs.
+
+But if any 'misbehaviours' ever occur, please tell me at <eu@alexdantas.net>.
+\"---------------------------------- AUTHORS -----------------------------------
+.SH AUTHORS
+This manual page and yetris were both written by Alexandre Dantas <eu@alexdantas.net>.
+\"---------------------------------- WEBSITE -----------------------------------
+.SH WWW
+* http://yetris.alexdantas.net/
+
+* https://github.com/alexdantas/yetris/

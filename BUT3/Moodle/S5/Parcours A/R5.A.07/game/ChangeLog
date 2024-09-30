@@ -1,0 +1,88 @@
+All the changes are documented on the git history, so here's just the major ones
+
+10-10-14 v2.3.0:
+	* Gameplay: Now the game supports high score!
+	* Development: Completely changed the source code
+	               hierarchy. Its easier to add features now!
+
+29-05-14 v2.2.3:
+	* Development: Stopped distributing libiniparser's source
+	               code along - now we expect the user to
+	               install it as a dependency.
+
+29-05-14 v2.2.2:
+	* Gameplay: Added a button that allows rotating pieces by
+	            180 degrees.
+	* Bugs: Fixed a nasty bug that crashed the game randomly
+	        during the Water animation.
+	* Development: Removed entirely any C++11 features from the
+	               codebase, thus making this game portable across
+	               ancient compilers.
+
+08-03-14 v2.0.1:
+	* Bugs: Fixed this huge bug that prevented anyone from building
+	        yetris if not cloned from a git repository.
+
+13-02-14 v2.0.0:
+	* Interface: Menus and Menu Items added. Now you can customize
+	             settings in-game, along with the old way of editing
+	             .ini files. Also, Pause Menu!
+	* Interface: The Main Menu has two nice Animations, with way
+	             more to come. It's a nice display of animated
+	             ASCII-art with colors.
+	* Gameplay: Game Profiles added! Now the settings are saved
+	            to each user individually and one can change between
+	            profiles easily.
+	* Development: Completely reprogrammed the code to C++.
+	               The game's way more flexible now - some features
+	               would be unfeasable in plain old C.
+	* Bugs: Fixed thousands of bugs introduced by myself when
+	        converting to C++. So, in the end...
+	* Downgrade: No high score support for now. It'll take
+	             quite some time to make it and save according to
+	             game profiles.
+	* Downgrade: Scores are quite crippled, along with combos and
+	             back-to-backs. They should be reimplemented soon.
+
+26-01-14 v1.7.0:
+	* Gameplay: blocks on the board can be pushed on all 4 directions.
+	            options on the config file.
+	* Gameplay: game can add noise (random blocks) at startup.
+	            option on the config file.
+	* Development: changed to Semantic Versioning.
+
+04-03-13 v1.6:
+	* Gameplay: High scores! Can save and show them during the game.
+	* Bugs: Game now compiles and runs on MacOSX.
+
+24-02-13 v1.5:
+	* Interface: Help window explaining controls, statistics showing
+	             misc information about the game.
+	* Gameplay: Smoother interface, color customizations, dozens of
+	            bugs fixed, Windows version improved.
+
+17-02-13 v1.4:
+	* Gameplay: config file support! Also, we can pause the game now.
+	* Interface: the player can customize some layout parts.
+	* Licensing: yetris is now Free Software (GPLv3)!
+	* Bugs: lots of minor ones killed.
+
+12-02-13 v1.0:
+	* Gameplay: added highscore, combo, back-to-back, and some other
+	            stuff. It's pretty much functional now.
+	* Interface: cleaned up a bit. It displays everything that need
+	             to be displayed.
+	* Released!
+
+07-02-13 v0.7:
+	* Interface: layout redesigned. 80 x 24 chars and can center the screen.
+	* Gameplay: score, 5 next pieces, hold and improved ghost.
+
+06-02-13 v0.4:
+	* Intense development - most basic features done.
+	* Ghost piece.
+
+05-02-13 v0.0:
+	* Beginning: started coding the project.
+	* Interface: printed all the main windows with ncurses.
+
