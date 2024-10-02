@@ -1,0 +1,2369 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+<!-- 2024-09-17 Tue 10:38 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sensibilisation à la programmation concurrente (multitâche) à travers C++ (Cours Intégré)</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Michel Simatic">
+<meta name="description" content="Voir titre">
+<meta name="keywords" content="Programmation concurrente C++ thread synchronisation">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Sensibilisation à la programmation concurrente (multitâche) à travers C++ (Cours Intégré)</h1>
+<div id="table-of-contents">
+<h2>Table des matières</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1d54502">1. Préparation de la dimension "Intégré" de ce cours intégré</a></li>
+<li><a href="#org162c743">2. Introduction</a>
+<ul>
+<li><a href="#org3991579">2.1. Génèse de ce cours</a></li>
+<li><a href="#orgcfe5b4e">2.2. Objectifs de ce cours</a></li>
+<li><a href="#org8e83544">2.3. Quelle version de C++ ?</a></li>
+</ul>
+</li>
+<li><a href="#org38ff18d">3. Multitâche pour accélérer les performances</a>
+<ul>
+<li><a href="#orgb9d35ce">3.1. Code 01 : Un exemple d'application permettant de comprendre une motivation du multithreading</a>
+<ul>
+<li><a href="#org966974a">3.1.1. Expériences</a></li>
+</ul>
+</li>
+<li><a href="#org8078af7">3.2. Outil : volatile</a></li>
+<li><a href="#org83e8d8f">3.3. Outil : Threads</a></li>
+<li><a href="#org195c232">3.4. Code 02 : Exemple de parallélisation avec des threads (et outil Diagramme de séquence)</a>
+<ul>
+<li><a href="#org62f49d4">3.4.1. Expériences</a></li>
+</ul>
+</li>
+<li><a href="#org6e4d055">3.5. Outil : Diagramme de séquence</a></li>
+<li><a href="#org9d30b51">3.6. Outil : Mutex (pour gérer les exclusions mutuelles)</a></li>
+<li><a href="#org9390268">3.7. Code 03 : Utilisation de mutex pour définir le pattern de synchronisation "Section critique" et éviter les <i>Data Race</i></a>
+<ul>
+<li><a href="#orgc81154b">3.7.1. Expériences</a></li>
+</ul>
+</li>
+<li><a href="#orgf1c8128">3.8. Outil : variable <code>Atomic</code></a></li>
+<li><a href="#org1e98060">3.9. Code 04 : Opération <code>Atomic</code></a></li>
+<li><a href="#org6fa2bfa">3.10. Bonne pratique : Eviter les variables mutables pour n'avoir que des variables non-mutables et patron d'architecture <i>MapReduce</i></a></li>
+<li><a href="#org05fd496">3.11. Code 05 : Exemple de mise en oeuvre de <i>MapReduce</i></a></li>
+<li><a href="#orgfa844a1">3.12. Outil : Tâche (future ou <code>std::async()</code>)</a></li>
+<li><a href="#orga4f9e07">3.13. Code 06 : Exemple d'utilisation de tasks</a></li>
+</ul>
+</li>
+<li><a href="#orgcb8314e">4. Spécificités C++</a>
+<ul>
+<li><a href="#orgeb1a686">4.1. Outil : Lock</a></li>
+<li><a href="#org40a8d44">4.2. Code 07 : S'appuyer sur la RAII pour déverrouiller automatiquement (notion spécifique C++)</a></li>
+<li><a href="#org660734e">4.3. Bonne pratique : Utilisation de variables static dans un Block scope</a></li>
+<li><a href="#orge4f08fb">4.4. Outil : thread_local (stockage spécifique à chaque thread)</a></li>
+<li><a href="#org0050fa9">4.5. Code 08 : Exemple d'utilisation de static et de thread_local</a></li>
+<li><a href="#orgf022484">4.6. Code 09 : atomic ne peut pas être utilisé sur un std::vector</a></li>
+</ul>
+</li>
+<li><a href="#org0d0338b">5. Multitâche pour gérer de multiples activités en parallèle</a></li>
+<li><a href="#org2441e84">6. Variables "Condition" ("Moniteur") pour de nouveaux patrons (<i>patterns</i>) de synchronisation</a>
+<ul>
+<li><a href="#org1d39618">6.1. Outil : Variable "Condition" ("Moniteur")</a></li>
+<li><a href="#org10100cf">6.2. Code 10 : Pattern de synchronisation Cohorte à base de moniteur</a></li>
+<li><a href="#orga973d20">6.3. Code 11 : Pattern de synchronisation Loquet (<i>Latch</i>) avec moniteur (N threads contrôlent 1 thread)</a></li>
+<li><a href="#org8ddae05">6.4. Code 12 : Pattern de synchronisation Loquet (<i>Latch</i>) avec moniteur (1 thread contrôle N threads)</a></li>
+<li><a href="#orge928e7c">6.5. Outil : <code>std::latch</code></a></li>
+<li><a href="#org1361c0a">6.6. Code 13 : Pattern de synchronisation Loquet (<i>Latch</i>) avec <code>std::latch</code> (N threads contrôlent 1 thread)</a></li>
+<li><a href="#org8f5af82">6.7. Code 14 : Pattern de synchronisation Loquet (<i>Latch</i>) avec <code>std::latch</code> (1 thread contrôle N threads)</a></li>
+<li><a href="#orgf8082a4">6.8. Outil : <code>std::barrier</code></a></li>
+<li><a href="#orga6cbd35">6.9. Code 15 : Pattern de synchronisation Barrière (<i>Latch</i>) avec <code>std::barrier</code></a></li>
+<li><a href="#org420599a">6.10. Pattern de synchronisation Producteur / Consommateur</a>
+<ul>
+<li><a href="#orgba7b00f">6.10.1. Enoncé du problème à résoudre</a></li>
+<li><a href="#orgc8f4d96">6.10.2. Variante avec buffer de taille infinie (cf. Code 16)</a></li>
+<li><a href="#org8efc19a">6.10.3. Variante avec buffer de taille finie</a></li>
+<li><a href="#org1d271ac">6.10.4. Variante (fausse) avec buffer de taille finie</a></li>
+</ul>
+</li>
+<li><a href="#orge779df5">6.11. Code 16 : Pattern de synchronisation Producteur / Consommateur avec queue illimitée</a></li>
+<li><a href="#orge0d91f9">6.12. Code 17 : Pattern de synchronisation Producteur / Consommateur avec production régulée</a></li>
+</ul>
+</li>
+<li><a href="#orgb351abd">7. Variables semaphore pour une autre manière de synchroniser</a>
+<ul>
+<li><a href="#org63a294e">7.1. Outil : Sémaphores</a></li>
+<li><a href="#org3c36b1a">7.2. Code 18 : Pattern de synchronisation Cohorte à base de sémaphore</a></li>
+<li><a href="#org3347956">7.3. Pattern de synchronisation Rendez-vous</a></li>
+<li><a href="#orgf6e8b61">7.4. Pattern de synchronisation Lecteurs-Rédacteurs</a>
+<ul>
+<li><a href="#orgd2929da">7.4.1. Enoncé du problème</a></li>
+<li><a href="#org3ef0359">7.4.2. Algorithmes</a></li>
+<li><a href="#org2c2c0fe">7.4.3. Risque de famine pour le writer</a></li>
+<li><a href="#org1b0d0e4">7.4.4. Algorithmes corrigeant le problème de famine</a></li>
+</ul>
+</li>
+<li><a href="#orgc588803">7.5. Code 19 : Pattern de synchronisation Lecteurs-Rédacteurs avec sémaphore</a></li>
+<li><a href="#org0b069ca">7.6. Outil : Verrou pour lecteurs-rédacteur (<code>std::shared_lock</code>)</a></li>
+<li><a href="#org1f73cac">7.7. Code 20 : Pattern de synchronisation Lecteurs-Rédacteurs avec verrou lecteurs-rédacteur</a></li>
+</ul>
+</li>
+<li><a href="#orgbee983d">8. Autres notions importantes</a>
+<ul>
+<li><a href="#org5d4bef4">8.1. Bonne pratique : Gestion de la mémoire (allocation/désallocation)</a></li>
+<li><a href="#org8e4b74c">8.2. Code 21 : Serveur TCP avec <code>shared_ptr</code></a></li>
+<li><a href="#org3e6b5b3">8.3. Code 22 : Serveur TCP avec <code>unique_ptr</code></a></li>
+<li><a href="#org0a2cdd1">8.4. Code 23 : Serveur TCP sans pointeurs</a></li>
+<li><a href="#orgd3c06e6">8.5. Outil : Thread-safe initialisation</a>
+<ul>
+<li><a href="#org6f947d3">8.5.1. (std::call_once and std::once_flag)</a></li>
+</ul>
+</li>
+<li><a href="#org896b86b">8.6. Outil : Algorithmes parallèles de la STL (Standard Template Library, C++17)</a></li>
+<li><a href="#org191666d">8.7. Code 24 : Algorithmes parallèles de la STL et <i>execution policy</i></a></li>
+<li><a href="#orgcf7fadf">8.8. Code 25 : Algorithmes parallèles de la STL et risque de <i>Data Race</i></a></li>
+<li><a href="#orgf440f09">8.9. Outil : Coroutines (C++ 20)</a></li>
+<li><a href="#org32f543f">8.10. Code 26 : Coroutine</a></li>
+<li><a href="#orgfad7f1d">8.11. Fibres</a></li>
+<li><a href="#orgf0879f5">8.12. Debug, Profiling</a></li>
+<li><a href="#org3ce03a2">8.13. What should come in C++ 23</a></li>
+</ul>
+</li>
+<li><a href="#orga77a6ac">9. Threads versus Autres modèles de programmation</a></li>
+<li><a href="#orgbfbd3dd">10. Conclusion</a></li>
+<li><a href="#org903b556">11. Bibliographie</a></li>
+</li>
+</ul>
+</div>
+</div>
+<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+<meta http-equiv="cache-control" content="max-age=0">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+<meta http-equiv="pragma" content="no-cache">
+<div id="outline-container-org1d54502" class="outline-2">
+<h2 id="org1d54502"><span class="section-number-2">1</span> Préparation de la dimension "Intégré" de ce cours intégré</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Ce Cours Intégré a été testé sur <i>Windows</i> et <i>Linux</i> (il reste à le
+tester sur MacOS). Il nécessite des travaux préparatoires décrits dans
+cette section :
+</p>
+<ul class="org-ul">
+<li>Installation de l'IDE
+<ul class="org-ul">
+<li>Dans le cas où vous avez déjà installé VisualStudio (Entreprise ou Community) avec C++ :
+<ol class="org-ol">
+<li>Mettre à jour VisualStudio si vous êtes à une version strictement inférieure à 16.11.3</li>
+</ol></li>
+</ul></li>
+<li>Une fois l'IDE installé, décompressez l'archive ProgrammationConcurrente.zip dans le répertoire de votre choix.</li>
+<li>Enfin, exploitez le canevas de projet obtenu selon la procédure cmake du document en ANNEXE.<a href="./Annexe/Outils R5.B.04 (cmake, IDE, SonarLint, GoogleTest, débogueur, analyse de fuites mémoire).htm">ce document</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org162c743" class="outline-2">
+<h2 id="org162c743"><span class="section-number-2">2</span> Introduction</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org3991579" class="outline-3">
+<h3 id="org3991579"><span class="section-number-3">2.1</span> Génèse de ce cours</h3>
+<div class="outline-text-3" id="text-2-1">
+
+</div>
+</div>
+<div id="outline-container-orgcfe5b4e" class="outline-3">
+<h3 id="orgcfe5b4e"><span class="section-number-3">2.2</span> Objectifs de ce cours</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Présenter :
+<ul class="org-ul">
+<li>Les outils liés au multitâche (plus exactement à la concurrence)
+<ul class="org-ul">
+<li>Threads et tâches (On met donc de côté la programmation
+multi-processus et la programmation distribuée (même si on
+retrouve les mêmes notions)</li>
+<li>Outils de synchronisation</li>
+</ul></li>
+<li>Les patrons de synhronisation (<i>synchronization patterns</i>) classiques</li>
+<li>Les bonnes pratiques</li>
+</ul></li>
+<li>Illustrer cela avec des exemples de code C++ (en indiquant quand le
+code présenté est une spécificité C++).</li>
+<li>Vous donner l'envie d'imaginer un concept de jeu qui illustrerait
+tous ces mécanismes
+<ul class="org-ul">
+<li>Wooclap à la fin de la séance sur ce sujet !</li>
+<li>Projet de 2ème année TSP cette année ? PFE JIN l'an prochain ?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8e83544" class="outline-3">
+<h3 id="org8e83544"><span class="section-number-3">2.3</span> Quelle version de C++ ?</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-center">
+
+<div class="figure">
+<p><img src="Sensibilisation%20%C3%A0%20la%20programmation%20concurrente%20(multit%C3%A2che)%20%C3%A0%20travers%20C++%20(Cours%20Int%C3%A9gr%C3%A9)_fichiers/concurrence_en_C++.png" alt="concurrence_en_C++.png" width="1000px">
+</p>
+</div>
+</div>
+
+<p>
+La plupart des notions présentées ici sont anciennes. Par
+exemple, les sémaphores ont été inventés par Dijkstra dans les années
+1960, alors qu'ils n'ont été intégrés qu'à C++ <b>20</b>.  En général, des
+notions apparaissant après C++ <b>11</b> peuvent être implémentées :
+</p>
+<ul class="org-ul">
+<li>en s'appuyant sur des fonctionnalités C++ 11.
+<ul class="org-ul">
+<li>OK pour portabilité ; KO pour lisibilité et performances.</li>
+<li>Exemple : Un sémaphore (C++ 20) peut être implémenté avec un
+<code>mutex</code> et une <code>std::condition_variable</code> (C++ 11).</li>
+</ul></li>
+<li>en invoquant directement des appels système.
+<ul class="org-ul">
+<li>KO pour portabilité ; OK pour performances ; ? pour lisibilité.</li>
+<li>Exemple : Un sémaphore (C++ 20) peut être implémenté en utilisant
+les sémaphores de la bibliothèque <i>pthread</i> (ex. : <code>sem_init</code>) ou
+ceux de <i>Windows</i> (ex. : <code>CreateSemaphore</code>).</li>
+</ul></li>
+</ul>
+
+<p>
+Pour compiler les exemples, il est nécessaire de disposer d'un
+compilateur à jour :
+</p>
+<ul class="org-ul">
+<li>Au moins Visual Studio 16.11.3 (septembre 2021)</li>
+<li>Au moins gcc 11.1 (avril 2021). Le support de C++ 20 a l'air assez complet (cf. <a href="https://gcc.gnu.org/projects/cxx-status.html">cette page</a>).
+<ul class="org-ul">
+<li>Pour Ubuntu, <a href="https://cpp.tutorials24x7.com/blog/how-to-install-gcc-on-ubuntu-20-04-lts">cet article</a> explique comment faire cohabiter le gcc standard et le gcc plus avancé.</li>
+</ul></li>
+<li>Concernant clang
+<ul class="org-ul">
+<li>Clang MacOS est en retard quant à l'adoption de C++ 20 (comparer
+les colonnes "Clang" et "Apple clang" en
+<a href="https://en.cppreference.com/w/cpp/compiler_support/20">https://en.cppreference.com/w/cpp/compiler_support/20</a>). Notez que
+les compilateurs Clang et Apple clang n'ont pas les mêmes numéros
+de version.</li>
+<li>Sur Ubuntu/Windows, théoriquement, au moins clang 14.0.0. Pour ce cours, nous n'avons testé que
+la compilation des sources de ce cours avec clang 17.0.6 que nous avons installé sous Ubuntu
+de la manière suivante :
+<ul class="org-ul">
+<li>Suivre les instructions en <a href="https://ubuntuhandbook.org/index.php/2023/09/how-to-install-clang-17-or-16-in-ubuntu-22-04-20-04/">https://ubuntuhandbook.org/index.php/2023/09/how-to-install-clang-17-or-16-in-ubuntu-22-04-20-04/</a></li>
+<li>Pour utiliser ensuite clang à la place de gcc, ouvrir un
+terminal et y taper les intructions suivantes (NB : c'est
+ensuite dans ce terminal qu'on fera <code>cmake</code> et <code>make</code>) :</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">cf. https://ubuntuclub.org/how-to-use-clang-instead-of-gcc-in-ubuntu/</span>
+<span style="font-weight: bold;">export</span> <span style="font-weight: bold; font-style: italic;">CC</span>=/usr/bin/clang-17
+<span style="font-weight: bold;">export</span> <span style="font-weight: bold; font-style: italic;">CPP</span>=/usr/bin/clang-cpp-17
+<span style="font-weight: bold;">export</span> <span style="font-weight: bold; font-style: italic;">CXX</span>=/usr/bin/clang++-17
+<span style="font-weight: bold;">export</span> <span style="font-weight: bold; font-style: italic;">LD</span>=/usr/bin/ld.lld-17
+<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">Description of environment variables:</span>
+<span style="font-weight: bold; font-style: italic;">#    </span><span style="font-weight: bold; font-style: italic;">CC : C compilerclang</span>
+<span style="font-weight: bold; font-style: italic;">#    </span><span style="font-weight: bold; font-style: italic;">CPP : C precompiled processorclang-cpp</span>
+<span style="font-weight: bold; font-style: italic;">#    </span><span style="font-weight: bold; font-style: italic;">CXX : C++ compilerclang++</span>
+<span style="font-weight: bold; font-style: italic;">#    </span><span style="font-weight: bold; font-style: italic;">LD : Linkerld.lld</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org38ff18d" class="outline-2">
+<h2 id="org38ff18d"><span class="section-number-2">3</span> Multitâche pour accélérer les performances</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Tout au long de ce chapitre, nous allons comparer différents codes
+destinés à accélérer les performances, ce qui permettra de comprendre
+certains fonctionnements internes de l'ordinateur. Pour noter et
+commenter les résultats des expériences menées, nous vous invitons à
+utiliser cette feuille de calcul et à y consigner le résultat de
+chacune des expériences.
+</p>
+</div>
+<div id="outline-container-orgb9d35ce" class="outline-3">
+<h3 id="orgb9d35ce"><span class="section-number-3">3.1</span> Code 01 : Un exemple d'application permettant de comprendre une motivation du multithreading</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr"> 6: </span><span style="font-weight: bold;">constexpr</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_count</span> = 100000000;
+<span class="linenr"> 7: </span>
+<span class="linenr"> 8: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+<span class="linenr"> 9: </span>{
+<span class="linenr">10: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">counter</span> = nb_count;
+<span class="linenr">11: </span>
+<span class="linenr">12: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start</span> = <span style="font-weight: bold; text-decoration: underline;">high_resolution_clock</span>::now();
+<span class="linenr">13: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start_cpu</span> = get_cpu_time();
+<span class="linenr">14: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">i</span> = nb_count;
+<span class="linenr">15: </span>    <span style="font-weight: bold;">while</span> (i &gt; 0) {
+<span class="linenr">16: </span>        --counter;
+<span class="linenr">17: </span>        --i;
+<span class="linenr">18: </span>    }
+<span class="linenr">19: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">end_cpu</span> = get_cpu_time();
+</pre>
+</div>
+</div>
+<div id="outline-container-org966974a" class="outline-4">
+<h4 id="org966974a"><span class="section-number-4">3.1.1</span> Expériences</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>Générez votre code en mode <i>Debug</i>, puis exécutez-le sans débogage (Ctrl + F5).
+<ul class="org-ul">
+<li>Quelles valeurs de <code>counter</code> et <i>elapsed time</i> (temps d'exécution) obtenez-vous ?</li>
+</ul></li>
+<li>Débrachez votre machine et réexécutez votre code sans débogage (Ctrl + F5).
+<ul class="org-ul">
+<li>Quelles valeurs de <code>counter</code> et <i>elapsed time</i> (temps d'exécution) obtenez-vous ?</li>
+</ul></li>
+<li>Rebranchez votre machine (et gardez-la branchée pour le reste du TP).</li>
+<li>Pour le fun, dans un terminal :
+<ul class="org-ul">
+<li>Allez dans le répertoire contenant <code>Source_01.cpp</code> et <code>Source_01.py</code> (la version Python de ce code). 
+Par exemple, <code>cd ProgrammationConcurrente/01_CounterMonothread</code></li>
+<li>Tapez la commande : <code>python3 Source_01.py</code></li>
+<li>Quelles valeurs de <code>counter</code> et <i>elapsed time</i> obtenez-vous ?</li>
+<li>Calculez le rapport entre l' <i>elapsed time</i> de votre programme
+Python et l' <i>elapsed time</i> de votre programme C++. Commentez.</li>
+</ul></li>
+<li>Générez maintenant votre code en mode <i>Release</i>
+<ul class="org-ul">
+<li>Sous <i>Visual Studio</i>
+<ul class="org-ul">
+<li>Dans la barre de menu, cliquez sur la flèche à droite de
+<code>x64-Debug</code> et sélectionnez <code>Gérer les configurations</code> : Un
+onglet <code>CMakeSettings.json</code> s'ouvre.</li>
+<li>Dans cet onglet, dans <code>Configurations</code>, cliquer sur le bouton "+" et sélectionnez <code>x64-Release</code></li>
+<li>Fermez l'onglet <code>CMakeSettings.json</code></li>
+<li>Dans la barre de menu, sélectionnez <code>x64-Release</code> à la place de
+<code>x64-Debug</code> : Votre projet est regénéré en mode <i>Release</i></li>
+</ul></li>
+<li>Sous <i>CLion</i>
+<ul class="org-ul">
+<li>Menu <code>File</code> &gt; <code>Setting</code> : Une fenêtre de "Settings" s'ouvre.</li>
+<li>Sélectionnez <code>Build, Execution, Deployment</code> &gt; <code>CMake</code> : Le sous-menu <code>CMake</code> s'ouvre.</li>
+<li>Dans la colonne de gauche des profils, là où il n'y a que la
+mention <code>Debug</code>, cliquez sur le bouton "+" : Un item <code>Release</code>
+est créé.</li>
+<li>Patientez un peu le temps que le projet se regénère.</li>
+<li>Dans la liste déroulante avec <code>01_CounterMonothread | Debug</code>,
+vous pouvez maintenant sélectionner <code>Release</code>, puis sélectionner
+<code>01_CounterMonothread | Release</code></li>
+</ul></li>
+<li>Sous <i>XCode</i>
+<ul class="org-ul">
+<li>TODO A compléter</li>
+</ul></li>
+</ul></li>
+<li>Exécutez Code 01 en mode Release <b>et</b> sans débogage (Ctrl + F5).
+<ul class="org-ul">
+<li>Quelles valeurs de <code>counter</code> et <i>elapsed time</i> obtenez-vous ?</li>
+</ul></li>
+<li>Cet <i>elapsed time</i> est dû au fait que le compilateur fait des
+optimisations: Il constate qu'il n'a pas besoin de faire toute la
+boucle pour trouver son résultat, i.e. que <code>counter</code> vaut 0 à la fin
+de la boucle. Il remplace donc la boucle par l'écriture de 0 dans
+<code>counter</code>.</li>
+<li>Ajoutez le mot-clé <code>volatile</code> devant <code>auto counter = nb_count;</code> Cela
+indique au compilateur de faire aucune optimisation liée à <code>counter</code>.
+<ul class="org-ul">
+<li>Remarquez que <i>SonarLint</i> vous dit "Check if the usage of the type
+'volatile int' is really appropriate here (for inter-thread
+synchronization, atomic types are more suited)." Nous ignorons ce
+message pour l'instant.</li>
+<li>Quelles valeurs de <code>counter</code> et <i>elapsed time</i> obtenez-vous ?</li>
+</ul></li>
+<li>Voyons si ce résultat fait sens :
+<ul class="org-ul">
+<li>Récupérez la fréquence de votre processeur (Sous Windows, affichez
+les paramètres Windows et cherchez "A propos": Windows affiche la
+fréquence du processeur).</li>
+<li>Cette fréquence indique le nombre d'instructions qu'exécute votre
+ordinateur chaque seconde. Déduisez-en le temps nécessaire pour
+que votre processeur exécute une instruction.</li>
+<li>Le code de votre boucle est grosso-modo compilé en assembleur de
+la manière suivante (Si vous voulez voir le code assembleur, sous
+Visual Studio, mettez un point d'arrêt au niveau de <code>--counter;</code> ,
+lancez en mode debug, et affichez le code assembleur en appuyant
+sur Ctrl+Alt+D ; Sous CLion, même procédure, mais touches
+Alt+Shift+F7) :</li>
+</ul></li>
+</ul>
+<pre class="example">Etiquette_début_boucle: Si registre i &lt;= 0 saute à Etiquette_fin_boucle
+			Charge counter dans un registre
+			Décrémente de 1 ce registre
+			Stocke ce registre dans counter
+			Décrémente i
+			Saute à Etiquette_début_boucle
+Etiquette_fin_boucle: etc.
+</pre>
+<ul class="org-ul">
+<li>Le traitement de chaque "tour" de boucle nécessite donc 6
+instructions assembleur. Multipliez donc le temps de traitement
+d'une instruction par 6 et par 100.000.000 (nombre de "tours" de
+boucle) : Vous devriez obtenir un temps proche du temps d'exécution
+observé (en fait, le temps d'exécution observé est légèrement inférieur
+grâce au pipeline du processeur).</li>
+<li>Dans la suite, nous travaillerons systématiquement en mode <i>Debug</i>
+(donc, <code>x64-Debug</code> et non <code>x64-Release</code>) pour éviter que le
+compilateur fasse des optimisations sans nous le dire. Cela nous
+évitera de systématiquement ajouter la mention <code>volatile</code> aux
+variables que nous partagerons entre threads.</li>
+<li>Si on souhaite réduire le temps d'exécution, on pourrait chercher à
+réduire le temps d'exécution de chaque instruction, i.e. augmenter
+la fréquence du processeur. C'est ce qu'ont fait les constructeurs
+pendant des années :
+<ul class="org-ul">
+<li>Apple 2 (1977) : processeur 8 bits à 2,8 MHz</li>
+<li>Premier IBM PC (1981) : processeur (registres 16 bits, bus 8 bits) à 4,77 MHz</li>
+<li>etc.</li>
+<li>Toutefois, des fréquences au delà de 2,9 GHz entrainent des
+problèmes de refroidissement du processeur. Ainsi, le record
+d'overclocking est actuellement de 9,04392 Ghz grâce à un
+refroidissement à l'hélium liquide permettant d'atteindre -250°C
+(cf. <a href="https://www.lesnumeriques.com/cpu-processeur/9-ghz-le-nouveau-record-du-monde-de-frequence-pour-un-processeur-grand-public-n201325.html">cet article</a> et cet <a href="https://hwbot.org/benchmark/cpu_frequency/rankings#start=0%23interval=20">Hall of Fame</a>).</li>
+<li>Les constructeurs ont donc proposé que les processeurs soient
+constitués de plusieurs coeurs, ce qui permettrait de paralléliser
+les calculs à faire.</li>
+<li>Et, pour permettre la parallélisation des calculs, les
+développeurs de systèmes d'exploitation ont introduit la notion de
+thread, avec des appels systèmes pour la mettre en oeuvre. Ainsi,
+le développeur peut disposer de plusieurs "main" dans son
+programme.</li>
+<li>Enfin, les langages de haut niveau ont évolué pour offrir des
+abstractions qui
+<ul class="org-ul">
+<li>cachent les appels système,</li>
+<li>facilitent la portabilité entre des systèmes d'exploitation
+différents,</li>
+<li>Offrent des services de plus haut niveau au dessus des appels
+système.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8078af7" class="outline-3">
+<h3 id="org8078af7"><span class="section-number-3">3.2</span> Outil : volatile</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li>Ce mot-clé est disponible dans la plupart des langages de programmation.</li>
+<li>Il permet de dire au compilateur qu'il ne faut pas faire d'optimisation
+concernant une variable.</li>
+<li>Voir exemple en Code 01.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org83e8d8f" class="outline-3">
+<h3 id="org83e8d8f"><span class="section-number-3">3.3</span> Outil : Threads</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>Un thread est une entité système beaucoup plus légère (en temps de
+création et en mémoire) qu'un processus.</li>
+<li>Un thread a sa propre pile dans l'espace mémoire d'un processus
+(donc, la pile d'un thread est moins grande).</li>
+<li>Opérations sur les threads
+<ul class="org-ul">
+<li>Création</li>
+<li><code>join</code> : Attente de la terminaison d'un thread enfant par son créateur.</li>
+<li><code>detach</code> : Coupure du lien entre le thread enfant et son créateur.</li>
+</ul></li>
+<li>Les threads sont <b>préemptifs</b>, c'est-à-dire que, quand ils
+s'exécutent, ils peuvent être interrompues à n'importe quel moment
+par un autre thread. Nous verrons plus loin d'autres modèles de
+programmation.</li>
+<li>En Java, possibilité de définir des priorités d'exécution pour les
+threads. Non disponible dans le standard C++, mais contournement
+possible avec <a href="https://en.cppreference.com/w/cpp/thread/thread/native_handle"><code>std::thread::native_handle()</code></a> (Attention : appel pas
+obligatoirement implémenté).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org195c232" class="outline-3">
+<h3 id="org195c232"><span class="section-number-3">3.4</span> Code 02 : Exemple de parallélisation avec des threads (et outil Diagramme de séquence)</h3>
+<div class="outline-text-3" id="text-3-4">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr"> 8: </span><span style="font-weight: bold;">constexpr</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_count</span> = 100000000;
+<span class="linenr"> 9: </span><span style="font-weight: bold;">constexpr</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_threads</span> = 4;
+<span class="linenr">10: </span>
+<span class="linenr">11: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">decrement</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_decrement</span>, <span style="font-weight: bold; text-decoration: underline;">int</span> &amp;<span style="font-weight: bold; font-style: italic;">counter</span>) {
+<span class="linenr">12: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">i</span> = nb_decrement ; i &gt; 0; --i) {
+<span class="linenr">13: </span>        --counter;
+<span class="linenr">14: </span>    }
+<span class="linenr">15: </span>}
+<span class="linenr">16: </span>
+<span class="linenr">17: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+<span class="linenr">18: </span>{
+<span class="linenr">19: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">counter</span> = nb_count;
+<span class="linenr">20: </span>
+<span class="linenr">21: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start</span> = <span style="font-weight: bold; text-decoration: underline;">high_resolution_clock</span>::now();
+<span class="linenr">22: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start_cpu</span> = get_cpu_time();
+<span class="linenr">23: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">vector</span>&lt;<span style="font-weight: bold; text-decoration: underline;">std</span>::thread&gt; <span style="font-weight: bold; font-style: italic;">threads</span>(nb_threads);
+<span class="linenr">24: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span>&amp; <span style="font-weight: bold; font-style: italic;">t</span> : threads) {
+<span class="linenr">25: </span>        t = <span style="font-weight: bold; text-decoration: underline;">std</span>::thread(decrement, nb_count / nb_threads, <span style="font-weight: bold; text-decoration: underline;">std</span>::ref(counter));
+<span class="linenr">26: </span>    }
+<span class="linenr">27: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span>&amp; <span style="font-weight: bold; font-style: italic;">t</span>:threads) {
+<span class="linenr">28: </span>        t.join();
+<span class="linenr">29: </span>    }
+</pre>
+</div>
+</div>
+<div id="outline-container-org62f49d4" class="outline-4">
+<h4 id="org62f49d4"><span class="section-number-4">3.4.1</span> Expériences</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<ul class="org-ul">
+<li>Nous utilisons <a href="https://en.cppreference.com/w/cpp/thread/thread"><code>std::threads</code></a> pour paralléliser notre code.
+<ul class="org-ul">
+<li>Vérifiez que vous comprenez bien le fonctionnement de ce programme.</li>
+<li>En particulier, notez l'utilisation de <code>std::ref</code> pour passer une
+référence à une variable à un thread. On peut aussi passer une
+variable par copie ou bien par référence constante (<code>std::cref</code>)</li>
+</ul></li>
+<li>Générez votre code en mode Debug (pour éviter les optimisations), puis exécutez-le sans débogage (Ctrl + F5).
+<ul class="org-ul">
+<li>Quelles valeurs de <code>counter</code> et <i>elapsed time</i> obtenez-vous ?</li>
+</ul></li>
+<li>Selon vous, pourquoi <code>counter</code> ne vaut pas zéro ?
+<ul class="org-ul">
+<li>Voir section Cours sur "Diagramme de séquence" pour bien comprendre.</li>
+</ul></li>
+<li>Nous observons une <i>data race</i>, i.e. une situation dans laquelle au
+moins deux threads accèdent simultanément à la même variable <b>et</b>
+l'un de ces threads cherche à modifier cette variable. Si votre
+programme a une <i>data race</i>, son comportement est indéfini. Cela
+signifie que tout peut arriver et donc raisonner à propos de votre
+programme n'est plus possible.</li>
+<li>Si vous avez le temps, faites cette digression :
+<ul class="org-ul">
+<li>Commentez <code>t.join();</code></li>
+<li>Maintenant, le thread <code>main</code> n'attend plus que les autres threads
+aient fini: Son affichage est donc incorrect. De plus, le
+programme plante, quand les autres threads se terminent.</li>
+<li>Pour éviter ce plantage, vous pouvez ajouter <code>t.detach()</code>, après
+chaque création de thread enfant. Autre solution: C++ 20 apporte
+<a href="https://en.cppreference.com/w/cpp/thread/jthread"><code>std::jthread</code></a>. Remplacez <code>thread</code> par <code>jthread</code> (comme vous le
+suggérait <i>SonarLint</i>) et vérifiez que votre programme ne plante
+plus.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6e4d055" class="outline-3">
+<h3 id="org6e4d055"><span class="section-number-3">3.5</span> Outil : Diagramme de séquence</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+Notions essentielles :
+</p>
+<ul class="org-ul">
+<li>Un "Diagramme de séquence" peut aider à comprendre les <i>data race</i>.</li>
+<li>Un "Diagramme de séquence" va de haut en bas, alors qu'un
+"Diagramme de temps" va de gauche à droite ;</li>
+<li><code>mscgen</code> (<a href="https://www.mcternan.me.uk/mscgen/">https://www.mcternan.me.uk/mscgen/</a>) est un outil
+intéressant pour faire rapidement des diagrammes de séquence.</li>
+</ul>
+<div class="org-center">
+
+<div class="figure">
+<p><img src="Sensibilisation%20%C3%A0%20la%20programmation%20concurrente%20(multit%C3%A2che)%20%C3%A0%20travers%20C++%20(Cours%20Int%C3%A9gr%C3%A9)_fichiers/data_race_4_threads.png" alt="data_race_4_threads.png" width="1000px">
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9d30b51" class="outline-3">
+<h3 id="org9d30b51"><span class="section-number-3">3.6</span> Outil : Mutex (pour gérer les exclusions mutuelles)</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li>Opérations sur les mutex
+<ul class="org-ul">
+<li><code>lock</code> : Un thread qui exécute cette instruction <i>prend</i> le
+mutex. Si un autre thread essaie de prendre ensuite le mutex,
+cet autre thread est <i>bloqué</i> jusqu'à ce que le premier thread
+relâche le mutex.</li>
+<li><code>unlock</code> : Un thread qui exécute cette instruction <i>relâche</i> le
+mutex et réveille un des threads qui avait fait <code>lock</code> sur ce
+même mutex.</li>
+</ul></li>
+<li>On appelle <i>section critique</i> le code entre les instructions
+<code>lock()</code> et <code>unlock()</code>. Le système d'exploitation garantit qu'à tout
+instant, un seul thread exécutera la section critique.</li>
+<li>==&gt; Pattern de synchronisation "section critique"</li>
+<li>Une <i>section critique</i> doit être la plus courte possible en temps
+d'exécution. Donc :
+<ul class="org-ul">
+<li>N'y mettre que le code qui a besoin d'être en section critique.</li>
+<li><b>Jamais</b> de sleep dans une section critique.</li>
+</ul></li>
+<li>Les mutex peuvent conduire au cauchemard des verrous mortels
+(<i>deadlocks</i>) ! Autant que possible, veillez à verrouiller les mutex
+dans le <b>même</b> ordre.</li>
+<li>NB : En Java, il est aussi possible de définir un méthode (ou un
+bloc de code) comme <code>synchronized</code> pour éviter que'il y ait des
+exécutions concurrentes. Microsoft en a fait une extension C++ avec
+l'attribut <a href="https://docs.microsoft.com/fr-fr/cpp/windows/attributes/synchronize?view%3Dmsvc-160"><code>{synchronize}</code></a> non standard, donc à éviter.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9390268" class="outline-3">
+<h3 id="org9390268"><span class="section-number-3">3.7</span> Code 03 : Utilisation de mutex pour définir le pattern de synchronisation "Section critique" et éviter les <i>Data Race</i></h3>
+<div class="outline-text-3" id="text-3-7">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">12: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">decrement</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_decrement</span>, <span style="font-weight: bold; text-decoration: underline;">int</span> &amp;<span style="font-weight: bold; font-style: italic;">counter</span>) {
+<span class="linenr">13: </span>    <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">mutex</span> <span style="font-weight: bold; font-style: italic;">mtx</span>;
+<span class="linenr">14: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">i</span> = nb_decrement ; i &gt; 0; --i) {
+<span class="linenr">15: </span>        mtx.lock();
+<span class="linenr">16: </span>        --counter;
+<span class="linenr">17: </span>        mtx.unlock();
+<span class="linenr">18: </span>    }
+<span class="linenr">19: </span>}
+<span class="linenr">20: </span>
+<span class="linenr">21: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+<span class="linenr">22: </span>{
+<span class="linenr">23: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">counter</span> = nb_count;
+<span class="linenr">24: </span>
+<span class="linenr">25: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start</span> = <span style="font-weight: bold; text-decoration: underline;">high_resolution_clock</span>::now();
+<span class="linenr">26: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start_cpu</span> = get_cpu_time();
+<span class="linenr">27: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">vector</span>&lt;<span style="font-weight: bold; text-decoration: underline;">std</span>::thread&gt; <span style="font-weight: bold; font-style: italic;">threads</span>(nb_threads);
+<span class="linenr">28: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span>&amp; <span style="font-weight: bold; font-style: italic;">t</span> : threads) {
+<span class="linenr">29: </span>        t = <span style="font-weight: bold; text-decoration: underline;">std</span>::thread(decrement, nb_count / nb_threads, <span style="font-weight: bold; text-decoration: underline;">std</span>::ref(counter));
+<span class="linenr">30: </span>    }
+<span class="linenr">31: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> &amp;<span style="font-weight: bold; font-style: italic;">t</span>:threads) {
+<span class="linenr">32: </span>        t.join();
+<span class="linenr">33: </span>    }
+</pre>
+</div>
+</div>
+<div id="outline-container-orgc81154b" class="outline-4">
+<h4 id="orgc81154b"><span class="section-number-4">3.7.1</span> Expériences</h4>
+<div class="outline-text-4" id="text-3-7-1">
+<ul class="org-ul">
+<li><a href="https://www.cplusplus.com/reference/mutex/mutex/"><code>std::mutex</code></a> est la classe qui nous permet de définir des sections critiques.
+<ul class="org-ul">
+<li>Vérifiez que vous comprenez bien le fonctionnement de ce programme.</li>
+</ul></li>
+<li>Générez votre code en mode Debug (pour éviter les optimisations),
+puis exécutez-le sans débogage (Ctrl + F5).
+<ul class="org-ul">
+<li>Quelles valeurs de <code>counter</code> et <i>elapsed time</i> obtenez-vous ?</li>
+</ul></li>
+<li>Que se passe-t-il si vous oubliez <code>mtx.unlock()</code> ? Essayez en
+mettant cette instruction en commentaire.
+<ul class="org-ul">
+<li>Spécificité C++ : A cause d'une exception, votre programme risque
+de ne pas exécuter <code>mtx.unlock()</code>, même si vous avez bien écrit et
+compilé cette instruction ! Nous verrons plus loin qu'en
+définissant un <code>Lock</code> adossé au <code>mutex</code>, la RAII nous affranchit
+de ce problème.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf1c8128" class="outline-3">
+<h3 id="orgf1c8128"><span class="section-number-3">3.8</span> Outil : variable <code>Atomic</code></h3>
+<div class="outline-text-3" id="text-3-8">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li>Il est tellement classique de devoir se prémunir contre des
+écritures simultanées sur une variable que C++ fournit <a href="https://en.cppreference.com/w/cpp/atomic/atomic"><code>atomic</code></a>
+(depuis C++ 11). Par exemple :</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold;">struct</span> <span style="font-weight: bold; text-decoration: underline;">Counters</span> { <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">a</span>; <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">b</span>; }; <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">user-defined trivially-copyable type</span>
+<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">atomic</span>&lt;<span style="font-weight: bold; text-decoration: underline;">Counters</span>&gt; <span style="font-weight: bold; font-style: italic;">cnt</span>;         <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">specialization for the user-defined type</span>
+
+<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">atomic</span>&lt;<span style="font-weight: bold; text-decoration: underline;">int</span>&gt;
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">or</span>
+<span style="font-weight: bold; font-style: italic;">atomic_int</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>L'implémentation d'<code>atomic</code> s'appuie sur des instructions dédiées du
+processeur (==&gt; Plus performant qu'un <code>mutex</code>)</li>
+<li>Peut-on déclarer un <code>std::atomic&lt;std::vector&lt;int&gt;&gt;</code> ? <a href="https://stackoverflow.com/questions/32694114/can-i-make-a-thread-safe-stdatomicvectorint">Non, car</a> :
+<ul class="org-ul">
+<li>C++11 §29.5/1 says: "There is a generic class template
+atomic. The type of the template argument T shall be trivially
+copyable (3.9)."</li>
+<li>What does trivially copyable mean? §3.9 tells: "Scalar types,
+trivially copyable class types (Clause 9), arrays of such types,
+and cv-qualified versions of these types (3.9.3) are
+collectively called trivially copyable types."</li>
+<li>Ce n'est pas le cas de std::vector (non-trivial copy
+constructors, non-trivial move constructors, non-trivial copy
+assignment operators, non-trivial move assignment operators).</li>
+<li>Voir Code 09 qui ne compile pas avec <code>std::atomic&lt;std::vector&lt;int&gt;&gt;</code>.</li>
+</ul></li>
+<li>NB : Java propose aussi cette notion.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1e98060" class="outline-3">
+<h3 id="org1e98060"><span class="section-number-3">3.9</span> Code 04 : Opération <code>Atomic</code></h3>
+<div class="outline-text-3" id="text-3-9">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">12: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">decrement</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_decrement</span>, <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">atomic_int</span> &amp;<span style="font-weight: bold; font-style: italic;">counter</span>) {
+<span class="linenr">13: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">i</span> = nb_decrement ; i &gt; 0; --i) {
+<span class="linenr">14: </span>        --counter;
+<span class="linenr">15: </span>    }
+<span class="linenr">16: </span>}
+<span class="linenr">17: </span>
+<span class="linenr">18: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+<span class="linenr">19: </span>{
+<span class="linenr">20: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">atomic_int</span> <span style="font-weight: bold; font-style: italic;">counter</span> = nb_count;
+<span class="linenr">21: </span>
+<span class="linenr">22: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start</span> = <span style="font-weight: bold; text-decoration: underline;">high_resolution_clock</span>::now();
+<span class="linenr">23: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start_cpu</span> = get_cpu_time();
+<span class="linenr">24: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">vector</span>&lt;<span style="font-weight: bold; text-decoration: underline;">std</span>::thread&gt; <span style="font-weight: bold; font-style: italic;">threads</span>(nb_threads);
+<span class="linenr">25: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span>&amp; <span style="font-weight: bold; font-style: italic;">t</span> : threads) {
+<span class="linenr">26: </span>        t = <span style="font-weight: bold; text-decoration: underline;">std</span>::thread(decrement, nb_count / nb_threads, <span style="font-weight: bold; text-decoration: underline;">std</span>::ref(counter));
+<span class="linenr">27: </span>    }
+<span class="linenr">28: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> &amp;<span style="font-weight: bold; font-style: italic;">t</span>:threads) {
+<span class="linenr">29: </span>        t.join();
+<span class="linenr">30: </span>    }
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6fa2bfa" class="outline-3">
+<h3 id="org6fa2bfa"><span class="section-number-3">3.10</span> Bonne pratique : Eviter les variables mutables pour n'avoir que des variables non-mutables et patron d'architecture <i>MapReduce</i></h3>
+<div class="outline-text-3" id="text-3-10">
+<div class="org-center">
+
+<div class="figure">
+<p><img src="Sensibilisation%20%C3%A0%20la%20programmation%20concurrente%20(multit%C3%A2che)%20%C3%A0%20travers%20C++%20(Cours%20Int%C3%A9gr%C3%A9)_fichiers/mutable_shared_state.png" alt="mutable_shared_state.png" width="400px">
+</p>
+</div>
+</div>
+<ul class="org-ul">
+<li>==&gt; Eviter les variables mutables !</li>
+<li>==&gt; Piste de solution = Regarder si votre code ne pourrait pas
+bénéficier du patron d'architecture <i>MapReduce</i>:
+<ul class="org-ul">
+<li>Etape <i>Map</i> : Découpage en sous-problèmes et délégation des
+sous-problèmes à d'autres threads ou noeuds d'exécution (dans le
+cas d'une architecture répartie).</li>
+<li>Etape <i>Reduce</i> : Les threads/noeuds font remonter l'information au
+parent qui les avaient sollicités. Ce parent calcule le résultat.</li>
+</ul></li>
+<li>En environnement réparti, il est courant d'implémenter un
+<i>MapReduce</i> à l'aide d'un framework comme <a href="https://hadoop.apache.org/">Hadoop</a>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org05fd496" class="outline-3">
+<h3 id="org05fd496"><span class="section-number-3">3.11</span> Code 05 : Exemple de mise en oeuvre de <i>MapReduce</i></h3>
+<div class="outline-text-3" id="text-3-11">
+<ul class="org-ul">
+<li>Le code présenté implémente un patron d'architecture
+<i>MapReduce</i>. Identifiez les étapes <i>Map</i> et <i>Reduce</i>.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">12: </span>    <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">totalDecrement</span> = 0;
+<span class="linenr">13: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">i</span> = nb_decrement ; i &gt; 0; --i) {
+<span class="linenr">14: </span>        ++totalDecrement;
+<span class="linenr">15: </span>    }
+<span class="linenr">16: </span>    result = totalDecrement;
+<span class="linenr">17: </span>}
+<span class="linenr">18: </span>
+<span class="linenr">19: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+<span class="linenr">20: </span>{
+<span class="linenr">21: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">counter</span> = nb_count;
+<span class="linenr">22: </span>
+<span class="linenr">23: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start</span> = <span style="font-weight: bold; text-decoration: underline;">high_resolution_clock</span>::now();
+<span class="linenr">24: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start_cpu</span> = get_cpu_time();
+<span class="linenr">25: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">vector</span>&lt;<span style="font-weight: bold; text-decoration: underline;">std</span>::thread&gt; <span style="font-weight: bold; font-style: italic;">threads</span>(nb_threads);
+<span class="linenr">26: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">vector</span>&lt;<span style="font-weight: bold; text-decoration: underline;">int</span>&gt; <span style="font-weight: bold; font-style: italic;">results</span>(nb_threads);
+<span class="linenr">27: </span>    <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">numThread</span> = 0;
+<span class="linenr">28: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span>&amp; <span style="font-weight: bold; font-style: italic;">t</span> : threads) {
+<span class="linenr">29: </span>        t = <span style="font-weight: bold; text-decoration: underline;">std</span>::thread(computeDecrement, nb_count / nb_threads, <span style="font-weight: bold; text-decoration: underline;">std</span>::ref(results[numThread]));
+<span class="linenr">30: </span>        ++numThread;
+<span class="linenr">31: </span>    }
+<span class="linenr">32: </span>    numThread = 0;
+<span class="linenr">33: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> &amp;<span style="font-weight: bold; font-style: italic;">t</span>:threads) {
+<span class="linenr">34: </span>        t.join();
+<span class="linenr">35: </span>        counter -= results[numThread];
+<span class="linenr">36: </span>        ++numThread;
+<span class="linenr">37: </span>    }
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfa844a1" class="outline-3">
+<h3 id="orgfa844a1"><span class="section-number-3">3.12</span> Outil : Tâche (future ou <code>std::async()</code>)</h3>
+<div class="outline-text-3" id="text-3-12">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li>Lancement d'une tâche par <code>auto fut = std::async([] { resultat=calcul(); return resultat; });</code></li>
+<li>Attente du résultat d'une tâche par <code>resultat = fut.get();</code></li>
+</ul>
+<div class="org-center">
+
+<div class="figure">
+<p><img src="Sensibilisation%20%C3%A0%20la%20programmation%20concurrente%20(multit%C3%A2che)%20%C3%A0%20travers%20C++%20(Cours%20Int%C3%A9gr%C3%A9)_fichiers/taches_canaux_communication.png" alt="taches_canaux_communication.png" width="600px">
+</p>
+</div>
+</div>
+<blockquote>
+<p>
+[Grimm 2021] std::async should be your first choice : The C++ runtime decides if
+std::async is executed in a separate thread or not. The decision of
+the C++ runtime may depend on the number of CPU cores available, the
+utilization of your system, or the size of your work package. By using
+std::async you only specify the task that should run. The C++ runtime
+automatically manages the creation and also the lifetime of the
+thread.
+</p>
+</blockquote>
+
+<p>
+Les <b>CPP core guidelines</b> disent aussi "<a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cp4-think-in-terms-of-tasks-rather-than-threads">CP.4: Think in terms of tasks, rather than threads</a>."
+</p>
+<ul class="org-ul">
+<li>Toutefois,
+<a href="https://www.boost.org/doc/libs/1_85_0/libs/fiber/doc/html/fiber/performance.html">https://www.boost.org/doc/libs/1_85_0/libs/fiber/doc/html/fiber/performance.html</a>
+montre que le launch d'un <code>std::async</code> prend 106 us contre 52 us
+pour un <code>std::thread</code> ==&gt; A voir si cette différence de performances
+est importante pour les utilisateurs.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga4f9e07" class="outline-3">
+<h3 id="orga4f9e07"><span class="section-number-3">3.13</span> Code 06 : Exemple d'utilisation de tasks</h3>
+<div class="outline-text-3" id="text-3-13">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">11: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">taskDecrement</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_decrement</span>) {
+<span class="linenr">12: </span>    <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">totalDecrement</span> = 0;
+<span class="linenr">13: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">i</span> = nb_decrement ; i &gt; 0; --i) {
+<span class="linenr">14: </span>        ++totalDecrement;
+<span class="linenr">15: </span>    }
+<span class="linenr">16: </span>    <span style="font-weight: bold;">return</span> totalDecrement;
+<span class="linenr">17: </span>}
+<span class="linenr">18: </span>
+<span class="linenr">19: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+<span class="linenr">20: </span>{
+<span class="linenr">21: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">counter</span> = nb_count;
+<span class="linenr">22: </span>
+<span class="linenr">23: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start</span> = <span style="font-weight: bold; text-decoration: underline;">high_resolution_clock</span>::now();
+<span class="linenr">24: </span>    <span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">start_cpu</span> = get_cpu_time();
+<span class="linenr">25: </span>
+<span class="linenr">26: </span><span style="font-weight: bold; font-style: italic;">/*  </span><span style="font-weight: bold; font-style: italic;">auto fut0 = std::async([] { return taskDecrement(nb_count / nb_tasks); });</span>
+<span class="linenr">27: </span><span style="font-weight: bold; font-style: italic;">    auto fut1 = std::async([] { return taskDecrement(nb_count / nb_tasks); });</span>
+<span class="linenr">28: </span><span style="font-weight: bold; font-style: italic;">    auto fut2 = std::async([] { return taskDecrement(nb_count / nb_tasks); });</span>
+<span class="linenr">29: </span><span style="font-weight: bold; font-style: italic;">    auto fut3 = std::async([] { return taskDecrement(nb_count / nb_tasks); });</span>
+<span class="linenr">30: </span><span style="font-weight: bold; font-style: italic;">    counter -= fut0.get();</span>
+<span class="linenr">31: </span><span style="font-weight: bold; font-style: italic;">    counter -= fut1.get();</span>
+<span class="linenr">32: </span><span style="font-weight: bold; font-style: italic;">    counter -= fut2.get();</span>
+<span class="linenr">33: </span><span style="font-weight: bold; font-style: italic;">    counter -= fut3.get();</span>
+<span class="linenr">34: </span><span style="font-weight: bold; font-style: italic;">*/</span>
+<span class="linenr">35: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">vector</span>&lt;<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">future</span>&lt;<span style="font-weight: bold; text-decoration: underline;">int</span>&gt;&gt; <span style="font-weight: bold; font-style: italic;">futures</span>(nb_tasks);
+<span class="linenr">36: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span>&amp; <span style="font-weight: bold; font-style: italic;">fut</span> : futures) {
+<span class="linenr">37: </span>        fut = <span style="font-weight: bold; text-decoration: underline;">std</span>::async([] { <span style="font-weight: bold;">return</span> taskDecrement(nb_count / nb_tasks); });
+<span class="linenr">38: </span>    }
+<span class="linenr">39: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span>&amp; <span style="font-weight: bold; font-style: italic;">fut</span> : futures) {
+<span class="linenr">40: </span>        counter -= fut.get();
+<span class="linenr">41: </span>    }
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcb8314e" class="outline-2">
+<h2 id="orgcb8314e"><span class="section-number-2">4</span> Spécificités C++</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgeb1a686" class="outline-3">
+<h3 id="orgeb1a686"><span class="section-number-3">4.1</span> Outil : Lock</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li><code>std::guarded_lock</code></li>
+<li><code>std::scoped_lock</code>
+<ul class="org-ul">
+<li>Pour verrouiller (et relâcher plusieur mutex à la fois)</li>
+</ul></li>
+<li><code>std::unique_lock</code>
+<ul class="org-ul">
+<li>Plus cher que <code>lock_guard</code>, mais permet de reverrouiller récursivement un mutex.</li>
+<li>Obligatoire pour variable condition (cf. Code 10) et quand
+concurrence avec std::shared_lock (cf. Code 20)</li>
+</ul></li>
+<li><code>std::shared_lock</code> ==&gt; Utilisation pour lecteurs-rédacteur (cf. Code 20)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org40a8d44" class="outline-3">
+<h3 id="org40a8d44"><span class="section-number-3">4.2</span> Code 07 : S'appuyer sur la RAII pour déverrouiller automatiquement (notion spécifique C++)</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Ce code montre comment éviter, grâce à la RAII, qu'un mutex reste
+verrouillé si vous avez oublié l'instruction de déverrouillage ou bien
+si une exception a eu lieu durant une section critique : nous nous
+appuyons sur <a href="https://en.cppreference.com/w/cpp/thread/scoped_lock"><code>std::scoped_lock</code></a> (depuis C++ 17).
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">12: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">decrement</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_decrement</span>, <span style="font-weight: bold; text-decoration: underline;">int</span> &amp;<span style="font-weight: bold; font-style: italic;">counter</span>) {
+<span class="linenr">13: </span>    <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">mutex</span> <span style="font-weight: bold; font-style: italic;">mtx</span>;
+<span class="linenr">14: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">i</span> = nb_decrement ; i &gt; 0; --i) {
+<span class="linenr">15: </span>        <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">scoped_lock</span> <span style="font-weight: bold; font-style: italic;">lock</span>(mtx); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Since CPP 17</span>
+<span class="linenr">16: </span>        --counter;
+<span class="linenr">17: </span>    }
+<span class="linenr">18: </span>}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org660734e" class="outline-3">
+<h3 id="org660734e"><span class="section-number-3">4.3</span> Bonne pratique : Utilisation de variables static dans un Block scope</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Static variables with block scope are created exactly once and
+lazily. Lazily means that they are created just at the moment of
+usage.</li>
+<li>With C++11,static variables with block scope have an additional
+guarantee, they are initialized in a thread-safe way. <b>Warning</b>:
+Your compiler may not support this feature:
+<ul class="org-ul">
+<li>For VisualStudio, since VS 2015, <a href="https://docs.microsoft.com/fr-fr/cpp/build/reference/zc-threadsafeinit-thread-safe-local-static-initialization?view%3Dmsvc-160">option /Zc:threadSafeInit</a>
+(activated by default)</li>
+<li>For gcc, check if your compiler has option
+<code>-fno-threadsafe-statics</code> (Cette option est là pour désactiver
+cette fonction. Donc, si elle est là, le compilateur implémente
+cette fonction.)</li>
+<li>For clang, same as gcc.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge4f08fb" class="outline-3">
+<h3 id="orge4f08fb"><span class="section-number-3">4.4</span> Outil : thread_local (stockage spécifique à chaque thread)</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>Permet d'avoir une variable statique qui n'est pas partagée par tous les threads.</li>
+<li>Quand on déclare une variable <code>thread_local</code>, elle est implicitement
+<code>static</code>.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold;">thread_local</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">v</span> = 0;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0050fa9" class="outline-3">
+<h3 id="org0050fa9"><span class="section-number-3">4.5</span> Code 08 : Exemple d'utilisation de static et de thread_local</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+Ce code montre comment des variables sont partagées ou non par des
+threads, selon leur lieu de déclaration et leur attribut <code>static</code> ou
+<code>thread_local</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">12: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">incr</span>(<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">atomic_int</span>&amp; <span style="font-weight: bold; font-style: italic;">v_main</span>, <span style="font-weight: bold; text-decoration: underline;">int</span>&amp; <span style="font-weight: bold; font-style: italic;">v_work</span>) {
+<span class="linenr">13: </span>    <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">atomic_int</span> <span style="font-weight: bold; font-style: italic;">v_incr_static</span> = 0;
+<span class="linenr">14: </span>    <span style="font-weight: bold;">thread_local</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">v_incr_thread_local</span> = 0;
+<span class="linenr">15: </span>    <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">v_incr</span> = 0;
+<span class="linenr">16: </span>    ++v_main;
+<span class="linenr">17: </span>    ++v_work;
+<span class="linenr">18: </span>    ++v_incr_static;
+<span class="linenr">19: </span>    ++v_incr_thread_local;
+<span class="linenr">20: </span>    ++v_incr;
+<span class="linenr">21: </span>    display(v_main, v_work, v_incr_static, v_incr_thread_local, v_incr);
+<span class="linenr">22: </span>}
+<span class="linenr">23: </span>
+<span class="linenr">24: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">work</span>(<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">atomic_int</span>&amp; <span style="font-weight: bold; font-style: italic;">v_main</span>) {
+<span class="linenr">25: </span>    <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">v_work</span> = 0;
+<span class="linenr">26: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span> <span style="font-weight: bold; font-style: italic;">i</span> = nb_times; i &gt; 0; --i) {
+<span class="linenr">27: </span>        incr(v_main, v_work);
+<span class="linenr">28: </span>    }
+<span class="linenr">29: </span>}
+<span class="linenr">30: </span>
+<span class="linenr">31: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+<span class="linenr">32: </span>{
+<span class="linenr">33: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">atomic_int</span> <span style="font-weight: bold; font-style: italic;">v_main</span> = 0;
+<span class="linenr">34: </span>
+<span class="linenr">35: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">vector</span>&lt;<span style="font-weight: bold; text-decoration: underline;">std</span>::jthread&gt; <span style="font-weight: bold; font-style: italic;">threads</span>(nb_threads);
+<span class="linenr">36: </span>    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">auto</span>&amp; <span style="font-weight: bold; font-style: italic;">t</span> : threads) {
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf022484" class="outline-3">
+<h3 id="orgf022484"><span class="section-number-3">4.6</span> Code 09 : atomic ne peut pas être utilisé sur un std::vector</h3>
+<div class="outline-text-3" id="text-4-6">
+<ul class="org-ul">
+<li>Ce code ne compile pas avec <code>std::atomic&lt;std::vector&lt;int&gt;&gt;</code>.</li>
+<li>Il plante à l'exécution si on ne met pas de <code>mutex</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0d0338b" class="outline-2">
+<h2 id="org0d0338b"><span class="section-number-2">5</span> Multitâche pour gérer de multiples activités en parallèle</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Un programme peut gérer de multiples activités en parallèle sans que
+ce soit forcément pour accélérer les performances. Par exemple :
+<ul class="org-ul">
+<li>Un serveur http qui doit gérer les requêtes de multiples clients
+Web en parallèle.</li>
+<li>Un jeu qui gère la boucle de jeu en même temps que la tâche
+concernant l'IA.</li>
+</ul></li>
+<li>Ces multiples activités peuvent induire des problèmes de
+synchronisation autre que l'exclusion mutuelle, donc la
+spécification d'outils de synchronisation autres que le mutex/lock:
+<ul class="org-ul">
+<li>Variable "Condition" (ou "moniteur")</li>
+<li>Variable "Sémaphore"</li>
+</ul></li>
+<li>Nous allons maintenant détailler ces outils et leurs déclinaisons.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2441e84" class="outline-2">
+<h2 id="org2441e84"><span class="section-number-2">6</span> Variables "Condition" ("Moniteur") pour de nouveaux patrons (<i>patterns</i>) de synchronisation</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org1d39618" class="outline-3">
+<h3 id="org1d39618"><span class="section-number-3">6.1</span> Outil : Variable "Condition" ("Moniteur")</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li>"Global" variables</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">mutex</span> <span style="font-weight: bold; font-style: italic;">mtx</span>;
+<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">condition_variable</span> <span style="font-weight: bold; font-style: italic;">condVar</span>;
+
+<span style="font-weight: bold; text-decoration: underline;">bool</span> <span style="font-weight: bold; font-style: italic;">dataReady</span>{<span style="font-weight: bold; text-decoration: underline;">false</span>};
+</pre>
+</div>
+<ul class="org-ul">
+<li>Le thread en attente exécute le code suivant :</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Code écrit                                // Code exécuté</span>
+<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">unique_lock</span>&lt;<span style="font-weight: bold; text-decoration: underline;">std</span>::mutex&gt; <span style="font-weight: bold;">lck</span>(mtx);       <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">unique_lock</span>&lt;<span style="font-weight: bold; text-decoration: underline;">std</span>::mutex&gt; <span style="font-weight: bold;">lck</span>(mtx);
+condVar.wait(lck, []{ <span style="font-weight: bold;">return</span> dataReady; });   <span style="font-weight: bold;">while</span> ( ![]{ <span style="font-weight: bold;">return</span> dataReady; }() {
+                                                mtx.unlock();
+                                                condVar.wait(lck);
+                                                mtx.lock();
+                                             }
+</pre>
+</div>
+<ul class="org-ul">
+<li>Le thread qui va débloquer la situation exécute le code suivant :</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp">{
+   <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">lock_guard</span>&lt;<span style="font-weight: bold; text-decoration: underline;">std</span>::mutex&gt; <span style="font-weight: bold; font-style: italic;">lck</span>(mtx);
+   dataReady = <span style="font-weight: bold; text-decoration: underline;">true</span>;
+}
+condVar.notify_one();
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org10100cf" class="outline-3">
+<h3 id="org10100cf"><span class="section-number-3">6.2</span> Code 10 : Pattern de synchronisation Cohorte à base de moniteur</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>L'objectif de ce <i>pattern</i> de synchronisation est de garantir que
+pas plus de N threads font un certain traitement.
+<ul class="org-ul">
+<li>Parallèle avec la vie de tous les jours : Comment garantir qu'un
+parking de voitures de N places n'accueille pas plus de N
+véhicules ?</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr"> 9: </span><span style="font-weight: bold;">constexpr</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">max_cars_in_parking</span> = 4;
+<span class="linenr">10: </span><span style="font-weight: bold;">constexpr</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_threads</span> = 10;
+<span class="linenr">11: </span>
+<span class="linenr">12: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">car_life</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">num_thread</span>) {
+<span class="linenr">13: </span>    <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">mutex</span> <span style="font-weight: bold; font-style: italic;">mtx</span>;
+<span class="linenr">14: </span>    <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">condition_variable</span> <span style="font-weight: bold; font-style: italic;">cond_var</span>;
+<span class="linenr">15: </span>    <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_cars_in_parking</span> = 0;
+<span class="linenr">16: </span>
+<span class="linenr">17: </span>    {
+<span class="linenr">18: </span>        <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">unique_lock</span> <span style="font-weight: bold; font-style: italic;">lck</span>(mtx);
+<span class="linenr">19: </span>        <span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"Thread "</span> &lt;&lt; num_thread &lt;&lt; <span style="font-style: italic;">" wants to enter parking"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">20: </span>        cond_var.wait(lck, [] { <span style="font-weight: bold;">return</span> nb_cars_in_parking &lt; max_cars_in_parking; });
+<span class="linenr">21: </span>        ++nb_cars_in_parking;
+<span class="linenr">22: </span>    }
+<span class="linenr">23: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"Thread "</span> &lt;&lt; num_thread &lt;&lt; <span style="font-style: italic;">" enters parking"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">24: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">this_thread</span>::sleep_for(0.2s); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Note: We do not use sleep, otherwise the whole process would stop.</span>
+<span class="linenr">25: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"Thread "</span> &lt;&lt; num_thread &lt;&lt; <span style="font-style: italic;">" exits parking"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">26: </span>    {
+<span class="linenr">27: </span>       <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">lock_guard</span> <span style="font-weight: bold; font-style: italic;">lck</span>(mtx);
+<span class="linenr">28: </span>       --nb_cars_in_parking;
+<span class="linenr">29: </span>    }
+<span class="linenr">30: </span>    cond_var.notify_one();
+<span class="linenr">31: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"Thread "</span> &lt;&lt; num_thread &lt;&lt; <span style="font-style: italic;">" exited parking"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">32: </span>}
+</pre>
+</div>
+<ul class="org-ul">
+<li>Application : Considérez un parking avec seulement 2 places et 4
+voitures qui arrivent (couleurs similaires aux couleurs des feutres
+de tableau blanc) avec le scénatio suivant :
+<ul class="org-ul">
+<li>Les voitures bleue et verte entrent dans le parking.</li>
+<li>La voiture rouge arrive et se retrouve en attente.</li>
+<li>La voiture bleue sort du parking juste au moment où la voiture
+noire arrive ==&gt; la voiture noire entre dans le parking avant même
+que la voiture rouge ait pu amorcer un mouvement (et ce que le
+<code>cond_var.notify_one()</code> soit hors ou dans la section critique).</li>
+</ul></li>
+<li>NB : Durant l'exécution, il se pourrait que vous obteniez des
+messages "mélangés". Par exemple :</li>
+</ul>
+<pre class="example">Thread 6Thread 7 exits parking
+Thread 7 exited parking
+ exits parking
+Thread 6 exited parking
+</pre>
+<ul class="org-ul">
+<li>Ceci est juste un mélange d'affichages qui ne remet pas en cause la
+synchronisation qui, elle, s'est bien passée. Pour éviter ce
+mélange, une 1ère solution : vous définissez un mutex global qui
+protège chaque <code>cout</code> (cf. exemple en <code>13_SyncPattern_Barrier</code>):</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">synchronizedOut</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">string</span>&amp; <span style="font-weight: bold; font-style: italic;">s</span>) <span style="font-weight: bold;">noexcept</span> {
+    <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">mutex</span> <span style="font-weight: bold; font-style: italic;">coutMutex</span>;
+    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">scoped_lock</span> <span style="font-weight: bold; font-style: italic;">lock</span>(coutMutex);
+    <span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; s;
+}
+
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Invocation par synchronizedOut(name + ": " + "Morning work done!\n");</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Soit, 2ème solution (depuis C++ 20) : vous vous appuyez sur
+<a href="https://en.cppreference.com/w/cpp/io/basic_osyncstream"><code>std::basic_osyncstream</code></a> en écrivant par exemple:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Hello, "</span> &lt;&lt; <span style="font-style: italic;">"World!"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga973d20" class="outline-3">
+<h3 id="orga973d20"><span class="section-number-3">6.3</span> Code 11 : Pattern de synchronisation Loquet (<i>Latch</i>) avec moniteur (N threads contrôlent 1 thread)</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>Problème résolu : 8 passagers d'un minibus doivent embarquer
+dedans. Le conducteur ne démarre que quand tout le monde a embarqué.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">10: </span><span style="font-weight: bold;">constexpr</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">minibus_capacity</span> = 8; <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">passengers (in addition to the driver)</span>
+<span class="linenr">11: </span>
+<span class="linenr">12: </span><span style="font-weight: bold;">struct</span> <span style="font-weight: bold; text-decoration: underline;">minibus_t</span> {
+<span class="linenr">13: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">mutex</span> <span style="font-weight: bold; font-style: italic;">mtx</span>;
+<span class="linenr">14: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">condition_variable</span> <span style="font-weight: bold; font-style: italic;">cond_var</span>;
+<span class="linenr">15: </span>    <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_passengers</span>{ 0 }; <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Already boarded in minibus</span>
+<span class="linenr">16: </span>};
+<span class="linenr">17: </span>
+<span class="linenr">18: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">passenger</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">num_passenger</span>, <span style="font-weight: bold; text-decoration: underline;">minibus_t</span>&amp; <span style="font-weight: bold; font-style: italic;">minibus</span>) {
+<span class="linenr">19: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Passenger "</span> &lt;&lt; num_passenger &lt;&lt; <span style="font-style: italic;">" starting to board"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">20: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">this_thread</span>::sleep_for(1s); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Note: We do not use sleep, otherwise the whole process would stop.</span>
+<span class="linenr">21: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Passenger "</span> &lt;&lt; num_passenger &lt;&lt; <span style="font-style: italic;">" is done boarding"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">22: </span>    {
+<span class="linenr">23: </span>        <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">lock_guard</span> <span style="font-weight: bold; font-style: italic;">lck</span>(minibus.mtx);
+<span class="linenr">24: </span>        ++minibus.nb_passengers;
+<span class="linenr">25: </span>    }
+<span class="linenr">26: </span>    minibus.cond_var.notify_one();
+<span class="linenr">27: </span>}
+<span class="linenr">28: </span>
+<span class="linenr">29: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">driver</span>(<span style="font-weight: bold; text-decoration: underline;">minibus_t</span>&amp; <span style="font-weight: bold; font-style: italic;">minibus</span>) {
+<span class="linenr">30: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Driver waiting for "</span> &lt;&lt; minibus_capacity &lt;&lt; <span style="font-style: italic;">" passengers to get onboard"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">31: </span>    {
+<span class="linenr">32: </span>        <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">unique_lock</span> <span style="font-weight: bold; font-style: italic;">lck</span>(minibus.mtx);
+<span class="linenr">33: </span>        minibus.cond_var.wait(lck, [&amp;<span style="font-weight: bold; font-style: italic;">minibus</span>] { <span style="font-weight: bold;">return</span> minibus.nb_passengers == minibus_capacity; });
+<span class="linenr">34: </span>    }
+<span class="linenr">35: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Driver sees that "</span> &lt;&lt; minibus_capacity &lt;&lt; <span style="font-style: italic;">" passengers are onboard: He can start the trip!"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">36: </span>}
+</pre>
+</div>
+<ul class="org-ul">
+<li>Dans ce code, nous utilisons <code>notify_one()</code>. Aurions-nous pu
+utiliser <code>notify_all</code> ? Si oui, lequel des deux est le plus
+performant ?</li>
+<li>NB : Vu que les passagers terminent leur exécution une fois qu'ils
+ont embarqués, nous aurions pu procéder comme au "Code 06",
+programmer les passagers sous forme de <code>std::async()</code>, le chauffeur
+faisant des <code>get()</code> sur chacun des passagers.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8ddae05" class="outline-3">
+<h3 id="org8ddae05"><span class="section-number-3">6.4</span> Code 12 : Pattern de synchronisation Loquet (<i>Latch</i>) avec moniteur (1 thread contrôle N threads)</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>Problème résolu : 8 coureurs d'athlétisme ne commencent à courir que
+quand le juge a donné le top départ.
+<ul class="org-ul">
+<li>Dans la version fournie, le juge donne le signal de début de
+course une fois que les coureurs sont en place.</li>
+<li>Une fois que vous avez vérifié que cette version fonctionne,
+mettez le <code>sleep_for</code> avant le <code>for (auto&amp; t : threads) {</code> et le
+lancement du referee avant le <code>sleep_for</code>. Vérifiez que les
+coureurs se mettent bien à courir immédiatement, vu que le signal
+a déjà été donné.</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">10: </span><span style="font-weight: bold;">constexpr</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_runners</span> = 8; <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">How many runners can run in parallel in a stadium</span>
+<span class="linenr">11: </span>
+<span class="linenr">12: </span><span style="font-weight: bold;">struct</span> <span style="font-weight: bold; text-decoration: underline;">stadium_t</span> {
+<span class="linenr">13: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">mutex</span> <span style="font-weight: bold; font-style: italic;">mtx</span>;
+<span class="linenr">14: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">condition_variable</span> <span style="font-weight: bold; font-style: italic;">cond_var</span>;
+<span class="linenr">15: </span>    <span style="font-weight: bold; text-decoration: underline;">bool</span> <span style="font-weight: bold; font-style: italic;">run_signal</span>{ <span style="font-weight: bold; text-decoration: underline;">false</span> };
+<span class="linenr">16: </span>};
+<span class="linenr">17: </span>
+<span class="linenr">18: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">runner</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">num_runner</span>, <span style="font-weight: bold; text-decoration: underline;">stadium_t</span>&amp; <span style="font-weight: bold; font-style: italic;">stadium</span>) {
+<span class="linenr">19: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Runner "</span> &lt;&lt; num_runner &lt;&lt; <span style="font-style: italic;">" waiting for run signal"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">20: </span>    {
+<span class="linenr">21: </span>        <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">unique_lock</span> <span style="font-weight: bold; font-style: italic;">lck</span>(stadium.mtx);
+<span class="linenr">22: </span>        stadium.cond_var.wait(lck, [&amp;<span style="font-weight: bold; font-style: italic;">stadium</span>] { <span style="font-weight: bold;">return</span> stadium.run_signal; });
+<span class="linenr">23: </span>    }
+<span class="linenr">24: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Runner "</span> &lt;&lt; num_runner &lt;&lt; <span style="font-style: italic;">" starts running"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">25: </span>}
+<span class="linenr">26: </span>
+<span class="linenr">27: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">referee</span>(<span style="font-weight: bold; text-decoration: underline;">stadium_t</span>&amp; <span style="font-weight: bold; font-style: italic;">stadium</span>) {
+<span class="linenr">28: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Referee is about to fire run signal"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">29: </span>    {
+<span class="linenr">30: </span>        <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">lock_guard</span> <span style="font-weight: bold; font-style: italic;">lck</span>(stadium.mtx);
+<span class="linenr">31: </span>        stadium.run_signal = <span style="font-weight: bold; text-decoration: underline;">true</span>;
+<span class="linenr">32: </span>    }
+<span class="linenr">33: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Referee has fired run signal"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">34: </span>    stadium.cond_var.notify_all();
+<span class="linenr">35: </span>}
+</pre>
+</div>
+<ul class="org-ul">
+<li>Dans ce code, nous utilisons <code>notify_all()</code>. Selon vous,
+aurions-nous pu utiliser <code>notify_one</code> ?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge928e7c" class="outline-3">
+<h3 id="orge928e7c"><span class="section-number-3">6.5</span> Outil : <code>std::latch</code></h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+Notions essentielles [Grimm, 2021]
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Member function</b></th>
+<th scope="col" class="org-left"><b>Description</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>lat.count_down(upd = 1)</code></td>
+<td class="org-left">Atomically decrements the counter by <code>upd</code> without blocking the caller.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>lat.try_wait()</code></td>
+<td class="org-left">Returns true if counter == 0.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>lat.wait()</code></td>
+<td class="org-left">Returns immediately if counter <code>= 0. If not blocks until counter =</code> 0.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>lat.arrive_and_wait(upd = 1)</code></td>
+<td class="org-left">Equivalent to <code>count_down(upd); wait();</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>std::latch::max</code></td>
+<td class="org-left">Maximum value of the counter supported by the implementation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org1361c0a" class="outline-3">
+<h3 id="org1361c0a"><span class="section-number-3">6.6</span> Code 13 : Pattern de synchronisation Loquet (<i>Latch</i>) avec <code>std::latch</code> (N threads contrôlent 1 thread)</h3>
+<div class="outline-text-3" id="text-6-6">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">11: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">passenger</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">num_passenger</span>, <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">latch</span>&amp; <span style="font-weight: bold; font-style: italic;">onboarding_remaining</span>) {
+<span class="linenr">12: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Passenger "</span> &lt;&lt; num_passenger &lt;&lt; <span style="font-style: italic;">" starting to board"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">13: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">this_thread</span>::sleep_for(1s);
+<span class="linenr">14: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Passenger "</span> &lt;&lt; num_passenger &lt;&lt; <span style="font-style: italic;">" is done boarding"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">15: </span>    onboarding_remaining.count_down();
+<span class="linenr">16: </span>}
+<span class="linenr">17: </span>
+<span class="linenr">18: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">driver</span>(<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">latch</span>&amp; <span style="font-weight: bold; font-style: italic;">onboarding_remaining</span>) {
+<span class="linenr">19: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Driver waiting for "</span> &lt;&lt; minibus_capacity &lt;&lt; <span style="font-style: italic;">" passengers to get onboard"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">20: </span>    onboarding_remaining.wait();
+<span class="linenr">21: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Driver sees that "</span> &lt;&lt; minibus_capacity &lt;&lt; <span style="font-style: italic;">" passengers are onboard: He can start the trip!"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">22: </span>}
+<span class="linenr">23: </span>
+<span class="linenr">24: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+<span class="linenr">25: </span>{
+<span class="linenr">26: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">latch</span> <span style="font-weight: bold; font-style: italic;">onboarding_remaining</span>(minibus_capacity);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8f5af82" class="outline-3">
+<h3 id="org8f5af82"><span class="section-number-3">6.7</span> Code 14 : Pattern de synchronisation Loquet (<i>Latch</i>) avec <code>std::latch</code> (1 thread contrôle N threads)</h3>
+<div class="outline-text-3" id="text-6-7">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">11: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">runner</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">num_runner</span>, <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">latch</span>&amp; <span style="font-weight: bold; font-style: italic;">fire_signal</span>) {
+<span class="linenr">12: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Runner "</span> &lt;&lt; num_runner &lt;&lt; <span style="font-style: italic;">" waiting for run signal"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">13: </span>    fire_signal.wait();
+<span class="linenr">14: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Runner "</span> &lt;&lt; num_runner &lt;&lt; <span style="font-style: italic;">" starts running"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">15: </span>}
+<span class="linenr">16: </span>
+<span class="linenr">17: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">referee</span>(<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">latch</span>&amp; <span style="font-weight: bold; font-style: italic;">fire_signal</span>) {
+<span class="linenr">18: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Referee is about to fire run signal"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">19: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Referee has fired run signal"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">20: </span>    fire_signal.count_down();
+<span class="linenr">21: </span>}
+<span class="linenr">22: </span>
+<span class="linenr">23: </span><span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+<span class="linenr">24: </span>{
+<span class="linenr">25: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">latch</span> <span style="font-weight: bold; font-style: italic;">fire_signal</span>(1);
+</pre>
+</div>
+<p>
+Une fois que vous avez vérifié que la version fournie fonctionne,
+mettez le <code>sleep_for</code> avant le <code>for (auto&amp; t : threads) {</code> et le
+lancement du referee avant le <code>sleep_for</code>. Vérifiez que les
+coureurs se mettent bien à courir immédiatement, vu que le signal
+a déjà été donné.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf8082a4" class="outline-3">
+<h3 id="orgf8082a4"><span class="section-number-3">6.8</span> Outil : <code>std::barrier</code></h3>
+<div class="outline-text-3" id="text-6-8">
+<p>
+Notions essentielles [Grimm, 2021]
+</p>
+<ul class="org-ul">
+<li>A <code>std::barrier</code> is similar to a <code>std::latch</code></li>
+<li>But two differences
+<ol class="org-ol">
+<li>You can use a <code>std::barrier</code> more than once</li>
+<li>You can adjust the counter for the next phase</li>
+</ol></li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Member function</b></th>
+<th scope="col" class="org-left"><b>Description</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>bar.arrive(upd)</code></td>
+<td class="org-left">Atomically decrements counter by <code>upd</code>.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>bar.wait()</code></td>
+<td class="org-left">Blocks at the synchronization point until the completion step is done.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>bar.arrive_and_wait()</code></td>
+<td class="org-left">Equivalent to <code>wait(arrive())</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>bar.arrive_and_drop()</code></td>
+<td class="org-left">Decrements the initial expected count for all subsequent phases by one.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>std::barrier::max</code></td>
+<td class="org-left">Maximum value of the counter supported by the implementation.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orga6cbd35" class="outline-3">
+<h3 id="orga6cbd35"><span class="section-number-3">6.9</span> Code 15 : Pattern de synchronisation Barrière (<i>Latch</i>) avec <code>std::barrier</code></h3>
+</div>
+<div id="outline-container-org420599a" class="outline-3">
+<h3 id="org420599a"><span class="section-number-3">6.10</span> Pattern de synchronisation Producteur / Consommateur</h3>
+<div class="outline-text-3" id="text-6-10">
+</div>
+<div id="outline-container-orgba7b00f" class="outline-4">
+<h4 id="orgba7b00f"><span class="section-number-4">6.10.1</span> Enoncé du problème à résoudre</h4>
+<div class="outline-text-4" id="text-6-10-1">
+<ul class="org-ul">
+<li>1 ou plusieurs threads produisent des données.</li>
+<li>1 ou plusieurs threads consomment les données produites.</li>
+</ul>
+
+<p>
+2 variantes
+</p>
+<ol class="org-ol">
+<li>La communication se fait via un buffer de taille infinie (la
+production n'est donc pas limitée).</li>
+<li>La communication se fait via un buffer , ne pouvant contenir qu'un
+maximum de N data.</li>
+</ol>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="Sensibilisation%20%C3%A0%20la%20programmation%20concurrente%20(multit%C3%A2che)%20%C3%A0%20travers%20C++%20(Cours%20Int%C3%A9gr%C3%A9)_fichiers/producteur-consommateur.png" alt="producteur-consommateur.png" width="500px">
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc8f4d96" class="outline-4">
+<h4 id="orgc8f4d96"><span class="section-number-4">6.10.2</span> Variante avec buffer de taille infinie (cf. Code 16)</h4>
+<div class="outline-text-4" id="text-6-10-2">
+<ul class="org-ul">
+<li>Cette variante présente le risque de consommer trop de mémoire,
+si les producteurs produisent beaucoup plus vite que les
+consommateurs ne consomment.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8efc19a" class="outline-4">
+<h4 id="org8efc19a"><span class="section-number-4">6.10.3</span> Variante avec buffer de taille finie</h4>
+<div class="outline-text-4" id="text-6-10-3">
+<div class="org-src-container">
+<pre class="src src-cpp">nb_places_dispo = N;
+nb_data_dispo = 0;
+
+slot_dispo = 0;
+slot_data = 0;
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Producteur                                 // Consommateur</span>
+Répéter                                       <span style="font-weight: bold; text-decoration: underline;">Répéter</span>
+  <span style="font-weight: bold; font-style: italic;">data</span> = produitData();
+
+  mtx_places_dispo.lock();                      mtx_data_dispo.lock();
+  cond_places_dispo.wait( mtx_places_dispo,     cond_data_dispo.wait( data_dispo,
+       []{ <span style="font-weight: bold;">return</span> nb_places_dispo &gt; 0 });          []{ <span style="font-weight: bold;">return</span> nb_data_dispo &gt; 0 });
+  --nb_place_dispo;                             --nb_data_dispo;
+  buffer[slot_dispo] = data;                    data = buffer[slot_data];
+  slot_dispo = (slot_dispo + 1) % N;            slot_data = (slot_data + 1) % N;
+  mtx_places_dispo.unlock();                    mtx_data_dispo.unlock();
+
+  mtx_data_dispo.lock();                        mtx_places_dispo.lock();
+  ++nb_data_dispo;                              ++nb_place_dispo;
+  mtx_data_dispo.unlock();                      mtx_places_dispo.unlock();
+  cond_data_dispo.notify_one();                 cond_place_dispo.notify_one();
+
+                                                consomme(data);
+Fin <span style="font-weight: bold; text-decoration: underline;">Répéter</span>                                   <span style="font-weight: bold; text-decoration: underline;">Fin</span> <span style="font-weight: bold; font-style: italic;">répéter</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Selon vous, pourquoi doit-on avoir la mise à jour de slot_dispo et
+de slot_data dans une section critique ? Pourquoi définir ces
+variables comme <code>atomic</code> ne suffit pas ?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1d271ac" class="outline-4">
+<h4 id="org1d271ac"><span class="section-number-4">6.10.4</span> Variante (fausse) avec buffer de taille finie</h4>
+<div class="outline-text-4" id="text-6-10-4">
+<div class="org-src-container">
+<pre class="src src-cpp">nb_places_dispo = N;
+nb_data_dispo = 0;
+
+slot_dispo = 0;
+slot_data = 0;
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Producteur                                 // Consommateur</span>
+Répéter                                       <span style="font-weight: bold; text-decoration: underline;">Répéter</span>
+  <span style="font-weight: bold;">mtx_places_dispo</span>.lock();                      mtx_data_dispo.lock();
+  cond_places_dispo.wait( mtx_places_dispo,     cond_data_dispo.wait( data_dispo,
+       []{ <span style="font-weight: bold;">return</span> nb_places_dispo &gt; 0 });          []{ <span style="font-weight: bold;">return</span> nb_data_dispo &gt; 0 });
+  --nb_place_dispo;                             --nb_data_dispo;
+  slot = slot_dispo;                            slot = slot_data;
+  slot_dispo = (slot_dispo + 1) % N;            slot_data = (slot_data + 1) % N;
+  mtx_places_dispo.unlock();                    mtx_data_dispo.unlock();
+
+  buffer[slot] = calculData();                  data = (buffer[slot]);
+
+  mtx_data_dispo.lock();                        mtx_places_dispo.lock();
+  ++nb_data_dispo;                              ++nb_place_dispo;
+  mtx_data_dispo.unlock();                      mtx_places_dispo.unlock();
+  cond_data_dispo.notify_one();                 cond_place_dispo.notify_one();
+
+                                                consomme(data);
+Fin <span style="font-weight: bold; text-decoration: underline;">Répéter</span>                                   <span style="font-weight: bold; text-decoration: underline;">Fin</span> <span style="font-weight: bold; font-style: italic;">répéter</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Pourquoi cette variante pose-t-elle problème ?</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge779df5" class="outline-3">
+<h3 id="orge779df5"><span class="section-number-3">6.11</span> Code 16 : Pattern de synchronisation Producteur / Consommateur avec queue illimitée</h3>
+<div class="outline-text-3" id="text-6-11">
+<ul class="org-ul">
+<li>Ce code largement inspiré du livre [Grimm, 2021] s'appuie sur une
+queue non limitée en taille. Notez que le livre [Grimm, 2021]
+contient, aux pages 538-554, toute une discussion sur
+l'implémentation d'une telle queue.</li>
+<li>Vu tous les warnings remontés par <i>SonarLint</i>, la qualité de ce code
+pose question.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge0d91f9" class="outline-3">
+<h3 id="orge0d91f9"><span class="section-number-3">6.12</span> Code 17 : Pattern de synchronisation Producteur / Consommateur avec production régulée</h3>
+<div class="outline-text-3" id="text-6-12">
+<ul class="org-ul">
+<li>Ce code implémente l'algorithme présenté précédemment.</li>
+<li>Notez l'instruction <code>exit(0);</code> qui permet de forcer l'arrêt du
+processus, même si des threads détachés continuent à s'exécuter
+(Mettez cette instruction en commentaire, puis relancez votre
+programme pour vous en convaincre).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb351abd" class="outline-2">
+<h2 id="orgb351abd"><span class="section-number-2">7</span> Variables semaphore pour une autre manière de synchroniser</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org63a294e" class="outline-3">
+<h3 id="org63a294e"><span class="section-number-3">7.1</span> Outil : Sémaphores</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li>Historiquement, les sémaphores ont été conçus avant les
+moniteurs. Mais, comme de nombreuses personnes estiment qu'il est
+plus simple de travailler avec les moniteurs qu'avec les sémaphores,
+les moniteurs ont été offerts dès C++ 11 alors que les sémaphores ne
+sont arrivés qu'avec C++ 20.</li>
+<li>Notions de base
+<ul class="org-ul">
+<li>Un sémaphore est un objet système contenant
+<ul class="org-ul">
+<li>Un compteur initialisé à une certaine valeur</li>
+<li>Une file d'attente de processus mis en attente car le compteur avait une valeur &lt; 0.</li>
+</ul></li>
+<li>Opérations
+<ul class="org-ul">
+<li>Initialisation : <code>std::counting_semaphore&lt;valeur_init&gt; sem(valeur_init);</code></li>
+<li>Opérateur <code>P()</code> ("Puis-je ?") : <code>sem.acquire(); // en C++</code></li>
+<li>Opérateur <code>V()</code> ("Vas-y !") : <code>sem.release(); // en C++</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">P()                          // V()</span>
+<span style="font-weight: bold; text-decoration: underline;">Si</span> <span style="font-weight: bold; font-style: italic;">compteur</span> &lt;= 0 Alors          compteur += 1
+   Met le thread en attente     Réveille l<span style="font-weight: bold;">'</span>éventuel thread en tête de file d<span style="font-weight: bold;">'</span>attente
+FinSi
+compteur -= 1
+</pre>
+</div>
+<ul class="org-ul">
+<li>Bonnes pratiques
+<ul class="org-ul">
+<li>Un sémaphore initialisé à 1 peut être utilisé comme un
+mutex. Mais, préférez systématiquement le mutex si opérations
+lock() et unlock() sont faites dans le même thread. En effet :
+<ul class="org-ul">
+<li>Mutex plus performant que sémaphore.</li>
+<li>Code plus clair ==&gt; Meilleure maintenabilité.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3c36b1a" class="outline-3">
+<h3 id="org3c36b1a"><span class="section-number-3">7.2</span> Code 18 : Pattern de synchronisation Cohorte à base de sémaphore</h3>
+<div class="outline-text-3" id="text-7-2">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr">12: </span><span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">car_life</span>(<span style="font-weight: bold;">const</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">num_thread</span>) {
+<span class="linenr">13: </span>    <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">counting_semaphore</span>&lt;max_cars_in_parking&gt; <span style="font-weight: bold; font-style: italic;">parking</span>(max_cars_in_parking);
+<span class="linenr">14: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Thread "</span> &lt;&lt; num_thread &lt;&lt; <span style="font-style: italic;">" wants to enter parking"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">15: </span>    parking.acquire();
+<span class="linenr">16: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Thread "</span> &lt;&lt; num_thread &lt;&lt; <span style="font-style: italic;">" enters parking"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">17: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">this_thread</span>::sleep_for(0.2s); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Note: We do not use sleep, otherwise the whole process would stop.</span>
+<span class="linenr">18: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Thread "</span> &lt;&lt; num_thread &lt;&lt; <span style="font-style: italic;">" exits parking"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">19: </span>    parking.release();
+<span class="linenr">20: </span>    <span style="font-weight: bold; text-decoration: underline;">std</span>::osyncstream(<span style="font-weight: bold; text-decoration: underline;">std</span>::cout) &lt;&lt; <span style="font-style: italic;">"Thread "</span> &lt;&lt; num_thread &lt;&lt; <span style="font-style: italic;">" exited parking"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span class="linenr">21: </span>}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3347956" class="outline-3">
+<h3 id="org3347956"><span class="section-number-3">7.3</span> Pattern de synchronisation Rendez-vous</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+On souhaite que, après un travail, 2 threads se "rejoignent" avant de démarrer un nouveau travail.
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp">sem_juliette(0)
+sem_romeo(0)
+
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Juliette                       // Romeo</span>
+<span style="font-weight: bold; text-decoration: underline;">Se</span> <span style="font-weight: bold;">pouponner</span>();                   Encore plus <span style="font-weight: bold; text-decoration: underline;">se</span> <span style="font-weight: bold;">pouponner</span>()
+sem_juliette.release()            sem_romeo.release()
+sem_romeo.acquire()               sem_juliette.acquire()
+Boire <span style="font-weight: bold; text-decoration: underline;">un</span> <span style="font-weight: bold;">pseudo</span>-poison()          Être perclus <span style="font-weight: bold; text-decoration: underline;">de</span> <span style="font-weight: bold;">douleur</span>()
+</pre>
+</div>
+
+<p>
+Notez qu'un <code>std::latch()</code> permet d'être plus concis (et plus efficace ?) :
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">latch</span> <span style="font-weight: bold; font-style: italic;">rdv</span>(2); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Car 2 personnes ont besoin de se retrouver.</span>
+
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Juliette                       // Romeo</span>
+<span style="font-weight: bold; text-decoration: underline;">Se</span> <span style="font-weight: bold;">pouponner</span>();                   Encore plus <span style="font-weight: bold; text-decoration: underline;">se</span> <span style="font-weight: bold;">pouponner</span>()
+rdv.arrive_and_wait()             rdv.arrive_and_wait()
+Boire <span style="font-weight: bold; text-decoration: underline;">un</span> <span style="font-weight: bold;">pseudo</span>-poison()          Être perclus <span style="font-weight: bold; text-decoration: underline;">de</span> <span style="font-weight: bold;">douleur</span>()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf6e8b61" class="outline-3">
+<h3 id="orgf6e8b61"><span class="section-number-3">7.4</span> Pattern de synchronisation Lecteurs-Rédacteurs</h3>
+<div class="outline-text-3" id="text-7-4">
+</div>
+<div id="outline-container-orgd2929da" class="outline-4">
+<h4 id="orgd2929da"><span class="section-number-4">7.4.1</span> Enoncé du problème</h4>
+<div class="outline-text-4" id="text-7-4-1">
+<p>
+(cf. <a href="https://www.tutorialspoint.com/readers-writers-problem">https://www.tutorialspoint.com/readers-writers-problem</a>)
+</p>
+
+<p>
+The readers-writers problem relates to an object such as a file that is 
+shared between multiple processes. Some of these processes are readers 
+i.e. they only want to read the data from the object and some of the 
+processes are writers i.e. they want to write into the object.
+</p>
+
+<p>
+The readers-writers problem is used to manage synchronization so that 
+there are no problems with the object data. For example - If two readers
+ access the object at the same time there is no problem. However if two 
+writers or a reader and writer access the object at the same time, there
+ may be problems.
+</p>
+
+<p>
+To solve this situation, a writer should get exclusive access to an 
+object i.e. when a writer is accessing the object, no reader or writer 
+may access it. However, multiple readers can access the object at the 
+same time.
+</p>
+</div>
+</div>
+<div id="outline-container-org3ef0359" class="outline-4">
+<h4 id="org3ef0359"><span class="section-number-4">7.4.2</span> Algorithmes</h4>
+<div class="outline-text-4" id="text-7-4-2">
+<p>
+Notez l'utilisation de mutex ou de sémaphore selon qu'on
+lock()/unlock() dans le même thread ou pas.
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">semaphore</span> <span style="font-weight: bold; font-style: italic;">sem_wrt</span>(1);
+<span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_reader</span>(0);
+
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Reader                       // Writer</span>
+mtx_reader.lock();              sem_wrt.acquire();
+++nb_reader;                    .
+<span style="font-weight: bold;">if</span> (nb_reader == 1)             WRITE INTO THE <span style="font-weight: bold; text-decoration: underline;">OBJECT</span>
+   <span style="font-weight: bold;">sem_wrt</span>.acquire();           .
+mtx_reader.unlock();            sem_wrt.release();
+.
+. READ THE OBJECT
+.
+mtx_reader.lock();
+--nb_reader;
+<span style="font-weight: bold;">if</span> (nb_reader == 0)
+   sem_wrt.release();
+mtx_reader.unlock();
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2c2c0fe" class="outline-4">
+<h4 id="org2c2c0fe"><span class="section-number-4">7.4.3</span> Risque de famine pour le writer</h4>
+<div class="outline-text-4" id="text-7-4-3">
+<p>
+Les algorithmes précédents présentent un risque de famine : s'il y a
+de nombreux lecteurs, ils risquent d'empêcher indéfiniment qu'un
+rédacteur prenne la main.
+</p>
+
+<p>
+On pourrait faire un diagramme de temps. Mais il est plus ludique de
+demander de l'aide à Gudul, Symfony et Petit Poney.
+</p>
+
+<p>
+Solution : Ajouter un autre mutex_anti_famine.
+</p>
+</div>
+</div>
+<div id="outline-container-org1b0d0e4" class="outline-4">
+<h4 id="org1b0d0e4"><span class="section-number-4">7.4.4</span> Algorithmes corrigeant le problème de famine</h4>
+<div class="outline-text-4" id="text-7-4-4">
+<p>
+On ajoute un mutex (vu que lock()/unlock() dans le même thread) qui
+permet d'ordonancer ceux qui veulent accéder à l'objet.
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">semaphore</span> <span style="font-weight: bold; font-style: italic;">sem_wrt</span>(1);
+<span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">nb_reader</span>(0);
+
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Reader                                 // Writer</span>
+mtx_glob.lock();                          mtx_glob.lock();
+mtx_reader.lock();<span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">Désormais inutile     sem_wrt.acquire();</span>
+++nb_reader;                              .
+<span style="font-weight: bold;">if</span> (nb_reader == 1)                       WRITE INTO THE <span style="font-weight: bold; text-decoration: underline;">OBJECT</span>
+   <span style="font-weight: bold;">sem_wrt</span>.acquire();                     .
+mtx_reader.unlock();<span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">Désormais inutile   sem_wrt.release();</span>
+mtx_glob.unlock();                        mtx_glob.lock();
+.
+. READ THE OBJECT
+.
+mtx_reader.lock();
+--nb_reader;
+<span style="font-weight: bold;">if</span> (nb_reader == 0)
+   sem_wrt.release();
+mtx_reader.unlock();
+</pre>
+</div>
+<ul class="org-ul">
+<li>Pourquoi les instructions <code>mtx_reader.lock()</code> et
+<code>mtx_reader.unlock()</code> ont le commentaire <code>//Désormais inutile</code> ?</li>
+<li>Pourquoi les instructions <code>wrt.lock()</code> et <code>wrt.unlock()</code> du <i>Writer</i>
+restent nécessaires ?</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc588803" class="outline-3">
+<h3 id="orgc588803"><span class="section-number-3">7.5</span> Code 19 : Pattern de synchronisation Lecteurs-Rédacteurs avec sémaphore</h3>
+<div class="outline-text-3" id="text-7-5">
+<p>
+Analysez le code et posez des questions si des points vous semblent obscurs.
+</p>
+</div>
+</div>
+<div id="outline-container-org0b069ca" class="outline-3">
+<h3 id="org0b069ca"><span class="section-number-3">7.6</span> Outil : Verrou pour lecteurs-rédacteur (<code>std::shared_lock</code>)</h3>
+<div class="outline-text-3" id="text-7-6">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li><code>std::shared_lock</code> s'appuie sur un <code>std::shared_timed_mutex</code> (C++14)
+ou un <code>std::shared_mutex</code> (C++17), le premier permettant de
+spécifier une date de libération ou une durée avant libération.</li>
+<li>Ensuite
+<ul class="org-ul">
+<li>Verrou de lecteur : <code>std::shared_lock readerLock(a_shared_mutex);</code></li>
+<li>Verrou de rédacteur : <code>std::lock_guard writerLock(a_shared_mutex);</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f73cac" class="outline-3">
+<h3 id="org1f73cac"><span class="section-number-3">7.7</span> Code 20 : Pattern de synchronisation Lecteurs-Rédacteurs avec verrou lecteurs-rédacteur</h3>
+<div class="outline-text-3" id="text-7-7">
+<p>
+Analysez le code. Voyez comment l'utilisation du verrou
+lecteurs-rédacteur simplifie le code. Posez des questions si des
+points vous semblent obscurs.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbee983d" class="outline-2">
+<h2 id="orgbee983d"><span class="section-number-2">8</span> Autres notions importantes</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org5d4bef4" class="outline-3">
+<h3 id="org5d4bef4"><span class="section-number-3">8.1</span> Bonne pratique : Gestion de la mémoire (allocation/désallocation)</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li>Si un programme multithreadé fait des allocations/désallocations mémoire, il est possible que
+<ul class="org-ul">
+<li>les allocations se font dans un thread,</li>
+<li>les utilisations de la mémoire allouée se fait dans d'autres threads,</li>
+<li>les désallocations se fait dans un autre thread.</li>
+</ul></li>
+<li>Cela entraine plein de questions dont :
+<ul class="org-ul">
+<li>Comment synchroniser allocations, utilisation et désallocations ?</li>
+<li>Comment être sûr qu'on n'oublie pas de libérer de la mémoire ?</li>
+<li>Comment détecter si, par erreur de logique, notre code utilise de
+la mémoire mémoire déjà libérée ?</li>
+</ul></li>
+<li>Les réponses à ces questions dépendent du langage :
+<ul class="org-ul">
+<li>Langages à base de <i>garbage collector</i> (C#, Java) : a priori, rien
+à faire.</li>
+<li>En C, il est <b>essentiel</b> de respecter les conseils suivants :
+<ul class="org-ul">
+<li>Si vous déclarez un pointeur nu, pensez à <b>systématiquement</b>
+l'initialiser (à <code>NULL</code> si vous n'avez pas de valeur à fournir à
+la variable).</li>
+<li>Tout <code>free(ptr)</code> doit être suivi de <code>ptr = NULL;</code></li>
+</ul></li>
+<li>En C++, s'appuyer sur <code>shared_ptr</code>, en réfléchissant préalablement s'il est
+nécessaire d'avoir des pointeurs. cf. Exemple d'un serveur TCP.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8e4b74c" class="outline-3">
+<h3 id="org8e4b74c"><span class="section-number-3">8.2</span> Code 21 : Serveur TCP avec <code>shared_ptr</code></h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+NB : Dans ce code, remarquez qu'au lieu d'une exclusion mutuelle dans
+l'accès à l'objet socket, on aurait pu mettre en place un
+lecteurs-rédacteurs. Mais la diffusion obtenue n'aurait plus été à
+ordre total.
+</p>
+</div>
+</div>
+<div id="outline-container-org3e6b5b3" class="outline-3">
+<h3 id="org3e6b5b3"><span class="section-number-3">8.3</span> Code 22 : Serveur TCP avec <code>unique_ptr</code></h3>
+</div>
+<div id="outline-container-org0a2cdd1" class="outline-3">
+<h3 id="org0a2cdd1"><span class="section-number-3">8.4</span> Code 23 : Serveur TCP sans pointeurs</h3>
+<div class="outline-text-3" id="text-8-4">
+<p>
+TODO Ajouter ce code
+</p>
+</div>
+</div>
+<div id="outline-container-orgd3c06e6" class="outline-3">
+<h3 id="orgd3c06e6"><span class="section-number-3">8.5</span> Outil : Thread-safe initialisation</h3>
+<div class="outline-text-3" id="text-8-5">
+</div>
+<div id="outline-container-org6f947d3" class="outline-4">
+<h4 id="org6f947d3"><span class="section-number-4">8.5.1</span> (std::call_once and std::once_flag)</h4>
+</div>
+</div>
+<div id="outline-container-org896b86b" class="outline-3">
+<h3 id="org896b86b"><span class="section-number-3">8.6</span> Outil : Algorithmes parallèles de la STL (Standard Template Library, C++17)</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li>The Standard Template Library has more than 100 algorithms for
+searching, counting, and manipulating ranges and their
+elements. With C++17, 69 of them get new overloads, and eight new
+ones are added. The overloaded, and new algorithms can be invoked
+with a so-called execution policy.</li>
+<li>Using an execution policy, you can specify whether the algorithm
+should run sequentially, in parallel,or parallel with
+vectorization. For using the execution policy,you have to include
+the header <code>&lt;execution&gt;</code></li>
+<li>The execution policy is a permission and not a requirement.
+<ul class="org-ul">
+<li><code>std::execution::seq</code> : runs the program sequentially</li>
+<li><code>std::execution::par</code> : runs the program in parallel on multiple threads</li>
+<li><code>std::execution::par_unseq</code> : runs the program in parallel on
+multiple threads and allows the interleaving of individual loops;
+permits a vectorised version with SIMD (Single Instruction
+Multiple Data) extensions.</li>
+</ul></li>
+<li>Attention : The parallel algorithm does not automatically protect
+you from data races and deadlocks.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org191666d" class="outline-3">
+<h3 id="org191666d"><span class="section-number-3">8.7</span> Code 24 : Algorithmes parallèles de la STL et <i>execution policy</i></h3>
+</div>
+<div id="outline-container-orgcf7fadf" class="outline-3">
+<h3 id="orgcf7fadf"><span class="section-number-3">8.8</span> Code 25 : Algorithmes parallèles de la STL et risque de <i>Data Race</i></h3>
+</div>
+<div id="outline-container-orgf440f09" class="outline-3">
+<h3 id="orgf440f09"><span class="section-number-3">8.9</span> Outil : Coroutines (C++ 20)</h3>
+<div class="outline-text-3" id="text-8-9">
+<p>
+Notions essentielles
+</p>
+<ul class="org-ul">
+<li>Les coroutines sont une mise en oeuvre d'un paradigme producteur-consommateur avec :
+<ul class="org-ul">
+<li>Un producteur (la coroutine)</li>
+<li>Un consommateur (le thread qui crée la coroutine)</li>
+<li>Ils communiquent via un buffer
+<ul class="org-ul">
+<li>limité à 1 seul élément</li>
+<li>capable de transporter aussi les exceptions remontées par la coroutine</li>
+</ul></li>
+</ul></li>
+<li>Les coroutines sont une généralisation des tâches.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org32f543f" class="outline-3">
+<h3 id="org32f543f"><span class="section-number-3">8.10</span> Code 26 : Coroutine</h3>
+</div>
+<div id="outline-container-orgfad7f1d" class="outline-3">
+<h3 id="orgfad7f1d"><span class="section-number-3">8.11</span> Fibres</h3>
+<div class="outline-text-3" id="text-8-11">
+<ul class="org-ul">
+<li>Les fibres sont des unités d'exécution qui s'exécutent au sein de
+threads, sans préemption entre fibres (un fibre doit <b>explicitement</b>
+passer la main à une autre fibre,
+cf. <a href="https://learn.microsoft.com/fr-fr/windows/win32/procthread/fibers">https://learn.microsoft.com/fr-fr/windows/win32/procthread/fibers</a>).
+<ul class="org-ul">
+<li>"A context switch between threads costs usually thousands of CPU
+cycles on x86 compared to a fiber switch with less than 100
+cycles." (cf. doc fibres Boost)</li>
+<li>==&gt; Pas mal utilisé dans le jeu vidéo</li>
+</ul></li>
+<li>Pour approfondir
+<ul class="org-ul">
+<li><a href="https://agraphicsguynotes.com/posts/fiber_in_cpp_understanding_the_basics/">https://agraphicsguynotes.com/posts/fiber_in_cpp_understanding_the_basics/</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_85_0/libs/fiber/doc/html/index.html">Boost.Fiber</a> fournit une bibliothèque de fibres pour les applications C++.</li>
+</ul></li>
+<li>TODO A compléter !</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf0879f5" class="outline-3">
+<h3 id="orgf0879f5"><span class="section-number-3">8.12</span> Debug, Profiling</h3>
+<div class="outline-text-3" id="text-8-12">
+<ul class="org-ul">
+<li>Debug
+<ul class="org-ul">
+<li>TODO : Démo de Debug avec multithreading.</li>
+</ul></li>
+<li>Profiling: Comprendre où un programme passe du temps.
+<ul class="org-ul">
+<li><a href="https://hackingcpp.com/cpp/tools/profilers.html">https://hackingcpp.com/cpp/tools/profilers.html</a> recommande <a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/vtune-profiler.html#gs.a8pbxc">VTune</a>
+d'Intel, outil également recommandé par
+<a href="https://stackoverflow.com/questions/67554/whats-the-best-free-c-profiler-for-windows">https://stackoverflow.com/questions/67554/whats-the-best-free-c-profiler-for-windows</a></li>
+<li>Chez ASOBO, ils utilisent <a href="https://devblogs.microsoft.com/pix/">Microsoft PIX</a> qui concerne "Performance
+tuning and debugging for DirectX 12 games on Windows"</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3ce03a2" class="outline-3">
+<h3 id="org3ce03a2"><span class="section-number-3">8.13</span> What should come in C++ 23</h3>
+<div class="outline-text-3" id="text-8-13">
+<div class="org-center">
+
+<div class="figure">
+<p><img src="Sensibilisation%20%C3%A0%20la%20programmation%20concurrente%20(multit%C3%A2che)%20%C3%A0%20travers%20C++%20(Cours%20Int%C3%A9gr%C3%A9)_fichiers/concurrence_en_C++.png" alt="concurrence_en_C++.png" width="1000px">
+</p>
+</div>
+</div>
+
+<p>
+TODO To be continued ! (lisez [Grimm, 2021] si vous êtes impatient(e))
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga77a6ac" class="outline-2">
+<h2 id="orga77a6ac"><span class="section-number-2">9</span> Threads versus Autres modèles de programmation</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Jusqu'à présent, nous avons travaillé avec des applications
+multithreadées, ce multithread étant <b>préemptif</b> : Quand un thread
+s'exécute, il peut être interrompu à n'importe quel moment
+par un autre thread. 
+<ul class="org-ul">
+<li>Cela nécessite de gérer d'éventuels problèmes de synchronisation
+(cf. tout ce que nous avons vu jusqu'à présent.</li>
+</ul></li>
+<li>Il existe aussi :
+<ul class="org-ul">
+<li>des modèles de threads non-préemptifs (Quand un thread
+s'exécute, il doit explicitement passer la main - instruction
+<code>yield</code> pour qu'un autre prenne la main).
+<ul class="org-ul">
+<li>cf. notion de <a href="https://fr.wikipedia.org/wiki/Fibre_(informatique)">fibre informatique</a></li>
+<li>cf. article <a href="https://www.codeproject.com/Articles/5246597/Robust-Cplusplus-P-and-V-Considered-Harmful">Robust C++: P and V Considered Harmful</a> et son <a href="https://github.com/GregUtas/robust-services-core">framework associé</a>.</li>
+</ul></li>
+<li>des modèles de programmation basés sur de la programmation
+événementielle (programmation asynchrone).
+<ul class="org-ul">
+<li>Livre "Development and Deployment of Multiplayer Online Games",
+Volume 2, chapitre 5 "(Re)actor-Fest architecture. It just works."</li>
+<li><a href="https://www.boost.org/doc/libs/1_77_0/libs/fiber/doc/html/fiber/integration/event_driven_program.html">Boost for Event-Driven Program</a> (Langage C++)</li>
+<li><a href="https://libevent.org/">https://libevent.org/</a> (langage C)</li>
+</ul></li>
+<li>des modèles de programmation où il faut explicitement "donner la
+main" à une bibliothèque en appelant une de ses fonctions pour que
+cette bibliothèque puisse progresser (cf., par exemple,
+SDL/Bibliothèques <a href="https://www.photonengine.com/">Photon</a> et <a href="https://www.ggpo.net/">GGPO</a>).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbfbd3dd" class="outline-2">
+<h2 id="orgbfbd3dd"><span class="section-number-2">10</span> Conclusion</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+La programmation concurrente est une combinaison de :
+</p>
+<ul class="org-ul">
+<li>Outils
+<ul class="org-ul">
+<li><code>volatile</code> (variable <code>volatile</code>)</li>
+<li>Thread</li>
+<li>Diagramme de séquence</li>
+<li>Mutex et Lock</li>
+<li>Variables <code>atomic</code></li>
+<li>Tâches (future ou <code>std::async()</code>)</li>
+<li>Condition/Moniteur (<code>std::condition</code>)</li>
+<li><code>std::latch</code></li>
+<li><code>std::barrier</code></li>
+<li>Sémaphores</li>
+<li><code>std::shared_lock</code></li>
+<li>Thread-safe initialization</li>
+<li>Algorithmes parallèles de la STL</li>
+<li>Coroutines</li>
+</ul></li>
+<li>Patterns de synchronisation
+<ul class="org-ul">
+<li>Exclusion mutuelle</li>
+<li>Cohorte</li>
+<li>Loquet (<i>Latch</i>)</li>
+<li>Barrière</li>
+<li>Rendez-vous</li>
+<li>Producteur/Consommateur</li>
+<li>Lecteurs-rédacteurs</li>
+</ul></li>
+<li>Bonnes pratiques
+<ul class="org-ul">
+<li>Eviter les variables mutables pour n'avoir que des variables non-mutables et patron d'architecture <i>MapReduce</i></li>
+<li>Utilisation de variables static dans un Block scope</li>
+<li>Dès que possible, préférer les mutex aux sémaphores initialisés à 1</li>
+<li>"Trucs" pour la gestion de la mémoire (allocation/désallocation)</li>
+</ul></li>
+</ul>
+
+<p>
+Il existe d'autres modèles de programmation.
+</p>
+</div>
+</div>
+<div id="outline-container-org903b556" class="outline-2">
+<h2 id="org903b556"><span class="section-number-2">11</span> Bibliographie</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>"Concurrency with Modern C++, What every professional C++
+programmer should know about concurrency.", Rainer Grimm, Juillet
+2021, <a href="https://leanpub.com/concurrencywithmodernc">https://leanpub.com/concurrencywithmodernc</a>
+<ul class="org-ul">
+<li>Un livre payant, mais excellent.</li>
+</ul></li>
+<li><a href="https://www.modernescpp.com/index.php/category/multithreading">https://www.modernescpp.com/index.php/category/multithreading</a>,
+Rainer Grimm, le blog de l'auteur du livre évoqué précédemment.</li>
+<li>"The Little Book of Semaphores", Allen B. Downey, 2016,
+<a href="https://greenteapress.com/wp/semaphores/">https://greenteapress.com/wp/semaphores/</a>
+<ul class="org-ul">
+<li>Un livre gratuit qui est une mine d'information sur les problèmes
+de stnchronisation.</li>
+</ul></li>
+<li>"My tutorial and take on C++20 coroutines", David Mazières, Février
+2021, <a href="https://www.scs.stanford.edu/~dm/blog/c++-coroutines.html">https://www.scs.stanford.edu/~dm/blog/c++-coroutines.html</a>
+<ul class="org-ul">
+<li>Explique bien les coroutines C++ 20.</li>
+</ul></li>
+<li>"C++ Concurrency in_Action, Practical multithreading", Anthony
+Williams, 2012.
+<ul class="org-ul">
+<li>ne concerne que C++ 11 et me semble désormais obsolète.</li>
+</ul></li>
+</ul>
+</div>
+</div>

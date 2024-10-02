@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="">
+  <title>Outils R5.B.04 (cmake, IDE, SonarLint, GoogleTest, débogueur, analyse de fuites mémoire)</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {  background-color: #f8f8f8; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ef2929; } /* Alert */
+    code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #c4a000; } /* Attribute */
+    code span.bn { color: #0000cf; } /* BaseN */
+    code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4e9a06; } /* Char */
+    code span.cn { color: #000000; } /* Constant */
+    code span.co { color: #8f5902; font-style: italic; } /* Comment */
+    code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+    code span.dt { color: #204a87; } /* DataType */
+    code span.dv { color: #0000cf; } /* DecVal */
+    code span.er { color: #a40000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #0000cf; } /* Float */
+    code span.fu { color: #000000; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+    code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+    code span.ot { color: #8f5902; } /* Other */
+    code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+    code span.sc { color: #000000; } /* SpecialChar */
+    code span.ss { color: #4e9a06; } /* SpecialString */
+    code span.st { color: #4e9a06; } /* String */
+    code span.va { color: #000000; } /* Variable */
+    code span.vs { color: #4e9a06; } /* VerbatimString */
+    code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Outils R5.B.04 (cmake, IDE, SonarLint, GoogleTest, débogueur, analyse de fuites mémoire)</h1>
+<p class="author">Michel SIMATIC</p>
+<p class="date">15 mai 2024</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="#cmake"><span class="toc-section-number">2</span> <em>cmake</em></a>
+<ul>
+<li><a href="#instructions-communes-à-tous-les-ideos"><span class="toc-section-number">2.1</span> Instructions communes à tous les IDE/OS</a></li>
+<li><a href="#clion-linux"><span class="toc-section-number">2.2</span> <em>Clion</em> (<em>Linux</em>)</a></li>
+<li><a href="#clion-macos"><span class="toc-section-number">2.3</span> <em>CLion</em> (<em>MacOS</em>)</a>
+<ul>
+<li><a href="#démarche-préliminaire-pour-les-utilisateurstrices-de-mac-avec-processeur-m1-arm"><span class="toc-section-number">2.3.1</span> Démarche préliminaire pour les utilisateurs·trices de Mac avec processeur M1 (ARM)</a></li>
+<li><a href="#démarche-pour-tous-les-utilisateurstrices-de-macos"><span class="toc-section-number">2.3.2</span> Démarche pour tous les utilisateurs·trices de <em>MacOS</em></a></li>
+</ul></li>
+<li><a href="#visual-studio-windows"><span class="toc-section-number">2.4</span> <em>Visual Studio</em> (<em>Windows</em>)</a></li>
+</ul></li>
+<li><a href="#ide-clion-ou-visual-studio-ajout-de-fichiers-source-dans-un-projet-généré-par-cmake"><span class="toc-section-number">3</span> IDE <em>CLion</em> ou <em>Visual Studio</em> : Ajout de fichiers source dans un projet généré par <em>cmake</em></a>
+<ul>
+<li><a href="#clion-linux-ou-macos"><span class="toc-section-number">3.1</span> <em>CLion</em> (<em>Linux</em> ou <em>MacOS</em>)</a></li>
+<li><a href="#visual-studio-windows-1"><span class="toc-section-number">3.2</span> <em>Visual Studio</em> (<em>Windows</em>)</a></li>
+</ul></li>
+<li><a href="#sonarlint"><span class="toc-section-number">4</span> <em>SonarLint</em></a>
+<ul>
+<li><a href="#session-R5.B.04-2023-2024-résoudre-un-bug-lié-à-la-combinaison-visual-studio-version-17.9.6-cmake-sonarlint"><span class="toc-section-number">4.1</span> Session R5.B.04 2023-2024 : Résoudre un bug lié à la combinaison <em>Visual Studio</em> version 17.9.6 / <em>cmake</em> / <em>SonarLint</em></a>
+<ul>
+<li><a href="#constatation-du-bug"><span class="toc-section-number">4.1.1</span> Constatation du bug</a></li>
+<li><a href="#correction-du-bug"><span class="toc-section-number">4.1.2</span> Correction du bug</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#google-test-au-sein-de-votre-ide"><span class="toc-section-number">5</span> <em>Google Test</em> au sein de votre IDE</a>
+<ul>
+<li><a href="#avec-clion-linux-ou-macos"><span class="toc-section-number">5.1</span> Avec <em>CLion</em> (<em>Linux</em> ou <em>MacOS</em>)</a></li>
+<li><a href="#avec-visual-studio-windows-et-son-explorateur-de-tests"><span class="toc-section-number">5.2</span> Avec <em>Visual Studio</em> (<em>Windows</em>) et son explorateur de tests</a></li>
+</ul></li>
+<li><a href="#débogueur"><span class="toc-section-number">6</span> Débogueur</a>
+<ul>
+<li><a href="#initiation-au-débogage-de-programme-avec-clion"><span class="toc-section-number">6.1</span> Initiation au débogage de programme avec <em>CLion</em></a></li>
+<li><a href="#initiation-au-débogage-de-programme-avec-visual-studio"><span class="toc-section-number">6.2</span> Initiation au débogage de programme avec <em>Visual Studio</em></a>
+<ul>
+<li><a href="#introduction-1"><span class="toc-section-number">6.2.1</span> Introduction</a></li>
+<li><a href="#mise-en-place-de-lenvironnement"><span class="toc-section-number">6.2.2</span> Mise en place de l’environnement</a></li>
+<li><a href="#déboguer-un-plantage-qui-ne-semble-pas-dans-notre-code"><span class="toc-section-number">6.2.3</span> Déboguer un plantage qui ne semble pas dans notre code</a></li>
+<li><a href="#pas-à-pas"><span class="toc-section-number">6.2.4</span> Pas à pas</a></li>
+<li><a href="#pose-dun-point-darrêt-conditionnel"><span class="toc-section-number">6.2.5</span> Pose d’un point d’arrêt conditionnel</a></li>
+<li><a href="#arrêter-lexécution-quand-la-valeur-dune-variable-change"><span class="toc-section-number">6.2.6</span> Arrêter l’exécution quand la valeur d’une variable change</a></li>
+<li><a href="#nettoyage-de-tous-les-points-darrêt"><span class="toc-section-number">6.2.7</span> Nettoyage de tous les points d’arrêt</a></li>
+<li><a href="#conclusion"><span class="toc-section-number">6.2.8</span> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#analyse-de-fuites-mémoire"><span class="toc-section-number">7</span> Analyse de fuites mémoire</a>
+<ul>
+<li><a href="#linux"><span class="toc-section-number">7.1</span> <em>Linux</em></a>
+<ul>
+<li><a href="#clion-sans-installation-dun-autre-outil"><span class="toc-section-number">7.1.1</span> <em>CLion</em> sans installation d’un autre outil</a></li>
+<li><a href="#clion-combiné-à-loutil-valgrind"><span class="toc-section-number">7.1.2</span> <em>Clion</em> combiné à l’outil <em>Valgrind</em></a></li>
+</ul></li>
+<li><a href="#macos"><span class="toc-section-number">7.2</span> <em>MacOS</em></a>
+<ul>
+<li><a href="#clion"><span class="toc-section-number">7.2.1</span> <em>Clion</em></a></li>
+<li><a href="#outil-standard-leaks"><span class="toc-section-number">7.2.2</span> Outil standard <em>Leaks</em></a></li>
+</ul></li>
+<li><a href="#visual-studio-windows-2"><span class="toc-section-number">7.3</span> <em>Visual Studio</em> / <em>Windows</em></a>
+<ul>
+<li><a href="#votez-pour-que-le-sanitizer-address-permette-la-détection-de-fuites-mémoire-sous-windows"><span class="toc-section-number">7.3.1</span> Votez pour que le <em>sanitizer</em> <code>Address</code> permette la détection de fuites mémoire sous <em>Windows</em></a></li>
+<li><a href="#visual-studio-profiler"><span class="toc-section-number">7.3.2</span> <em>Visual Studio Profiler</em></a></li>
+<li><a href="#dr-memory"><span class="toc-section-number">7.3.3</span> <em>Dr Memory</em></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+<meta http-equiv="cache-control" content="max-age=0">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+<meta http-equiv="pragma" content="no-cache">
+<h1 data-number="1" id="introduction"><span class="header-section-number">1</span> Introduction</h1>
+<p>Ce document donne des précisions sur l’utilisation de différents outils utilisés durant R5.B.04 :</p>
+<ul>
+<li><em>cmake</em></li>
+<li>IDE <em>Visual Studio</em> ou <em>CLion</em>, plus précisément l’ajout de fichiers dans un projet généré par <em>cmake</em></li>
+<li><em>SonarLint</em></li>
+<li><em>GoogleTest</em></li>
+<li>Débogueur.</li>
+<li>Analyseur de fuites mémoire</li>
+</ul>
+<h1 data-number="2" id="cmake"><span class="header-section-number">2</span> <em>cmake</em></h1>
+<p>Tous les canevas de projet C++ fournis dans le cadre de R5.B.04 s’appuient sur <em>cmake</em>. <em>cmake</em> permet de configurer l’environnement du projet, ce qui dispensera de configurer l’IDE.</p>
+<p>Commencez par lire ci-dessous les instructions communes à tous les IDE/OS, puis lisez la section correspondant à votre IDE/OS.</p>
+<h2 data-number="2.1" id="instructions-communes-à-tous-les-ideos"><span class="header-section-number">2.1</span> Instructions communes à tous les IDE/OS</h2>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<ul>
+<li>Décompressez l’archive fournie (par exemple, <code>SampleSFML.zip</code> dans l’exercice d’introduction) dans le répertoire de votre choix.
+<ul>
+<li>Attention : Le chemin qui mène à votre répertoire ne doit pas 
+contenir de nom contenant le caractère espace ou bien un accent. Par 
+exemple, sous Windows, <code>C:\Users\Barnabé\Mes    Documents\CPP</code> est à bannir à cause du <strong>é</strong> dans <em>Barnabé</em> et de <strong>l’espace</strong> dans <em>Mes Documents</em> ; il vaut mieux que le chemin soit <code>C:\CPP</code>. Si vous ne respectez pas ce conseil, votre IDE risque de recompiler <strong>systématiquement</strong> l’ensemble de votre projet.</li>
+</ul></li>
+<li>Renommez le répertoire racine du répertoire que vous venez d’extraire (par exemple, <code>SampleSFML</code>)</li>
+<li>Dans le fichier <code>nouveau_nom_du_répertoire_racine\CMakeLists.txt</code>, au niveau de la ligne <code>project(nom_projet VERSION 1.0.0 LANGUAGES    CXX)</code>, remplacer <code>nom_projet</code> par un nom (sans espace) qui correspond à votre projet.</li>
+<li>Passez à la section de ce document correspondant à votre IDE/OS.</li>
+</ul>
+</details>
+<h2 data-number="2.2" id="clion-linux"><span class="header-section-number">2.2</span> <em>Clion</em> (<em>Linux</em>)</h2>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<ul>
+<li>Dans <em>Clion</em>, Menu File &gt; Open et sélectionnez <code>chemin_absolu_vers_votre_projet/CMakeLists.txt</code>. Cliquez sur “OK” : Une fenêtre “Open Project” apparaît. CLiquez sur “Open as Project”</li>
+<li>Etape intermédiaire requise à partir de CLion 2022.1
+<ul>
+<li>Une fenêtre “Open Project Wizard” s’affiche. Notez que son champ <em>Generator</em> vous dit, par défaut, <em>Use default Ninja</em></li>
+<li>Ninja est un système de build, comme make
+<ul>
+<li>Si vous souhaitez l’installer, tapez <code>sudo apt-get install -y ninja-build</code> (cf.&nbsp;<a href="https://zoomadmin.com/HowToInstall/UbuntuPackage/ninja-build">ce site</a>).</li>
+<li>Si vous ne souhaitez pas l’installer, sélectionnez dans le champ <em>Generator</em> : <em>Unix Makefiles</em> ou <em>Let CMake decide</em></li>
+</ul></li>
+<li>Cliquez ensuite sur le bouton “OK”.</li>
+</ul></li>
+<li>Le chargement de votre projet devrait s’effectuer correctement dans <em>CLion</em>,
+ sauf si c’est la première fois que vous effectuez cette opération dans 
+le contexte de R5.B.04 et que votre projet utilise la bibliothèque <em>SFML</em>. Dans ce cas, dans un terminal :</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">cd</span> chemin_absolu_vers_votreRépertoireProjet</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">rm</span> -Rf cmake-build-debug</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="fu">mkdir</span> build</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="bu">cd</span> build</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="fu">cmake</span> .. <span class="co"># N'oubliez pas le " .." après la commande cmake</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co"># Si cmake affiche l'une des messages suivants:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">#    - "cmake not found"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co">#    - "Error during cmake"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="co">#    - "No CMAKE_CXX_COMPILER"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="co">#    - "Could NOT find X11"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="co"># Alors tapez les 2 commandes suivantes:</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="fu">sudo</span> apt -y install git cmake g++ libx11-dev libxrandr-dev libxi-dev libxcursor-dev libudev-dev mesa-common-dev libfreetype6-dev libopenal-dev libvorbis-dev libflac-dev</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="co"># Au final, vous devriez obtenir le message "-- Build files have been written to: absolute_path_to_your_project". Cela signifie que toutes les installations préalables pour Linux sont OK.</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="co"># Il vous reste à nettoyer votre répertoire de votre test cmake:</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a><span class="bu">cd</span> ..</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a><span class="fu">rm</span> -Rf build</span></code></pre></div>
+<ul>
+<li>Si vous avez dû faire toutes ces manipulations dans un terminal, dans <em>CLion</em>, menu Build &gt; Rebuild Project</li>
+<li>Menu Build &gt; Build Project : Cette opération peut prendre un certain temps, notamment si votre projet utilise <em>SFML</em> et que donc <em>CLion</em> doit télécharger le projet <em>SFML</em>. Enfin, <em>CLion</em> affiche “Build finished” : tout s’est bien passé.</li>
+<li>Menu Run &gt; Run ‘sample’ : la fenêtre de message affiche des 
+informations de compilation (cette première compilation peut prendre du 
+temps car <em>CLion</em> doit recompiler des fichiers de bibliothèques). Notamment, dans le cas de l’exemple SampleSFML, une fenêtre “SFML works !” semblable à la fenêtre ci-dessous s’ouvre:</li>
+</ul>
+<figure>
+<img src="Outils%20R5.B.04%20(cmake,%20IDE,%20SonarLint,%20GoogleTest,%20d%C3%A9bogueur,%20analyse%20de%20fuites%20m%C3%A9moire)_fichiers/fenetre_SFML_works.png" alt=""><figcaption>Fenêtre <em>SFML works!</em></figcaption>
+</figure>
+<ul>
+<li>Cliquez sur la croix à droite de cette fenêtre pour terminer votre programme.</li>
+</ul>
+</details>
+<h2 data-number="2.3" id="clion-macos"><span class="header-section-number">2.3</span> <em>CLion</em> (<em>MacOS</em>)</h2>
+<h3 data-number="2.3.1" id="démarche-préliminaire-pour-les-utilisateurstrices-de-mac-avec-processeur-m1-arm"><span class="header-section-number">2.3.1</span> Démarche préliminaire pour les utilisateurs·trices de Mac avec processeur M1 (ARM)</h3>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<p>Dans un terminal, tapez la commande <em>which brew</em> pour vous assurer d’avoir la version de <em>Homebrew</em> adaptée à l’architecture ARM de votre processeur : Si la version de <em>Homebrew</em> est adaptée à ARM, le chemin affiché devrait commencer par <code>/opt/homebrew/</code>. Si le chemin affiché commence par <code>/usr/local/</code>, votre version de <em>Homebrew</em> est adaptée à un processeur Intel (ce qui vous posera des soucis lorsque <em>CLion</em> fera des éditions de liens) : Il vous faut installer un <em>Homebrew</em> adapté à ARM (cf.&nbsp;procédure un peu modifiée de la <a href="https://apple.stackexchange.com/questions/410825/apple-silicon-port-all-homebrew-packages-under-usr-local-opt-to-opt-homebrew">1ère réponse ici</a>) :</p>
+<ul>
+<li><code>brew bundle dump</code> pour créer un <em>Brewfile</em> des packages déjà installés.</li>
+<li>(facultatif) Désinstallez <em>Homebrew</em></li>
+<li>Installez Homebrew pour ARM</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="bu">cd</span> /opt</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="fu">sudo</span> mkdir -p homebrew</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="fu">sudo</span> chown -R <span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span> homebrew</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="ex">curl</span> -L https://github.com/Homebrew/brew/tarball/master <span class="kw">|\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="fu">tar</span> xz --strip 1 -C homebrew</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="co">#+end_src</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="ex">-</span> Modifiez *PATH*</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="co">#+begin_src bash</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="va">PATH=</span>/opt/homebrew/bin:<span class="va">$PATH</span></span></code></pre></div>
+<ul>
+<li>Réinstallez les packages (en tout cas, ceux qui sont disponibles) avec le <em>Brewfile</em></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">hash</span> -d brew</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="ex">brew</span> bundle install --file /path/to/Brewfile</span></code></pre></div>
+</details>
+<h3 data-number="2.3.2" id="démarche-pour-tous-les-utilisateurstrices-de-macos"><span class="header-section-number">2.3.2</span> Démarche pour tous les utilisateurs·trices de <em>MacOS</em></h3>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<ul>
+<li>Dans <em>Clion</em>, Menu File &gt; Open et sélectionner <em>chemin_absolu_vers_votre_projet/CMakeLists.txt</em>. Cliquez sur “OK” : Une fenêtre “Open Project” apparaît. Cliquez sur “Open as Project” :
+<ul>
+<li>Etape intermédiaire requise à partir de CLion 2022.1
+<ul>
+<li>Une fenêtre “Open Project Wizard” s’affiche. Notez que son champ <em>Generator</em> vous dit, par défaut, <em>Use default Ninja</em></li>
+<li>Ninja est un système de build, comme make
+<ul>
+<li>Si vous souhaitez l’installer, tapez <code>brew install ninja</code> (cf.&nbsp;<a href="https://formulae.brew.sh/formula/ninja">ce site</a>).</li>
+<li>Si vous ne souhaitez pas l’installer, sélectionnez dans le champ <em>Generator</em> : <em>Unix Makefiles</em> ou <em>Let CMake decide</em></li>
+</ul></li>
+<li>Cliquez ensuite sur le bouton “OK”.</li>
+</ul></li>
+<li>Le chargement de votre projet devrait maintenant s’effectuer correctement dans <em>CLion</em>. Si ce n’est pas le cas, c’est que vous êtes dans le contexte d’une première utilisation de <em>cmake</em> dans le contexte R5.B.04 :
+<ul>
+<li>Dans un terminal, tapez la commande <code>brew install sfml</code></li>
+<li>Dans <em>CLion</em>, menu Build &gt; Rebuild Project</li>
+</ul></li>
+</ul></li>
+<li>Pour exécuter une application :
+<ul>
+<li>Menu Run &gt; Run ‘sample’ : la fenêtre de message affiche des 
+informations de compilation (cette première compilation peut prendre du 
+temps car <em>CLion</em> doit recompiler des fichiers de bibliothèques). Notamment, dans le cas de l’exemple SampleSFML, une fenêtre “SFML works !” semblable à la fenêtre ci-dessous s’ouvre:</li>
+</ul></li>
+</ul>
+<figure>
+<img src="Outils%20R5.B.04%20(cmake,%20IDE,%20SonarLint,%20GoogleTest,%20d%C3%A9bogueur,%20analyse%20de%20fuites%20m%C3%A9moire)_fichiers/fenetre_SFML_works.png" alt=""><figcaption>Fenêtre <em>SFML works!</em></figcaption>
+</figure>
+</details>
+<h2 data-number="2.4" id="visual-studio-windows"><span class="header-section-number">2.4</span> <em>Visual Studio</em> (<em>Windows</em>)</h2>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<ul>
+<li>Dans <em>Visual Studio</em>, menu Fichier &gt; Ouvrir &gt; Dossier : une fenêtre “Sélectionner un dossier” s’ouvre.</li>
+<li>Sélectionner le répertoire de votre projet et cliquez sur “Sélectionner un dossier” : la fenêtre de sortie de <em>Visual Studio</em> que l’IDE travaille et vous affiche à la fin “Fin de la génération de CMake.”. NB :
+<ul>
+<li>Cette opération peut prendre un certain temps, notamment si votre projet utilise <em>SFML</em> et que donc <em>Visual Studio</em> doit télécharger le projet <em>SFML</em></li>
+<li>Si jamais <em>cmake</em> vous affiche <em>– Configuring incomplete, errors occurred!</em> et que, parmi les messages que <em>cmake</em> vous affiche, vous voyez <em>error: could not find git for clone of sfml-populate</em> ou bien qu’il y a eu des soucis avec un <em>git clone</em>, c’est que git n’est pas installé sur votre machine ou bien qu’il n’est pas assez récent.
+<ul>
+<li>Installez la dernière version de <a href="https://gitforwindows.org/">Git for windows</a>.</li>
+<li>Arrêtez et redémarrez <em>Visual Studio</em></li>
+<li>Recommencez cette procédure</li>
+</ul></li>
+<li><em>cmake</em> vous affiche éventuellement un warning concernant <em>pugixml</em> : ce warning est normal.</li>
+</ul></li>
+<li>Menu Générer &gt; Tout générer</li>
+<li>Quand la génération est terminée, cliquez gauche sur la <em>droite</em>
+ du bouton “Sélectionner un élément de démarrage” (2ème ligne de la 
+barre de menu) et sélectionnez “sample.exe”, “mainLauncher.exe” ou 
+“unitTests.exe”</li>
+<li>Cliquez sur ce bouton (ou Ctrl-F5) pour lancer l’application choisie
+ : votre programme s’exécute. Notamment, dans le cas de l’exemple SampleSFML, la fenêtre suivante s’affiche pour vous signifier que <em>SFML</em> fonctionne.</li>
+</ul>
+<figure>
+<img src="Outils%20R5.B.04%20(cmake,%20IDE,%20SonarLint,%20GoogleTest,%20d%C3%A9bogueur,%20analyse%20de%20fuites%20m%C3%A9moire)_fichiers/fenetre_SFML_works.png" alt=""><figcaption>Fenêtre <em>SFML works!</em></figcaption>
+</figure>
+<ul>
+<li>Cliquez sur la croix à droite de cette fenêtre pour terminer votre programme.</li>
+<li>Dans la “Console de débogage Microsoft Visual Studio”, appuyez sur une touche pour fermer cette console.</li>
+</ul>
+<p>Pour information, cette procédure crée les répertoires <em>.vs</em> et <em>out</em> dans le répertoire de votre projet.</p>
+</details>
+<h1 data-number="3" id="ide-clion-ou-visual-studio-ajout-de-fichiers-source-dans-un-projet-généré-par-cmake"><span class="header-section-number">3</span> IDE <em>CLion</em> ou <em>Visual Studio</em> : Ajout de fichiers source dans un projet généré par <em>cmake</em></h1>
+<p>Pour les premiers canevas de projet que vous utiliserez dans R5.B.04,
+ vous aurez juste à modifier des fichiers source déjà fournis dans le 
+canevas.</p>
+<p>Puis, vous serez amené à ajouter des fichiers sources, ce qui requiert une procédure particulière décrite dans cette section.</p>
+<h2 data-number="3.1" id="clion-linux-ou-macos"><span class="header-section-number">3.1</span> <em>CLion</em> (<em>Linux</em> ou <em>MacOS</em>)</h2>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+Sous <em>CLion</em>, vous pouvez utiliser les menus de création de <code>.h</code> et de <code>.cpp</code>. Sachez toutefois que <em>CLion</em> modifiera <code>src/CMakeLists.txt</code>. pour y ajouter le nom des fichiers ajoutés. Si vous le souhaitez vous pouvez manuellement supprimer ces ajouts inutiles.
+</details>
+<h2 data-number="3.2" id="visual-studio-windows-1"><span class="header-section-number">3.2</span> <em>Visual Studio</em> (<em>Windows</em>)</h2>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<p>Dans le cas où votre projet a été créé avec menu Fichier &gt; Ouvrir &gt; CMake… :</p>
+<ul>
+<li>Sous <em>Visual Studio</em>, dans l’explorateur de solutions, cliquez droit sur <em>src</em>, puis cliquez gauche sur Ajouter &gt; Ajouter un nouvel élément… : une fenêtre “Ajouter un nouvel élément src” s’ouvre.</li>
+<li>Dans le cadre de gauche, sélectionnez “Visual C++”, puis le type de 
+fichier que vous voulez créer. Enfin, cliquez sur le bouton “Ouvrir” : 
+votre fichier est créé dans le répertoire <em>src</em></li>
+<li>Indiquez son nom : Une fenêtre “Aperçu des changements - CMake” apparaît</li>
+<li>Cliquez sur le bouton “Annuler” (en effet, <em>Visual Studio</em> vous propose d’ajouter ce nouveau fichier à votre fichier <code>CMakeLists.txt</code> ; c’est inutile, car votre <code>CMakeLists.txt</code> prend en compte tout nouveau fichier grâce à sa ligne <code>file(GLOB SOURCES CONFIGURE_DEPENDS *.h *.cpp)</code></li>
+</ul>
+</details>
+<h1 data-number="4" id="sonarlint"><span class="header-section-number">4</span> <em>SonarLint</em></h1>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<ul>
+<li>Une fois que <em>SonarLint</em> est installé dans votre <em>IDE</em> (<em>VisualStudio</em> ou <em>CLion</em> ; voir la procédure d’installation pour chacun de ces <em>IDE</em>), à chaque fois que vous ouvrirez ou sauvegarderez un fichier source, ce fichier sera analysé par <em>SonarLint</em>. Les problèmes détectés seront listés dans la fenêtre d’erreur de l’IDE, sous la forme de <em>warnings</em>.</li>
+<li>Si vous souhaitez désactivez certains warnings <em>SonarLint</em> (par exemple, le warning <code>S106: Replace this usage of std::cout by a logger</code> qui est trop complexe à résoudre pour nos applications “jouet”), cliquez droit sur la règle (dans la fenêtre d’erreur de <em>VisualStudio</em> ou pour <em>CLion</em>, dans la sous-fenêtre <em>SonarLint</em>) et sélectionnez “Disable SonarLint rule”.</li>
+<li>Si vous souhaitez réactiver une règle
+<ul>
+<li>Pour <em>VisualStudio</em>
+<ul>
+<li>Menu <em>Outils</em> &gt; <em>Options</em>: Une fenêtre <em>Options</em> s’ouvre.</li>
+<li>Dans le champ de recherche, tapez <em>SonarLint</em>: Un sous-menu <em>SonarLint</em> apparaît.</li>
+<li>Sélectionnez <em>Général</em> et cliquez sur le bouton <em>Edit rules settings</em>: Un fichier <em>settings.json</em> s’ouvre dans l’explorateur de fichier.</li>
+<li>Remplacez <em>“Off”</em> par <em>“On”</em> sur la règle que vous souhaitez réactiver et sauvegardez le fichier.</li>
+</ul></li>
+<li>Pour <em>CLion</em>
+<ul>
+<li>Menu <em>Window</em> &gt; <em>Editor Tabs</em> &gt; <em>Configure Editor Tabs</em>: Une fenêtre <em>Settings</em> s’ouvre.</li>
+<li>Cherchez <em>SonarLint</em> et sélectionnez celui qui est dans le sous-menu <em>Tools</em>.</li>
+<li>Cliquez sur l’onglet <em>Rules</em>, puis <em>C++</em>. Cliquez sur le bouton <em>Filter</em> et sélectionnez <em>Show only Changed</em>.</li>
+<li>Réactivez la règle souhaitée.</li>
+</ul></li>
+</ul></li>
+</ul>
+</details>
+<h2 data-number="4.1" id="session-R5.B.04-2023-2024-résoudre-un-bug-lié-à-la-combinaison-visual-studio-version-17.9.6-cmake-sonarlint"><span class="header-section-number">4.1</span> Session R5.B.04 2023-2024 : Résoudre un bug lié à la combinaison <em>Visual Studio</em> version 17.9.6 / <em>cmake</em> / <em>SonarLint</em></h2>
+<p>Pour la session R5.B.04 2023-2024, un bug lié à la combinaison <em>Visual Studio</em> version 17.9.6 / <em>cmake</em> / <em>SonarLint</em> est apparu quelques jours avant le début de ce cours. Il empêche que <em>SonarLint</em> affiche ses messages dans <em>Visual Studio</em>.</p>
+<h3 data-number="4.1.1" id="constatation-du-bug"><span class="header-section-number">4.1.1</span> Constatation du bug</h3>
+<p>Voyons tout d’abord si vous êtes concerné·e par ce bug :</p>
+<ul>
+<li><p>Dans <em>Visual Studio</em>, Outils &gt; Ligne de commande &gt; PowerShell développeur : Une fenêtre PowerShell s’ouvre.</p></li>
+<li><p>Tapez la commande <code>cmake --version</code> : La version de <code>cmake</code> s’affiche.</p></li>
+<li><p>Si la version affichée est <code>cmake version 3.28.0-msvc1</code>, vous êtes concerné·e par le bug, ce qui explique que vous avez peut-être vu le message <code>SonarLint: Failed to analyze &lt;nomFichier&gt;. See the Output Window for more information</code> (en bas à gauche).</p>
+<figure>
+<img src="Outils%20R5.B.04%20(cmake,%20IDE,%20SonarLint,%20GoogleTest,%20d%C3%A9bogueur,%20analyse%20de%20fuites%20m%C3%A9moire)_fichiers/sonarLintFailed.jpg" alt=""><figcaption>Fenêtre avec message <em>SonarLint Failed</em></figcaption>
+</figure></li>
+<li><p>D’ailleurs, dans l’onglet “Sortie” en bas de l’écran, si vous sélectionnez “SonarLint” à la place de “CMake” dans la <em>combo box</em> “Afficher la sortie à partir de :”, vous voyez le message :</p>
+<pre class="text"><code>[CLangAnalyzer] Analyzing C:\temp\R5.B.04\SampleGoogleTest\unitTests\unitTests.cpp
+[CFamily Analysis] Unsupported configuration: Unexpanded response file is not supported:@unitTests\CMakeFiles\unitTests.dir\unitTests.cpp.obj.modmap.
+[CLangAnalyzer] Failed to analyze C:\temp\R5.B.04\SampleGoogleTest\unitTests\unitTests.cpp: See above for more information.</code></pre></li>
+</ul>
+<h3 data-number="4.1.2" id="correction-du-bug"><span class="header-section-number">4.1.2</span> Correction du bug</h3>
+<p>Cet <a href="https://community.sonarsource.com/t/sonarlint-not-working-in-c-cmake-project-in-visual-studio-2022-unexpanded-response-file/111175">article</a> indique la démarche pour résoudre ce bug :</p>
+<ul>
+<li>Installez la dernière version de cmake (3.29.2) à partir d’<a href="https://cmake.org/download/">ici</a>.
+<ul>
+<li>Installez cette version dans le répertoire par défaut qui est proposé (<code>C:\Program Files\CMake\bin</code>).</li>
+<li>Pensez à indiquer que vous souhaitez que le <code>PATH</code> de l’utilisateur (vous pouvez aussi indiquer “tous les utilisateurs”) soit modifié pour inclure le chemin vers ce <code>cmake</code>.</li>
+</ul></li>
+<li>Dans Visual Studio, Outils &gt; Options &gt; CMake &gt; Général : La fenêtre des options générales de “Cmake” s’affiche.</li>
+<li>Descendez un peu dans cette fenêtre, cochez “Activer l’exécutable 
+CMake personnalisé”, indiquez le chemin “C:Files” et cliquez sur “OK”.</li>
+<li>Attendez que votre projet soit régénéré.</li>
+<li>Redémarrez <em>Visual Studio</em> pour que soit prise ne compte la nouvelle valeur de la variable d’environnement <code>PATH</code> avec le chemin vers <em>cmake</em> installé : Le bug ne devrait plus se manifester.</li>
+<li><strong>NB</strong> Si vous aviez un projet sur lequel vous aviez déjà appliqué la procédure de prise en compte de <code>CMakeLists.txt</code>,
+ vous devez faire régénérer votre projet ==&gt; menu “Projet &gt; 
+Supprimer le cache et reconfigurer” pour que VisualStudio applique le <code>CMakeLists.txt</code> avec le nouveau <em>cmake</em>.</li>
+</ul>
+<h1 data-number="5" id="google-test-au-sein-de-votre-ide"><span class="header-section-number">5</span> <em>Google Test</em> au sein de votre IDE</h1>
+<p><em>Google Test</em> est un environnement facilitant l’écriture et le passage de tests unitaires. Cette section présente l’utilisation de <em>Google Test</em> selon l’IDE que vous utilisez. Nous supposons ici que vous avez déjà appliqué <em>cmake</em> sur un canevas de projet contenant des tests unitaires.</p>
+<h2 data-number="5.1" id="avec-clion-linux-ou-macos"><span class="header-section-number">5.1</span> Avec <em>CLion</em> (<em>Linux</em> ou <em>MacOS</em>)</h2>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<ul>
+<li>Menu Build &gt; Build Project : la fenêtre de sortie montre le travail de <em>CLion</em>, puis affiche “Build finished”</li>
+<li>Dans la 2ème ligne de menu, cliquez sur la flèche vers le bas à droite de la petite fenêtre contenant <em>mainLauncher | Debug</em> : une fenêtre avec de nombreuses configuration s’affiche.</li>
+<li>Sélectionnez <em>unitTests</em> : l’icône Google suivie de <em>unitTest | Debug</em> s’affiche désormais dans la petite fenêtre de la 2ème ligne de menu.</li>
+<li>clic sur le triangle vert à droite de cette petite fenêtre OU BIEN 
+Menu Run &gt; Run ‘unitTests’ : en bas de l’écran, le résultat du test 
+est affiché avec une synthèse (que vous pouvez déplier) dans le cadre 
+gauche.</li>
+<li>Si le test révèle une erreur, dans le cadre à droite, cliquez sur le lien bleu signalant la ligne en erreur : <em>CLion</em> ouvre le fichier <em>unitTests.cpp</em> au niveau du test unitaire en erreur.</li>
+</ul>
+</details>
+<h2 data-number="5.2" id="avec-visual-studio-windows-et-son-explorateur-de-tests"><span class="header-section-number">5.2</span> Avec <em>Visual Studio</em> (<em>Windows</em>) et son explorateur de tests</h2>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<ul>
+<li>Menu Test &gt; Exécuter tous les tests : une fenêtre “Explorateur de tests” apparaît.
+<ul>
+<li><p>Si cette fenêtre ne vous affiche aucun test, mais le message 
+“Générez votre solution pour découvrir tous les tests disponibles”, 
+vérifiez que votre <code>CMakeLists.txt</code> racine contient les trois dernières lignes suivantes :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">include</span>(GoogleTest)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="kw">enable_testing</span>()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="kw">add_subdirectory</span>(tests)</span></code></pre></div></li>
+<li><p>Si la ligne <code>include(GoogleTest)</code> manque, ajoutez-la et supprimez-la du fichier <code>unitTests/CMakeLists.txt</code> où elle doit encore apparaître.</p></li>
+<li><p>Si elle ne manque pas, prévenez Michel Simatic pour qu’il voit ce qui peut être fait (<a href="https://developercommunity.visualstudio.com/t/test-explorer-does-not-show-new-google-test-cases/1374043">Ce ticket</a> ne serait pas corrigé).</p></li>
+</ul></li>
+<li>Menu Test &gt; Exécuter tous les tests (ou clic sur l’icône en haut à
+ gauche de l’explorateur de tests) : une fenêtre “Explorateur de tests” 
+apparaît. Au bout de quelques secondes, une croix rouge apparaît devant 
+la ligne <code>unitTests (1)</code> : vous avez passé votre premier test unitaire sur votre application.</li>
+<li>Si un test révèle une erreur, dans l’explorateur de tests, dépliez la ligne <code>unitTest (1)</code> et double-cliquez sur la ligne terminale <code>TestName</code> : <em>Visual Studio</em> ouvre le fichier <code>unitTests.cpp</code>
+ au niveau du test unitaire en erreur (et l’explorateur de tests 
+explicite l’erreur dans la sous-fenêtre à droite “Récapitulatif des 
+détails du test”)</li>
+<li><strong>Très important</strong> : Si, après avoir fait une séance de
+ tests, vous modifiez le nom/sous-nom d’un test ou bien que vous ajoutez
+ de nouveaux tests, il faut penser à faire menu &gt; Tout générer, pour 
+que vos mises à jour soient prises dans l’explorateur de tests.</li>
+</ul>
+</details>
+<h1 data-number="6" id="débogueur"><span class="header-section-number">6</span> Débogueur</h1>
+<p>Cette section retranscrit le contenu des vidéos de tutoriel sur le débogage :</p>
+<ul>
+<li><a href="https://mediaserver.imtbs-tsp.eu/videos/initiation-au-debogage-de-programme-avec-visual-studio/">Initiation au débogage de programme avec Visual Studio</a></li>
+<li><a href="https://mediaserver.imtbs-tsp.eu/videos/initiation-au-debogage-de-programme-avec-clion/">Initiation au débogage de programme avec CLion</a></li>
+</ul>
+<p>Ces vidéos utilisent le fichier <a href="./Sources/ExempleDeDebugDeProgramme.cpp"><code>ExempleDeDebugDeProgramme.cpp</code></a></p>
+<h2 data-number="6.1" id="initiation-au-débogage-de-programme-avec-clion"><span class="header-section-number">6.1</span> Initiation au débogage de programme avec <em>CLion</em></h2>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<ul>
+<li>Vidéo des manipulations <a href="https://mediaserver.imtbs-tsp.eu/videos/initiation-au-debogage-de-programme-avec-clion/">ici</a>.</li>
+
+</ul>
+<p>Les manipulations ont été effectuées en s’appuyant sur le scénario <em>Visual Studio</em> ci-dessous. Pour information, <em>CLion</em> ne permet pas de mettre en place un arrêt quand la valeur d’une variable change (il faut taper manuellement la commande <em>gdb</em> <code>watch</code> dans la console <em>gdb</em> fournie par <em>CLion</em>).</p>
+</details>
+<h2 data-number="6.2" id="initiation-au-débogage-de-programme-avec-visual-studio"><span class="header-section-number">6.2</span> Initiation au débogage de programme avec <em>Visual Studio</em></h2>
+<details>
+<p></p><summary>Cliquez pour déplier/plier les détails</summary><p></p>
+<ul>
+<li>Vidéo des manipulations <a href="https://mediaserver.imtbs-tsp.eu/videos/initiation-au-debogage-de-programme-avec-visual-studio/">ici</a>.</li>
+<li>Fichier exemple <a href="./Sources/ExempleDeDebugDeProgramme.cpp"><code>ExempleDeDebugDeProgramme.cpp</code></a></li>
+</ul>
+<h3 data-number="6.2.1" id="introduction-1"><span class="header-section-number">6.2.1</span> Introduction</h3>
+<p>Dans ce tutoriel vidéo, je vous propose une initiation aux 
+principales fonctions de débogage offertes par Visual Studio. Vous 
+pourrez ainsi gagner en efficacité et en rapidité dans la mise au point 
+de vos programmes, qu’ils soient écrits en C++ ou dans d’autres 
+langages. En effet, les notions présentées ici sont génériques à tous 
+les langages de programmation.</p>
+<p>Notez que, pour ce tutoriel, nous nous appuierons sur le fichier <a href="./Sources/ExempleDeDebugDeProgramme.cpp"><code>ExempleDeDebugDeProgramme.cpp</code></a> que je vous invite à télécharger maintenant, si vous ne l’avez pas déjà fait.</p>
+<h3 data-number="6.2.2" id="mise-en-place-de-lenvironnement"><span class="header-section-number">6.2.2</span> Mise en place de l’environnement</h3>
+<ol type="1">
+<li>Création d’un projet console</li>
+<li>Recopie du code pour debugging</li>
+</ol>
+<h3 data-number="6.2.3" id="déboguer-un-plantage-qui-ne-semble-pas-dans-notre-code"><span class="header-section-number">6.2.3</span> Déboguer un plantage qui ne semble pas dans notre code</h3>
+<ol type="1">
+<li>Menu Déboguer &gt; Exécuter sans débogage</li>
+<li>La fenêtre affiche <code>Expression: vector subscript out of range</code></li>
+<li>Vu que la fenêtre dit <code>Please retry to debug the application</code>, clic sur <code>Recommencer</code></li>
+<li>Expliquer affichage “<em>Windows</em> recherche une solution au problème” (pour info, <em>MacOS</em> a le même comportement). Le pb ne vient pas de votre OS ou de votre IDE (VisualStudio), mais bien de votre application !</li>
+<li>Cliquer sur “Déboguer” : patienter (environ 20 secondes).</li>
+<li>Choisir l’instance courante : vous arrivez dans le menu de debug.</li>
+<li>Nous pourrions commencer le débogage. Mais, pour vous montrer qu’on 
+peut s’économiser le temps d’attente qu’on vient de vivre, voyons ce qui
+ se passe si on lance notre programme directement en débogage.</li>
+<li>Faisons le ménage et démarrons maintenant en mode debug, par exemple
+ en cliquant sur le bouton “Débogueur Windows Local” ou bien en appuyant
+ sur la touche F5</li>
+<li>La fenêtre affiche toujours <code>Expression: vector subscript out of range</code>.</li>
+<li>Vu que la fenêtre dit <code>Please retry to debug the application</code>, clic sur <code>Recommencer</code></li>
+<li>On arrive directement dans VisualStudio, dans le code du module vector qui affiche <code>vector subscript out of range</code></li>
+<li>Dans le cadre en bas à droite, sélectionner l’onglet “Pile des appels” : la flèche montre où est arrêté votre programme.</li>
+<li>Double-cliquez sur la ligne juste en dessous : vous êtes à votre ligne de code qui a appelé vector et qui a généré le souci.</li>
+<li>Sélectionnez <code>v.size</code> : VS vous affiche 4.</li>
+<li>Sélectionnez <code>v</code> et cliquez sur la flèche pour voir le contenu de <code>v</code> : il y a 4 éléments. NB : on peut aussi voir le contenu de <code>v</code> dans le cadre des variables locales en bas à gauche.</li>
+<li>OK, nous comprenons le bug : ajoutons le <code>-1</code> et cliquons sur le bouton “Redémarrer”</li>
+</ol>
+<h3 data-number="6.2.4" id="pas-à-pas"><span class="header-section-number">6.2.4</span> Pas à pas</h3>
+<ol type="1">
+<li>Nous obtenons une erreur, plus loin : <code>division par     zéro</code>. Effectivement <code>c</code> vaut <code>0</code> (qui ne fait pas bon ménage avec l’opérateur modulo).</li>
+<li>Pour comprendre comment <code>c</code> s’est retrouvé avec la valeur <code>0</code>, mettons un point d’arrêt au niveau de la définition de <code>c</code>, puis exécutons pas à pas le programme.</li>
+<li>Arrêter le programme</li>
+<li>Clic droit, Exécuter jusqu’au curseur</li>
+<li>Bouton “Pas à pas principal” (y compris au-dessus de l’appel à <code>unCalcul()</code>) ==&gt; Zut, la valeur de <code>c</code> a changé.</li>
+<li>Exécuter jusqu’au curseur de l’appel à <code>unCalcul()</code></li>
+<li>Bouton “Pas à pas détaillé” ==&gt; Vous rentrez dans <code>unCalcul()</code></li>
+<li>Faire “Aperçu de la définition” ==&gt; On voit l’origine du problème.</li>
+</ol>
+<h3 data-number="6.2.5" id="pose-dun-point-darrêt-conditionnel"><span class="header-section-number">6.2.5</span> Pose d’un point d’arrêt conditionnel</h3>
+<ol type="1">
+<li>Insérer un point d’arrêt au niveau du <code>return resultat</code></li>
+<li>Dans le cadre en bas à droite, clic sur l’onglet “Points d’arrêt”</li>
+<li>Clic-droit sur le point d’arrêt, Paramètres</li>
+<li>Clic sur Conditions, <code>resultat == 0</code></li>
+<li>Redémarrez</li>
+<li>Désactivez ce point d’arrêt</li>
+</ol>
+<h3 data-number="6.2.6" id="arrêter-lexécution-quand-la-valeur-dune-variable-change"><span class="header-section-number">6.2.6</span> Arrêter l’exécution quand la valeur d’une variable change</h3>
+<ol type="1">
+<li>Exécutez jusqu’à ce que la variable <code>c</code> soit définie.</li>
+<li>Dans le cadre des variables locales, clic-droit sur <code>c</code> et “Arrêtez quand la valeur change”. Notez que la variable <code>a</code> change aussi de couleur (vu que <code>c</code> est une référence vers <code>a</code>).</li>
+<li>Cliquez sur “Continuer” ==&gt; Arrêt quand <code>a</code> (et donc <code>c</code>) change.</li>
+<li>Hélas, si vous cliquez sur “Redémarrez”, le programme ne s’arrête pas sur le changement de <code>c</code> : il faut programmer un nouveau point d’arrêt pour cette variable.</li>
+</ol>
+<h3 data-number="6.2.7" id="nettoyage-de-tous-les-points-darrêt"><span class="header-section-number">6.2.7</span> Nettoyage de tous les points d’arrêt</h3>
+<ol type="1">
+<li>Menu Déboguer &gt; Supprimer tous les points d’arrêt</li>
+</ol>
+<h3 data-number="6.2.8" id="conclusion"><span class="header-section-number">6.2.8</span> Conclusion</h3>
+<p>Nous voici arrivés à la fin de cette initiation au débogage sous <em>Visual Studio</em>
+ : n’hésitez pas à faire vos propres expériences pour vous familiariser 
+avec cet outil et ainsi gagner en efficacité et en rapidité dans la mise
+ au point de vos programmes.</p>
+</details>
+<h1 data-number="7" id="analyse-de-fuites-mémoire"><span class="header-section-number">7</span> Analyse de fuites mémoire</h1>
+<p>Pour analyser les fuites mémoire dans du code <em>C++</em>, nous nous appuyons sur des outils dédiés.</p>
+<p>Pour tester ces outils, vous pouvez vous appuyer sur votre propre 
+projet ou bien créer un projet console et substituer le code 
+automatiquement généré par le contenu de <a href="./Sources/codeQuiFuit.cpp"><code>codeQuiFuit.cpp</code></a>.</p>
+<h2 data-number="7.1" id="linux"><span class="header-section-number">7.1</span> <em>Linux</em></h2>
+<h3 data-number="7.1.1" id="clion-sans-installation-dun-autre-outil"><span class="header-section-number">7.1.1</span> <em>CLion</em> sans installation d’un autre outil</h3>
+<p>Pour éviter l’installation d’un autre outil, nous nous appuyons sur le <a href="https://github.com/google/sanitizers"><em>sanitizer</em></a> <code>address</code>.</p>
+<p>Pour ce faire, modifiez le <code>CMakeLists.txt</code> à la racine de votre projet en lui ajoutant les lignes :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>        .......</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>        <span class="kw">set</span> (<span class="dv">BUILD_SHARED_LIBS</span> FALSE)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>        <span class="kw">set</span>(<span class="dv">CMAKE_POLICY_DEFAULT_CMP0077</span> NEW) <span class="co"># This cmake_policy avoids warning by cmake when we use pugixml</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>        <span class="kw">cmake_policy</span>(<span class="ot">SET</span> CMP0135 <span class="ot">NEW</span>) <span class="co"># This cmake_policy avoids warning by cmake when we fetch contents based on URL</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>        <span class="co">###### DEBUT lignes a rajouter</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>        <span class="kw">if</span>(<span class="dv">MSVC</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>          <span class="kw">add_compile_options</span>(/fsanitize=address)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>        <span class="kw">else</span>()</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>          <span class="kw">add_compile_options</span>(-fsanitize=address)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>          <span class="kw">add_link_options</span>(-fsanitize=address)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a>        <span class="kw">endif</span>()</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>        <span class="co">###### FIN lignes a rajouter</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a>        <span class="kw">set</span>(<span class="dv">CMAKE_CXX_STANDARD</span> 20)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>        .......</span></code></pre></div>
+<p>Dans votre projet, prenez en compte les changements de <code>CMakeLists.txt</code>, puis régénérez complètement votre projet.</p>
+<p>Si vous exécutez, comme jusqu’à présent, <code>unitTests</code> dans le cadre de l’environnement <em>GoogleTest</em>, vos tests sont toujours tous corrects. Cependant, en bas à gauche de votre écran, à côté de l’onglet <code>Console</code>, il y a un onglet <code>Sanitizers</code> qui vous signale des problèmes repérés dans votre code :</p>
+<figure>
+<img src="Outils%20R5.B.04%20(cmake,%20IDE,%20SonarLint,%20GoogleTest,%20d%C3%A9bogueur,%20analyse%20de%20fuites%20m%C3%A9moire)_fichiers/ongletSanitizerDansValgrind.jpg" alt=""><figcaption>Onglet <code>Sanitizer</code> dans <em>CLion</em></figcaption>
+</figure>
+<p>Pour information, si vous choisissez d’exécuter la cible <code>All CTests</code>, les tests qui causent la fuite mémoire sont signalés comme ne passant pas (alors que, pourtant, les différents <code>EXPECT</code> ou <code>ASSERT</code> sont corrects). L’onglet <code>Sanitizers</code> permet de comprendre les problèmes.</p>
+<h3 data-number="7.1.2" id="clion-combiné-à-loutil-valgrind"><span class="header-section-number">7.1.2</span> <em>Clion</em> combiné à l’outil <em>Valgrind</em></h3>
+<ol type="1">
+<li>Installez <em>Valgrind</em>. Par exemple, sous <em>Ubuntu</em> : <em>sudo apt install valgrind</em></li>
+<li>Dans <em>CLion</em>, menu Run &gt; Run ‘unitTests’ with Valgrind Memcheck : la fenêtre Console indique que valgrind a été lancé.</li>
+<li>Au bout de quelques secondes, la fenêtre en bas à droite de l’écran 
+indique que les “Tests Results” sont OK. En fait, ceci ne concerne que 
+les tests unitaires qui sont tous OK. SI vous cliquez sur l’onglet 
+“Valgrind” (à côté de l’onglet “Console” actuellement affiché), vous 
+voyez un message <code>Leak-DefinitelyLost 3 Warnings</code>. Si vous 
+dépliez ce message, vous accédez au détail de ces fuites mémoire. En 
+dépliant l’une de ces fuites, vous avez accès à la pile d’appel qui a 
+amené à l’allocation mémoire sans libération associée. En 
+double-cliquant sur l’une des lignes de la pile d’appel (par exemple, 
+dans la figure 1, sur la ligne <code>Group::Group(pugi::xml_node) Group.cpp:15)</code>), vous accédez au code de la ligne qui a fait le <code>new</code>.</li>
+</ol>
+<figure>
+<img src="Outils%20R5.B.04%20(cmake,%20IDE,%20SonarLint,%20GoogleTest,%20d%C3%A9bogueur,%20analyse%20de%20fuites%20m%C3%A9moire)_fichiers/resultatValgrind.jpg" alt=""><figcaption>CLion affichant le résultat de l’exécution de Valgrind</figcaption>
+</figure>
+<h2 data-number="7.2" id="macos"><span class="header-section-number">7.2</span> <em>MacOS</em></h2>
+<h3 data-number="7.2.1" id="clion"><span class="header-section-number">7.2.1</span> <em>Clion</em></h3>
+<p>Suivez la démarche proposée dans la section “<em>CLion</em> sans installation d’un autre outil” de <em>Linux</em>.</p>
+<h3 data-number="7.2.2" id="outil-standard-leaks"><span class="header-section-number">7.2.2</span> Outil standard <em>Leaks</em></h3>
+<p>Sous MacOS, vous pouvez aussi vous appuyer sur l’outil <em>leaks</em> fourni en standard (cf.&nbsp;<a href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/ManagingMemory/Articles/FindingLeaks.html">cet article</a>).</p>
+<p>Dans un terminal, compiler votre programme avec l’option <code>-g</code> (NB: <em>Clion</em> compile votre programme directement avec cette option). Par exemple:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="fu">cc</span> -g -Wall -Werror nomFichier.c -o nomFichier</span></code></pre></div>
+<ul>
+<li>Tapez la commande :</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="ex">leaks</span> --atExit --list -- ./nomFichier</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="co"># ==&gt; Détection des leaks sans voir leur emplacement précis dans le code</span></span></code></pre></div>
+<ul>
+<li>Tapez la commande :</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="bu">export</span> <span class="va">MallocStackLogging=</span>1</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="co"># Rien ne se passe</span></span></code></pre></div>
+<ul>
+<li>Tapez la commande :</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="ex">leaks</span> --atExit --list -- ./nomFichier</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="co"># ==&gt; Affichage des emplacements précis dans le code</span></span></code></pre></div>
+<h2 data-number="7.3" id="visual-studio-windows-2"><span class="header-section-number">7.3</span> <em>Visual Studio</em> / <em>Windows</em></h2>
+<h3 data-number="7.3.1" id="votez-pour-que-le-sanitizer-address-permette-la-détection-de-fuites-mémoire-sous-windows"><span class="header-section-number">7.3.1</span> Votez pour que le <em>sanitizer</em> <code>Address</code> permette la détection de fuites mémoire sous <em>Windows</em></h3>
+<p><em>Windows</em> implémente le <em>sanitizer</em> <code>Address</code> pour son compilateur <em>MSVC</em> (cf.&nbsp;<a href="https://learn.microsoft.com/fr-fr/cpp/sanitizers/asan-error-examples?view=msvc-170">tous ces exemples de détection</a>), mais, actuellement, cette implémentation ne détecte pas les fuites mémoire !</p>
+<p>Si vous le souhaitez, votez <a href="https://developercommunity.visualstudio.com/t/Memory-leak-detection-using-fsanitizel/1476736">ici</a> pour demander l’ajout de cette fonctionnalité !</p>
+<p>En attendant, consultez la section suivante pour détecter les fuites mémoire sous <em>Windows</em>.</p>
+<h3 data-number="7.3.2" id="visual-studio-profiler"><span class="header-section-number">7.3.2</span> <em>Visual Studio Profiler</em></h3>
+<p>Par rapport à <em>Valgrind</em> sous <em>Linux</em>, le <em>Visual Studio Profiler</em> est un peu plus compliqué à mettre en oeuvre, mais présente l’avantage de ne pas du tout ralentir l’application profilée.</p>
+<p>Cet outil étant disponible en standard dans <em>Visual Studio</em>, il n’y a aucune installation à faire.</p>
+<p>Commencez par poser un point d’arrêt au niveau de l’appel à la 
+fonction que vous souhaitez tester. Par exemple, dans le cas d’une 
+application R5.B.04, l’appel à la fonction <code>myMain()</code>.</p>
+<p>Si vous souhaitez voir si vos tests unitaires révèlent des fuites mémoire :</p>
+<ol type="1">
+<li>Posez un point d’arrêt au niveau de la première ligne de votre premier test unitaire,</li>
+<li>Cliquez sur le bouton “Débogueur Windows Local”</li>
+<li>Quand vous êtes arrêté au niveau de votre ligne, dans la fenêtre en bas à droite, sélectionnez l’onglet “Pile des appels”</li>
+<li>Recherchez dans cette pile la ligne <code>unitTests.exe!RUN_ALL_TESTS()</code> et double-cliquez dessus : le code de <code>gtest.h</code> s’affiche.</li>
+<li>Posez un point d’arrêt sur la ligne <code>return ::testing::UnitTest::GetInstance()-&gt;Run();</code></li>
+<li>Dans la fenêtre en bas à droite, sélectionnez l’onglet “Points 
+d’arrêt” et désactivez ou effacez le point d’arrêt de la première ligne 
+de votre test unitaire.</li>
+<li>Cliquez sur l’icône “Redémarrez votre session de debug” (Ctrl+Maj+F5)</li>
+<li>Dans la fenêtre “Outils de diagnostic”
+<ul>
+<li>Onglet “Utilisation de la mémoire”</li>
+<li>Cliquez sur le bouton “Profilage du tas” s’il est grisé.</li>
+<li>Cliquez sur le lien “activer les instantanés pour commencer le 
+profilage du tas” : le bouton “Prendre un instantané” n’est plus grisé.</li>
+<li>Cliquez sur le bouton “Prendre un instantané”</li>
+</ul></li>
+<li>Mettez un point d’arrêt sur la ligne qui suit l’appel à la fonction dont vous souhaitez tester les fuites.</li>
+<li>Cliquez sur le bouton “Continuer”</li>
+<li>Cliquez sur le bouton “Prendre un instantané” : une deuxième ligne 
+d’instantané apparaît dans la fenêtre “Outils de diagnostic” avec des 
+flèches rouge.</li>
+<li>Cliquez sur le lien à gauche de la première flèche rouge : un onglet “Instantané n°2” apparaît.</li>
+<li>Pour chaque type d’objet correspondant à votre code (par exemple, <code>unitTests.exe!Circle[]</code>)
+<ul>
+<li>Double-cliquez sur ce type : vous voyez les différentes instances qui ont été perdues (cf.&nbsp;figure ci-dessous).</li>
+<li>En dessous, la pile d’appel vous montre l’endroit où le new a été fait dans le code.</li>
+<li>Doublez-cliquez sur une ligne de la pile pour visualiser la ligne de code qui a fait le new.</li>
+</ul></li>
+</ol>
+<figure>
+<img src="Outils%20R5.B.04%20(cmake,%20IDE,%20SonarLint,%20GoogleTest,%20d%C3%A9bogueur,%20analyse%20de%20fuites%20m%C3%A9moire)_fichiers/resultatVisualStudioProfiler.jpg" alt=""><figcaption>Visual Studio affichant le résultat de la différence d’instantanés</figcaption>
+</figure>
+<h3 data-number="7.3.3" id="dr-memory"><span class="header-section-number">7.3.3</span> <em>Dr Memory</em></h3>
+<p>L’outil <em>Dr.&nbsp;Memory</em> est sensé être un équivalent de <em>Valgrind</em> sous Windows. Mais il ne fonctionne pas correctement. Nous le mentionnons ici seulement pour information.</p>
+
+
+
+</body></html>
