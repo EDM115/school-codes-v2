@@ -4,10 +4,10 @@
 ### [Apprentissage](./Apprentissage)
 BUT Info Apprentissage 2022-2024
 
-### [Parcours A](./Parcours A)
+### [Parcours A](./Parcours%20A)
 Parcours A
 
-### [Parcours B](./Parcours B)
+### [Parcours B](./Parcours%20B)
 Parcours B
 
 ### R5.01

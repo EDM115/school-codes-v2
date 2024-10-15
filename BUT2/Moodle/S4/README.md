@@ -3,10 +3,10 @@
 ### [Apprentissage](./Apprentissage)
 BUT Info Apprentissage 2023-2025
 
-### [Parcours A](./Parcours A)
+### [Parcours A](./Parcours%20A)
 Parcours A
 
-### [Parcours C](./Parcours C)
+### [Parcours C](./Parcours%20C)
 Parcours C (parcours aujourd'hui disparu de l'IUT Info de Vannes)
 
 ### [R4.01](./R4.01)

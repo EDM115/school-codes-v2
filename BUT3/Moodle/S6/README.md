@@ -1,10 +1,10 @@
 ## Le Semestre 6
 
 
-### [Parcours A](./Parcours A)
+### [Parcours A](./Parcours%20A)
 Parcours A
 
-### [Parcours B](./Parcours B)
+### [Parcours B](./Parcours%20B)
 Parcours B
 
 ### [R6.01](./R6.01)
