@@ -1,18 +1,31 @@
 Dans ce TP, vous allez devoir installer et configurer un outil de CI/CD (Jenkins) pour construire un executable.
 
-Pour l'instant le process CI/CD est simple, vous devez juste récupérer le jeu Tetris en clonant le git repository du jeu sur gitlab.iu-vannes.org, puis vous arranger pour que le job jenkins construise (build) le jeu.
+Le process CI/CD est simple:
 
-On doit pouvoir ensuite récupérer le jeu (son exécutable) dans le job jenkins, une fois celui-ci terminé.
+- vous devez juste récupérer le jeu Tetris en clonant le git repository du jeu sur gitlab.iu-vannes.org (RA5.07). 
 
-Vous devez installer Jenkins sur la machine mis à disposition pour que cela fonctionne, c'est la même machine que celle des TP d'avant (elle a été reseté), donc pour vous y connecter, regardez dans les TP précédents si vous ne vous souvenez plus comment faire.
+- modifier le source pour que le jeu build bien sur votre machine distante. Pensez à virer le répertoire .git existant.
 
-ATTENTION: vous ne devez pas changer le mot de passe par défaut du Jenkins que vous installerez.
+- une fois que tout est ok, vous créez un projet sous gitlab.iu-vannes.org (ou réutilisez un projet a vous existant)
 
+- puis vous arranger pour que le job jenkins construise (build) le jeu a partir de votre repository sur gitlab.iu-vannes.org (l'URL du jenkins est http://jenkins.iu-vannes.org)
 
-Dans ce TP, vous allez reprendre l'outil de CI/CD que vous avez mis en place la dernière fois (Jenkins) et créer un job pour construire le même jeu que la dernière fois mais en utilisant un pipeline Jenkins.
+- on doit pouvoir ensuite récupérer le jeu (son exécutable) dans le job jenkins, une fois celui-ci terminé sous forme d'artefact.
 
-A la fin de ce job, postez le contenu de votre pipeline dans la zone de rendu.
+Vous devez utiliser le Jenkins fourni par l'enseignant. Pour la machine à distance pour extraite le tarball, le corriger et le compiler, vous pouvez utiliser la machine distante mis à disposition par l'enseignant, ajoutez 60 au numero de machine pour se connecter.
 
-Le job pipeline doit aussi générer un artefact avec l'exécutable du jeu dedans + un fichier md5sum contenant le md5sum de l'exécutable.
+---
 
-Du coup cet artefact doit etre un fichier zip.
+Dans ce TP, vous allez reprendre l'outil de CI/CD que vous avez mis en place la dernière fois (Jenkins) et créer un job pour construire une calculatrice en ligne en utilisant un pipeline Jenkins.
+
+l'URL du project calculatrice est: http://gitlab.iu-vannes.org/root/calc
+
+Il vous faudra aussi créer un 2ème pipeline qui sera lancé automatiquement en enchaînement du premier, et qui lui fera un ensemble de tests (voir fichier test.sh a enrichir) afin de valider que le build du pipeline précédent à produit quelque chose de valide et testé. Si jamais le premier pipeline a échoué, alors le 2ème ne doit pas se lancer.
+A la fin de ce job, postez le contenu de vos 2 pipelines dans la zone de rendu dans un fichier texte, pdt, odt ou docx.
+
+Le premier job pipeline doit générer un artefact avec l'exécutable du jeu dedans + un fichier md5sum contenant le md5sum de l'exécutable (du coup cet artefact doit etre un fichier zip.).
+
+Le second job pipeline doit générer le résultat des tests tels qu'ils s'affichent à l'écran lors de l'exécution des tests. Forcément, ils doivent récupérer l'artefact du premier job (l'exécutable calc) pour runner les tests.
+A noter que seul un test est implémenté (l'addition), il faut au moins en faire 4, un pour chaque opération arithmétique et tous les tests doivent passer !
+
+ATTENTION: pensez bien à travailler dans votre Workspace sous Jenkins (WorkspaceXX ou XX est votre numéro)
