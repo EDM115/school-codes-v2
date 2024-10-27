@@ -1,0 +1,53 @@
+networks:
+  backend:
+    driver: bridge
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    depends_on:
+      - ms-user
+      - ms-location
+    networks:
+      - backend
+    ports:
+      - "8080:8080"
+
+  location-db:
+    environment:
+      MYSQL_DATABASE: locationdb
+      MYSQL_ROOT_PASSWORD: root
+    image: mysql:5.7
+    networks:
+      - backend
+
+  ms-location:
+    build: ./ms-location
+    container_name: ms-location
+    depends_on:
+      - location-db
+    networks:
+      - backend
+    ports:
+      - "8082:8082"
+
+  ms-user:
+    build: ./ms-user
+    container_name: ms-user
+    depends_on:
+      - user-db
+    networks:
+      - backend
+    ports:
+      - "8081:8081"
+
+  user-db:
+    environment:
+      MYSQL_DATABASE: userdb
+      MYSQL_ROOT_PASSWORD: root
+    image: mysql:5.7
+    networks:
+      - backend
+
+version: "3"

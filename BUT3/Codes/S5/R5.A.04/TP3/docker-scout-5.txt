@@ -1,0 +1,32 @@
+
+
+## Overview
+
+                    │       Analyzed Image         
+────────────────────┼──────────────────────────────
+  Target            │  vulnerable-image-5:latest   
+    digest          │  1226389b7947                
+    platform        │ linux/amd64                  
+    vulnerabilities │    0C     0H     0M     1L   
+    size            │ 76 MB                        
+    packages        │ 138                          
+
+
+## Packages and Vulnerabilities
+
+   0C     0H     0M     1L  openssl 1.1.1n-0+deb10u6
+pkg:deb/debian/openssl@1.1.1n-0%2Bdeb10u6?os_distro=buster&os_name=debian&os_version=10
+
+    ✗ LOW CVE-2010-0928
+      https://scout.docker.com/v/CVE-2010-0928?s=debian&n=openssl&ns=debian&t=deb&osn=debian&osv=10&vr=%3E%3D1.1.1n-0%2Bdeb10u3
+      Affected range : >=1.1.1n-0+deb10u3  
+      Fixed version  : not fixed           
+    
+
+
+1 vulnerability found in 1 package
+  LOW       1  
+  MEDIUM    0  
+  HIGH      0  
+  CRITICAL  0  
+

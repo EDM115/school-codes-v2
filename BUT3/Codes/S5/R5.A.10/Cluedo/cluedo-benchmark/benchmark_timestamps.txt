@@ -1,0 +1,514 @@
+Benchmark Timestamps
+Starting Socket.IO connection creation, 941.7602
+Socket.IO connection and game created: 50, 2689.2117
+Socket.IO connection and game created: 100, 4375.9223
+Socket.IO connection and game created: 150, 6176.3074
+Socket.IO connection and game created: 200, 7594.5255
+Socket.IO connection and game created: 250, 9260.8785
+Socket.IO connection and game created: 300, 10877.2469
+Socket.IO connection and game created: 350, 12542.2051
+Socket.IO connection and game created: 400, 14163.4025
+Socket.IO connection and game created: 450, 15776.1019
+Socket.IO connection and game created: 500, 17391.4749
+Socket.IO connection and game created: 550, 19040.5683
+Socket.IO connection and game created: 600, 20657.342
+Socket.IO connection and game created: 650, 22293.7016
+Socket.IO connection and game created: 700, 23904.5951
+Socket.IO connection and game created: 750, 25545.2723
+Socket.IO connection and game created: 800, 27161.2992
+Socket.IO connection and game created: 850, 28769.1483
+Socket.IO connection and game created: 900, 30343.01
+Socket.IO connection and game created: 950, 31982.6251
+Socket.IO connection and game created: 1000, 33571.2876
+Socket.IO connection and game created: 1050, 35174.1398
+Socket.IO connection and game created: 1100, 36747.2826
+Socket.IO connection and game created: 1150, 38361.5409
+Socket.IO connection and game created: 1200, 40067.3501
+Socket.IO connection and game created: 1250, 41688.4332
+Socket.IO connection and game created: 1300, 43205.7553
+Socket.IO connection and game created: 1350, 44803.4337
+Socket.IO connection and game created: 1400, 46491.8455
+Socket.IO connection and game created: 1450, 48027.1903
+Socket.IO connection and game created: 1500, 49661.1667
+Socket.IO connection and game created: 1550, 51270.5736
+Socket.IO connection and game created: 1600, 52894.1893
+Socket.IO connection and game created: 1650, 54521.434
+Socket.IO connection and game created: 1700, 56129.4503
+Socket.IO connection and game created: 1750, 57739.6469
+Socket.IO connection and game created: 1800, 59317.9952
+Socket.IO connection and game created: 1850, 60925.3307
+Socket.IO connection and game created: 1900, 62553.8568
+Socket.IO connection and game created: 1950, 64225.1517
+Socket.IO connection and game created: 2000, 65775.2395
+Socket.IO connection and game created: 2050, 67378.3758
+Socket.IO connection and game created: 2100, 68978.592
+Socket.IO connection and game created: 2150, 70539.734
+Socket.IO connection and game created: 2200, 72138.1091
+Socket.IO connection and game created: 2250, 73821.4679
+Socket.IO connection and game created: 2300, 75409.6558
+Socket.IO connection and game created: 2350, 77019.8099
+Socket.IO connection and game created: 2400, 78598.3989
+Socket.IO connection and game created: 2450, 80247.2454
+Socket.IO connection and game created: 2500, 81866.9034
+Socket.IO connection and game created: 2550, 83474.315
+Socket.IO connection and game created: 2600, 85061.6927
+Socket.IO connection and game created: 2650, 86672.289
+Socket.IO connection and game created: 2700, 88274.1267
+Socket.IO connection and game created: 2750, 89988.58
+Socket.IO connection and game created: 2800, 91725.8574
+Socket.IO connection and game created: 2850, 93524.5898
+Socket.IO connection and game created: 2900, 95305.2113
+Socket.IO connection and game created: 2950, 97078.9347
+Socket.IO connection and game created: 3000, 98963.7153
+Socket.IO connection and game created: 3050, 100565.7914
+Socket.IO connection and game created: 3100, 102158.9678
+Socket.IO connection and game created: 3150, 103834.9655
+Socket.IO connection and game created: 3200, 105475.8236
+Socket.IO connection and game created: 3250, 107217.8118
+Socket.IO connection and game created: 3300, 108868.2514
+Socket.IO connection and game created: 3350, 110509.2721
+Socket.IO connection and game created: 3400, 112256.8929
+Socket.IO connection and game created: 3450, 114011.0455
+Socket.IO connection and game created: 3500, 115816.7721
+Socket.IO connection and game created: 3550, 117783.2195
+Socket.IO connection and game created: 3600, 119715.9619
+Socket.IO connection and game created: 3650, 121717.2379
+Socket.IO connection and game created: 3700, 123762.2487
+Socket.IO connection and game created: 3750, 126026.2005
+Socket.IO connection and game created: 3800, 127762.3322
+Socket.IO connection and game created: 3850, 129488.7815
+Socket.IO connection and game created: 3900, 131264.2864
+Socket.IO connection and game created: 3950, 133097.4154
+Socket.IO connection and game created: 4000, 134939.6678
+Socket.IO connection and game created: 4050, 136703.5816
+Socket.IO connection and game created: 4100, 138550.8321
+Socket.IO connection and game created: 4150, 140346.6455
+Socket.IO connection and game created: 4200, 142319.7116
+Socket.IO connection and game created: 4250, 144158.2907
+Socket.IO connection and game created: 4300, 146038.8605
+Socket.IO connection and game created: 4350, 147937.4439
+Socket.IO connection and game created: 4400, 149893.6627
+Socket.IO connection and game created: 4450, 151907.5617
+Socket.IO connection and game created: 4500, 153896.9998
+Socket.IO connection and game created: 4550, 155849.4347
+Socket.IO connection and game created: 4600, 157492.2789
+Socket.IO connection and game created: 4650, 159191.6274
+Socket.IO connection and game created: 4700, 160829.4012
+Socket.IO connection and game created: 4750, 162439.259
+Socket.IO connection and game created: 4800, 164110.953
+Socket.IO connection and game created: 4850, 165733.026
+Socket.IO connection and game created: 4900, 167479.3615
+Socket.IO connection and game created: 4950, 169225.6371
+All Socket.IO connections and games created, 170825.6854
+Starting game events, 170827.4757
+Game event triggered: action 1, 170937.2101
+Socket.IO connection and game created: 5000, 171045.865
+Game event triggered: action 51, 176558.2781
+Game event triggered: action 101, 182269.3293
+Game event triggered: action 151, 187803.9391
+Game event triggered: action 201, 193365.5077
+Game event triggered: action 251, 198940.0044
+Game event triggered: action 301, 204473.683
+Game event triggered: action 351, 210009.4987
+Game event triggered: action 401, 215541.086
+Game event triggered: action 451, 221064.3914
+Game event triggered: action 501, 226602.4351
+Game event triggered: action 551, 232138.165
+Game event triggered: action 601, 237657.8798
+Game event triggered: action 651, 243196.6225
+Game event triggered: action 701, 248720.4459
+Game event triggered: action 751, 254245.8673
+Game event triggered: action 801, 259785.4271
+Game event triggered: action 851, 265308.38
+Game event triggered: action 901, 270846.7642
+Game event triggered: action 951, 276384.1086
+Game event triggered: action 1001, 281928.1417
+Game event triggered: action 1051, 287456.1806
+Game event triggered: action 1101, 292973.9019
+Game event triggered: action 1151, 298519.6666
+Game event triggered: action 1201, 304048.0589
+Game event triggered: action 1251, 309574.4718
+Game event triggered: action 1301, 315095.4546
+Game event triggered: action 1351, 320626.0954
+Game event triggered: action 1401, 326158.1137
+Game event triggered: action 1451, 331679.9396
+Game event triggered: action 1501, 337214.0417
+Game event triggered: action 1551, 342746.0041
+Game event triggered: action 1601, 348284.3837
+Game event triggered: action 1651, 353818.2781
+Game event triggered: action 1701, 359355.7675
+Game event triggered: action 1751, 364886.6985
+Game event triggered: action 1801, 370408.996
+Game event triggered: action 1851, 375954.3415
+Game event triggered: action 1901, 381485.3473
+Game event triggered: action 1951, 387016.7416
+Game event triggered: action 2001, 392558.2699
+Game event triggered: action 2051, 398096.6923
+Game event triggered: action 2101, 403636.735
+Game event triggered: action 2151, 409175.2425
+Game event triggered: action 2201, 414725.7425
+Game event triggered: action 2251, 420250.4441
+Game event triggered: action 2301, 425785.2834
+Game event triggered: action 2351, 431333.5325
+Game event triggered: action 2401, 436862.4146
+Game event triggered: action 2451, 442385.7973
+Game event triggered: action 2501, 447923.8073
+Game event triggered: action 2551, 453458.5819
+Game event triggered: action 2601, 459001.3454
+Game event triggered: action 2651, 464529.4429
+Game event triggered: action 2701, 470061.0218
+Game event triggered: action 2751, 475600.9565
+Game event triggered: action 2801, 481127.0335
+Game event triggered: action 2851, 486667.7876
+Game event triggered: action 2901, 492221.3731
+Game event triggered: action 2951, 497766.438
+Game event triggered: action 3001, 503323.4708
+Game event triggered: action 3051, 508866.3696
+Game event triggered: action 3101, 514448.1255
+Game event triggered: action 3151, 520005.4578
+Game event triggered: action 3201, 525550.5555
+Game event triggered: action 3251, 531128.9541
+Game event triggered: action 3301, 536668.474
+Game event triggered: action 3351, 542199.5
+Game event triggered: action 3401, 547733.7763
+Game event triggered: action 3451, 553269.6234
+Game event triggered: action 3501, 558843.206
+Game event triggered: action 3551, 564406.1241
+Game event triggered: action 3601, 569991.2562
+Game event triggered: action 3651, 575598.1362
+Game event triggered: action 3701, 581130.1224
+Game event triggered: action 3751, 586670.9839
+Game event triggered: action 3801, 592209.6897
+Game event triggered: action 3851, 597741.8367
+Game event triggered: action 3901, 603298.1433
+Game event triggered: action 3951, 608837.8753
+Game event triggered: action 4001, 614398.1871
+Game event triggered: action 4051, 619978.85
+Game event triggered: action 4101, 625531.3999
+Game event triggered: action 4151, 631080.6471
+Game event triggered: action 4201, 636650.5447
+Game event triggered: action 4251, 642198.4063
+Game event triggered: action 4301, 647749.823
+Game event triggered: action 4351, 653281.1714
+Game event triggered: action 4401, 658824.3209
+Game event triggered: action 4451, 664352.5345
+Game event triggered: action 4501, 669907.9539
+Game event triggered: action 4551, 675454.1058
+Game event triggered: action 4601, 680994.277
+Game event triggered: action 4651, 686533.9521
+Game event triggered: action 4701, 692069.6218
+Game event triggered: action 4751, 697602.1884
+Game event triggered: action 4801, 703154.6423
+Game event triggered: action 4851, 708696.199
+Game event triggered: action 4901, 714225.9407
+Game event triggered: action 4951, 719776.267
+All game events triggered, 725316.9296
+Closing Socket.IO connections, 725317.815
+All Socket.IO connections closed, 725602.189
+Starting data insertion, 725603.6505
+Inserted game and player: 1, 725966.3594
+Inserted game and player: 51, 727873.8683
+Inserted game and player: 101, 729734.1657
+Inserted game and player: 151, 731564.3231
+Inserted game and player: 201, 733362.361
+Inserted game and player: 251, 735343.4925
+Inserted game and player: 301, 737288.9776
+Inserted game and player: 351, 739144.7652
+Inserted game and player: 401, 741022.9146
+Inserted game and player: 451, 743007.1351
+Inserted game and player: 501, 744883.5452
+Inserted game and player: 551, 746717.1799
+Inserted game and player: 601, 748643.4525
+Inserted game and player: 651, 750489.1262
+Inserted game and player: 701, 752389.5313
+Inserted game and player: 751, 754257.7099
+Inserted game and player: 801, 756093.601
+Inserted game and player: 851, 758105.3319
+Inserted game and player: 901, 760207.754
+Inserted game and player: 951, 762131.4407
+Inserted game and player: 1001, 763965.1064
+Inserted game and player: 1051, 765762.7859
+Inserted game and player: 1101, 767676.8506
+Inserted game and player: 1151, 769678.3376
+Inserted game and player: 1201, 771983.1884
+Inserted game and player: 1251, 774507.8274
+Inserted game and player: 1301, 776366.0368
+Inserted game and player: 1351, 778177.526
+Inserted game and player: 1401, 780382.5607
+Inserted game and player: 1451, 782538.3602
+Inserted game and player: 1501, 784336.1556
+Inserted game and player: 1551, 786340.1248
+Inserted game and player: 1601, 788204.8132
+Inserted game and player: 1651, 790181.57
+Inserted game and player: 1701, 792068.3982
+Inserted game and player: 1751, 793947.6683
+Inserted game and player: 1801, 795747.8498
+Inserted game and player: 1851, 797556.9558
+Inserted game and player: 1901, 799686.2749
+Inserted game and player: 1951, 801633.4392
+Inserted game and player: 2001, 803481.6336
+Inserted game and player: 2051, 805489.154
+Inserted game and player: 2101, 807569.4724
+Inserted game and player: 2151, 809471.2638
+Inserted game and player: 2201, 811393.665
+Inserted game and player: 2251, 813443.3944
+Inserted game and player: 2301, 815265.9329
+Inserted game and player: 2351, 817102.1197
+Inserted game and player: 2401, 819135.7349
+Inserted game and player: 2451, 821266.7995
+Inserted game and player: 2501, 823100.3226
+Inserted game and player: 2551, 825046.1228
+Inserted game and player: 2601, 827028.0621
+Inserted game and player: 2651, 829006.1829
+Inserted game and player: 2701, 831015.2796
+Inserted game and player: 2751, 832983.2773
+Inserted game and player: 2801, 835201.2028
+Inserted game and player: 2851, 837012.6383
+Inserted game and player: 2901, 838898.6132
+Inserted game and player: 2951, 840942.7102
+Inserted game and player: 3001, 842729.4214
+Inserted game and player: 3051, 844766.8021
+Inserted game and player: 3101, 847244.766
+Inserted game and player: 3151, 849681.6717
+Inserted game and player: 3201, 852038.7537
+Inserted game and player: 3251, 854172.7032
+Inserted game and player: 3301, 856141.7214
+Inserted game and player: 3351, 858277.7089
+Inserted game and player: 3401, 860233.5231
+Inserted game and player: 3451, 862503.1804
+Inserted game and player: 3501, 864506.8454
+Inserted game and player: 3551, 866661.5914
+Inserted game and player: 3601, 868460.3152
+Inserted game and player: 3651, 870632.1506
+Inserted game and player: 3701, 872523.4217
+Inserted game and player: 3751, 874626.3474
+Inserted game and player: 3801, 876571.0711
+Inserted game and player: 3851, 878709.542
+Inserted game and player: 3901, 880653.997
+Inserted game and player: 3951, 882676.5754
+Inserted game and player: 4001, 884599.0228
+Inserted game and player: 4051, 886452.7473
+Inserted game and player: 4101, 888621.3292
+Inserted game and player: 4151, 890795.3499
+Inserted game and player: 4201, 892699.0428
+Inserted game and player: 4251, 894654.9876
+Inserted game and player: 4301, 896468.959
+Inserted game and player: 4351, 898528.3091
+Inserted game and player: 4401, 900439.6231
+Inserted game and player: 4451, 902248.4528
+Inserted game and player: 4501, 904521.6195
+Inserted game and player: 4551, 906802.8729
+Inserted game and player: 4601, 909021.7161
+Inserted game and player: 4651, 910886.0937
+Inserted game and player: 4701, 912938.0662
+Inserted game and player: 4751, 915027.5599
+Inserted game and player: 4801, 917083.573
+Inserted game and player: 4851, 919016.9357
+Inserted game and player: 4901, 921167.2793
+Inserted game and player: 4951, 923000.9448
+All data inserted, 925208.4148
+Starting data modification, 925209.5853
+Modified player: 1, 925485.084
+Modified player: 51, 927570.5477
+Modified player: 101, 929371.3139
+Modified player: 151, 931371.8011
+Modified player: 201, 933681.261
+Modified player: 251, 935928.4185
+Modified player: 301, 937917.509
+Modified player: 351, 940273.4089
+Modified player: 401, 942307.0356
+Modified player: 451, 944338.1624
+Modified player: 501, 946304.3462
+Modified player: 551, 948293.5013
+Modified player: 601, 950204.8792
+Modified player: 651, 952067.6967
+Modified player: 701, 953992.4567
+Modified player: 751, 955814.6631
+Modified player: 801, 957817.3749
+Modified player: 851, 959859.9409
+Modified player: 901, 961815.8827
+Modified player: 951, 963691.5316
+Modified player: 1001, 965792.6835
+Modified player: 1051, 967700.7474
+Modified player: 1101, 969487.6529
+Modified player: 1151, 971330.0656
+Modified player: 1201, 973185.48
+Modified player: 1251, 975038.9432
+Modified player: 1301, 976882.5537
+Modified player: 1351, 978810.3542
+Modified player: 1401, 980610.5489
+Modified player: 1451, 982513.2845
+Modified player: 1501, 984313.6652
+Modified player: 1551, 986664.2192
+Modified player: 1601, 988597.7501
+Modified player: 1651, 990420.1887
+Modified player: 1701, 992368.4795
+Modified player: 1751, 994282.5327
+Modified player: 1801, 996105.0411
+Modified player: 1851, 998135.6498
+Modified player: 1901, 1000304.5476
+Modified player: 1951, 1002249.3538
+Modified player: 2001, 1004058.5563
+Modified player: 2051, 1005911.5299
+Modified player: 2101, 1007744.0416
+Modified player: 2151, 1009667.5704
+Modified player: 2201, 1011747.9846
+Modified player: 2251, 1013859.4546
+Modified player: 2301, 1015882.1
+Modified player: 2351, 1017919.0109
+Modified player: 2401, 1019830.5265
+Modified player: 2451, 1021830.5658
+Modified player: 2501, 1023628.4782
+Modified player: 2551, 1025486.4718
+Modified player: 2601, 1027284.37
+Modified player: 2651, 1029082.4326
+Modified player: 2701, 1031006.9319
+Modified player: 2751, 1032826.837
+Modified player: 2801, 1034613.6669
+Modified player: 2851, 1036481.7701
+Modified player: 2901, 1038517.9973
+Modified player: 2951, 1040418.1803
+Modified player: 3001, 1042509.7616
+Modified player: 3051, 1044435.4118
+Modified player: 3101, 1046700.9569
+Modified player: 3151, 1048487.9584
+Modified player: 3201, 1050359.6992
+Modified player: 3251, 1052330.4487
+Modified player: 3301, 1054435.037
+Modified player: 3351, 1056334.4096
+Modified player: 3401, 1058303.7772
+Modified player: 3451, 1060462.2005
+Modified player: 3501, 1062487.1387
+Modified player: 3551, 1064379.125
+Modified player: 3601, 1066357.1155
+Modified player: 3651, 1068404.1555
+Modified player: 3701, 1070531.6236
+Modified player: 3751, 1072621.0261
+Modified player: 3801, 1074632.4713
+Modified player: 3851, 1076854.5894
+Modified player: 3901, 1078665.7757
+Modified player: 3951, 1080488.3883
+Modified player: 4001, 1082286.3348
+Modified player: 4051, 1084334.8212
+Modified player: 4101, 1086357.2844
+Modified player: 4151, 1088301.8497
+Modified player: 4201, 1090247.7219
+Modified player: 4251, 1092123.3806
+Modified player: 4301, 1094101.8142
+Modified player: 4351, 1096068.6222
+Modified player: 4401, 1098228.9867
+Modified player: 4451, 1100284.789
+Modified player: 4501, 1102296.369
+Modified player: 4551, 1104344.7354
+Modified player: 4601, 1106432.3455
+Modified player: 4651, 1108296.9814
+Modified player: 4701, 1110503.2448
+Modified player: 4751, 1112481.235
+Modified player: 4801, 1114439.4225
+Modified player: 4851, 1116362.0049
+Modified player: 4901, 1118543.1451
+Modified player: 4951, 1120476.436
+All data modified, 1122385.5007
+Starting data deletion, 1122386.9052
+Deleted player and game: 1, 1122561.4329
+Deleted player and game: 51, 1124626.382
+Deleted player and game: 101, 1126646.5128
+Deleted player and game: 151, 1128780.2087
+Deleted player and game: 201, 1131138.7966
+Deleted player and game: 251, 1133053.5224
+Deleted player and game: 301, 1135076.0721
+Deleted player and game: 351, 1136899.1968
+Deleted player and game: 401, 1139091.3324
+Deleted player and game: 451, 1140966.8704
+Deleted player and game: 501, 1142867.5128
+Deleted player and game: 551, 1144675.8694
+Deleted player and game: 601, 1146708.1971
+Deleted player and game: 651, 1148708.6613
+Deleted player and game: 701, 1150764.5978
+Deleted player and game: 751, 1152787.1138
+Deleted player and game: 801, 1154640.5714
+Deleted player and game: 851, 1156729.7385
+Deleted player and game: 901, 1158595.2778
+Deleted player and game: 951, 1160789.0223
+Deleted player and game: 1001, 1162889.2225
+Deleted player and game: 1051, 1164863.4367
+Deleted player and game: 1101, 1166955.1306
+Deleted player and game: 1151, 1168880.0013
+Deleted player and game: 1201, 1170678.0173
+Deleted player and game: 1251, 1172663.4934
+Deleted player and game: 1301, 1174688.3027
+Deleted player and game: 1351, 1176655.4572
+Deleted player and game: 1401, 1178702.4488
+Deleted player and game: 1451, 1180727.7537
+Deleted player and game: 1501, 1182908.1023
+Deleted player and game: 1551, 1184708.4334
+Deleted player and game: 1601, 1186728.4322
+Deleted player and game: 1651, 1189109.5882
+Deleted player and game: 1701, 1190976.1289
+Deleted player and game: 1751, 1192862.3272
+Deleted player and game: 1801, 1194720.9956
+Deleted player and game: 1851, 1196598.6076
+Deleted player and game: 1901, 1198409.9446
+Deleted player and game: 1951, 1200592.2436
+Deleted player and game: 2001, 1202390.3139
+Deleted player and game: 2051, 1204558.1039
+Deleted player and game: 2101, 1206755.9031
+Deleted player and game: 2151, 1208745.9708
+Deleted player and game: 2201, 1210736.0664
+Deleted player and game: 2251, 1212714.2273
+Deleted player and game: 2301, 1214704.3246
+Deleted player and game: 2351, 1216736.6949
+Deleted player and game: 2401, 1218547.9429
+Deleted player and game: 2451, 1220417.5763
+Deleted player and game: 2501, 1222564.376
+Deleted player and game: 2551, 1224364.8848
+Deleted player and game: 2601, 1226589.3643
+Deleted player and game: 2651, 1228489.6055
+Deleted player and game: 2701, 1230412.1627
+Deleted player and game: 2751, 1232301.4449
+Deleted player and game: 2801, 1234148.5873
+Deleted player and game: 2851, 1236240.0978
+Deleted player and game: 2901, 1238198.441
+Deleted player and game: 2951, 1240423.0502
+Deleted player and game: 3001, 1242357.2954
+Deleted player and game: 3051, 1244156.9711
+Deleted player and game: 3101, 1246033.4725
+Deleted player and game: 3151, 1248143.2468
+Deleted player and game: 3201, 1249954.5604
+Deleted player and game: 3251, 1252014.2429
+Deleted player and game: 3301, 1254132.9269
+Deleted player and game: 3351, 1256191.2241
+Deleted player and game: 3401, 1258113.9129
+Deleted player and game: 3451, 1260094.917
+Deleted player and game: 3501, 1261966.7839
+Deleted player and game: 3551, 1263820.4497
+Deleted player and game: 3601, 1265798.272
+Deleted player and game: 3651, 1267712.0574
+Deleted player and game: 3701, 1269798.0949
+Deleted player and game: 3751, 1271749.4482
+Deleted player and game: 3801, 1273952.2251
+Deleted player and game: 3851, 1275808.6322
+Deleted player and game: 3901, 1277897.4261
+Deleted player and game: 3951, 1280023.7166
+Deleted player and game: 4001, 1282073.9532
+Deleted player and game: 4051, 1284029.6092
+Deleted player and game: 4101, 1286262.4103
+Deleted player and game: 4151, 1288106.3272
+Deleted player and game: 4201, 1290097.1507
+Deleted player and game: 4251, 1292121.1104
+Deleted player and game: 4301, 1293921.6602
+Deleted player and game: 4351, 1295890.8689
+Deleted player and game: 4401, 1298067.4378
+Deleted player and game: 4451, 1300447.4018
+Deleted player and game: 4501, 1302589.1438
+Deleted player and game: 4551, 1304509.326
+Deleted player and game: 4601, 1306594.7501
+Deleted player and game: 4651, 1308621.3164
+Deleted player and game: 4701, 1310705.1007
+Deleted player and game: 4751, 1312705.2808
+Deleted player and game: 4801, 1314666.0523
+Deleted player and game: 4851, 1316549.0626
+Deleted player and game: 4901, 1318516.0564
+Deleted player and game: 4951, 1320449.7801
+All data deleted, 1322224.1809
+Benchmark completed, 1322225.1651

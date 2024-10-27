@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - filters:
+            - StripPrefix=1
+          id: ms-user
+          predicates:
+            - Path=/ms-user/**
+          uri: http://ms-user:8081/users
+        - filters:
+            - StripPrefix=1
+          id: ms-location
+          predicates:
+            - Path=/ms-location/**
+          uri: http://ms-location:8082/locations

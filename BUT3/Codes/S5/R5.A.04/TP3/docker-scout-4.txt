@@ -1,0 +1,18 @@
+
+
+## Overview
+
+                    │       Analyzed Image         
+────────────────────┼──────────────────────────────
+  Target            │  vulnerable-image-4:latest   
+    digest          │  30238a62427f                
+    platform        │ linux/amd64                  
+    vulnerabilities │    0C     0H     0M     0L   
+    size            │ 190 MB                       
+    packages        │ 282                          
+
+
+## Packages and Vulnerabilities
+
+  No vulnerable packages detected
+

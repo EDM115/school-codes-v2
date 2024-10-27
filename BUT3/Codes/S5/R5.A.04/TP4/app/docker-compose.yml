@@ -1,0 +1,89 @@
+services:
+  user_ms:
+    volumes:
+       - ./user-service:/usr/src/app
+    build: ./user-service
+    # image: "app/user_ms"
+    ## container_name: user_ms
+    # restart: always # -> for prod version
+    # Will start/stop containers in correct dependency order
+    deploy:
+      replicas: 4
+    depends_on:
+      - user_db
+    env_file:
+      - ./user-service/.env
+    networks:
+      - user_net
+      - ms_net
+
+  user_db:
+    # build: ./user-service/initdb
+    image: "postgres"
+    container_name: user_db
+    env_file:
+      - ./user-service/.env
+    networks:
+      - user_net
+    volumes:
+      - ./user-service-vol:/var/lib/postgresql/data
+      - ./user-service/initdb/1_user_db.sql:/docker-entrypoint-initdb.d/1_user_db.sql
+      - ./user-service/initdb/2_init_db.sql:/docker-entrypoint-initdb.d/2_init_db.sql
+
+  location_ms:
+    volumes:
+      - ./location-service:/usr/src/app
+    build: ./location-service
+    # image: "app/location_ms"
+    ## container_name: location_ms
+    # restart: always # -> for prod version
+    # Will start/stop containers in correct dependency order
+    deploy:
+      replicas: 4
+    depends_on:
+      - location_db
+    env_file:
+      - ./location-service/.env
+    networks:
+      - location_net
+      - ms_net
+
+  location_db:
+    # build: ./location-service/initdb
+    image: "postgres"
+    container_name: location_db
+    env_file:
+      - ./location-service/.env
+    networks:
+      - location_net
+    volumes:
+      - ./location-service-vol:/var/lib/postgresql/data
+      - ./location-service/initdb/1_location_db.sql:/docker-entrypoint-initdb.d/1_location_db.sql
+      - ./location-service/initdb/2_init_db.sql:/docker-entrypoint-initdb.d/2_init_db.sql
+
+  api_gateway:
+    # build: .
+    build: ./gateway
+    # image: "app/api_gateway"
+    container_name: api_gateway
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./gateway/nginx.conf:/etc/nginx/nginx.conf  # Map custom Nginx configuration
+    depends_on:
+      - user_ms
+      - location_ms
+    networks:
+      - ms_net
+
+volumes:
+  user-service-vol:
+  location-service-vol:
+
+networks:
+  user_net:
+    driver: bridge
+  location_net:
+    driver: bridge
+  ms_net:
+    driver: bridge

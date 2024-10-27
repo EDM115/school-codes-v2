@@ -1,0 +1,11 @@
+{
+  "name": "tp3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"no build :)\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

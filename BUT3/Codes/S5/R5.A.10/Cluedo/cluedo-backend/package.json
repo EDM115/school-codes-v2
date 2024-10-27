@@ -1,0 +1,19 @@
+{
+  "author": "EDM115",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.21.0",
+    "neo4j-driver": "5.25.0",
+    "socket.io": "4.8.0",
+    "uid": "2.0.2"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "cluedo-backend",
+  "private": true,
+  "scripts": {
+    "i": "npm i --no-audit --no-fund",
+    "start": "node --watch index.js"
+  },
+  "version": "1.0.0"
+}

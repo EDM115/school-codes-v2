@@ -1,0 +1,998 @@
+
+
+## Overview
+
+                    │           Analyzed Image            
+────────────────────┼─────────────────────────────────────
+  Target            │  vulnerable-image-3:latest          
+    digest          │  7df8477cc070                       
+    platform        │ linux/amd64                         
+    vulnerabilities │    4C    59H    34M     5L    15?   
+    size            │ 208 MB                              
+    packages        │ 621                                 
+
+
+## Packages and Vulnerabilities
+
+   1C     3H     3M     0L     1?  lodash 4.17.4
+pkg:npm/lodash@4.17.4
+
+    ✗ CRITICAL CVE-2019-10744 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2019-10744?s=github&n=lodash&t=npm&vr=%3C4.17.12
+      Affected range : <4.17.12                                      
+      Fixed version  : 4.17.12                                       
+      CVSS Score     : 9.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H  
+    
+    ✗ HIGH CVE-2020-8203 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2020-8203?s=github&n=lodash&t=npm&vr=%3E%3D3.7.0%2C%3C4.17.19
+      Affected range : >=3.7.0                                       
+                     : <4.17.19                                      
+      Fixed version  : 4.17.20                                       
+      CVSS Score     : 7.4                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H  
+    
+    ✗ HIGH CVE-2021-23337 [Improper Neutralization of Special Elements used in a Command ('Command Injection')]
+      https://scout.docker.com/v/CVE-2021-23337?s=github&n=lodash&t=npm&vr=%3C4.17.21
+      Affected range : <4.17.21                                      
+      Fixed version  : 4.17.21                                       
+      CVSS Score     : 7.2                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2018-16487 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2018-16487?s=github&n=lodash&t=npm&vr=%3C4.17.11
+      Affected range : <4.17.11  
+      Fixed version  : 4.17.11   
+    
+    ✗ MEDIUM CVE-2018-3721 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2018-3721?s=github&n=lodash&t=npm&vr=%3C4.17.5
+      Affected range : <4.17.5                                       
+      Fixed version  : 4.17.5                                        
+      CVSS Score     : 6.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N  
+    
+    ✗ MEDIUM CVE-2020-28500 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2020-28500?s=github&n=lodash&t=npm&vr=%3C4.17.21
+      Affected range : <4.17.21                                      
+      Fixed version  : 4.17.21                                       
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+    ✗ MEDIUM CVE-2019-1010266 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2019-1010266?s=github&n=lodash&t=npm&vr=%3C4.17.11
+      Affected range : <4.17.11  
+      Fixed version  : 4.17.11   
+    
+    ✗ UNSPECIFIED GMS-2018-10 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2018-10?s=gitlab&n=lodash&t=npm&vr=%3C4.17.5
+      Affected range : <4.17.5  
+      Fixed version  : 4.17.5   
+    
+
+   1C     2H     6M     0L  urllib3 1.13.1
+pkg:pypi/urllib3@1.13.1
+
+    ✗ CRITICAL CVE-2018-20060 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2018-20060?s=github&n=urllib3&t=pypi&vr=%3C1.23
+      Affected range : <1.23                                         
+      Fixed version  : 1.23                                          
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2021-33503
+      https://scout.docker.com/v/CVE-2021-33503?s=pypa&n=urllib3&t=pypi&vr=%3C1.26.5
+      Affected range : <1.26.5  
+      Fixed version  : 1.26.5   
+    
+    ✗ HIGH CVE-2019-11324 [Improper Certificate Validation]
+      https://scout.docker.com/v/CVE-2019-11324?s=github&n=urllib3&t=pypi&vr=%3C1.24.2
+      Affected range : <1.24.2                                       
+      Fixed version  : 1.24.2                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+    ✗ MEDIUM CVE-2020-26137 [Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')]
+      https://scout.docker.com/v/CVE-2020-26137?s=github&n=urllib3&t=pypi&vr=%3C1.25.9
+      Affected range : <1.25.9                                       
+      Fixed version  : 1.25.9                                        
+      CVSS Score     : 6.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2019-11236 [Improper Neutralization of CRLF Sequences ('CRLF Injection')]
+      https://scout.docker.com/v/CVE-2019-11236?s=github&n=urllib3&t=pypi&vr=%3C%3D1.24.2
+      Affected range : <=1.24.2                                      
+      Fixed version  : 1.24.3                                        
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2018-25091 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2018-25091?s=github&n=urllib3&t=pypi&vr=%3C1.24.2
+      Affected range : <1.24.2                                       
+      Fixed version  : 1.24.2                                        
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2023-43804 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2023-43804?s=github&n=urllib3&t=pypi&vr=%3C1.26.17
+      Affected range : <1.26.17                                      
+      Fixed version  : 1.26.17                                       
+      CVSS Score     : 5.9                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N  
+    
+    ✗ MEDIUM CVE-2024-37891 [Incorrect Resource Transfer Between Spheres]
+      https://scout.docker.com/v/CVE-2024-37891?s=github&n=urllib3&t=pypi&vr=%3C1.26.19
+      Affected range : <1.26.19                                      
+      Fixed version  : 1.26.19                                       
+      CVSS Score     : 4.4                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N  
+    
+    ✗ MEDIUM CVE-2023-45803 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2023-45803?s=github&n=urllib3&t=pypi&vr=%3C1.26.18
+      Affected range : <1.26.18                                      
+      Fixed version  : 1.26.18                                       
+      CVSS Score     : 4.2                                           
+      CVSS Vector    : CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N  
+    
+
+   1C     0H     1M     0L  minimist 0.0.8
+pkg:npm/minimist@0.0.8
+
+    ✗ CRITICAL CVE-2021-44906 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2021-44906?s=github&n=minimist&t=npm&vr=%3C0.2.4
+      Affected range : <0.2.4                                        
+      Fixed version  : 0.2.4                                         
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ MEDIUM CVE-2020-7598 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2020-7598?s=github&n=minimist&t=npm&vr=%3C0.2.1
+      Affected range : <0.2.1                                        
+      Fixed version  : 0.2.1                                         
+      CVSS Score     : 5.6                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L  
+    
+
+   1C     0H     0M     0L  cryptiles 2.0.5
+pkg:npm/cryptiles@2.0.5
+
+    ✗ CRITICAL CVE-2018-1000620 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2018-1000620?s=gitlab&n=cryptiles&t=npm&vr=%3C%3D4.1.1
+      Affected range : <=4.1.1                                       
+      Fixed version  : 4.1.2                                         
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+
+   0C     7H     1M     0L  tar 1.0.3
+pkg:npm/tar@1.0.3
+
+    ✗ HIGH CVE-2021-37712 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2021-37712?s=gitlab&n=tar&t=npm&vr=%3C%3D4.4.17
+      Affected range : <=4.4.17                                      
+      Fixed version  : 4.4.18, 5.0.10, 6.1.9                         
+      CVSS Score     : 8.6                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2021-37701 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2021-37701?s=gitlab&n=tar&t=npm&vr=%3C4.4.16
+      Affected range : <4.4.16                                       
+      Fixed version  : 4.4.16, 5.0.8, 6.1.7                          
+      CVSS Score     : 8.6                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2021-37713 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2021-37713?s=github&n=tar&t=npm&vr=%3C4.4.18
+      Affected range : <4.4.18                                       
+      Fixed version  : 4.4.18                                        
+      CVSS Score     : 8.2                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N  
+    
+    ✗ HIGH CVE-2021-32804 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2021-32804?s=github&n=tar&t=npm&vr=%3C3.2.2
+      Affected range : <3.2.2                                        
+      Fixed version  : 3.2.2                                         
+      CVSS Score     : 8.2                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N  
+    
+    ✗ HIGH CVE-2021-32803 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2021-32803?s=gitlab&n=tar&t=npm&vr=%3C3.2.3
+      Affected range : <3.2.3                                        
+      Fixed version  : 3.2.3, 4.4.15, 5.0.7, 6.1.2                   
+      CVSS Score     : 8.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H  
+    
+    ✗ HIGH CVE-2018-20834 [Improper Link Resolution Before File Access ('Link Following')]
+      https://scout.docker.com/v/CVE-2018-20834?s=github&n=tar&t=npm&vr=%3C2.2.2
+      Affected range : <2.2.2                                        
+      Fixed version  : 2.2.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+    ✗ HIGH CVE-2015-8860 [Improper Link Resolution Before File Access ('Link Following')]
+      https://scout.docker.com/v/CVE-2015-8860?s=github&n=tar&t=npm&vr=%3C2.0.0
+      Affected range : <2.0.0                                        
+      Fixed version  : 2.0.0                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+    ✗ MEDIUM CVE-2024-28863 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2024-28863?s=github&n=tar&t=npm&vr=%3C6.2.1
+      Affected range : <6.2.1                                        
+      Fixed version  : 6.2.1                                         
+      CVSS Score     : 6.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H  
+    
+
+   0C     6H     1M     0L  tar 2.2.1
+pkg:npm/tar@2.2.1
+
+    ✗ HIGH CVE-2021-37712 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2021-37712?s=gitlab&n=tar&t=npm&vr=%3C%3D4.4.17
+      Affected range : <=4.4.17                                      
+      Fixed version  : 4.4.18, 5.0.10, 6.1.9                         
+      CVSS Score     : 8.6                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2021-37701 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2021-37701?s=gitlab&n=tar&t=npm&vr=%3C4.4.16
+      Affected range : <4.4.16                                       
+      Fixed version  : 4.4.16, 5.0.8, 6.1.7                          
+      CVSS Score     : 8.6                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2021-37713 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2021-37713?s=github&n=tar&t=npm&vr=%3C4.4.18
+      Affected range : <4.4.18                                       
+      Fixed version  : 4.4.18                                        
+      CVSS Score     : 8.2                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N  
+    
+    ✗ HIGH CVE-2021-32804 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2021-32804?s=github&n=tar&t=npm&vr=%3C3.2.2
+      Affected range : <3.2.2                                        
+      Fixed version  : 3.2.2                                         
+      CVSS Score     : 8.2                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N  
+    
+    ✗ HIGH CVE-2021-32803 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2021-32803?s=gitlab&n=tar&t=npm&vr=%3C3.2.3
+      Affected range : <3.2.3                                        
+      Fixed version  : 3.2.3, 4.4.15, 5.0.7, 6.1.2                   
+      CVSS Score     : 8.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H  
+    
+    ✗ HIGH CVE-2018-20834 [Improper Link Resolution Before File Access ('Link Following')]
+      https://scout.docker.com/v/CVE-2018-20834?s=github&n=tar&t=npm&vr=%3C2.2.2
+      Affected range : <2.2.2                                        
+      Fixed version  : 2.2.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+    ✗ MEDIUM CVE-2024-28863 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2024-28863?s=github&n=tar&t=npm&vr=%3C6.2.1
+      Affected range : <6.2.1                                        
+      Fixed version  : 6.2.1                                         
+      CVSS Score     : 6.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H  
+    
+
+   0C     5H     1M     0L     1?  npm 3.5.2
+pkg:npm/npm@3.5.2
+
+    ✗ HIGH CVE-2018-7408 [Incorrect Permission Assignment for Critical Resource]
+      https://scout.docker.com/v/CVE-2018-7408?s=github&n=npm&t=npm&vr=%3C5.7.1
+      Affected range : <5.7.1                                        
+      Fixed version  : 5.7.1                                         
+      CVSS Score     : 7.8                                           
+      CVSS Vector    : CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2019-16777 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2019-16777?s=github&n=npm&t=npm&vr=%3C6.13.4
+      Affected range : <6.13.4                                       
+      Fixed version  : 6.13.4                                        
+      CVSS Score     : 7.7                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:N  
+    
+    ✗ HIGH CVE-2019-16776 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2019-16776?s=github&n=npm&t=npm&vr=%3C6.13.3
+      Affected range : <6.13.3                                       
+      Fixed version  : 6.13.3                                        
+      CVSS Score     : 7.7                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:N  
+    
+    ✗ HIGH CVE-2019-16775 [Improper Link Resolution Before File Access ('Link Following')]
+      https://scout.docker.com/v/CVE-2019-16775?s=github&n=npm&t=npm&vr=%3C6.13.3
+      Affected range : <6.13.3                                       
+      Fixed version  : 6.13.3                                        
+      CVSS Score     : 7.7                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:N  
+    
+    ✗ HIGH CVE-2016-3956 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2016-3956?s=github&n=npm&t=npm&vr=%3E%3D3.0.0%2C%3C%3D3.8.2
+      Affected range : >=3.0.0  
+                     : <=3.8.2  
+      Fixed version  : 3.8.3    
+    
+    ✗ MEDIUM CVE-2020-15095 [Insertion of Sensitive Information into Log File]
+      https://scout.docker.com/v/CVE-2020-15095?s=github&n=npm&t=npm&vr=%3C6.14.6
+      Affected range : <6.14.6                                       
+      Fixed version  : 6.14.6                                        
+      CVSS Score     : 4.4                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:N/A:N  
+    
+    ✗ UNSPECIFIED GMS-2016-23 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2016-23?s=gitlab&n=npm&t=npm&vr=%3E%3D3.0.0alpha%2C%3C%3D%2C3.8.2
+      Affected range : >=3.0.0alpha   
+                     : <=             
+                     : 3.8.2          
+      Fixed version  : 2.15.1, 3.8.3  
+    
+
+   0C     2H     0M     0L     1?  minimatch 3.0.0
+pkg:npm/minimatch@3.0.0
+
+    ✗ HIGH CVE-2022-3517 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2022-3517?s=github&n=minimatch&t=npm&vr=%3C3.0.5
+      Affected range : <3.0.5                                        
+      Fixed version  : 3.0.5                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2016-10540 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2016-10540?s=github&n=minimatch&t=npm&vr=%3C3.0.2
+      Affected range : <3.0.2                                        
+      Fixed version  : 3.0.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ UNSPECIFIED GMS-2016-36 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2016-36?s=gitlab&n=minimatch&t=npm&vr=%3C%3D3.0.1
+      Affected range : <=3.0.1  
+      Fixed version  : 3.0.2    
+    
+
+   0C     2H     0M     0L     1?  semver 2.1.0
+pkg:npm/semver@2.1.0
+
+    ✗ HIGH CVE-2022-25883 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2022-25883?s=github&n=semver&t=npm&vr=%3C5.7.2
+      Affected range : <5.7.2                                        
+      Fixed version  : 5.7.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2015-8855 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2015-8855?s=github&n=semver&t=npm&vr=%3C4.3.2
+      Affected range : <4.3.2                                        
+      Fixed version  : 4.3.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ UNSPECIFIED GMS-2015-9 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2015-9?s=gitlab&n=semver&t=npm&vr=%3C4.3.2
+      Affected range : <4.3.2  
+      Fixed version  : 4.3.2   
+    
+
+   0C     2H     0M     0L     1?  minimatch 1.0.0
+pkg:npm/minimatch@1.0.0
+
+    ✗ HIGH CVE-2022-3517 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2022-3517?s=github&n=minimatch&t=npm&vr=%3C3.0.5
+      Affected range : <3.0.5                                        
+      Fixed version  : 3.0.5                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2016-10540 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2016-10540?s=github&n=minimatch&t=npm&vr=%3C3.0.2
+      Affected range : <3.0.2                                        
+      Fixed version  : 3.0.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ UNSPECIFIED GMS-2016-36 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2016-36?s=gitlab&n=minimatch&t=npm&vr=%3C%3D3.0.1
+      Affected range : <=3.0.1  
+      Fixed version  : 3.0.2    
+    
+
+   0C     2H     0M     0L     1?  minimatch 2.0.10
+pkg:npm/minimatch@2.0.10
+
+    ✗ HIGH CVE-2022-3517 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2022-3517?s=github&n=minimatch&t=npm&vr=%3C3.0.5
+      Affected range : <3.0.5                                        
+      Fixed version  : 3.0.5                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2016-10540 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2016-10540?s=github&n=minimatch&t=npm&vr=%3C3.0.2
+      Affected range : <3.0.2                                        
+      Fixed version  : 3.0.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ UNSPECIFIED GMS-2016-36 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2016-36?s=gitlab&n=minimatch&t=npm&vr=%3C%3D3.0.1
+      Affected range : <=3.0.1  
+      Fixed version  : 3.0.2    
+    
+
+   0C     2H     0M     0L  qs 6.3.1
+pkg:npm/qs@6.3.1
+
+    ✗ HIGH CVE-2022-24999 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2022-24999?s=github&n=qs&t=npm&vr=%3E%3D6.3.0%2C%3C6.3.3
+      Affected range : >=6.3.0                                       
+                     : <6.3.3                                        
+      Fixed version  : 6.3.3                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2017-1000048 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2017-1000048?s=github&n=qs&t=npm&vr=%3E%3D6.3.0%2C%3C6.3.2
+      Affected range : >=6.3.0                                       
+                     : <6.3.2                                        
+      Fixed version  : 6.3.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     2H     0M     0L  qs 2.2.4
+pkg:npm/qs@2.2.4
+
+    ✗ HIGH CVE-2022-24999 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2022-24999?s=github&n=qs&t=npm&vr=%3C6.2.4
+      Affected range : <6.2.4                                        
+      Fixed version  : 6.2.4                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2017-1000048 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2017-1000048?s=github&n=qs&t=npm&vr=%3C6.0.4
+      Affected range : <6.0.4                                        
+      Fixed version  : 6.0.4                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     2H     0M     0L  qs 5.2.0
+pkg:npm/qs@5.2.0
+
+    ✗ HIGH CVE-2022-24999 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2022-24999?s=github&n=qs&t=npm&vr=%3C6.2.4
+      Affected range : <6.2.4                                        
+      Fixed version  : 6.2.4                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2017-1000048 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2017-1000048?s=github&n=qs&t=npm&vr=%3C6.0.4
+      Affected range : <6.0.4                                        
+      Fixed version  : 6.0.4                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     2H     0M     0L  hoek 2.16.3
+pkg:npm/hoek@2.16.3
+
+    ✗ HIGH CVE-2018-3728 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2018-3728?s=github&n=hoek&t=npm&vr=%3C4.2.1
+      Affected range : <4.2.1                                        
+      Fixed version  : 4.2.1                                         
+      CVSS Score     : 8.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2020-36604 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2020-36604?s=github&n=hoek&t=npm&vr=%3C%3D6.1.3
+      Affected range : <=6.1.3                                       
+      Fixed version  : not fixed                                     
+      CVSS Score     : 8.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+
+   0C     2H     0M     0L  hawk 3.1.0
+pkg:npm/hawk@3.1.0
+
+    ✗ HIGH CVE-2016-2515 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2016-2515?s=github&n=hawk&t=npm&vr=%3C3.1.3
+      Affected range : <3.1.3                                        
+      Fixed version  : 3.1.3                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2022-29167 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2022-29167?s=github&n=hawk&t=npm&vr=%3C9.0.1
+      Affected range : <9.0.1                                        
+      Fixed version  : 9.0.1                                         
+      CVSS Score     : 7.4                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:N/A:H  
+    
+
+   0C     1H     2M     0L     2?  tough-cookie 2.2.0
+pkg:npm/tough-cookie@2.2.0
+
+    ✗ HIGH CVE-2017-15010 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2017-15010?s=github&n=tough-cookie&t=npm&vr=%3C2.3.3
+      Affected range : <2.3.3                                        
+      Fixed version  : 2.3.3                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ MEDIUM CVE-2023-26136 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2023-26136?s=github&n=tough-cookie&t=npm&vr=%3C4.1.3
+      Affected range : <4.1.3                                        
+      Fixed version  : 4.1.3                                         
+      CVSS Score     : 6.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2016-1000232 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2016-1000232?s=github&n=tough-cookie&t=npm&vr=%3C2.3.0
+      Affected range : <2.3.0                                        
+      Fixed version  : 2.3.0                                         
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+    ✗ UNSPECIFIED GMS-2017-210 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2017-210?s=gitlab&n=tough-cookie&t=npm&vr=%3C2.3.3
+      Affected range : <2.3.3  
+      Fixed version  : 2.3.3   
+    
+    ✗ UNSPECIFIED GMS-2016-49 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2016-49?s=gitlab&n=tough-cookie&t=npm&vr=%3E%3D0.9.7%2C%3C%3D2.2.2
+      Affected range : >=0.9.7  
+                     : <=2.2.2  
+      Fixed version  : 2.3.0    
+    
+
+   0C     1H     2M     0L  requests 2.9.1
+pkg:pypi/requests@2.9.1
+
+    ✗ HIGH CVE-2018-18074 [Insufficiently Protected Credentials]
+      https://scout.docker.com/v/CVE-2018-18074?s=github&n=requests&t=pypi&vr=%3C%3D2.19.1
+      Affected range : <=2.19.1                                      
+      Fixed version  : 2.20.0                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N  
+    
+    ✗ MEDIUM CVE-2023-32681 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2023-32681?s=github&n=requests&t=pypi&vr=%3E%3D2.3.0%2C%3C2.31.0
+      Affected range : >=2.3.0                                       
+                     : <2.31.0                                       
+      Fixed version  : 2.31.0                                        
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N  
+    
+    ✗ MEDIUM CVE-2024-35195 [Always-Incorrect Control Flow Implementation]
+      https://scout.docker.com/v/CVE-2024-35195?s=github&n=requests&t=pypi&vr=%3C2.32.0
+      Affected range : <2.32.0                                       
+      Fixed version  : 2.32.0                                        
+      CVSS Score     : 5.6                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N  
+    
+
+   0C     1H     2M     0L  express 4.15.0
+pkg:npm/express@4.15.0
+
+    ✗ HIGH CVE-2022-24999 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2022-24999?s=gitlab&n=express&t=npm&vr=%3C4.17.3
+      Affected range : <4.17.3                                       
+      Fixed version  : 4.17.3                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ MEDIUM CVE-2024-29041 [Improper Validation of Syntactic Correctness of Input]
+      https://scout.docker.com/v/CVE-2024-29041?s=github&n=express&t=npm&vr=%3C4.19.2
+      Affected range : <4.19.2                                       
+      Fixed version  : 4.19.2                                        
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2024-43796 [Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')]
+      https://scout.docker.com/v/CVE-2024-43796?s=github&n=express&t=npm&vr=%3C4.20.0
+      Affected range : <4.20.0                                       
+      Fixed version  : 4.20.0                                        
+      CVSS Score     : 5.0                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L  
+    
+
+   0C     1H     1M     0L  is-my-json-valid 2.12.2
+pkg:npm/is-my-json-valid@2.12.2
+
+    ✗ HIGH CVE-2016-2537 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2016-2537?s=github&n=is-my-json-valid&t=npm&vr=%3C2.17.2
+      Affected range : <2.17.2                                       
+      Fixed version  : 2.17.2                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ MEDIUM CVE-2018-1107 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2018-1107?s=github&n=is-my-json-valid&t=npm&vr=%3E%3D2.0.0%2C%3C2.17.2
+      Affected range : >=2.0.0                                       
+                     : <2.17.2                                       
+      Fixed version  : 2.17.2                                        
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+
+   0C     1H     0M     1L     1?  debug 2.2.0
+pkg:npm/debug@2.2.0
+
+    ✗ HIGH CVE-2017-20165 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2017-20165?s=github&n=debug&t=npm&vr=%3C2.6.9
+      Affected range : <2.6.9                                        
+      Fixed version  : 2.6.9                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ LOW CVE-2017-16137 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2017-16137?s=github&n=debug&t=npm&vr=%3C2.6.9
+      Affected range : <2.6.9                                        
+      Fixed version  : 2.6.9                                         
+      CVSS Score     : 3.7                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+    ✗ UNSPECIFIED GMS-2017-248 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2017-248?s=gitlab&n=debug&t=npm&vr=%3C2.6.9
+      Affected range : <2.6.9        
+      Fixed version  : 2.6.9, 3.1.0  
+    
+
+   0C     1H     0M     1L     1?  debug 2.6.1
+pkg:npm/debug@2.6.1
+
+    ✗ HIGH CVE-2017-20165 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2017-20165?s=github&n=debug&t=npm&vr=%3C2.6.9
+      Affected range : <2.6.9                                        
+      Fixed version  : 2.6.9                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ LOW CVE-2017-16137 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2017-16137?s=github&n=debug&t=npm&vr=%3C2.6.9
+      Affected range : <2.6.9                                        
+      Fixed version  : 2.6.9                                         
+      CVSS Score     : 3.7                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+    ✗ UNSPECIFIED GMS-2017-248 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2017-248?s=gitlab&n=debug&t=npm&vr=%3C2.6.9
+      Affected range : <2.6.9        
+      Fixed version  : 2.6.9, 3.1.0  
+    
+
+   0C     1H     0M     1L  npm-user-validate 0.1.2
+pkg:npm/npm-user-validate@0.1.2
+
+    ✗ HIGH CVE-2020-7754 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2020-7754?s=github&n=npm-user-validate&t=npm&vr=%3C1.0.1
+      Affected range : <1.0.1                                        
+      Fixed version  : 1.0.1                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ LOW GHSA-xgh6-85xh-479p
+      https://scout.docker.com/v/GHSA-xgh6-85xh-479p?s=github&n=npm-user-validate&t=npm&vr=%3C%3D1.0.0
+      Affected range : <=1.0.0  
+      Fixed version  : 1.0.1    
+    
+
+   0C     1H     0M     0L     1?  brace-expansion 1.1.1
+pkg:npm/brace-expansion@1.1.1
+
+    ✗ HIGH CVE-2017-18077 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2017-18077?s=github&n=brace-expansion&t=npm&vr=%3C1.1.7
+      Affected range : <1.1.7                                        
+      Fixed version  : 1.1.7                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ UNSPECIFIED GMS-2017-113 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2017-113?s=gitlab&n=brace-expansion&t=npm&vr=%3C%3D1.1.6
+      Affected range : <=1.1.6  
+      Fixed version  : 1.1.7    
+    
+
+   0C     1H     0M     0L     1?  fresh 0.5.0
+pkg:npm/fresh@0.5.0
+
+    ✗ HIGH CVE-2017-16119 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2017-16119?s=github&n=fresh&t=npm&vr=%3C0.5.2
+      Affected range : <0.5.2                                        
+      Fixed version  : 0.5.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ UNSPECIFIED GMS-2017-232 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2017-232?s=gitlab&n=fresh&t=npm&vr=%3C%2C0.5.2
+      Affected range : <      
+                     : 0.5.2  
+      Fixed version  : 0.5.2  
+    
+
+   0C     1H     0M     0L     1?  brace-expansion 1.1.2
+pkg:npm/brace-expansion@1.1.2
+
+    ✗ HIGH CVE-2017-18077 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2017-18077?s=github&n=brace-expansion&t=npm&vr=%3C1.1.7
+      Affected range : <1.1.7                                        
+      Fixed version  : 1.1.7                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ UNSPECIFIED GMS-2017-113 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2017-113?s=gitlab&n=brace-expansion&t=npm&vr=%3C%3D1.1.6
+      Affected range : <=1.1.6  
+      Fixed version  : 1.1.7    
+    
+
+   0C     1H     0M     0L     1?  mime 1.3.4
+pkg:npm/mime@1.3.4
+
+    ✗ HIGH CVE-2017-16138 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2017-16138?s=github&n=mime&t=npm&vr=%3C1.4.1
+      Affected range : <1.4.1                                        
+      Fixed version  : 1.4.1                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ UNSPECIFIED GMS-2017-247 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2017-247?s=gitlab&n=mime&t=npm&vr=%3C1.4.1
+      Affected range : <1.4.1        
+      Fixed version  : 1.4.1, 2.0.3  
+    
+
+   0C     1H     0M     0L  async 1.4.2
+pkg:npm/async@1.4.2
+
+    ✗ HIGH CVE-2021-43138 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2021-43138?s=gitlab&n=async&t=npm&vr=%3C2.6.4
+      Affected range : <2.6.4                                        
+      Fixed version  : 2.6.4, 3.2.2                                  
+      CVSS Score     : 7.8                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+
+   0C     1H     0M     0L  node-uuid 1.4.3
+pkg:npm/node-uuid@1.4.3
+
+    ✗ HIGH CVE-2015-8851 [Insufficient Entropy]
+      https://scout.docker.com/v/CVE-2015-8851?s=github&n=node-uuid&t=npm&vr=%3C1.4.4
+      Affected range : <1.4.4                                        
+      Fixed version  : 1.4.4                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N  
+    
+
+   0C     1H     0M     0L  semver 5.0.3
+pkg:npm/semver@5.0.3
+
+    ✗ HIGH CVE-2022-25883 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2022-25883?s=github&n=semver&t=npm&vr=%3C5.7.2
+      Affected range : <5.7.2                                        
+      Fixed version  : 5.7.2                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     1H     0M     0L  async 0.8.0
+pkg:npm/async@0.8.0
+
+    ✗ HIGH CVE-2021-43138 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2021-43138?s=gitlab&n=async&t=npm&vr=%3C2.6.4
+      Affected range : <2.6.4                                        
+      Fixed version  : 2.6.4, 3.2.2                                  
+      CVSS Score     : 7.8                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+
+   0C     1H     0M     0L  path-to-regexp 0.1.7
+pkg:npm/path-to-regexp@0.1.7
+
+    ✗ HIGH CVE-2024-45296 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2024-45296?s=github&n=path-to-regexp&t=npm&vr=%3C0.1.10
+      Affected range : <0.1.10                                       
+      Fixed version  : 0.1.10                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     1H     0M     0L  fstream 1.0.8
+pkg:npm/fstream@1.0.8
+
+    ✗ HIGH CVE-2019-13173 [Improper Link Resolution Before File Access ('Link Following')]
+      https://scout.docker.com/v/CVE-2019-13173?s=github&n=fstream&t=npm&vr=%3C1.0.12
+      Affected range : <1.0.12                                       
+      Fixed version  : 1.0.12                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+
+   0C     1H     0M     0L  ini 1.3.4
+pkg:npm/ini@1.3.4
+
+    ✗ HIGH CVE-2020-7788 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2020-7788?s=github&n=ini&t=npm&vr=%3C1.3.6
+      Affected range : <1.3.6                                        
+      Fixed version  : 1.3.6                                         
+      CVSS Score     : 7.3                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L  
+    
+
+   0C     0H     2M     0L     1?  request 2.65.0
+pkg:npm/request@2.65.0
+
+    ✗ MEDIUM CVE-2023-28155 [Server-Side Request Forgery (SSRF)]
+      https://scout.docker.com/v/CVE-2023-28155?s=github&n=request&t=npm&vr=%3C%3D2.88.2
+      Affected range : <=2.88.2                                      
+      Fixed version  : not fixed                                     
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2017-16026 [Insertion of Sensitive Information Into Sent Data]
+      https://scout.docker.com/v/CVE-2017-16026?s=github&n=request&t=npm&vr=%3E%3D2.49.0%2C%3C2.68.0
+      Affected range : >=2.49.0                                      
+                     : <2.68.0                                       
+      Fixed version  : 2.68.0                                        
+      CVSS Score     : 5.9                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N  
+    
+    ✗ UNSPECIFIED GMS-2016-8 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/GMS-2016-8?s=gitlab&n=request&t=npm&vr=%3E2.51.0%2C%3C%3D2.67.0
+      Affected range : >2.51.0   
+                     : <=2.67.0  
+      Fixed version  : 2.68.0    
+    
+
+   0C     0H     2M     0L  bl 1.0.0
+pkg:npm/bl@1.0.0
+
+    ✗ MEDIUM CVE-2020-8244 [Out-of-bounds Read]
+      https://scout.docker.com/v/CVE-2020-8244?s=github&n=bl&t=npm&vr=%3C1.2.3
+      Affected range : <1.2.3                                        
+      Fixed version  : 1.2.3                                         
+      CVSS Score     : 6.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L  
+    
+    ✗ MEDIUM GHSA-wrw9-m778-g6mc [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/GHSA-wrw9-m778-g6mc?s=github&n=bl&t=npm&vr=%3E%3D1.0.0%2C%3C1.0.1
+      Affected range : >=1.0.0  
+                     : <1.0.1   
+      Fixed version  : 1.0.1    
+    
+
+   0C     0H     1M     0L  serve-static 1.12.0
+pkg:npm/serve-static@1.12.0
+
+    ✗ MEDIUM CVE-2024-43800 [Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')]
+      https://scout.docker.com/v/CVE-2024-43800?s=github&n=serve-static&t=npm&vr=%3C1.16.0
+      Affected range : <1.16.0                                       
+      Fixed version  : 1.16.0                                        
+      CVSS Score     : 5.0                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L  
+    
+
+   0C     0H     1M     0L  stringstream 0.0.4
+pkg:npm/stringstream@0.0.4
+
+    ✗ MEDIUM CVE-2018-21270 [Out-of-bounds Read]
+      https://scout.docker.com/v/CVE-2018-21270?s=github&n=stringstream&t=npm&vr=%3C0.0.6
+      Affected range : <0.0.6  
+      Fixed version  : 0.0.6   
+    
+
+   0C     0H     1M     0L  ms 0.7.1
+pkg:npm/ms@0.7.1
+
+    ✗ MEDIUM CVE-2017-20162 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2017-20162?s=github&n=ms&t=npm&vr=%3C2.0.0
+      Affected range : <2.0.0                                        
+      Fixed version  : 2.0.0                                         
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+
+   0C     0H     1M     0L  jsonpointer 2.0.0
+pkg:npm/jsonpointer@2.0.0
+
+    ✗ MEDIUM CVE-2021-23807 [Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')]
+      https://scout.docker.com/v/CVE-2021-23807?s=github&n=jsonpointer&t=npm&vr=%3C5.0.0
+      Affected range : <5.0.0                                        
+      Fixed version  : 5.0.0                                         
+      CVSS Score     : 5.6                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L  
+    
+
+   0C     0H     1M     0L  hosted-git-info 2.1.4
+pkg:npm/hosted-git-info@2.1.4
+
+    ✗ MEDIUM CVE-2021-23362 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2021-23362?s=github&n=hosted-git-info&t=npm&vr=%3C2.8.9
+      Affected range : <2.8.9                                        
+      Fixed version  : 2.8.9                                         
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+
+   0C     0H     1M     0L  send 0.15.0
+pkg:npm/send@0.15.0
+
+    ✗ MEDIUM CVE-2024-43799 [Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')]
+      https://scout.docker.com/v/CVE-2024-43799?s=github&n=send&t=npm&vr=%3C0.19.0
+      Affected range : <0.19.0                                       
+      Fixed version  : 0.19.0                                        
+      CVSS Score     : 5.0                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L  
+    
+
+   0C     0H     1M     0L  extend 3.0.0
+pkg:npm/extend@3.0.0
+
+    ✗ MEDIUM CVE-2018-16492 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2018-16492?s=github&n=extend&t=npm&vr=%3E%3D3.0.0%2C%3C3.0.2
+      Affected range : >=3.0.0  
+                     : <3.0.2   
+      Fixed version  : 3.0.2    
+    
+
+   0C     0H     1M     0L  ms 0.7.2
+pkg:npm/ms@0.7.2
+
+    ✗ MEDIUM CVE-2017-20162 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2017-20162?s=github&n=ms&t=npm&vr=%3C2.0.0
+      Affected range : <2.0.0                                        
+      Fixed version  : 2.0.0                                         
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+
+   0C     0H     1M     0L  tunnel-agent 0.4.1
+pkg:npm/tunnel-agent@0.4.1
+
+    ✗ MEDIUM GHSA-xc7v-wxcw-j472 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/GHSA-xc7v-wxcw-j472?s=github&n=tunnel-agent&t=npm&vr=%3C0.6.0
+      Affected range : <0.6.0  
+      Fixed version  : 0.6.0   
+    
+
+   0C     0H     1M     0L  concat-stream 1.5.1
+pkg:npm/concat-stream@1.5.1
+
+    ✗ MEDIUM GHSA-g74r-ffvr-5q9f [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/GHSA-g74r-ffvr-5q9f?s=github&n=concat-stream&t=npm&vr=%3E%3D1.5.0%2C%3C1.5.2
+      Affected range : >=1.5.0  
+                     : <1.5.2   
+      Fixed version  : 1.5.2    
+    
+
+   0C     0H     0M     1L  cookie 0.3.1
+pkg:npm/cookie@0.3.1
+
+    ✗ LOW CVE-2024-47764 [Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')]
+      https://scout.docker.com/v/CVE-2024-47764?s=github&n=cookie&t=npm&vr=%3C0.7.0
+      Affected range : <0.7.0  
+      Fixed version  : 0.7.0   
+    
+
+   0C     0H     0M     1L  chownr 1.0.1
+pkg:npm/chownr@1.0.1
+
+    ✗ LOW CVE-2017-18869 [Time-of-check Time-of-use (TOCTOU) Race Condition]
+      https://scout.docker.com/v/CVE-2017-18869?s=github&n=chownr&t=npm&vr=%3C1.1.0
+      Affected range : <1.1.0                                        
+      Fixed version  : 1.1.0                                         
+      CVSS Score     : 2.5                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N  
+    
+
+
+117 vulnerabilities found in 48 packages
+  UNSPECIFIED  15  
+  LOW          5   
+  MEDIUM       34  
+  HIGH         59  
+  CRITICAL     4   
+

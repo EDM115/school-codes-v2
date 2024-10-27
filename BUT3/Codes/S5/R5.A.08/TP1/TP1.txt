@@ -1,0 +1,40 @@
+TP1
+
+Q1 - Détails du diagramme de composants :
+
+1. Frontend Web et Frontend Mobile :
+   - Services fournis : Interactions avec l'utilisateur (visualisation des produits, commandes, gestion du compte client)
+   - Services requis : Services CRUD pour les produits, gestion des clients, traitement des commandes, et paiement.
+
+2. Backend :
+   - Produit :
+     - Services fournis : Gestion CRUD des produits (ajout, modification, suppression, visualisation des produits)
+     - Services requis : Accès à la base de données du catalogue de produits.
+   - Client :
+     - Services fournis : Gestion des clients (ajout, suppression, mise à jour des informations personnelles, authentification)
+     - Services requis : Accès à la base de données des clients et contrôle d'accès (authentification et autorisations).
+   - Commande :
+     - Services fournis : Traitement des commandes (création, modification, validation, gestion de l'expédition)
+     - Services requis : Gestion des produits pour traiter la commande et interaction avec le service de livraison externe.
+   - Paiement :
+     - Services fournis : Traitement des paiements et génération de factures
+     - Services requis : Interaction avec des services bancaires externes pour les paiements et le traitement des factures.
+
+3. Services externes :
+   - Services bancaires : Pour le traitement des paiements.
+   - Services de livraison : Pour l'expédition des commandes.
+
+
+Q2 - Patron de conception pertinent
+
+Le patron de conception "State" (État) est particulièrement adapté à la gestion des différents états d'une commande dans ce cas. Le patron "State" permet de représenter une entité (ici, la commande) qui change de comportement en fonction de son état (Nouvelle, En préparation, Validée, Expédiée, Livrée, Archivée).
+
+Principe du patron de conception State :
+- Il permet à un objet de modifier son comportement lorsque son état change, sans que les changements soient directement gérés par l'objet lui-même. Cela permet de découpler la logique de changement d'état et la gestion des états.
+- Chaque état est représenté par une classe distincte qui implémente un comportement spécifique.
+- L'objet (Commande dans notre cas) délègue certaines de ses tâches à des objets représentant ses états.
+
+Explication du rôle des classes :
+   - Commande est la classe qui change d'état au fur et à mesure du processus de commande.
+   - EtatCommande définit l'interface commune que toutes les étapes doivent implémenter (en suivant le patron "State").
+   - Les classes d'états spécifiques (comme EtatNouvelle, EtatEnPreparation, etc.) encapsulent le comportement lié à chaque état de la commande.

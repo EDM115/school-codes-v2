@@ -1,0 +1,17 @@
+{
+  "author": "EDM115",
+  "dependencies": {
+    "neo4j-driver": "5.25.0",
+    "ofetch": "1.4.0",
+    "socket.io-client": "4.8.0"
+  },
+  "license": "MIT",
+  "main": "benchmark.js",
+  "name": "cluedo-benchmark",
+  "private": true,
+  "scripts": {
+    "i": "npm i --no-audit --no-fund",
+    "benchmark": "node benchmark.js"
+  },
+  "version": "1.0.0"
+}

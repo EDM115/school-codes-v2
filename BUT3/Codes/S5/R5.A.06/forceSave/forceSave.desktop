@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=forceSave
+X-KDE-PluginInfo-Author=alfredbaudisch
+Name=forceSave
+Comment=Force saving the image as a PNG without triggering the save dialog

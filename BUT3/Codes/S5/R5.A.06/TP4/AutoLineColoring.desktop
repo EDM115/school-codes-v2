@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=AutoLineColoring
+X-KDE-PluginInfo-Author=EDM115
+Name=AutoLineColoring
+Comment=Automatically colorize lines based on detected contours

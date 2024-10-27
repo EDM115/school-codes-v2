@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=restartKrita
+X-KDE-PluginInfo-Author=EDM115
+Name=restartKrita
+Comment=Restart Krita

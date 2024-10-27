@@ -1,0 +1,21 @@
+Name:           yetris
+Version:        1.0
+Release:        1%{?dist}
+Summary:        Simple tetris game
+
+License:        GPL
+URL:            http://gitlab.iu-vannes.org/root/RA5.07/
+Source0:        %{name}.tar.gz
+
+# BuildRequires:  gcc, make
+# RPM can't find these even if they are installed
+Requires:       glibc, libstdc++
+
+%description
+A simple tetris game but it slays
+
+%prep
+%setup -q -n game
+
+%build
+make

@@ -1,0 +1,533 @@
+
+
+## Overview
+
+                    │       Analyzed Image         
+────────────────────┼──────────────────────────────
+  Target            │  vulnerable-image-2:latest   
+    digest          │  4d2c0dcab629                
+    platform        │ linux/amd64                  
+    vulnerabilities │   11C    26H    25M     2L   
+    size            │ 342 MB                       
+    packages        │ 541                          
+
+
+## Packages and Vulnerabilities
+
+   6C     9H     1M     0L  mercurial 3.1.2
+pkg:pypi/mercurial@3.1.2
+
+    ✗ CRITICAL CVE-2018-13347 [Integer Overflow or Wraparound]
+      https://scout.docker.com/v/CVE-2018-13347?s=github&n=mercurial&t=pypi&vr=%3C4.6.1
+      Affected range : <4.6.1                                        
+      Fixed version  : 4.6.1                                         
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ CRITICAL CVE-2017-17458 [Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')]
+      https://scout.docker.com/v/CVE-2017-17458?s=github&n=mercurial&t=pypi&vr=%3C4.4.1
+      Affected range : <4.4.1                                        
+      Fixed version  : 4.4.1                                         
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ CRITICAL CVE-2017-1000116 [Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')]
+      https://scout.docker.com/v/CVE-2017-1000116?s=github&n=mercurial&t=pypi&vr=%3C4.3
+      Affected range : <4.3                                          
+      Fixed version  : 4.3                                           
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ CRITICAL CVE-2014-9462 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2014-9462?s=github&n=mercurial&t=pypi&vr=%3C3.2.4
+      Affected range : <3.2.4                                        
+      Fixed version  : 3.2.4                                         
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ CRITICAL CVE-2014-9390 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2014-9390?s=github&n=mercurial&t=pypi&vr=%3C3.2.3
+      Affected range : <3.2.3                                        
+      Fixed version  : 3.2.3                                         
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ CRITICAL CVE-2018-1000132 [Incorrect Permission Assignment for Critical Resource]
+      https://scout.docker.com/v/CVE-2018-1000132?s=github&n=mercurial&t=pypi&vr=%3C4.5.1
+      Affected range : <4.5.1                                        
+      Fixed version  : 4.5.1                                         
+      CVSS Score     : 9.1                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N  
+    
+    ✗ HIGH CVE-2018-17983 [Out-of-bounds Read]
+      https://scout.docker.com/v/CVE-2018-17983?s=github&n=mercurial&t=pypi&vr=%3C4.7.2
+      Affected range : <4.7.2                                        
+      Fixed version  : 4.7.2                                         
+      CVSS Score     : 9.1                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H  
+    
+    ✗ HIGH CVE-2017-9462 [Incorrect Permission Assignment for Critical Resource]
+      https://scout.docker.com/v/CVE-2017-9462?s=github&n=mercurial&t=pypi&vr=%3C4.1.3
+      Affected range : <4.1.3                                        
+      Fixed version  : 4.1.3                                         
+      CVSS Score     : 8.8                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2016-3630
+      https://scout.docker.com/v/CVE-2016-3630?s=github&n=mercurial&t=pypi&vr=%3C3.7.3
+      Affected range : <3.7.3                                        
+      Fixed version  : 3.7.3                                         
+      CVSS Score     : 8.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2016-3105 [Improper Access Control]
+      https://scout.docker.com/v/CVE-2016-3105?s=github&n=mercurial&t=pypi&vr=%3C3.8
+      Affected range : <3.8                                          
+      Fixed version  : 3.8                                           
+      CVSS Score     : 8.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2016-3069 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2016-3069?s=github&n=mercurial&t=pypi&vr=%3C3.7.3
+      Affected range : <3.7.3                                        
+      Fixed version  : 3.7.3                                         
+      CVSS Score     : 8.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2016-3068 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2016-3068?s=github&n=mercurial&t=pypi&vr=%3C3.7.3
+      Affected range : <3.7.3                                        
+      Fixed version  : 3.7.3                                         
+      CVSS Score     : 8.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2018-13348 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2018-13348?s=github&n=mercurial&t=pypi&vr=%3C4.6.1
+      Affected range : <4.6.1                                        
+      Fixed version  : 4.6.1                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+    ✗ HIGH CVE-2018-13346 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2018-13346?s=github&n=mercurial&t=pypi&vr=%3C4.6.1
+      Affected range : <4.6.1                                        
+      Fixed version  : 4.6.1                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+    ✗ HIGH CVE-2017-1000115 [Improper Link Resolution Before File Access ('Link Following')]
+      https://scout.docker.com/v/CVE-2017-1000115?s=github&n=mercurial&t=pypi&vr=%3C4.3.1
+      Affected range : <4.3.1                                        
+      Fixed version  : 4.3.1                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+    ✗ MEDIUM CVE-2019-3902 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2019-3902?s=github&n=mercurial&t=pypi&vr=%3C4.9
+      Affected range : <4.9                                          
+      Fixed version  : 4.9                                           
+      CVSS Score     : 5.9                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+
+   3C     6H    10M     0L  django 1.11
+pkg:pypi/django@1.11
+
+    ✗ CRITICAL CVE-2020-7471 [Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')]
+      https://scout.docker.com/v/CVE-2020-7471?s=github&n=django&t=pypi&vr=%3C1.11.28
+      Affected range : <1.11.28                                      
+      Fixed version  : 1.11.28                                       
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ CRITICAL CVE-2019-19844 [Weak Password Recovery Mechanism for Forgotten Password]
+      https://scout.docker.com/v/CVE-2019-19844?s=github&n=django&t=pypi&vr=%3C1.11.27
+      Affected range : <1.11.27                                      
+      Fixed version  : 1.11.27                                       
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ CRITICAL CVE-2019-14234 [Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')]
+      https://scout.docker.com/v/CVE-2019-14234?s=github&n=django&t=pypi&vr=%3E%3D1.11a1%2C%3C1.11.23
+      Affected range : >=1.11a1                                      
+                     : <1.11.23                                      
+      Fixed version  : 1.11.23                                       
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2022-36359 [Download of Code Without Integrity Check]
+      https://scout.docker.com/v/CVE-2022-36359?s=github&n=django&t=pypi&vr=%3C3.2.15
+      Affected range : <3.2.15                                       
+      Fixed version  : 3.2.15                                        
+      CVSS Score     : 8.8                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2020-9402 [Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')]
+      https://scout.docker.com/v/CVE-2020-9402?s=github&n=django&t=pypi&vr=%3E%3D1.11%2C%3C1.11.29
+      Affected range : >=1.11                                        
+                     : <1.11.29                                      
+      Fixed version  : 1.11.29                                       
+      CVSS Score     : 8.8                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2019-6975 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2019-6975?s=github&n=django&t=pypi&vr=%3E%3D1.11%2C%3C1.11.19
+      Affected range : >=1.11                                        
+                     : <1.11.19                                      
+      Fixed version  : 1.11.19                                       
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2019-14235 [Uncontrolled Recursion]
+      https://scout.docker.com/v/CVE-2019-14235?s=github&n=django&t=pypi&vr=%3E%3D1.11a1%2C%3C1.11.23
+      Affected range : >=1.11a1                                      
+                     : <1.11.23                                      
+      Fixed version  : 1.11.23                                       
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2019-14233 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2019-14233?s=github&n=django&t=pypi&vr=%3E%3D1.11a1%2C%3C1.11.23
+      Affected range : >=1.11a1                                      
+                     : <1.11.23                                      
+      Fixed version  : 1.11.23                                       
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2019-14232 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2019-14232?s=github&n=django&t=pypi&vr=%3E%3D1.11a1%2C%3C1.11.23
+      Affected range : >=1.11a1                                      
+                     : <1.11.23                                      
+      Fixed version  : 1.11.23                                       
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ MEDIUM CVE-2019-3498 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2019-3498?s=github&n=django&t=pypi&vr=%3E%3D1.11a1%2C%3C1.11.18
+      Affected range : >=1.11a1                                      
+                     : <1.11.18                                      
+      Fixed version  : 1.11.18                                       
+      CVSS Score     : 6.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N  
+    
+    ✗ MEDIUM CVE-2019-12308 [Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')]
+      https://scout.docker.com/v/CVE-2019-12308?s=github&n=django&t=pypi&vr=%3E%3D1.11a1%2C%3C1.11.21
+      Affected range : >=1.11a1                                      
+                     : <1.11.21                                      
+      Fixed version  : 1.11.21                                       
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2018-14574 [URL Redirection to Untrusted Site ('Open Redirect')]
+      https://scout.docker.com/v/CVE-2018-14574?s=github&n=django&t=pypi&vr=%3E%3D1.11%2C%3C1.11.15
+      Affected range : >=1.11                                        
+                     : <1.11.15                                      
+      Fixed version  : 1.11.15                                       
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2017-12794 [Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')]
+      https://scout.docker.com/v/CVE-2017-12794?s=github&n=django&t=pypi&vr=%3E%3D1.11a1%2C%3C1.11.5
+      Affected range : >=1.11a1                                      
+                     : <1.11.5                                       
+      Fixed version  : 1.11.5                                        
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2024-27351 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2024-27351?s=gitlab&n=django&t=pypi&vr=%3C3.2.25
+      Affected range : <3.2.25                                       
+      Fixed version  : 3.2.25, 4.2.11, 5.0.3                         
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H  
+    
+    ✗ MEDIUM CVE-2019-12781 [Cleartext Transmission of Sensitive Information]
+      https://scout.docker.com/v/CVE-2019-12781?s=github&n=django&t=pypi&vr=%3E%3D1.11%2C%3C1.11.22
+      Affected range : >=1.11                                        
+                     : <1.11.22                                      
+      Fixed version  : 1.11.22                                       
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N  
+    
+    ✗ MEDIUM CVE-2018-7537 [Incorrect Regular Expression]
+      https://scout.docker.com/v/CVE-2018-7537?s=github&n=django&t=pypi&vr=%3E%3D1.11%2C%3C1.11.11
+      Affected range : >=1.11                                        
+                     : <1.11.11                                      
+      Fixed version  : 1.11.11                                       
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+    ✗ MEDIUM CVE-2018-7536 [Incorrect Regular Expression]
+      https://scout.docker.com/v/CVE-2018-7536?s=github&n=django&t=pypi&vr=%3E%3D1.11a1%2C%3C1.11.11
+      Affected range : >=1.11a1                                      
+                     : <1.11.11                                      
+      Fixed version  : 1.11.11                                       
+      CVSS Score     : 5.3                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+    ✗ MEDIUM CVE-2021-33203 [Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')]
+      https://scout.docker.com/v/CVE-2021-33203?s=github&n=django&t=pypi&vr=%3C2.2.24
+      Affected range : <2.2.24                                       
+      Fixed version  : 2.2.24                                        
+      CVSS Score     : 4.9                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N  
+    
+    ✗ MEDIUM CVE-2024-45231 [Observable Response Discrepancy]
+      https://scout.docker.com/v/CVE-2024-45231?s=github&n=django&t=pypi&vr=%3C4.2.16
+      Affected range : <4.2.16                                       
+      Fixed version  : 4.2.16                                        
+      CVSS Score     : 3.7                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N  
+    
+
+   1C     2H     6M     0L  urllib3 1.22
+pkg:pypi/urllib3@1.22
+
+    ✗ CRITICAL CVE-2018-20060 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2018-20060?s=github&n=urllib3&t=pypi&vr=%3C1.23
+      Affected range : <1.23                                         
+      Fixed version  : 1.23                                          
+      CVSS Score     : 9.8                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2021-33503
+      https://scout.docker.com/v/CVE-2021-33503?s=pypa&n=urllib3&t=pypi&vr=%3C1.26.5
+      Affected range : <1.26.5  
+      Fixed version  : 1.26.5   
+    
+    ✗ HIGH CVE-2019-11324 [Improper Certificate Validation]
+      https://scout.docker.com/v/CVE-2019-11324?s=github&n=urllib3&t=pypi&vr=%3C1.24.2
+      Affected range : <1.24.2                                       
+      Fixed version  : 1.24.2                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N  
+    
+    ✗ MEDIUM CVE-2020-26137 [Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')]
+      https://scout.docker.com/v/CVE-2020-26137?s=github&n=urllib3&t=pypi&vr=%3C1.25.9
+      Affected range : <1.25.9                                       
+      Fixed version  : 1.25.9                                        
+      CVSS Score     : 6.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2019-11236 [Improper Neutralization of CRLF Sequences ('CRLF Injection')]
+      https://scout.docker.com/v/CVE-2019-11236?s=github&n=urllib3&t=pypi&vr=%3C%3D1.24.2
+      Affected range : <=1.24.2                                      
+      Fixed version  : 1.24.3                                        
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2018-25091 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2018-25091?s=github&n=urllib3&t=pypi&vr=%3C1.24.2
+      Affected range : <1.24.2                                       
+      Fixed version  : 1.24.2                                        
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2023-43804 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2023-43804?s=github&n=urllib3&t=pypi&vr=%3C1.26.17
+      Affected range : <1.26.17                                      
+      Fixed version  : 1.26.17                                       
+      CVSS Score     : 5.9                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N  
+    
+    ✗ MEDIUM CVE-2024-37891 [Incorrect Resource Transfer Between Spheres]
+      https://scout.docker.com/v/CVE-2024-37891?s=github&n=urllib3&t=pypi&vr=%3C1.26.19
+      Affected range : <1.26.19                                      
+      Fixed version  : 1.26.19                                       
+      CVSS Score     : 4.4                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N  
+    
+    ✗ MEDIUM CVE-2023-45803 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2023-45803?s=github&n=urllib3&t=pypi&vr=%3C1.26.18
+      Affected range : <1.26.18                                      
+      Fixed version  : 1.26.18                                       
+      CVSS Score     : 4.2                                           
+      CVSS Vector    : CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N  
+    
+
+   1C     2H     1M     1L  werkzeug 2.0.3
+pkg:pypi/werkzeug@2.0.3
+
+    ✗ CRITICAL CVE-2022-29361
+      https://scout.docker.com/v/CVE-2022-29361?s=pypa&n=werkzeug&t=pypi&vr=%3C2.1.1
+      Affected range : <2.1.1  
+      Fixed version  : 2.1.1   
+    
+    ✗ HIGH CVE-2024-34069 [Cross-Site Request Forgery (CSRF)]
+      https://scout.docker.com/v/CVE-2024-34069?s=github&n=werkzeug&t=pypi&vr=%3C3.0.3
+      Affected range : <3.0.3                                        
+      Fixed version  : 3.0.3                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2023-25577 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2023-25577?s=github&n=werkzeug&t=pypi&vr=%3C2.2.3
+      Affected range : <2.2.3                                        
+      Fixed version  : 2.2.3                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ MEDIUM CVE-2023-46136 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2023-46136?s=github&n=werkzeug&t=pypi&vr=%3C2.3.8
+      Affected range : <2.3.8                                        
+      Fixed version  : 2.3.8                                         
+      CVSS Score     : 5.7                                           
+      CVSS Vector    : CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ LOW CVE-2023-23934 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2023-23934?s=github&n=werkzeug&t=pypi&vr=%3C2.2.3
+      Affected range : <2.2.3                                        
+      Fixed version  : 2.2.3                                         
+      CVSS Score     : 2.6                                           
+      CVSS Vector    : CVSS:3.1/AV:A/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N  
+    
+
+   0C     3H     0M     0L  flask 0.12.2
+pkg:pypi/flask@0.12.2
+
+    ✗ HIGH CVE-2023-30861 [Use of Persistent Cookies Containing Sensitive Information]
+      https://scout.docker.com/v/CVE-2023-30861?s=github&n=flask&t=pypi&vr=%3C2.2.5
+      Affected range : <2.2.5                                        
+      Fixed version  : 2.2.5                                         
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N  
+    
+    ✗ HIGH CVE-2019-1010083 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2019-1010083?s=github&n=flask&t=pypi&vr=%3C1.0
+      Affected range : <1.0                                          
+      Fixed version  : 1.0                                           
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+    ✗ HIGH CVE-2018-1000656 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2018-1000656?s=github&n=flask&t=pypi&vr=%3C0.12.3
+      Affected range : <0.12.3                                       
+      Fixed version  : 0.12.3                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     2H     0M     0L  setuptools 28.8.0
+pkg:pypi/setuptools@28.8.0
+
+    ✗ HIGH CVE-2024-6345 [Improper Control of Generation of Code ('Code Injection')]
+      https://scout.docker.com/v/CVE-2024-6345?s=github&n=setuptools&t=pypi&vr=%3C70.0.0
+      Affected range : <70.0.0                                       
+      Fixed version  : 70.0.0                                        
+      CVSS Score     : 8.8                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+    ✗ HIGH CVE-2022-40897 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2022-40897?s=github&n=setuptools&t=pypi&vr=%3C65.5.1
+      Affected range : <65.5.1                                       
+      Fixed version  : 65.5.1                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     1H     2M     0L  requests 2.18.4
+pkg:pypi/requests@2.18.4
+
+    ✗ HIGH CVE-2018-18074 [Insufficiently Protected Credentials]
+      https://scout.docker.com/v/CVE-2018-18074?s=github&n=requests&t=pypi&vr=%3C%3D2.19.1
+      Affected range : <=2.19.1                                      
+      Fixed version  : 2.20.0                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N  
+    
+    ✗ MEDIUM CVE-2023-32681 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2023-32681?s=github&n=requests&t=pypi&vr=%3E%3D2.3.0%2C%3C2.31.0
+      Affected range : >=2.3.0                                       
+                     : <2.31.0                                       
+      Fixed version  : 2.31.0                                        
+      CVSS Score     : 6.1                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N  
+    
+    ✗ MEDIUM CVE-2024-35195 [Always-Incorrect Control Flow Implementation]
+      https://scout.docker.com/v/CVE-2024-35195?s=github&n=requests&t=pypi&vr=%3C2.32.0
+      Affected range : <2.32.0                                       
+      Fixed version  : 2.32.0                                        
+      CVSS Score     : 5.6                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N  
+    
+
+   0C     1H     0M     0L  wheel 0.37.1
+pkg:pypi/wheel@0.37.1
+
+    ✗ HIGH CVE-2022-40898 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2022-40898?s=github&n=wheel&t=pypi&vr=%3C%3D0.37.1
+      Affected range : <=0.37.1                                      
+      Fixed version  : 0.38.1                                        
+      CVSS Score     : 7.5                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     0H     2M     0L  jinja2 3.0.3
+pkg:pypi/jinja2@3.0.3
+
+    ✗ MEDIUM CVE-2024-34064 [Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')]
+      https://scout.docker.com/v/CVE-2024-34064?s=github&n=jinja2&t=pypi&vr=%3C3.1.4
+      Affected range : <3.1.4                                        
+      Fixed version  : 3.1.4                                         
+      CVSS Score     : 5.4                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N  
+    
+    ✗ MEDIUM CVE-2024-22195 [Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')]
+      https://scout.docker.com/v/CVE-2024-22195?s=github&n=jinja2&t=pypi&vr=%3C3.1.3
+      Affected range : <3.1.3                                        
+      Fixed version  : 3.1.3                                         
+      CVSS Score     : 5.4                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N  
+    
+
+   0C     0H     1M     0L  zipp 3.6.0
+pkg:pypi/zipp@3.6.0
+
+    ✗ MEDIUM CVE-2024-5569 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2024-5569?s=github&n=zipp&t=pypi&vr=%3C3.19.1
+      Affected range : <3.19.1                                       
+      Fixed version  : 3.19.1                                        
+      CVSS Score     : 6.2                                           
+      CVSS Vector    : CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     0H     1M     0L  idna 2.6
+pkg:pypi/idna@2.6
+
+    ✗ MEDIUM CVE-2024-3651 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2024-3651?s=github&n=idna&t=pypi&vr=%3C3.7
+      Affected range : <3.7                                          
+      Fixed version  : 3.7                                           
+      CVSS Score     : 6.2                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H  
+    
+
+   0C     0H     1M     0L  pip 21.3.1
+pkg:pypi/pip@21.3.1
+
+    ✗ MEDIUM CVE-2023-5752 [Improper Neutralization of Special Elements used in a Command ('Command Injection')]
+      https://scout.docker.com/v/CVE-2023-5752?s=github&n=pip&t=pypi&vr=%3C23.3
+      Affected range : <23.3                                         
+      Fixed version  : 23.3                                          
+      CVSS Score     : 5.5                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N  
+    
+
+   0C     0H     0M     1L  configobj 5.0.6
+pkg:pypi/configobj@5.0.6
+
+    ✗ LOW CVE-2023-26112 [Inefficient Regular Expression Complexity]
+      https://scout.docker.com/v/CVE-2023-26112?s=github&n=configobj&t=pypi&vr=%3C%3D5.0.8
+      Affected range : <=5.0.8                                       
+      Fixed version  : not fixed                                     
+      CVSS Score     : 3.7                                           
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L  
+    
+
+
+64 vulnerabilities found in 13 packages
+  LOW       2   
+  MEDIUM    25  
+  HIGH      26  
+  CRITICAL  11  
+
