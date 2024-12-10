@@ -8,7 +8,7 @@
     <br>
         <span class="drac-text drac-line-height drac-text-white">Créé par :
         <br>
-            <span class="drac-text drac-text-semibold drac-line-height drac-text-green">Lussandre Lederrey<br>Nathan Basol</span>
+            <span class="drac-text drac-text-semibold drac-line-height drac-text-green">EDM115<br>Bazo</span>
         </span>
         <br>
 

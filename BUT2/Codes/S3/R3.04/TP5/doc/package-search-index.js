@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"binome"},{"l":"complexe"},{"l":"utils"}];updateSearchResults();

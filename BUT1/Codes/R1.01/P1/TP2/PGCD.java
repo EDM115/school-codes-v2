@@ -1,6 +1,5 @@
 /**
 * Trouve le PGCD de neux nombres entiers
-* @author M.Adam
 */
 class PGCD {
 	void principal() {

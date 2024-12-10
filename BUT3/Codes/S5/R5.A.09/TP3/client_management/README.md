@@ -1,4 +1,4 @@
-# R5.A.09 - TP2 - Lussandre Lederrey
+# R5.A.09 - TP2
 
 ## Build && Run
 

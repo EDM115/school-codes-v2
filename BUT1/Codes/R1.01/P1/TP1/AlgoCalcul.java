@@ -1,6 +1,5 @@
 /**
 * Essai de la configuration R1.01
-* @author M.Adam
 */
 
 class AlgoCalcul {

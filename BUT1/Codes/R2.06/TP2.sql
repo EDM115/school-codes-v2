@@ -9,14 +9,6 @@ ORDER BY etudStagiaire;
 
 -- 58 Résultats : --
 
-ETUDSTAGIAIRE,	NOMENTREPRISE,			DEPENTREPRISE
-21702527,		SCM VIAUD-FORMAGNE,		56
-21802862,		CGI,					56
-21900078,		ACCENTURE,				75
-21900144,		IRISA, EQUIPE OBELIX,	56
-21900169,		EXOTIC ANIMALS,			56
-...				...						...
-
 
 -- Q2 : Pour chaque stagiaire (nom et prénom), afficher le nom et le département de l'entreprise --
 
@@ -26,15 +18,7 @@ WHERE Etudiant.idEtud = Stagiaire.etudStagiaire
 AND Entreprise.idEntreprise = Stagiaire.entrepriseStage
 ORDER BY nomEtud, prenomEtud;
 
--- 58 Résultats : --
-
-NOMETUD,	PRENOMETUD,	NOMENTREPRISE,					DEPENTREPRISE
-AUVRAY,		ALEXANDRE,	INRAE ET FN3PT,					75
-BEAUCLAIR,	ADRIEN,		NIRYO,							59
-BERNIER,	ALLAN,		ADAPEI56,						56
-BLIVET,		LAURELINE,	CNRS,							35
-BOIVENT,	PIERRE,		DEPARTEMENT DILLE-ET-VILAINE,	35
-...			...			...								...
+-- 58 Résultats : --						...
 
 
 -- Q3 : Pour chaque étudiant (id), afficher son entreprise (nom) si elle existe et rien sinon --
@@ -49,14 +33,6 @@ FROM Etudiant
 
 -- 107 Résultats : --
 
-IDETUD,		NOMENTREPRISE
-21702527,	SCM VIAUD-FORMAGNE
-21802862,	CGI
-21807519,
-21900078,	ACCENTURE
-21900144,	IRISA, EQUIPE OBELIX
-...			...
-
 
 -- Q4 : Afficher les étudiants (nom et prénom) ayant réalisé un stage dans un département différent de celui du lycée --
 
@@ -69,14 +45,6 @@ ORDER BY nomEtud, prenomEtud;
 
 -- 31 Résultats : --
 
-NOMETUD,	PRENOMETUD
-AUVRAY,		ALEXANDRE
-BEAUCLAIR,	ADRIEN
-BERNIER,	ALLAN
-BONNET,		BENJAMIN
-BRAUD,		ANTOINE
-...			...
-
 
 -- Q5 : Afficher les apprentis (nom et prénom) suivis par Muriel Mannevy --
 
@@ -88,15 +56,6 @@ ORDER BY nomEtud, prenomEtud;
 
 -- 7 Résultats --
 
-NOMETUD,	PRENOMETUD
-KOENIGS,	THEO
-LE BRETON,	DAN
-LE PORS,	YANIS
-MADELAINE,	DYLAN
-PLOQUIN,	NATHAN
-ROUILLIER,	JULIEN
-TIRLEMONT,	KIERIAN
-
 
 -- Q6 : Pour chaque tuteur d'apprenti (nom), afficher les apprentis (nom et prénom) --
 
@@ -107,14 +66,6 @@ AND Etudiant.idEtud = Apprenti.etudApp
 ORDER BY nomEtud, prenomEtud;
 
 -- 24 Résultats : --
-
-NOMENS,		NOMETUD,		PRENOMETUD
-Tuffigo,	ADAM,			ANTOINE
-Baudont,	BREIT HOARAU,	EMELINE
-Lefevre,	CARN,			YOHAN
-Lefevre,	CASTELLA,		MATEO
-Baudont,	CLOAREC,		THOMAS
-...			...				...
 
 
 -- Q7 : Afficher les tuteurs (nom) ayant suivi un apprenti en dehors de la Bretagne --
@@ -146,14 +97,6 @@ FROM Enseignant
 
 -- 35 Résultats : --
 
-UPPER(NOMENS),	UPPER(NOMETUD),	UPPER(PRENOMETUD),	DEPENTREPRISE
-ADAM,
-BAUDONT,		BREIT HOARAU,	EMELINE,			56
-BAUDONT,		GARIN-HAMELINE,	GILDAS,				56
-BAUDONT,		SUARD,			MAEL,				56
-BAUDONT,		CLOAREC,		THOMAS,				56
-...				...				...					...
-
 
 -- Q9 : Afficher les étudiants (nom et prénom) qui ont travaillé dans le Morbihan et qui ont poursuivi leurs études à l'ENSIBS --
 
@@ -176,13 +119,6 @@ FROM (
 ORDER BY UPPER(nomEtud), UPPER(prenomEtud);
 
 -- 5 Résultats : --
-
-UPPER(NOMETUD),	UPPER(PRENOMETUD)
-GARIN-HAMELINE,	GILDAS
-GUENNEC,		PAUL
-LE CHENADEC,	SARAH
-LE GARREC,		VINCENT
-PEDRON,			MATISSE
 
 
 -- Q10 : Afficher les enseignants (nom) à la fois tuteur de groupe en Info1 et tuteur d'apprenti --

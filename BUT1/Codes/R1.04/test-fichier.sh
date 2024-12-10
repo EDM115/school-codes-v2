@@ -18,7 +18,7 @@ else
 
 	if [ -r "$1" ]
 	then
-		eccess="en lecture"
+		access="en lecture"
 	else
 		access="non accessible en lecture"
 	fi

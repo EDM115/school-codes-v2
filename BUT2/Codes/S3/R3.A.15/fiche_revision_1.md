@@ -1,5 +1,4 @@
-## Fiche de révision - TP1 - Lussandre Lederrey
-
+## Fiche de révision - TP1
 **Différence entre classification et régression**
 - Classification : Catégorise des données (ex: déterminer si un mail est un spam).
 - Régression : Prédit une valeur quantitative (ex: estimer le prix d'une maison).

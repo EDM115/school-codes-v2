@@ -5,7 +5,7 @@ import java.util.Collections;
 /**
  * Grundy2 Game
  * This class simplifies the game so the heaps that are loosing are only counted once
- * @author EDM115, nathan-basol
+ * @author EDM115
  */
 class Grundy2RecPerdantNeutre {
 

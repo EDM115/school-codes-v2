@@ -1,7 +1,6 @@
 <div align="center">
 
 # Fiche de révision - TP4
-### Lussandre Lederrey - Mathieu Stephan - Allan Maccrez - Nathan Basol
 
 </div>
 

@@ -1,4 +1,4 @@
--- Script de création de table - SportTrack - Lussandre Lederrey | Nathan Basol - 08/09/2023
+-- Script de création de table - SportTrack
 
 -- Création de la table User
 CREATE TABLE User(

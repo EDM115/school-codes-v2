@@ -5,7 +5,7 @@ import java.util.Collections;
 /**
  * Grundy2 Game
  * This class adds a Game vs AI function and efficiency calculation
- * @author EDM115, nathan-basol
+ * @author EDM115
  */
 class Grundy2RecBruteEff {
 

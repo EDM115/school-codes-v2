@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"datastruct","l":"HashTable"},{"p":"datastruct","l":"HashTableTest"},{"p":"datastruct","l":"Table"},{"p":"datastruct","l":"HashTable.Tuple"}];updateSearchResults();

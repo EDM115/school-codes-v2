@@ -1,4 +1,4 @@
-Schéma Relationnel - SportTrack - Nathan Basol | Lussandre Lederrey - 08/09/2023
+Schéma Relationnel - SportTrack
 
 User(adresse_electronique(1), nom(NN), prenom(NN), date_naissance(NN), sexe(NN), taille(NN), poids(NN), mot_de_passe(NN))
 

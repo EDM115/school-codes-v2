@@ -1,4 +1,4 @@
-## Fiche de révision - TP2 - Lussandre Lederrey
+## Fiche de révision - TP2
 
 ---
 
