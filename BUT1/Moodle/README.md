@@ -15,9 +15,6 @@ English Week : Conférences
 ### [EPE](./EPE)
 Étudier avec plaisir et efficacité à l'université
 
-### [Forum Entreprises](./Forum%20Entreprises)
-Forum Entreprises
-
 ### [International](./International)
 Les études à l'international
 

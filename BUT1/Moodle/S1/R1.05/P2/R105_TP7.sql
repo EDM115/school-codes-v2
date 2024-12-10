@@ -160,12 +160,12 @@ AND E1.noEtu != E2.noEtu;
 /*
 Réponse: 6 tuples
 UPPER(E1.NOMETU)	UPPER(E1.PRENOM)
-POULAIN	THOMAS
-HASCOET	ANTHONY
-MORVAN	ENZO
-HASCOET	JACK
-POULAIN	THEO
-MORVAN	LOUANNE
+X	THOMAS
+X	ANTHONY
+X	ENZO
+X	JACK
+X	THEO
+X	LOUANNE
 */
 
 -----------------------------------------------------
@@ -201,11 +201,11 @@ WHERE ROWNUM <= 5 ;
 /*
 Réponse: 5 tuples
 LEPRENOM
-ACHRAF
-ALAN
-ALEXANDRE
-ALEXIS
-ALICE
+X
+X
+X
+X
+X
 */
 
 -----------------------------------------------------
@@ -226,11 +226,11 @@ WHERE ROWNUM <= 5 ;
 /*
 Réponse: 5 tupels
 LEPRENOM
-SAM
-SAMUEL
-SAMY
-SEBASTIEN
-SERGE
+X
+X
+X
+X
+X
 */
 
 -----------------------------------------------------
@@ -243,11 +243,11 @@ WHERE ROWNUM <= 5 ;
 
 /*
 LEPRENOM
-YOUENN
-YOHANN
-YANN-MAEL
-YANIS
-WILLIAM
+X
+X
+X
+X
+X
 5 rows selected.
 */
 
@@ -262,11 +262,11 @@ AND UPPER(E1.groupe) != UPPER(E2.groupe)
 /*
 Réponse: 11 tuples
 UPPER(E1.PRENOM)
-NATHAN
-GWENDAL
-GABRIEL
-CORENTIN
-NOE
+X
+X
+X
+X
+X
 */
 
 -----------------------------------------------------

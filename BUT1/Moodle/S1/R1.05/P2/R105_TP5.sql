@@ -72,7 +72,7 @@ FROM EtudiantInfo
 WHERE UPPER(prenom) = 'LOUIS';
 /*
 Réponse: 1 tuple
-4	BARRIAC	Louis	INFO1	D
+4	X	Louis	INFO1	D
 */
 
 ------------------------------------------------------------------------
@@ -84,10 +84,10 @@ WHERE UPPER(prenom) = 'CLEMENT'
 OR UPPER(prenom) = 'PIERRE';
 -- Réponse: 4 rows selected.
 /*
-9	BELLIER	Clement	INFO1	A
-45	HOUSSIN--VONTHRON	Clement	INFO1	A
-148	MAILLET	CLeMENT	INFO2	B
-155	MONFORT	Clement	INFO2	B
+9	X	Clement	INFO1	A
+45	X	Clement	INFO1	A
+148	X	CLeMENT	INFO2	B
+155	X	Clement	INFO2	B
 */
 
 
@@ -100,8 +100,8 @@ WHERE UPPER(prenom) = 'CLEMENT'
 AND promotion = 'INFO2';
 -- Réponse: 2 tuples (si je m'appelle Clement)
 /*
-148	MAILLET	CLeMENT	INFO2	B
-155	MONFORT	Clement	INFO2	B
+148	X	CLeMENT	INFO2	B
+155	X	Clement	INFO2	B
 */
 
 
@@ -115,11 +115,7 @@ SELECT DISTINCT UPPER(prenom1)
 FROM EnseignantInfo;
 -- Réponse: 153 rows selected.
 /*
-ACHRAF
-ALAN
-ALEXANDRE
-ALEXIS
-ALICE
+...
 */
 
 ------------------------------------------------------------------------
@@ -176,8 +172,7 @@ FROM EtudiantInfo
 WHERE UPPER(nomEtu) LIKE 'A%A%';
 -- 2 rows selected.
 /*
-AGBOGBO (BASSON)	DEBORAH
-ANNASRI	SAMY
+...
 */
 
 
@@ -194,10 +189,10 @@ FROM (SELECT *
 );
 -- 4 rows selected.
 /*
-118	COSTAMAGNA
-25	DA ROCHA
-136	JOMAA
-86	PINTO DA SILVA
+118	X
+25	X
+136	X
+86	X
 */
 
 -----------------------------------------------------
@@ -210,9 +205,5 @@ FROM (SELECT *
 WHERE ROWNUM < 11;
 -- 10 rows selected.
 /*
-AGBOGBO (BASSON)
-AIME
-ANNASRI
-ANTONIO
-AUGER
+...
 */
