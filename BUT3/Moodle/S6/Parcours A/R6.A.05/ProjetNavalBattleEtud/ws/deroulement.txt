@@ -1,0 +1,53 @@
+Déroulement d'une partie
+
+Ce déroulement est intégralement codé dans le fichier main.cpp
+
+1 - Création d'une instance de l'objet CGui pour chacun des 2 adversaires
+2 - Choix : êtes-vous Client ou Serveur ?
+
+Coté serveur :
+3 - Créer une instance de l'objet Serveur (CJoueurServ)
+4 - Attendre la création du client
+5 - Récupérer les données du jeu (lecture du fichier flotille.txt)
+6 - Envoyer les données du jeu au client
+7 - Attente de la réponse du client comme quoi il est initialisé (positionnement des bateaux sur sa grille)
+8 - Positionnement des bateaux du serveur sur sa grille
+9 - tant qu'il nous reste des bateaux et qu'on n'a pas touché tous ceux de l'adversaire
+        On boucle
+        1 - Choisir l'attaque (coordonnées ligne/colonne)
+        2 - Lancement de l'attaque (méthode attaque() de CJoueur)
+        3 - Affichage des deux grilles pour le serveur suite à la réponse du client : plouf/coulé/touché
+        4 - Test si serveur gagné
+        5 - Attente de l'attaque du client
+        6 - Réponse du serveur suite à l'attaque du client (méthode attaqueAdverse() de CJoueur) : plouf/coulé/touché
+        7 - Test si serveur perdu
+        8 - Affichage des deux grilles pour le serveur suite à l'attaque du client
+        9 - Boucle
+10 - Fin du jeu
+
+
+Coté client :
+3 - Créer une instance de l'objet Client (CJoueurCli)
+4 - Récupérer les données du jeu (elles sont envoyées par réseau par le serveur)
+5 - Positionnement des bateaux sur la grille
+6 - Informer le serveur que les bateaux sont positionnés sur la grille (méthode ok() de CJoueur)
+9 - tant qu'il nous reste des bateaux et qu'on n'a pas touché tous ceux de l'adversaire
+        On boucle
+        1 - Attendre l'attaque du serveur
+        2 - Réponse du client suite à l'attaque du serveur (méthode attaqueAdverse() de CJoueur) : plouf/coulé/touché
+        3 - Affichage des deux grilles pour le client suite à l'attaque du serveur
+        4 - Test si client perdu
+        5 - Choisir l'attaque (coordonnées ligne/colonne)
+        6 - Lancement de l'attaque (méthode attaque() de CJoueur)
+        7 - Affichage des deux grilles pour le client suite à la réponse du serveur : plouf/coulé/touché
+        8 - Test si client gagné
+        9 - Boucle
+10 - Fin du jeu
+
+
+** Remarque : pour jouer sur 2 machines DISTANTES **
+
+1 - Récupérer l'adresse IP de la machine sur laquelle tournera l'application serveur : taper "/sbin/ifconfig" (eth0 inet adr)
+2 - Dans le fichier "main.cpp", lors de la connexion du client au serveur, remplacer "localhost" par l'adresse IP de la machine serveur récupérée à l'étape 1
+3 - Recompiler l'application
+4 - Sur la machine serveur, exécuter l'application en tant que serveur (choix 0), sur la machine distante (quelconque), exécuter l'application en tant que client (choix 1)

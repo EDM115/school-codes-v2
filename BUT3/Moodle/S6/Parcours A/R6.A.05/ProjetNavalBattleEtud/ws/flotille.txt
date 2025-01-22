@@ -1,0 +1,7 @@
+# Commentaires :
+# - fichier a placer dans le repertoire /datas
+# - format 1 ligne : nom_du_bateau<ESPACE>nombre_sur_grille<ESPACE>nombre_cases_horizontales
+porte-avion 1 4
+croiseur 2 3
+torpilleur 2 2
+# sous-marin 3 1
