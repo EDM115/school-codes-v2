@@ -29,3 +29,20 @@ Dans ce rendu, il vous est demandé de fournir votre enquête préliminaire :
 3. Les éventuelles découvertes durant votre analyse
   - Quel est leur impact vis-à-vis cotre enquête
   - En quoi vous avez à adapter votre approche suite a ces nouvelles informations ?
+
+---
+
+Dans ce rendu finale, vous rédigez votre compte rendu d'action qui sera soumis au CNIL comme rapport d'activité.
+
+On doit retrouver ces éléments dans le rapport :
+1. Explication du contexte
+  - Qu'est ce qui s'est passé
+  - Comment s'est-il passé
+  - Quelles étaient les motivations
+2. Présentation de vos activités
+  - Explication des actions que vous avez entreprises
+  - Présentation des contraintes et difficultés rencontrés
+3. Les "Lessons Learned"
+  - Ce que vous (Free) en extrait de cet événement
+  - Les actions de protection/prévention à mettre en œuvre pour empêcher une nouvelle attaque
+  - Présentation des actions entrepris pour contourner les difficultés, et en quoi ils seraient utiles dans le futur
