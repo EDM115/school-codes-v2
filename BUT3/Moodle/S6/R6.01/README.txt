@@ -155,3 +155,22 @@ preuve du potentiel, de la pertinence de mon offre  :  essor des offres comme bl
 https://www.succes-marketing.com/analyse-swot/
 https://www.technique-de-vente.com/analyse-swot-pourquoi-et-comment-realiser-une-matrice-swot/
 https://www.daf-mag.fr/Thematique/data-methodologie-1238/Breves/Business-model-start-grands-gagnants-sont-intermediation-abonnement-325286.htm
+
+————————————————————
+
+Mercredi 5 Février
+
+Planning de la journée
+8h Rédaction de l'exécutive summary dans un contexte de recherche d'une intégration dans un incubateur de startup + démarrage de l'élaboration du Pitch de 5 mn
+Entre 14h et  15h, Pitch avec vos animateurs, sélections des 4 meilleurs projets
+15h30 Pitch des finalistes et vote pour les meilleurs projets 2024 (amphi C)
+
+https://www.my-business-plan.fr/fiches-techniques/executive-summary
+https://www.dynamique-mag.com/article/qu-est-ce-que-executive-summary.8068
+https://bpifrance-creation.fr/encyclopedie/previsions-financieres-business-plan/business-plan/rediger-executive-summary-business
+
+https://www.l-expert-comptable.com/a/534245-7-conseils-pour-reussir-le-pitch-de-son-projet-d-entreprise.html
+https://bpifrance-creation.fr/moment-de-vie/comment-pitcher-pro
+https://bpifrance-creation.fr/encyclopedie/porteur-projet-preparation-droits-obligations/preparation/plan-type-pitch-presenter
+https://www.youtube.com/watch?v=OUmQ7U9GBXo
+https://mon-pitch.com/qui-veut-etre-mon-associe-le-debrief-pitch-de-lepisode-1/

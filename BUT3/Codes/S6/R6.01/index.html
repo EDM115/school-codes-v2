@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ScanWash - PoC</title>
+    <link rel="icon" href="./scanwash_up_small.png" />
+    <!-- Tailwind CSS via Play CDN avec configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {}
+        }
+      }
+    </script>
+    <style>
+      /* Règle globale pour le box-sizing et éviter les débordements */
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      html, body {
+        overflow-x: hidden;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .hidden {
+        display: none;
+      }
+      input,
+      select {
+        background-color: white;
+        border-color: transparent;
+      }
+      li {
+        border-color: transparent;
+      }
+      .dark input,
+      .dark select {
+        background-color: #374151;
+        color: white;
+      }
+      footer {
+        margin-top: auto !important;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- En-tête -->
+    <header class="bg-blue-600 dark:bg-blue-800 text-white p-4">
+      <div class="container mx-auto max-w-screen-xl px-4 flex items-center justify-between">
+        <h1 class="text-3xl font-bold">ScanWash</h1>
+        <p class="mt-1">Scannez, optimisez, économisez !</p>
+        <div class="text-3xl">
+          <img src="./scanwash_up_small.png" alt="ScanWash" class="h-16 w-16 rounded-lg" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Barre de navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow">
+      <div class="container mx-auto max-w-screen-xl px-4">
+        <ul class="flex flex-wrap justify-center gap-4 py-4">
+          <li>
+            <a href="#" data-target="home" class="nav-link text-blue-600 dark:text-blue-300 hover:text-blue-800">Accueil</a>
+          </li>
+          <li>
+            <a href="#" data-target="presentation" class="nav-link text-blue-600 dark:text-blue-300 hover:text-blue-800">Présentation</a>
+          </li>
+          <li>
+            <a href="#" data-target="catalog" class="nav-link text-blue-600 dark:text-blue-300 hover:text-blue-800">Garde-robe</a>
+          </li>
+          <li>
+            <a href="#" data-target="basket" class="nav-link text-blue-600 dark:text-blue-300 hover:text-blue-800">Panier</a>
+          </li>
+          <li>
+            <a href="#" data-target="settings" class="nav-link text-blue-600 dark:text-blue-300 hover:text-blue-800">Paramètres</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto max-w-screen-xl px-4 py-6">
+      <!-- Section Accueil -->
+      <section id="home" class="section">
+        <h2 class="text-2xl font-bold mb-4">Bienvenue sur ScanWash</h2>
+        <p class="mb-4">
+          Gérez et optimisez l'entretien de vos vêtements de manière intelligente et écologique.
+        </p>
+        <div class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-4">
+          <h3 class="text-xl font-semibold">Statistiques de lavage</h3>
+          <p>Nombre de lavages : <span id="wash-count">0</span></p>
+          <p>Eau utilisée : <span id="water-consumption">0</span> L</p>
+          <p>Énergie consommée : <span id="energy-consumption">0</span> kWh</p>
+          <p>Cycles effectués : <span id="cycle-count">0</span></p>
+          <!-- Nouvelles stats : économie d'eau et d'énergie -->
+          <p>Eau économisée : <span id="water-saved">0</span> L</p>
+          <p>Énergie économisée : <span id="energy-saved">0</span> kWh</p>
+          <div class="flex justify-end">
+            <button id="reset-stats" class="bg-orange-600 text-white px-4 py-2 rounded">
+              Réinitialiser les stats
+            </button>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-4">
+          <h3 class="text-xl font-semibold">Résumé de votre garde-robe</h3>
+          <p>Total de vêtements : <span id="total-clothes">0</span></p>
+        </div>
+      </section>
+
+      <section id="presentation" class="section hidden flex flex-col items-center justify-center">
+        <h1 class="text-5xl font-bold mb-4">ScanWash</h1>
+        <p class="text-2xl mb-4">Scannez, optimisez, économisez !</p>
+        <img src="./scanwash_up_small.png" alt="ScanWash" class="h-80 w-80 rounded-lg" />
+      </section>
+
+      <!-- Section Garde-robe -->
+      <section id="catalog" class="section hidden">
+        <h2 class="text-2xl font-bold mb-4">Garde-robe de vêtements</h2>
+        <!-- Formulaire d'ajout de vêtement -->
+        <div class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-6">
+          <h3 class="text-xl font-semibold mb-2">Ajouter un vêtement</h3>
+          <form id="add-clothing-form" class="space-y-4">
+            <!-- Nom et randomiseur -->
+            <div>
+              <label class="block font-medium">Nom du vêtement</label>
+              <div class="flex flex-col sm:flex-row sm:space-x-2">
+                <input type="text" id="clothing-name" class="border rounded w-full p-2" placeholder="ex. T-shirt, Jean" required />
+                <button type="button" id="randomize-name" class="bg-blue-600 text-white px-2 rounded mt-2 sm:mt-0">Randomiser nom</button>
+              </div>
+            </div>
+            <!-- Les autres champs -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-medium">Type</label>
+                <select id="washing-type" class="border rounded w-full p-2">
+                  <option value="machine">Machine</option>
+                  <option value="main">Main</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-medium">Température</label>
+                <select id="temperature" class="border rounded w-full p-2">
+                  <option value="30°C">30°C</option>
+                  <option value="40°C">40°C</option>
+                  <option value="60°C">60°C</option>
+                  <option value="90°C">90°C</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-medium">Couleur</label>
+                <select id="color" class="border rounded w-full p-2">
+                  <option value="clair">Clair</option>
+                  <option value="foncé">Foncé</option>
+                  <option value="coloré">Coloré</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-medium">Composition</label>
+                <select id="composition" class="border rounded w-full p-2">
+                  <option value="coton">Coton</option>
+                  <option value="synthétique">Synthétique</option>
+                  <option value="laine">Laine</option>
+                  <option value="mixte">Mixte</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-medium">Autres options</label>
+                <select id="other-options" class="border rounded w-full p-2">
+                  <option value="aucun">Aucun</option>
+                  <option value="adoucissant">Pas d'adoucissant</option>
+                  <option value="essorage">Pas d'essorage</option>
+                  <option value="javel">Javel</option>
+                </select>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <button type="button" id="simulate-scan" class="bg-blue-600 text-white px-4 py-2 rounded block w-full sm:w-auto">Simuler scan</button>
+              <div>
+                <label class="inline-flex items-center">
+                  <input type="checkbox" id="add-to-basket" class="form-checkbox" />
+                  <span class="ml-2">Ajouter au panier</span>
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded w-full sm:w-auto">Ajouter à la garde-robe</button>
+          </form>
+        </div>
+
+        <!-- Liste de la garde-robe -->
+        <div class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-4">
+          <h3 class="text-xl font-semibold mb-2">Votre garde-robe</h3>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+            <div class="flex space-x-2 mb-2 sm:mb-0">
+              <button id="select-toggle" type="button" class="bg-blue-600 text-white px-4 py-2 rounded">Tout sélectionner</button>
+              <button id="randomize-dirt-wardrobe" class="bg-blue-600 text-white px-4 py-2 rounded">Randomiser la saleté</button>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+            <div class="flex flex-col sm:flex-row sm:space-x-2">
+              <div>
+                <label class="block font-medium">Mode de tri</label>
+                <select id="sort-mode" class="border rounded w-full p-2">
+                  <option value="dirt" selected>Saleté</option>
+                  <option value="temperature">Température</option>
+                  <option value="color">Couleur</option>
+                </select>
+              </div>
+              <button id="sort-clothes" class="bg-blue-600 text-white px-4 py-2 rounded mt-2 sm:mt-0">Trier automatiquement</button>
+              <button id="add-selected-to-basket" class="bg-green-600 text-white px-4 py-2 rounded mt-2 sm:mt-0" disabled>Ajouter les vêtements sélectionnés au panier</button>
+            </div>
+            <button id="delete-all-clothes" class="mt-2 sm:mt-0 bg-red-600 text-white px-4 py-2 rounded">Tout supprimer</button>
+          </div>
+          <ul id="clothing-list" class="space-y-2">
+            <!-- Les articles seront ajoutés dynamiquement -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section Panier -->
+      <section id="basket" class="section hidden">
+        <h2 class="text-2xl font-bold mb-4">Panier de lavage</h2>
+        <div class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-6">
+          <h3 class="text-xl font-semibold mb-2">Articles sélectionnés</h3>
+          <ul id="basket-list" class="space-y-2">
+            <!-- Affichage complet de chaque vêtement -->
+          </ul>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+          <button id="optimize-wash" class="bg-green-600 text-white px-4 py-2 rounded">Optimiser le lavage</button>
+          <button id="empty-basket" class="bg-red-600 text-white px-4 py-2 rounded">Vider le panier</button>
+        </div>
+        <div id="wash-recommendation" class="mt-4 bg-white dark:bg-gray-800 shadow rounded p-4 hidden">
+          <h3 class="text-xl font-semibold mb-2">Recommandation(s) de lavage</h3>
+          <p id="recommendation-text"></p>
+        </div>
+      </section>
+
+      <!-- Section Paramètres -->
+      <section id="settings" class="section hidden">
+        <h2 class="text-2xl font-bold mb-4">Paramètres</h2>
+        <div class="bg-white dark:bg-gray-800 shadow rounded p-4">
+          <h3 class="text-xl font-semibold mb-2">Personnalisation</h3>
+          <div class="flex items-center">
+            <label for="dark-mode-toggle" class="mr-2">Thème sombre</label>
+            <input type="checkbox" id="dark-mode-toggle" class="form-checkbox h-5 w-5 text-blue-600" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-gray-800 text-white py-4 mt-6">
+      <div class="container mx-auto max-w-screen-xl px-4 text-center">
+        <p>&copy; 2025 ScanWash. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Fonction UUID v4
+      function uuidv4() {
+        return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+          (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
+      }
+
+      // Activation du thème sombre si sauvegardé
+      const darkModeSetting = localStorage.getItem("darkMode")
+      if (darkModeSetting === "true") {
+        document.documentElement.classList.add("dark")
+        document.getElementById("dark-mode-toggle").checked = true
+      }
+
+      // Variables globales pour les statistiques de lavage
+      // Ajout de waterSaved et energySaved
+      let washStats = JSON.parse(localStorage.getItem("washStats")) || {
+        washes: 0,
+        water: 0,
+        energy: 0,
+        cycles: 0,
+        waterSaved: 0,
+        energySaved: 0
+      }
+
+      // Chargement de la garde-robe depuis localStorage
+      let clothingCatalog = JSON.parse(localStorage.getItem("clothingCatalog")) || []
+
+      // Navigation
+      const navLinks = document.querySelectorAll(".nav-link")
+      const sections = document.querySelectorAll(".section")
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault()
+          sections.forEach((section) => section.classList.add("hidden"))
+          document.getElementById(link.dataset.target).classList.remove("hidden")
+        })
+      })
+
+      function saveWashStats() {
+        localStorage.setItem("washStats", JSON.stringify(washStats))
+      }
+
+      // Mise à jour des statistiques, y compris eau et énergie économisées
+      function updateHomeStats() {
+        document.getElementById("wash-count").textContent = washStats.washes
+        document.getElementById("water-consumption").textContent = washStats.water
+        document.getElementById("energy-consumption").textContent = washStats.energy
+        document.getElementById("cycle-count").textContent = washStats.cycles
+        document.getElementById("total-clothes").textContent = clothingCatalog.length
+        document.getElementById("water-saved").textContent = washStats.waterSaved.toFixed(1)
+        document.getElementById("energy-saved").textContent = washStats.energySaved.toFixed(1)
+      }
+
+      // Lorsqu'un utilisateur modifie le niveau de saleté via le slider dans la garde-robe
+      function updateItemDirt(index, newDirt) {
+        clothingCatalog[index].dirt = parseInt(newDirt)
+        if (clothingCatalog[index].dirt === 0) {
+          clothingCatalog[index].inBasket = false
+          clothingCatalog[index].selected = false;
+        }
+        saveCatalog()
+        updateHomeStats()
+        updateAddToBasketButton()
+        updateClothingList()
+      }
+
+      // Randomiser le nom dans le formulaire
+      const clothingNames = ["T-shirt", "Jean", "Chemise", "Pull", "Veste", "Robe", "Short", "Chaussettes", "Sous-vêtements", "Pyjama", "Manteau", "Costume", "Jupe", "Pantalon", "Chemisier", "Blouse", "Sweat", "Polo", "Débardeur", "Blazer", "Imperméable", "Maillot de bain", "Peignoir", "Salopette", "Combinaison", "Gilet", "Cardigan", "Sweat à capuche", "Soutien-gorge", "Caleçon", "Chaussons", "Chapeau", "Casquette", "Bonnet", "Écharpe", "Cravate", "Foulard", "Ceinture", "Collants", "Legging", "Jogging", "Pantacourt", "Bermuda", "Chemisette"];
+      document.getElementById("randomize-name").addEventListener("click", () => {
+        const randomName = clothingNames[Math.floor(Math.random() * clothingNames.length)]
+        document.getElementById("clothing-name").value = randomName
+      })
+
+      // Simulation du scan (randomisation des dropdowns)
+      document.getElementById("simulate-scan").addEventListener("click", () => {
+        function randomSelect(selectId) {
+          const selectElem = document.getElementById(selectId)
+          const options = selectElem.options
+          selectElem.selectedIndex = Math.floor(Math.random() * options.length)
+        }
+        randomSelect("washing-type")
+        randomSelect("temperature")
+        randomSelect("color")
+        randomSelect("composition")
+        randomSelect("other-options")
+      })
+
+      // Sauvegarder la garde-robe
+      function saveCatalog() {
+        localStorage.setItem("clothingCatalog", JSON.stringify(clothingCatalog))
+        updateHomeStats()
+      }
+
+      // Mise à jour de l'affichage de la liste des vêtements (garde-robe)
+      function updateClothingList() {
+        const clothingList = document.getElementById("clothing-list")
+        clothingList.innerHTML = ""
+        clothingCatalog.forEach((item, index) => {
+          const li = document.createElement("li")
+          li.classList.add("p-2", "border", "rounded", "flex", "justify-between", "items-center", "flex-wrap")
+          li.innerHTML = `
+            <div class="flex-1">
+              <strong>${item.name}</strong> (Lavé ${item.washes} fois)<br>
+              <small>Type : ${item.washingType}, Temp : ${item.temperature}, Couleur : ${item.color}, Composition : ${item.composition}, Option : ${item.otherOptions}</small><br>
+              <label class="block font-medium text-sm mt-1">
+                Saleté : <span id="dirt-value-${index}">${item.dirt}%</span>
+              </label>
+              <input type="range" min="0" max="100" value="${item.dirt}" class="w-full" onchange="updateItemDirt(${index}, this.value)" />
+            </div>
+            <div class="flex flex-col items-end">
+              ${
+                item.inBasket
+                  ? `<input type="checkbox" class="select-for-basket" data-index="${index}" checked disabled title="Déjà ajouté au panier">`
+                  : (item.dirt > 0)
+                      ? `<input type="checkbox" class="select-for-basket" data-index="${index}" ${item.selected ? "checked" : ""}>`
+                      : `<input type="checkbox" class="select-for-basket" data-index="${index}" disabled title="Saleté à 0%, impossible d'ajouter au panier">`
+              }
+              <div class="mt-2">
+                <button onclick="deleteClothing(${index})" class="bg-red-600 text-white px-2 py-1 rounded text-sm">Supprimer</button>
+              </div>
+            </div>
+          `
+          clothingList.appendChild(li)
+        })
+        updateAddToBasketButton()
+      }
+
+      // Mise à jour de l'affichage de la liste du panier
+      function updateBasketList() {
+        const basketList = document.getElementById("basket-list")
+        basketList.innerHTML = ""
+        clothingCatalog.forEach((item, index) => {
+          if (item.inBasket) {
+            const li = document.createElement("li")
+            li.classList.add("p-2", "border", "rounded", "flex", "justify-between", "items-center", "flex-wrap")
+            li.innerHTML = `
+              <div>
+                <strong>${item.name}</strong> (Lavé ${item.washes} fois)<br>
+                <small>Type : ${item.washingType}, Temp : ${item.temperature}, Couleur : ${item.color}, Composition : ${item.composition}, Option : ${item.otherOptions}</small><br>
+                Saleté : ${item.dirt}%
+              </div>
+              <button onclick="removeFromBasket(${index})" class="bg-red-600 text-white px-2 py-1 rounded text-sm">Retirer</button>
+            `
+            basketList.appendChild(li)
+          }
+        })
+      }
+
+      // Ajouter un vêtement au panier (uniquement si saleté > 0)
+      function addToBasket(index) {
+        if (parseInt(clothingCatalog[index].dirt) === 0) {
+          alert("Impossible d'ajouter un vêtement à 0% de saleté.")
+          return
+        }
+        clothingCatalog[index].inBasket = true
+        // On incrémente le compteur de lavages pour cet article
+        clothingCatalog[index].washes += 1;
+        saveCatalog()
+        updateClothingList()
+        updateBasketList()
+      }
+
+      // Retirer un vêtement du panier
+      function removeFromBasket(index) {
+        clothingCatalog[index].inBasket = false
+        saveCatalog()
+        updateClothingList()
+        updateBasketList()
+      }
+
+      // Supprimer un vêtement de la garde-robe
+      function deleteClothing(index) {
+        clothingCatalog.splice(index, 1)
+        saveCatalog()
+        updateClothingList()
+        updateBasketList()
+      }
+
+      // Bouton pour supprimer tous les vêtements
+      document.getElementById("delete-all-clothes").addEventListener("click", () => {
+        if (confirm("Voulez-vous vraiment supprimer tous les vêtements ?")) {
+          clothingCatalog = []
+          saveCatalog()
+          updateClothingList()
+          updateBasketList()
+        }
+      })
+
+      // Bouton pour trier automatiquement les vêtements (par saleté, température ou couleur)
+      document.getElementById("sort-clothes").addEventListener("click", () => {
+        const sortMode = document.getElementById("sort-mode").value
+        clothingCatalog.sort((a, b) => {
+          if (sortMode === "dirt") {
+            return a.dirt - b.dirt
+          } else if (sortMode === "temperature") {
+            return a.temperature.localeCompare(b.temperature)
+          } else if (sortMode === "color") {
+            return a.color.localeCompare(b.color)
+          }
+          return 0
+        })
+        saveCatalog()
+        updateClothingList()
+      })
+
+      // Bouton pour ajouter (ou retirer) tous les vêtements sélectionnables au panier
+      document.getElementById("select-toggle").addEventListener("click", () => {
+        let shouldSelect = false;
+        clothingCatalog.forEach((item) => {
+          // On ne modifie que les articles qui ne sont pas déjà dans le panier
+          if (!item.inBasket && item.dirt > 0 && !item.selected) {
+            shouldSelect = true;
+          }
+        });
+        clothingCatalog = clothingCatalog.map((item) => {
+          if (!item.inBasket && item.dirt > 0) {
+            item.selected = shouldSelect;
+          }
+          return item;
+        });
+        document.getElementById("select-toggle").textContent = shouldSelect ? "Tout désélectionner" : "Tout sélectionner";
+        saveCatalog();
+        updateClothingList();
+        updateBasketList();
+      });
+
+      // Bouton pour ajouter les vêtements sélectionnés au panier (validation de la sélection)
+      document.getElementById("add-selected-to-basket").addEventListener("click", () => {
+        clothingCatalog = clothingCatalog.map(item => {
+          if (!item.inBasket && item.dirt > 0 && item.selected) {
+            item.inBasket = true;
+            item.selected = false;
+          }
+          return item;
+        });
+        saveCatalog()
+        updateClothingList()
+        updateBasketList()
+      });
+
+      function updateAddToBasketButton() {
+        const checkboxes = document.querySelectorAll(".select-for-basket")
+        const button = document.getElementById("add-selected-to-basket")
+        let anyChecked = false
+        checkboxes.forEach((cb) => {
+          const index = parseInt(cb.getAttribute("data-index"))
+          if (clothingCatalog[index].dirt > 0 && cb.checked) anyChecked = true
+        })
+        button.disabled = !anyChecked
+      }
+
+      document.addEventListener("change", (e) => {
+        if (e.target.classList.contains("select-for-basket")) {
+          const index = parseInt(e.target.getAttribute("data-index"));
+          if (!clothingCatalog[index].inBasket) {
+            clothingCatalog[index].selected = e.target.checked;
+            updateAddToBasketButton();
+          }
+        }
+      });
+
+      // Gestion du formulaire d'ajout de vêtement
+      document.getElementById("add-clothing-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("clothing-name").value;
+        const washingType = document.getElementById("washing-type").value;
+        const temperature = document.getElementById("temperature").value;
+        const color = document.getElementById("color").value;
+        const composition = document.getElementById("composition").value;
+        const otherOptions = document.getElementById("other-options").value;
+        const addToBasketChecked = document.getElementById("add-to-basket").checked && defaultDirt > 0;
+
+        // Création d'un identifiant unique pour autoriser des noms similaires
+        const id = uuidv4();
+
+        const clothingItem = {
+          id,
+          name,
+          dirt: 0,
+          washingType,
+          temperature,
+          color,
+          composition,
+          otherOptions,
+          inBasket: addToBasketChecked,
+          selected: false,
+          washes: 0
+        };
+
+        clothingCatalog.push(clothingItem);
+        saveCatalog();
+        updateClothingList();
+        updateBasketList();
+        document.getElementById("add-clothing-form").reset();
+      });
+
+      // Bouton "Randomiser la saleté" pour la garde-robe
+      document.getElementById("randomize-dirt-wardrobe").addEventListener("click", () => {
+        clothingCatalog = clothingCatalog.map(item => {
+          item.dirt = Math.floor(Math.random() * 101);
+          if (item.dirt === 0) {
+            item.inBasket = false;
+            item.selected = false;
+          }
+          return item;
+        });
+        saveCatalog();
+        updateClothingList();
+        updateAddToBasketButton();
+      });
+
+      // Bouton "Réinitialiser les stats" sur la page d'accueil
+      document.getElementById("reset-stats").addEventListener("click", () => {
+        washStats = { washes: 0, water: 0, energy: 0, cycles: 0, waterSaved: 0, energySaved: 0 };
+        saveWashStats();
+        updateHomeStats();
+      });
+
+      // Optimisation du lavage en fonction des articles du panier
+      document.getElementById("optimize-wash").addEventListener("click", () => {
+        const basketItems = clothingCatalog.filter((item) => item.inBasket);
+        if (basketItems.length === 0) {
+          alert("Aucun vêtement dans le panier !");
+          return;
+        }
+        // Grouper les vêtements par washingType et plage de température recommandée
+        const machines = {};
+        basketItems.forEach((item) => {
+          let recTemp;
+          if (item.dirt < 30) {
+            recTemp = "30°C";
+          } else if (item.dirt < 70) {
+            recTemp = "40°C";
+          } else {
+            recTemp = "60°C";
+          }
+          const key = item.washingType + "-" + recTemp;
+          if (!machines[key]) {
+            machines[key] = { items: [], recTemp, washingType: item.washingType };
+          }
+          machines[key].items.push(item);
+        });
+
+        // Exemple de fusion (vous pouvez adapter la logique si besoin)
+        const mergedMachines = {};
+        for (const key in machines) {
+          const group = machines[key];
+          const temp = parseInt(group.recTemp);
+          let mergedKey = group.washingType + "-30°C";
+          if (temp > 30 && temp <= 40) {
+            mergedKey = group.washingType + "-40°C";
+          } else if (temp > 40) {
+            mergedKey = group.washingType + "-60°C";
+          }
+          if (!mergedMachines[mergedKey]) {
+            mergedMachines[mergedKey] = { items: [], recTemp: mergedKey.split("-")[1], washingType: group.washingType };
+          }
+          mergedMachines[mergedKey].items.push(...group.items);
+        }
+
+        let machineContainer = document.getElementById("machine-container");
+        if (!machineContainer) {
+          machineContainer = document.createElement("div");
+          machineContainer.id = "machine-container";
+          machineContainer.className = "mt-4";
+          document.getElementById("wash-recommendation").appendChild(machineContainer);
+        }
+        machineContainer.innerHTML = "";
+
+        let globalRecommendation = "";
+        for (const key in mergedMachines) {
+          const group = mergedMachines[key];
+          let totalDirt = group.items.reduce((sum, item) => sum + item.dirt, 0);
+          let avgDirt = totalDirt / group.items.length;
+          let detergentDose, washTime;
+          if (avgDirt < 30) {
+            detergentDose = "50ml";
+            washTime = "30 minutes";
+          } else if (avgDirt < 70) {
+            detergentDose = "75ml";
+            washTime = "45 minutes";
+          } else {
+            detergentDose = "100ml";
+            washTime = "60 minutes";
+          }
+          const recText = `Panier (${key.split("-")[0]}) : ${group.items.length} vêtement(s), Température recommandée : ${group.recTemp}, Lessive : ${detergentDose}, Durée : ${washTime}.`;
+          let vetText = "Vêtements : ";
+          for (const i in group.items) {
+            vetText += group.items[i].name + (i < group.items.length - 1 ? ", " : "");
+          }
+          const machineDiv = document.createElement("div");
+          machineDiv.className = "bg-gray-200 dark:bg-gray-700 p-4 rounded mb-4";
+          machineDiv.innerHTML = `<p>${recText}<br>${vetText}</p>`;
+          const launchBtn = document.createElement("button");
+          launchBtn.textContent = "Lancer cette machine";
+          launchBtn.className = "bg-green-600 text-white px-4 py-2 rounded mt-2";
+          launchBtn.addEventListener("click", () => {
+            group.items.forEach((item) => {
+              item.washes += 1;
+              item.dirt = 0;
+              item.inBasket = false;
+            });
+            saveCatalog();
+            updateBasketList();
+            updateClothingList();
+            machineDiv.remove();
+          });
+          machineDiv.appendChild(launchBtn);
+          machineContainer.appendChild(machineDiv);
+        }
+
+        const machineCount = Object.keys(mergedMachines).length;
+        washStats.washes += machineCount;
+        for (const key in mergedMachines) {
+          const count = mergedMachines[key].items.length;
+          // Exemple : l'eau économisée et l'énergie économisée sont calculées ici selon un coefficient
+          const waterUsedPerItem = 10;
+          const energyUsedPerItem = 0.5;
+          const waterSavedPerItem = waterUsedPerItem * 0.2; // 20% d'économie
+          const energySavedPerItem = energyUsedPerItem * 0.2;
+          washStats.water += waterUsedPerItem * count;
+          washStats.energy += energyUsedPerItem * count;
+          washStats.waterSaved += waterSavedPerItem * count;
+          washStats.energySaved += energySavedPerItem * count;
+          washStats.cycles += 1;
+        }
+        saveWashStats();
+        updateHomeStats();
+        document.getElementById("wash-recommendation").classList.remove("hidden");
+        document.getElementById("recommendation-text").textContent = globalRecommendation;
+      });
+
+      document.getElementById("empty-basket").addEventListener("click", () => {
+        const basketItems = clothingCatalog.filter((item) => item.inBasket);
+        if (basketItems.length === 0) {
+          alert("Aucun vêtement dans le panier !");
+          return;
+        }
+        clothingCatalog.forEach((item) => (item.inBasket = false));
+        if (document.getElementById("machine-container")) {
+          document.getElementById("machine-container").innerHTML = "";
+        }
+        saveCatalog();
+        updateBasketList();
+        updateClothingList();
+      });
+
+      // Gestion du thème sombre
+      document.getElementById("dark-mode-toggle").addEventListener("change", function () {
+        if (this.checked) {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("darkMode", "true");
+        } else {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("darkMode", "false");
+        }
+      });
+
+      // Initialisation : mise à jour de l'affichage
+      updateClothingList();
+      updateBasketList();
+      updateHomeStats();
+    </script>
+  </body>
+</html>

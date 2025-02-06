@@ -1,0 +1,8 @@
+# Path
+train: /content/aquarium_pretrain/train/images
+val: /content/aquarium_pretrain/valid/images
+test: /content/aquarium_pretrain/test/images
+
+# Classes
+nc: 7
+names: ["fish", "jellyfish", "penguin", "puffin", "shark", "starfish", "stingray"]
